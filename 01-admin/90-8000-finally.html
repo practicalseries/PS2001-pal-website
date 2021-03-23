@@ -1,0 +1,1048 @@
+<!DOCTYPE html>                                                                 <!-- HTML 5 file -->
+
+<!-- PRACTICALSERIES (c) 2021
+
+*******************************************************************************
+
+PRACTICALSERIES: Practical Series of Publications by Michael Gledhill
+                 Published in the United Kingdom
+
+                 Email: mg@practicalseries.com
+                 Web:   https://practicalseries.com
+
+******************************************************************************* -->
+<html lang="en">                                                                <!-- Declare language                              -->
+    <head>                                                                      <!-- Start of head section                         -->
+        <meta charset="utf-8">                                                  <!-- Use unicode char set (< 1024 char from SOF)   -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Make page follow browser width and reset zoom -->
+        <meta name="description" content="Practiacl series automation library, PAL">
+
+<!-- ==========================================================================
+
+
+
+*******************************************************************************
+Title :          PRACTICAL SERIES AUTOMATION LIBRARY (PAL)
+
+                 ADMIN - AND FINALLY...                    90-8000-FINALLY.HTML         
+*******************************************************************************
+DETAILS
+
+The Practical Series publication - Practical Series Automation Library (PAL)
+
+This website is part of the Practical Series Automation Library (PAL); a
+library of software modules and templates that have been made available for
+the Siemens Simatic S7-1500 range of controllers. The PAL is fully deployable
+software that is suitable for the control of most industrial process
+applications.
+
+*******************************************************************************
+MODIFICATION HISTORY:
+
+This is a complete summary of all software modifications.
+
+Date          Issue        Author         Reason for Modification
+*******************************************************************************
+11 Feb 2021   000.101      M. Gledhill    Released as a development prototype
+                                          Revision control active
+                                          RELEASE CHECKLIST
+                                             Title                Y
+                                             Meta description     Y
+                                             Rev Badge (br red)   000.101 (dev)
+                                             Rev Data Page        000.101
+                                             Rev Data Code        000.101
+                                             Rev Data scroll      000.101
+                                             TOC softscroll       Y
+                                             Nav Prev chap        N/A
+                                             Nav Prev sec         go(-1)
+                                             Nav Next chap        N/A
+                                             Nav Next sec         N/A
+                                             Nav Top              Y
+                                             Nav Home             Y (index)
+                                             Last section Prev    go(-1)
+                                             Last section Next    N/A
+                                             Footer Top           Y
+                                             Footer Contacts &c.  Y (90-80)
+
+09 Feb 2021   000.000      M. Gledhill    File created
+                                          based on 11-web/80-00   000.101
+                                          Updated for 01-admin format
+*************************************************************************** -->
+
+
+<!-- **************************************************************************
+     FAVICON
+     ***********************************************************************-->
+        <!-- favicons all platforms --> <link rel="apple-touch-icon" sizes="180x180" href="../00-comres/11-resources/02-images/01-favicons/apple-touch-icon.png">
+                                        <link rel="icon" type="image/png"            href="../00-comres/11-resources/02-images/01-favicons/favicon-32x32.png" sizes="32x32">
+                                        <link rel="icon" type="image/png"            href="../00-comres/11-resources/02-images/01-favicons/favicon-16x16.png" sizes="16x16">
+                                        <link rel="mask-icon"                        href="../00-comres/11-resources/02-images/01-favicons/safari-pinned-tab.svg">
+                                        <meta name="theme-color" content="#ffffff">
+
+
+<!-- **************************************************************************
+     HEAD SCRIPT AREA
+     ***********************************************************************-->
+        <!-- jQuery Library -->         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Waypoints (sticky nav) --> <script src="../00-comres/21-global/05-js/jquery.waypoints.min.js"></script>
+        <!-- Hyphenator -->             <script src="../00-comres/21-global/05-js/hyphenator.js"></script>
+        <!-- Lightbox -->               <script src="../00-comres/21-global/05-js/lightbox.js"></script>
+        <!-- Prettify (main) -->        <script src="../00-comres/21-global/05-js/run_prettify.js?autoload=true&lang=css"></script>
+        <!-- MathJax -->                <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async></script>
+        <!-- PS main script -->         <script src="../00-comres/11-resources/05-js/script.js"></script>
+                                                                <!-- ▼▼▼▼ CHANGE FOLDER ▼▼▼▼  -->
+         <!-- PS local scroll script --> <script src="01-pages/90-8000-finally/05-local-js/scroll.js"></script>
+
+
+
+
+<!-- **************************************************************************
+     HEAD CSS LOAD
+     ***********************************************************************-->
+        <!-- Load PS fonts -->          <link rel="stylesheet" type="text/css" href="../00-comres/21-global/03-fonts/ps-fonts.css">
+        <!-- Load TIA fonts -->         <link rel="stylesheet" type="text/css" href="../00-comres/21-global/03-fonts/tia-fonts.css">
+        <!-- Normalise -->              <link rel="stylesheet" type="text/css" href="../00-comres//21-global/01-css/normalise.css">
+        <!-- Lightbox styles -->        <link rel="stylesheet" type="text/css" href="../00-comres/21-global/01-css/lightbox.css">
+        <!-- Ionicons -->               <link rel="stylesheet" type="text/css" href="../00-comres/21-global/01-css/ionicons.min.css">
+        <!-- PS grid system -->         <link rel="stylesheet" type="text/css" href="../00-comres/11-resources/01-css/grid.css">
+        <!-- PS main styles -->         <link rel="stylesheet" type="text/css" href="../00-comres/11-resources/01-css/style.css">
+        <!-- PAL styles -->             <link rel="stylesheet" type="text/css" href="../00-comres/11-resources/01-css/style-pal.css">
+                                                                <!-- ▼▼▼▼ CHANGE FOLDER ▼▼▼▼  -->
+        <!-- Code frag highlights -->  <link rel="stylesheet" type="text/css" href="01-pages/90-8000-finally/01-local-css/codelines.css">
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      GOOGLE ANALYTICS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                        <script>
+                                          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                                          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                                          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                                          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                                          ga('create', 'UA-87335633-1', 'auto');
+                                          ga('set', 'anonymizeIp', true);           // anonymise ip address
+                                          ga('send', 'pageview');
+                                        </script>
+
+
+<!-- **************************************************************************
+     TITLE
+     ***********************************************************************-->
+        <title>PAL | Admin - And finally...</title>
+    </head>
+
+    <body>
+
+
+<!-- ************************************************************************** [WP HEADER]
+     HEADER (COVER & TABLE OF CONTENTS)
+     ***********************************************************************-->
+
+        <header id="js--000000">
+
+<!-- ************************************************************************** [WP TOPNAV]
+     TOP NAVIGATION (ABOVE CONTENTS LIST)
+     ***********************************************************************-->
+
+            <nav>                                               <!-- Start of top nav bar     -->
+                <div class="top-nav">                           <!-- Start of top nav row     -->
+                    <div class="rg-row">                        <!-- Start of nav button row  -->
+                        <!-- Button 01 - Previous Section -->
+                        <a class="nav-wide" href="javascript: history.go(-1)"><span class="top-nav-icon">l</span><span class="top-nav-text">Back</span></a>
+                        <!-- Button 02 - Previous Chapter -->
+                        <div class="nav-wide" ></div>
+                        <!-- Button 03 - Home wide (hidden when fixed nav activates) -->
+                        <a class="nav-wide nav-home" href="index.html#js--000000"><span class="top-nav-text">Home</span><span class="top-nav-icon">h</span></a>
+                        <!-- Button 03a - Top narrow (hidden until fixed nav activates) -->
+                        <a class="nav-narrow js--sc-000000" href="#"><span class="top-nav-icon">t</span><span class="top-nav-text">Top</span></a>
+                        <!-- Button 03b - Home narrow (hidden until fixed nav activates) -->
+                        <a class="nav-narrow" href="index.html#js--000000"><span class="top-nav-text">Home</span><span class="top-nav-icon">h</span></a>
+                        <!-- Button 04 - Next Chapter -->
+                        <div class="nav-wide" ></div>
+                        <!-- Button 05 - Next section -->
+                        <div class="nav-wide" ></div>
+                    </div>                                      <!-- End of nav button row    -->
+                </div>                                          <!-- End of top nav row       -->
+            </nav>                                              <!-- End of top nav bar       -->
+<!-- ========================================================================== [WP END]      -->
+
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      HEADLINE - LEFT SIDEBAR (LOGO)
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+             <div class="rg-row pal-title-row">
+                <div class="rg-col rg-span1-5">
+                    <aside class="aside-left aside-left-rev">
+                        <a href="index.html">
+<!-- Logo image -->         <img class="pal-headline-logo" src="../00-comres/11-resources/02-images/pal-logo-github-sml.svg" alt="PAL Logo">
+                        </a>
+                    </aside>
+
+                </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      HEADLINE - DOCUMENT TITLE
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                <div class="rg-col rg-span3-5">
+                    <div class="pal-headline">
+                        <p class="pal-headline-ps">Practical Series Automation Library</p>
+<!-- Doc Title Sml      <h2>And finally &hellip;</h2>-->
+<!-- Doc Title Lrg -->  <h2><span style="font-size: 150%">Admin &mdash; And finally &hellip;</span></h2> 
+                        
+                    </div>
+                </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      HEADLINE - RIGHT SIDEBAR (Page revision information)
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                <div class="rg-col rg-span1-5">
+                    <aside class="aside-right-rev">
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - REVISION TABLE
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class="table-rev">
+<!-- Title row -->      <tr>
+                            <td class="leading"></td>
+                            <td class="table-right"></td>
+                            <td colspan="2" class="table-left" style="border-bottom: 1px solid #ccc">Page Revision Data</td>
+                        </tr>
+<!-- Spacing row -->    <tr class="no-border">
+                            <td class="leading"></td>
+                            <td colspan="3" class="table-left"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">Page:</td>
+                            <td class="table-right" style="width: 30%" id="rev-doc">000.101</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">scroll.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-scroll"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em border-bottom: 1px solid #ccc"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">codelines.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-codelines"></td>
+                        </tr>
+<!-- Title row -->      <tr>
+                            <td class="leading" style="height: 2em"></td>
+                            <td class="table-right"></td>
+                            <td colspan="2" class="table-left" style="border-bottom: 1px solid #ccc; vertical-align: bottom">Common resources</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">script.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-script"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">Style.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-style"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">style-pal.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-style-pal"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">grid.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-grid"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">ps-fonts.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-ps-fonts"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">tia-fonts.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-tia-fonts"></td>
+                        </tr>
+<!-- Title row -->      <tr>
+                            <td class="leading" style="height: 2em"></td>
+                            <td class="table-right"></td>
+                            <td colspan="2" class="table-left" style="border-bottom: 1px solid #ccc; vertical-align: bottom">Global resources</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">normalise.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-normalise"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">lightbox.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-lightbox"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">lightbox.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-lbjs"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">waypoints.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-waypoints"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">hyphenator.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-hyphenator"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">ionicons.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-ionicons"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">prettify.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-prettify"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">prettify.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-run-prettify"></td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                    </aside>
+                </div>
+            </div>
+<!-- ************************************************************************** [WP TITLE]
+     TITLE BAR (Section number and text)
+     ***********************************************************************-->
+
+            <div class="rg-row">                                <!-- Start of title row       -->
+                <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
+                    <aside class="rev-badge-side">              <!-- BUILD BADGE              -->
+                        <img src="https://img.shields.io/badge/dev-000.101-BF504D.svg" alt="Build">
+                    </aside>
+                </div>                                          <!-- End of Left column       -->
+                <div class="rg-col rg-span3-5">                 <!-- Start of title           -->
+                   <div class="pal-overline-index"></div>       <!-- Overline bar             -->
+<!-- Section        <div class="title-num-box"><p></p></div>
+                    <div class="title-text-box"><h1><span class="title-small-num"></span><span style="font-size: 150%">Section</span></h1></div> -->
+<!-- Contents -->   <div class="title-contents"><h1>Contents</h1></div> 
+                </div>                                          <!-- End of title             -->
+                <div class="rg-col rg-span1-5">                 <!-- Start of right column    -->
+                    <aside class="aside-right-rev">             <!-- Start of right side bar  -->
+                    </aside>                                    <!-- End of right side bar    -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of title row         -->
+<!-- ========================================================================== [WP END]      -->
+
+
+<!-- ************************************************************************** [WP 000004]
+     TABLE OF CONTENTS
+     ***********************************************************************-->
+
+            <div class="rg-row">                                <!-- Start of TOC section -->
+                <div class="rg-col rg-span1-5"></div>           <!-- Left column (not used for TOC) -->
+                <div class="rg-col rg-span3-5">                 <!-- Start of TOC column (centre column) -->
+
+
+               <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    TOC - 80 And finally
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ul class="toc-list">
+<!-- Level 2 -->        <li><a class="js--sc-800100" href="90-8000-finally.html#js--800100">
+                            <div class="toc-lev"><span class="toc-lev2-num"></span><span class="toc-lev2-text">Contact MG</span></div></a>
+                        </li>
+<!-- Level 2 -->        <li><a class="js--sc-800200" href="90-8000-finally.html#js--800200">
+                            <div class="toc-lev"><span class="toc-lev2-num"></span><span class="toc-lev2-text">Acknowledgements</span></div></a>
+                            <br class="top-pad">
+                        </li>
+<!-- Level 2 -->        <li><a class="js--sc-800300" href="90-8000-finally.html#js--800300">
+                            <div class="toc-lev"><span class="toc-lev2-num"></span><span class="toc-lev2-text">Colophon</span></div></a>
+                        </li>
+<!-- Level 2 -->        <li><a class="js--sc-800400" href="90-8000-finally.html#js--800400">
+                            <div class="toc-lev"><span class="toc-lev2-num"></span><span class="toc-lev2-text">Legal &amp; Privacy</span></div></a>
+                        </li>
+                    </ul>
+              <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                </div>                                          <!-- End of TOC column        -->
+                <div class="rg-col rg-span1-5"></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of TOC section       -->
+<!-- ========================================================================== [WP END]      -->
+
+
+        </header>                                               <!-- End of header            -->
+<!-- ========================================================================== [WP END]      -->
+
+
+
+<!-- ************************************************************************** [WP FIXEDNAV]
+     FIXED NAVIGATION BAR CHANGEOVER POINT
+     ***********************************************************************-->
+        <div class="js--fixed-nav"></div>                          <!-- fixed navigation point   -->
+<!-- ========================================================================== [WP END]      -->
+
+
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - CONTACT MG
+     ***********************************************************************-->
+
+        <section class="section-std" id="js--800100">           <!-- Start of section         -->
+            <div class="rg-row sub-title-row">                  <!-- Start of subtitle row    -->
+                <div class="rg-col rg-span1-5"></div>           <!-- Left column (not used)   -->
+                <div class="rg-col rg-span3-5">                 <!-- Start of subtitle column -->
+                    <div class="sub-title-overline"></div>      <!-- Overline                 -->
+                    <div class="sub-title-text-box"><h2>Contact MG</h2></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class="rg-col rg-span1-5"></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class="rg-row">                                <!-- Start of section content -->
+                <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
+                <!--     <aside class="aside-left">                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class="rg-col rg-span3-5">                 <!-- Start of section text    -->
+
+                    <p class="hyp">You can reach me by email. I invite questions, corrections, constructive criticism and complaints (polite ones) with the following caveats:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      NUMBERED LIST
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ol class="list-num">                       <!-- Start of numbered list   -->
+                        <li><p class="hyp">I do have a day job (<span class="first-use">surprising isn&rsquo;t it</span>), I will respond to all polite emails but not necessarily instantly.</p></li>
+
+                        <li><p class="hyp">I can&rsquo;t offer detailed engineering advice about specific problems (<span class="first-use">e.g. why does that valve blow all the fuses when I try to open it</span>), but I will offer pearls of wisdom about less specific software issues.</p></li>
+
+                        <li><p class="hyp">I don&rsquo;t know anything about car engines or kettles so please don&rsquo;t ask.</p></li>
+
+                        <li><p class="hyp">For the more emotionally tainted, my dogs, Hector and Henry, are Salukis and while it may be off topic I have a soft spot for them and I may be willing to discuss them if pushed.</p></li>
+
+                        <li><p class="hyp">If your email comes down to &ldquo;<span class="first-use">I think your website&rsquo;s rubbish, I won&rsquo;t pay for it, but I do want to shout at you for a while about your outrageous shortcomings&rdquo;</span> then please, there is no need to trouble yourself; you&rsquo;ve already said everything by not paying.</p></li>
+                    </ol>                                       <!-- End of numbered list     -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                    <p class="hyp">So if you&rsquo;re happy with that, you can reach me here:</p>
+                    <p class="hyp"><a class="hlink" href="mailto:mg@practicalseries.com" style="margin-left: 6rem">mg@practicalseries.com.</a></p>
+
+                    <p class="hyp">I&rsquo;ve included the full details of how I store and manage emails in the <a class="xref nohyp js--sc-800500b" href="#">privacy and personal data section</a> below:</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class="rg-col rg-span1-5">                 <!-- Start of right column    -->
+                <!--     <aside class="aside-right">                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - ACKNOWLEDGEMENTS
+     ***********************************************************************-->
+
+        <section class="section-std" id="js--800200">           <!-- Start of section         -->
+            <div class="rg-row sub-title-row">                  <!-- Start of subtitle row    -->
+                <div class="rg-col rg-span1-5"></div>           <!-- Left column (not used)   -->
+                <div class="rg-col rg-span3-5">                 <!-- Start of subtitle column -->
+                    <div class="sub-title-overline"></div>      <!-- Overline                 -->
+                    <div class="sub-title-text-box"><h2>Acknowledgements</h2></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class="rg-col rg-span1-5"></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class="rg-row">                                <!-- Start of section content -->
+                <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
+                <!--     <aside class="aside-left">                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class="rg-col rg-span3-5">                 <!-- Start of section text    -->
+
+                    <p class="hyp">Thanks to everyone who has paid for this website. Your contributions are appreciated.</p>
+
+
+                    <p class="hyp">Thanks to the dogs: Hector (left) and Henry (right) their advice was invaluable.</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - DOUBLE FIGURE HALF PAGE WIDTH (361 px)
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class="fig-row">
+                        <figure class="fig-col fig1-2" id="js--f80-01">
+                            <a href="01-pages/90-8000-finally/02-images/fig-80-01.png" data-lightbox="fig-set" data-title="Hector the Saluki">
+                                <img src="01-pages/90-8000-finally/02-images/fig-80-01.png" alt="Hector">
+                            </a>
+                        </figure>
+                        <figure class="fig-col fig1-2" id="js--f80-02">
+                            <a href="01-pages/90-8000-finally/02-images/fig-80-02.png" data-lightbox="fig-set" data-title="Henry the Saluki">
+                                <img src="01-pages/90-8000-finally/02-images/fig-80-02.png" alt="Henry">
+                            </a>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                    <p class="hyp">Most of the images in the website are my own or of my creation (which probably explains the poor quality).</p>
+
+                    <p class="hyp">The fonts used were created by Mr Matthew Butterick and are Equity (serif), Concourse (sans serif) and Triplicate (monospace); I refer to them collectively on the website as the Equity fonts. If you want to use them you can buy them <a class="hlink nohyp" href="http://practicaltypography.com/equity.html">here</a>.</p>
+
+                    <p class="hyp">The website uses various third-party software and files, I hope I&rsquo;ve adequately and correctly made notification of them on the website and in the source code&nbsp;&mdash;&nbsp;I do so again here:</p>
+
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class="table-clean" id="js--t80-01">
+<!-- Header row -->     <tr>
+                            <th class="leading"></th>
+                            <th class="table-cent" style="width: 32%">File</th>
+                            <th class="table-cent" style="width: 30%">Author(s)</th>
+                            <th class="table-left" style="width: 38%">Purpose</th>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading"><div style="min-height: 4.5em"></div></td>
+                            <td class="table-cent">
+                                <p><a class="hlink nohyp" href="https://necolas.github.io/normalize.css/">normalise.css</a></p>(8.0.1)
+                            </td>
+                            <td class="table-cent">Nicolas Gallagher<br>Jonathan Neal</td>
+                            <td class="table-left">Conditions various html tags so that they are rendered consistently in different browsers </td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading"><div style="min-height: 4.5em"></div></td>
+                            <td class="table-cent">
+                                <p><a class="hlink nohyp" href="https://developers.google.com/speed/libraries/">jquery.min.js</a></p>(3.3.1)
+                            </td>
+                            <td class="table-cent">jQuery foundation<br>(Google hosted library )</td>
+                            <td class="table-left">jQuery library used to run the jQuery scripts </td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading"><div style="min-height: 4.5em"></div></td>
+                            <td class="table-cent">
+                                <p><a class="hlink nohyp" href="http://imakewebthings.com/waypoints/">waypoints.min.js</a></p>(4.0.1)
+                            </td>
+                            <td class="table-cent">Caleb Troughton</td>
+                            <td class="table-left">Used to detect when to switch to fixed navigation bar (has many other uses) </td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading"><div style="min-height: 4.5em"></div></td>
+                            <td class="table-cent">
+                                <p><a class="hlink nohyp" href="https://github.com/mnater/Hyphenator">hyphenator.js</a></p>(5.2.0)
+                            </td>
+                            <td class="table-cent">Mathias Nater</td>
+                            <td class="table-left">Dynamically hyphenates text within a web page </td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading"><div style="min-height: 4.5em"></div></td>
+                            <td class="table-cent">
+                                <p><a class="hlink nohyp" href="https://code.google.com/archive/p/google-code-prettify/">run_prettify.js</a></p>(2013)
+                            </td>
+                            <td class="table-cent">Google</td>
+                            <td class="table-left">Used to display code fragments within a html page </td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading"><div style="min-height: 4.5em"></div></td>
+                            <td class="table-cent">
+                                <p><a class="hlink nohyp" href="http://lokeshdhakar.com/projects/lightbox2/">lightbox.js</a></p>(2.10.0)
+                           </td>
+                            <td class="table-cent">Lokesh Dhakar</td>
+                            <td class="table-left">Used to overlay images on top of the current page </td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading"><div style="min-height: 4.5em"></div></td>
+                            <td class="table-cent">
+                                <p><a class="hlink nohyp" href="https://www.mathjax.org/">mathjax.js</a></p>(3.1.2)
+                            </td>
+                            <td class="table-cent">MathJax</td>
+                            <td class="table-left">Renders AsciiMath, TeX/LaTeX and MathML code as standard mathematical notation</td>
+                        </tr>
+<!-- Caption -->        <tr class="no-border">
+                            <td class="leading"></td>
+                            <td colspan="3" class="table-caption">Third-party software running on the website</td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                    <p class="hyp">Normalise, Hyphenator, Lightbox and Waypoints are available under the Github MIT licence (reproduced below) and jQuery, MathJax and Prettify are available under the Apache 2.0 licence (also reproduced below):</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - CLEAN TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      Single column.
+
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class="table-clean" id="js--t8--021"><!-- TABLE - Start of table  -->
+                        <tr>                                    <!-- TABLE - Start of header -->
+                            <th class="leading"></th>                                   <!-- Leading row (sets min-height) -->
+                            <th class="table-cent">GITHUB MIT LICENCE</th>      <!-- set column 01 width here -->
+                        </tr>                                   <!-- TABLE - End of header   -->
+                        <tr>                                    <!-- TABLE - Start of row 01 -->
+                            <td class="leading"><div style="min-height: 4.5em"></div></td><!-- Leading row (sets min-height) -->
+                            <td class="table-left">
+                                <p>The MIT License (MIT)</p>
+
+                                <p>Copyright &copy; [Authors as listed in the above table]</p>
+
+                                <p class="hyp">Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+                                <p class="hyp sml-caps-ns">The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+                                The software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and non-infringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.</p>
+                                </td>
+                        </tr>                                   <!-- TABLE - End of row 01   -->
+                        <tr class="no-border">                  <!-- TABLE - Start of caption row -->
+                            <td class="leading"></td>           <!-- Leading row (sets min-height) -->
+                            <td class="table-caption">Github Massachusetts Institute of Technology (MIT)Licence</td>
+                        </tr>                                   <!-- TABLE - End of caption row   -->
+                        <tr class="no-border">                  <!-- TABLE - Start of padding row -->
+                            <td class="leading"><div style="min-height: 4.5em"></div></td><!-- Leading row (sets min-height) -->
+                            <td class="table-caption"></td>
+                        </tr>                                   <!-- TABLE - End of padding row   -->
+                    </table>                                    <!-- TABLE - End of table    -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - CLEAN TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      Single column.
+
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                     <table class="table-clean" id="js--t80-02"><!-- TABLE - Start of table  -->
+                        <tr>                                    <!-- TABLE - Start of header -->
+                            <th class="leading"></th>                                   <!-- Leading row (sets min-height) -->
+                            <th class="table-cent">APACHE 2.0 LICENCE AND REFERENCE</th>      <!-- set column 01 width here -->
+                        </tr>                                   <!-- TABLE - End of header   -->
+                        <tr>                                    <!-- TABLE - Start of row 01 -->
+                            <td class="leading"><div style="min-height: 4.5em"></div></td><!-- Leading row (sets min-height) -->
+                            <td class="table-left">
+                                <p>The Apache License Version 2.0, January 2004</p>
+
+                                <p>Copyright &copy; [Authors as listed in the above table]</p>
+
+                                <p class="hyp">Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at:</p>
+
+                                <p><a class="hlink nohyp" href="http://apache.org/licenses/LICENSE-2.0">http://apache.org/licenses/license-2.0</a></p>
+
+                                <p class="hyp sml-caps-ns">Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "as is" basis, without warranties or conditions of any kind, either express or implied. See the License for the specific language governing permissions and limitations under the License.</p>
+                                </td>
+                        </tr>                                   <!-- TABLE - End of row 01   -->
+                        <tr class="no-border">                  <!-- TABLE - Start of caption row -->
+                            <td class="leading"></td>           <!-- Leading row (sets min-height) -->
+                            <td class="table-caption">Apache Licence</td>
+                        </tr>                                   <!-- TABLE - End of caption row   -->
+                        <tr class="no-border">                  <!-- TABLE - Start of padding row -->
+                            <td class="leading"><div style="min-height: 4.5em"></div></td><!-- Leading row (sets min-height) -->
+                            <td class="table-caption"></td>
+                        </tr>                                   <!-- TABLE - End of padding row   -->
+
+                    </table>                                    <!-- TABLE - End of table    -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                </div>                                          <!-- End of section text area   -->
+
+                <div class="rg-col rg-span1-5">                 <!-- Start of right column   -->
+                <!--     <aside class="aside-right">                 Start of right side bar -->
+                <!--         <p></p>                                 Side bar content        -->
+                <!--     </aside>                                    End of right side bar   -->
+                </div>                                          <!-- End of right column     -->
+            </div>                                              <!-- End of section content  -->
+        </section>                                              <!-- End of section -->
+<!-- ========================================================================== [WP END] -->
+
+
+
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - COLOPHON
+     ***********************************************************************-->
+
+        <section class="section-std" id="js--800300">           <!-- Start of section         -->
+            <div class="rg-row sub-title-row">                  <!-- Start of subtitle row    -->
+                <div class="rg-col rg-span1-5"></div>           <!-- Left column (not used)   -->
+                <div class="rg-col rg-span3-5">                 <!-- Start of subtitle column -->
+                    <div class="sub-title-overline"></div>      <!-- Overline                 -->
+                    <div class="sub-title-text-box"><h2>Colophon</h2></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class="rg-col rg-span1-5"></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class="rg-row">                                <!-- Start of section content -->
+                <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
+                <!--     <aside class="aside-left">                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class="rg-col rg-span3-5">                 <!-- Start of section text    -->
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class="table-clean" id="js--t80-06">
+<!-- Header row -->     <tr class="no-border">                                  <!-- TABLE - Start of header -->
+                            <th class="leading"></th>
+                            <th class="table-cent" style="width: 33.3%"></th>   <!-- set column 01 width here -->
+                            <th class="table-cent" style="width: 33.3%"></th>   <!-- set column 02 width here -->
+                            <th class="table-left" style="width: 33.3%"></th>   <!-- set column 03 width here -->
+                        </tr>
+<!-- Data row -->       <tr class="no-border">                                  <!-- TABLE - Start of row 01 -->
+                            <td class="leading"><div style="min-height: 4.5em"></div></td>
+                            <td class="table-cent">
+                                <figure class="fig-row">
+                                    <div class="fig-col fig1-1" id="js--f80-03">
+                                        <img src="01-pages/90-8000-finally/02-images/fig-80-03.png" alt="MG outline">
+                                    </div>
+                                </figure>
+                            </td>
+                            <td colspan="2" class="table-left">
+                                <p class="hyp">This website is part of the <em>Practical Series of Publications</em>.<br>It was designed and published in the United Kingdom by Michael&nbsp;Gledhill.</p>
+
+                                 <p class="hyp">It was first published in October 2016.</p>
+
+                            </td>
+                        </tr>
+<!-- Data row -->       <tr class="no-border">
+                            <td class="leading"><div style="min-height: 4.5em"></div></td>
+                            <td colspan="2" class="table-left">
+                                <p class="hyp">The website is printed mainly in the Equity typeface (serif), with headings, tables and annotation in Concourse (sans serif), and code fragments in Triplicate (monospaced).</p>
+
+
+                                <p class="hyp">The fonts have been created by Mr Matthew Butterick and are available here: <a class="hlink nohyp" href="http://practicaltypography.com/equity.html">here</a>.</p>
+
+                            </td>
+                            <td class="table-right">
+                                <figure class="fig-row">
+                                    <div class="fig-col fig1-1" id="js--f80-04">
+                                        <img src="01-pages/90-8000-finally/02-images/fig-80-04.png" alt="Hector outline">
+                                    </div>
+                                </figure>
+
+                            </td>
+                        </tr>
+<!-- Data row -->       <tr class="no-border">
+                            <td class="leading"><div style="min-height: 4.5em"></div></td>
+                            <td class="table-cent">
+                                <figure class="fig-row">
+                                    <div class="fig-col fig1-1" id="js--f80-05">
+                                        <img src="01-pages/90-8000-finally/02-images/fig-80-05.png" alt="Henry outline">
+                                    </div>
+                                </figure>
+                            </td>
+                            <td colspan="2" class="table-left" style="vertical-align: bottom">
+                                <p class="hyp">Finally, there is also one of my very own fonts in here somewhere.</p>
+
+                                <p class="hyp">It provides some of the symbols and icons used throughout the website, mainly in the navigation bar at the top.</p>
+
+                                 <p class="hyp">You can download it here: <a class="hlink nohyp" href="https://www.practicalseries.com/1001-webdevelopment/09-06-fonts.html#js--090601">here</a>.</p>
+
+                            </td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class="rg-col rg-span1-5">                 <!-- Start of right column    -->
+                <!--     <aside class="aside-right">                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+
+
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - LEGAL
+     ***********************************************************************-->
+
+        <section class="section-std" id="js--800400">           <!-- Start of section         -->
+            <div class="rg-row sub-title-row">                  <!-- Start of subtitle row    -->
+                <div class="rg-col rg-span1-5"></div>           <!-- Left column (not used)   -->
+                <div class="rg-col rg-span3-5">                 <!-- Start of subtitle column -->
+                    <div class="sub-title-overline"></div>      <!-- Overline                 -->
+                    <div class="sub-title-text-box"><h2>Legal</h2></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class="rg-col rg-span1-5"></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class="rg-row">                                <!-- Start of section content -->
+                <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
+                <!--     <aside class="aside-left">                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class="rg-col rg-span3-5">                 <!-- Start of section text    -->
+
+                    <p class="hyp">&copy;&nbsp;2021 Michael Gledhill. All rights reserved.</p>
+
+                    <p class="hyp">The website framework: its format, structure and source code, I make available to all who wish to use it. The text and images within the website may not be publicly reproduced without my written permission. In the unlikely event that you do wish to do so, please send requests to me at: <a class="hlink nohyp" href="mailto:mg@practicalseries.com">mg@practicalseries.com.</a></p>
+
+                    <p class="hyp">I have not been compensated to recommend any of the software, websites or products mentioned on these pages or used in the production of this website.</p>
+
+ <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      NOTE - HANGING INDENT
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ul class="note">                           <!-- Start of note            -->
+                        <li>I reference Mr Matthew Butterick&rsquo;s <a class="hlink nohyp" href="http://practicaltypography.com/">Practical&nbsp;Typography</a> website on several occasions within these pages. Despite the name, I have no connection with Practical Typography (although I do recommend it) and it is not part of the Practical Series of Publications&nbsp;&mdash;&nbsp;the name is purely coincidental&nbsp;&mdash;&nbsp;I had already registered practicalseries.com when I became aware of Practical Typography (in fact in the course of researching web layouts and typography for this website).</li>
+                    </ul>                                       <!-- End of note              -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class="rg-col rg-span1-5">                 <!-- Start of right column    -->
+                <!--     <aside class="aside-right">                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+
+
+
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - PRIVACY
+     ***********************************************************************-->
+
+        <section class="section-std" id="js--800500">           <!-- Start of section         -->
+            <div class="rg-row sub-title-row">                  <!-- Start of subtitle row    -->
+                <div class="rg-col rg-span1-5"></div>           <!-- Left column (not used)   -->
+                <div class="rg-col rg-span3-5">                 <!-- Start of subtitle column -->
+                    <div class="sub-title-thinline"></div>
+                    <div class="sub-title-text-box"><h2>Privacy &amp; cookies</h2></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class="rg-col rg-span1-5"></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class="rg-row">                                <!-- Start of section content -->
+                <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
+                <!--     <aside class="aside-left">                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class="rg-col rg-span3-5">                 <!-- Start of section text    -->
+
+                    <p class="hyp">This is a big thing now in Europe and in England: <a class="hlink nohyp" href="https://ico.org.uk/for-organisations/guide-to-the-general-data-protection-regulation-gdpr/">gdpr</a> <span class="first-use">(General Data Protection Regulation)</span>; it means I have to be very careful with any data I collect about people. I also have to explain why I want the data and what I&rsquo;m going to do with it. So here goes:</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class="rg-col rg-span1-5">                 <!-- Start of right column    -->
+                <!--     <aside class="aside-right">                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+
+<!-- ************************************************************************** [WP INLINE]
+     SECTION INLINE
+     ***********************************************************************-->
+
+        <section class="section-std" id="js--800500a">          <!-- Start of section         -->
+            <div class="rg-row sub-title-row">                  <!-- Start of subtitle row    -->
+                <div class="rg-col rg-span1-5"></div>           <!-- Left column (not used)   -->
+                <div class="rg-col rg-span3-5">                 <!-- Start of subtitle column -->
+                    <!-- <div class="sub-title-num-box"><h4></h4></div> -->
+                    <div class="sub-title-text-box"><h4>Cookies</h4></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class="rg-col rg-span1-5"></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class="rg-row">                                <!-- Start of section content -->
+                <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
+                <!--     <aside class="aside-left">                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class="rg-col rg-span3-5">                 <!-- Start of section text    -->
+
+                    <p class="hyp">The only cookies I use on this site are those needed for <a class="hlink hyp" href="https://marketingplatform.google.com/about/analytics/">google analytics</a> and <a class="hlink nohyp" href="https://www.paypal.com/uk/home">PayPal</a> I use Goole Analytics to help analyse how visitors use the site. It works by installing <span class="first-use">cookies</span> on your computer. Cookies are small text files that are used to collect standard internet log data <span class="first-use">(time of visit, type of browser, operating system &amp;c.)</span> and visitor behaviour information <span class="first-use">(referring sites, landing page, links to other sites that have been clicked &amp;c.)</span>. It collects this data in an anonymous form. Note the deliberate emphasis on <span class="first-use">anonymous</span>, no personally identifiable information<sup>&dagger;1</sup> is collected, the type of information collected by Google Analytics is given on their help page under <a class="hlink nohyp" href="https://support.google.com/analytics/answer/6004245?hl=en">data collected by google analytics</a>.</p>
+
+                    <p class="hyp">The anonymous information generated by Google Analytics cookies about your use of this website is transmitted to Google&nbsp;&mdash;&nbsp;<span class="first-use">not to me</span>. This information is processed to compile statistical reports on website activity <span class="first-use">(for this site only)</span>. I use these reports to evaluate the aggregate visitor usage; I do this so that I can optimise the website content, and hopefully, make it better <span class="first-use">(if I&rsquo;m being honest, I also like to know how many people visit, it make me feel better if the number goes up)</span>.</p>
+
+                    <p class="hyp">The PayPal cookie is used for the <a class="hlink nohyp" href="https://www.paypal.com/gb/smarthelp/article/what-are-smart-payment-buttons-in-express-checkout-ts2173">PayPal checkout</a> process (you have to give PayPal some information if you want to make a donation).</p>
+
+                    <p class="hyp"><em>In summary, you can browse this site with complete anonymity.</em></p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     TABLE - FOOTNOTE WITH ADDITIONAL PARAGRAPH
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class="table-fnote" id="js--fn01">
+                        <tr>
+                            <th class="fnote-top" style="width: 10%"></th>
+                            <th class="fnote-top" style="width: 10%"></th>
+                            <th class="fnote-top" style="width: 20%"></th>
+                            <th style="width: 60%"></th>
+                        </tr>
+                        <tr>
+<!-- Footnote number -->    <td class="table-left"><em>&dagger;1</em></td>
+<!-- Footnote text below --><td class="table-left"></td>
+                            <td colspan="2" class="table-left">By default Google Analytics collects the IP address of the website user. This is deemed personally identifiable information under GDPR (i.e. it is not considered to be anonymous), it is possible to stop Google Analytics doing this (by making it anonymise the IP address data, this is done by masking the last three digits of the address, see <a class="hlink nohyp" href="https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#anonymizeIp">here</a> for how to activate this option) and this is what I have done on this site.</td>
+                         </tr>
+                         <tr>
+                            <td class="table-left"></td>
+<!-- Add. para. below -->   <td class="table-left"></td>
+                            <td colspan="2" class="table-left"><em>I am not collecting IP addresses via Google Analytics</em>.</td>
+                        </tr>
+                   </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class="rg-col rg-span1-5">                 <!-- Start of right column    -->
+                <!--     <aside class="aside-right">                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP INLINE]
+     SECTION INLINE
+     ***********************************************************************-->
+
+        <section class="section-std" id="js--800500b">          <!-- Start of section         -->
+            <div class="rg-row sub-title-row">                  <!-- Start of subtitle row    -->
+                <div class="rg-col rg-span1-5"></div>           <!-- Left column (not used)   -->
+                <div class="rg-col rg-span3-5">                 <!-- Start of subtitle column -->
+                    <!-- <div class="sub-title-num-box"><h4></h4></div> -->
+                    <div class="sub-title-text-box"><h4>Privacy and personal data</h4></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class="rg-col rg-span1-5"></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class="rg-row">                                <!-- Start of section content -->
+                <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
+                <!--     <aside class="aside-left">                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class="rg-col rg-span3-5">                 <!-- Start of section text    -->
+
+                    <p class="hyp">This website does not ask for, nor does it collect, personal data. There is no <span class="menu">contact-me</span> form that asks for names, addresses, email details or phone numbers &amp;c. Neither are there any user logons or other such forms of identification.</p>
+
+                    <p class="hyp">People can email me if they want to, but that is their choice (I&rsquo;ve given my email address in a  <a class="xref nohyp js--sc-800100" href="#">previous section</a>) and I will respond as an individual to any emails I receive.</p>
+
+                    <p class="hyp">Where people do email me, I will not pass on any of their details to anyone else <span class="first-use">(even when they are rude to me)</span>. I respond directly to the sender and do not copy, forward or otherwise redistribute their emails with anyone else.</p>
+
+                    <p class="hyp">I delete all emails three months after the email conversation is complete (i.e. if you haven&rsquo;t emailed me for three months I delete all the emails I&rsquo;ve received from you and any replies I&rsquo;ve sent to you). </p>
+
+                    <p class="hyp">I do not reply to abusive emails <span class="first-use">(never argue with a stranger on the internet)</span> and these I delete straight away.</p>
+
+                    <p class="hyp">Where someone has asked a common or pertinent question, I may store the question itself and my response (these are copied to an offline Word FAQ sheet&nbsp;&mdash;&nbsp;what engineers call a <span class="first-use">technical query sheet)</span>, but I do not store any of the questioner&rsquo;s details (just the question and answer in an anonymous <span class="first-use">text based</span> format).</p>
+
+                    <p class="hyp">I also receive the email addresses and some contact details of those people who make a donation to this website. This information is provided to me by <a class="hlink nohyp" href="https://www.paypal.com/en/webapps/mpp/ua/privacy-full">paypal</a>&nbsp;&mdash;&nbsp;they tell me who has made the donation.</p>
+
+                    <p class="hyp">If the donation is for £5 or more, I keep certain information about that individual in a secure offline database. I store precisely:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      UNNUMBERED LIST
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ul class="list-no-num">                    <!-- Start of unnumbered list -->
+                        <li><p class="hyp">Name</p></li>
+
+                        <li><p class="hyp">Email address</p></li>
+
+                        <li><p class="hyp">Donation amount</p></li>
+
+                        <li><p class="hyp">Date of the donation</p></li>
+                    </ul>                                       <!-- End of unnumbered list   -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                    <p class="hyp">I do this purely for the purpose of sending those people a link to the downloadable pdf version of this website (I make this freely available to all who donate £5 or more).</p>
+
+                    <p class="hyp">I keep this information so that I can send a link for each new revision of the pdf when such revisions are issued (typically once a year). I.e. I make the pdfs available in perpetuity.</p>
+
+                    <p class="hyp">I do not share this information with anyone.</p>
+
+                    <p class="hyp">I do not send marketing or unsolicited emails of any kind (I do not have a mailing list or anything like that).</p>
+
+                    <p class="hyp">Anyone wishing to have their details deleted need only ask. You can contact me at the following email address: <a class="hlink" href="mailto:mg@practicalseries.com">mg@practicalseries.com.</a></p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class="rg-col rg-span1-5">                 <!-- Start of right column    -->
+                <!--     <aside class="aside-right">                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+
+<!-- ************************************************************************** [WP LAST]
+     SECTION - LAST SECTION BEFORE FOOTER (WITH NAVIGATION)
+     ***********************************************************************-->
+
+        <p> <br class="toc-pad"></p>
+        <p> <br class="toc-pad"></p>
+        <div class="section-std" id="js--999901">               <!-- Start of additional row  -->
+            <div class="rg-row">                                <!-- Start of row content     -->
+                <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
+                    <aside class="aside-nav">                   <!-- Start of sidebar nav     -->
+                        <a class="xref" href="javascript: history.go(-1)">Back</a>
+                    </aside>                                    <!-- End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class="rg-col rg-span3-5 aside-nav">       <!-- Start of end image area  -->
+                    <img src="../00-comres/11-resources/01-css/01-css-images/end-mark.svg" alt="End flourish image">
+                </div>                                          <!-- End of section text area -->
+
+                <div class="rg-col rg-span1-5">                 <!-- Start of right column    -->
+                    <aside class="aside-nav">                   <!-- Start of sidebar nav     -->
+                    </aside>                                    <!-- End of right side bar    -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of row content       -->
+        </div>                                                  <!-- End of additional row    -->
+<!-- ========================================================================== [WP END]      -->
+
+
+
+<!-- ************************************************************************** [WP FOOTER]
+     FOOTER
+     ***********************************************************************-->
+        <footer class="footer">                                 <!-- Start of footer          -->
+            <ul class="footer-nav">                             <!-- Start of footer nav      -->
+                <li><a class="js--sc-000000" href="#"><span class="top-nav-icon" style="color:#5b7daf">t</span>Top</a><span class="footer-spacer">&#x25C7;</span></li>
+                <li><a  class="js--sc-800100" href="90-8000-finally.html#js--800100">Contact MG</a><span class="footer-spacer">&#x25C7;</span></li>
+                <li><a  class="js--sc-800200" href="90-8000-finally.html#js--800200">Acknowledgments</a><span class="footer-spacer">&#x25C7;</span></li>
+                <li><a  class="js--sc-800300" href="90-8000-finally.html#js--800300">Colophon</a><span class="footer-spacer">&#x25C7;</span></li>
+                <li><a  class="js--sc-800400" href="90-8000-finally.html#js--800400">Legal &amp; Privacy</a></li>
+            </ul>                                               <!-- End of footer nav        -->
+
+            <ul class="social-links">
+            </ul>
+        </footer>                                               <!-- End of footer            -->
+<!-- ========================================================================== [WP END]      -->
+
+    </body>
+</html>

@@ -1,0 +1,65 @@
+/* PRACTICALSERIES (c) 2021
+
+*******************************************************************************
+Title :          PRACTICAL SERIES                                 TIA-FONTS.CSS
+*******************************************************************************
+
+PRACTICALSERIES: Practical Series of Publications by Michael Gledhill
+                 Published in the United Kingdom
+
+                 Email: mg@practicalseries.com
+                 Web:   www.practicalseries.com
+
+-------------------------------------------------------------------------------
+DETAILS
+
+1. SIEMENS TIA PORTAL BASIC FONTS
+The following file loads the Siemens TIA Portal Basic fonts
+
+
+2. NAMING CONVENTIONS
+The following fonts have been converted to webfonts and are loaded by this
+file:
+
+                                        Shorthand name
+    Font name           Type           (within website)
+---------------------------------------------------------------------
+    Siemens TAI Protal  Regular         tia-r
+    Siemens TAI Protal  Bold            tia-b
+-------------------------------------------------------------------------------
+MODIFICATION HISTORY:
+
+This is a complete summary of all software modifications.
+
+Date          Issue    Author         Reason for Modification
+-------------------------------------------------------------------------------
+10 Feb 2021   000.101      M. Gledhill    Development release for site build
+                                          Revision control active
+
+08 Feb 2021   000.000      M. Gledhill    Established for PAL
+-----------------------------------------------------------------------------*/
+
+
+/* ****************************************************************************
+   REVISION
+   **************************************************************************** */
+#rev-tia-fonts:after { content: "000.101"; }
+
+
+/* ****************************************************************************
+   Siemes TIA Portal Basic fonts
+   ************************************************************************* */
+
+@font-face {                    /* Siemens TIA Portal font - regular */
+    font-family: 'tia-r';
+    src: url(woff/tia-r.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {                    /* Siemens TIA Portal font - bold */
+    font-family: 'tia-b';
+    src: url(woff/tia-b.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

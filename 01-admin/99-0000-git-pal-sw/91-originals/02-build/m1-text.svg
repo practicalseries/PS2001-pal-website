@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="255"
+   height="20"
+   role="img"
+   aria-label="Dev: D0000"
+   version="1.1"
+   id="svg30"
+   sodipodi:docname="m1-text.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata36">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Dev: D0000</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs34" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     id="namedview32"
+     showgrid="false"
+     inkscape:zoom="3.6410256"
+     inkscape:cx="59.574369"
+     inkscape:cy="9.9999999"
+     inkscape:window-x="2552"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg30" />
+  <title
+     id="title2">Dev: D0000</title>
+  <linearGradient
+     id="s"
+     x2="0"
+     y2="1">
+    <stop
+       offset="0"
+       stop-color="#bbb"
+       stop-opacity=".1"
+       id="stop4" />
+    <stop
+       offset="1"
+       stop-opacity=".1"
+       id="stop6" />
+  </linearGradient>
+  <clipPath
+     id="r">
+    <rect
+       width="78"
+       height="20"
+       rx="3"
+       id="rect9"
+       x="0"
+       y="0"
+       style="fill:#ffffff" />
+  </clipPath>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16.39999962px;line-height:1.25;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:ss02;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+     x="-0.67304522"
+     y="14.140038"
+     id="text823"><tspan
+       sodipodi:role="line"
+       id="tspan825"
+       x="-0.67304522"
+       y="14.140038">FC18151 — Released for use</tspan></text>
+</svg>

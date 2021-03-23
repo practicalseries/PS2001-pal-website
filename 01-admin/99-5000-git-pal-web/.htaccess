@@ -1,0 +1,7 @@
+curl -I https://practicalseries.com/2001-pal/01-admin/99-0000-git-pal-sw/02-build/m1-badge.svg
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Etag: "cbe59136ae412f9b0a95b9a0d2ae4d30"
+Expires: Mon, 17 Feb 2014 15:21:20 GMT
+Last-Modified: Mon, 17 Feb 2014 07:19:50 GMT
+Pragma: no-cache
