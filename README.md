@@ -37,13 +37,13 @@
 [&emsp;&emsp;&ensp; 2.1. &emsp; &nbsp;The website structure](#21the-website-structure)
 
 [&emsp;&emsp;&ensp; 2.2. &emsp; &nbsp;Understanding the website structure](#22understanding-the-website-structure)<br>
-[&emsp;&emsp;&ensp; 2.2.1 &emsp;The PAL documentation (11-web directory)](#221-the-pal-documentation-11-web-directory)<br>
-[&emsp;&emsp;&ensp; 2.2.2 &emsp;The Project documentation (21-project directory)](#222-the-project-documentation-21-project-directory)<br>
-[&emsp;&emsp;&ensp; 2.2.3 &emsp;Common resources (00-comres directory)](#223-common-resources-00-comres-directory)<br>
-[&emsp;&emsp;&ensp; 2.2.4 &emsp;Administration files (01-admin directory)](#224-administration-files-01-admin-directory)<br>
-[&emsp;&emsp;&ensp; 2.2.5 &emsp;Git repository webpages (31-git directory)](#225-git-repository-webpages-31-git-directory)<br>
-[&emsp;&emsp;&ensp; 2.2.6 &emsp;Binary file storage (81-binary directory)](#226-binary-file-storage-81-binary-directory)<br>
-[&emsp;&emsp;&ensp; 2.2.7 &emsp;User Document storage (91-userdocs directory)](#227-user-document-storage-91-userdocs-directory)
+[&emsp;&emsp;&ensp; 2.2.1 &emsp;The PAL documentation (11-web)](#221-the-pal-documentation-11-web-directory)<br>
+[&emsp;&emsp;&ensp; 2.2.2 &emsp;The Project documentation (21-project)](#222-the-project-documentation-21-project-directory)<br>
+[&emsp;&emsp;&ensp; 2.2.3 &emsp;Common resources (00-comres)](#223-common-resources-00-comres-directory)<br>
+[&emsp;&emsp;&ensp; 2.2.4 &emsp;Administration files (01-admin)](#224-administration-files-01-admin-directory)<br>
+[&emsp;&emsp;&ensp; 2.2.5 &emsp;Git repository webpages (31-git)](#225-git-repository-webpages-31-git-directory)<br>
+[&emsp;&emsp;&ensp; 2.2.6 &emsp;Binary file storage (81-binary)](#226-binary-file-storage-81-binary-directory)<br>
+[&emsp;&emsp;&ensp; 2.2.7 &emsp;User Document storage (91-userdocs)](#227-user-document-storage-91-userdocs-directory)
 
 [&emsp;&emsp;&ensp; 2.3. &emsp; &nbsp;The live website](#23the-live-website)
         </td>
