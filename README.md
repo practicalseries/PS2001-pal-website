@@ -37,15 +37,16 @@
 [&emsp;&emsp;&ensp; 2.1. &emsp; &nbsp;The website structure](#21the-website-structure)
 
 [&emsp;&emsp;&ensp; 2.2. &emsp; &nbsp;Understanding the website structure](#22understanding-the-website-structure)<br>
-[&emsp;&emsp;&ensp; 2.2.1 &emsp;The PAL documentation (11-web)](#221-the-pal-documentation-11-web-directory)<br>
-[&emsp;&emsp;&ensp; 2.2.2 &emsp;The Project documentation (21-project)](#222-the-project-documentation-21-project-directory)<br>
+[&emsp;&emsp;&ensp; 2.2.1 &emsp;PAL documentation (11-web)](#221-the-pal-documentation-11-web-directory)<br>
+[&emsp;&emsp;&ensp; 2.2.2 &emsp;Project documentation (21-project)](#222-the-project-documentation-21-project-directory)<br>
 [&emsp;&emsp;&ensp; 2.2.3 &emsp;Common resources (00-comres)](#223-common-resources-00-comres-directory)<br>
 [&emsp;&emsp;&ensp; 2.2.4 &emsp;Administration files (01-admin)](#224-administration-files-01-admin-directory)<br>
-[&emsp;&emsp;&ensp; 2.2.5 &emsp;Git repository webpages (31-git)](#225-git-repository-webpages-31-git-directory)<br>
-[&emsp;&emsp;&ensp; 2.2.6 &emsp;Binary file storage (81-binary)](#226-binary-file-storage-81-binary-directory)<br>
-[&emsp;&emsp;&ensp; 2.2.7 &emsp;User Document storage (91-userdocs)](#227-user-document-storage-91-userdocs-directory)
+[&emsp;&emsp;&ensp; 2.2.5 &emsp;Git repository pages (31-git)](#225-git-repository-webpages-31-git-directory)<br>
+[&emsp;&emsp;&ensp; 2.2.6 &emsp;Binary files (81-binary)](#226-binary-file-storage-81-binary-directory)<br>
+[&emsp;&emsp;&ensp; 2.2.7 &emsp;User Documents (91-userdocs)](#227-user-document-storage-91-userdocs-directory)
 
-[&emsp;&emsp;&ensp; 2.3. &emsp; &nbsp;The live website](#23the-live-website)
+[&emsp;&emsp;&ensp; 2.3. &emsp; &nbsp;The live website](#23the-live-website)<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
         </td>
         <td align="left">
 
@@ -126,11 +127,11 @@ The website is split into three four main sections:
         <td>Siemens Controller software that makes up the PAL</td>
     </tr>
     <tr>
-        <td><strong>2. The PAL user guide and documentation</strong></td>
+        <td><strong>2. The PAL user guide</strong></td>
         <td>Operating instructions for the PAL software</td>
     </tr>
     <tr>
-        <td><strong>3. The Project validation documentation</strong></td>
+        <td><strong>3. The Project validation documents</strong></td>
         <td>Full set of validation documentation for the engineering project that produced the PAL</td>
     </tr>
     <tr>
@@ -627,7 +628,7 @@ Validation itself is a good idea; it’s not a bad approach to take to every pro
 
 At this point, I was going to restructure the software, write new bits and change some old bits, and I decided to do it as a formal project and since I wanted the software to be suitable for pharma projects, I decided that it would be a *“validated”* project with all that that entails. 
 
-It also occurred to me at this point that the project itself, with all its documents, specifications, matrixes, test sheets and a practical approach to validation might be of use to some engineers too. So, I’ve made it all available I even explain how to structure all the folders on a hard drive and where to keep everything.
+It also occurred to me at this point that the project itself, with all its documents, specifications, matrices, test sheets and a practical approach to validation might be of use to some engineers too. So, I’ve made it all available I even explain how to structure all the folders on a hard drive and where to keep everything.
 
 There is a complete copy of everything, including all the signed test sheets (with the date in the correct format to keep validation managers happy — *happy is probably the wrong word*).
 
