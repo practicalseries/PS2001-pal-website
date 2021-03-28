@@ -46,7 +46,7 @@
 [&emsp;&emsp;&ensp; 2.2.7 &emsp;User Documents (91-userdocs)](#227-user-document-storage-91-userdocs-directory)
 
 [&emsp;&emsp;&ensp; 2.3. &emsp; &nbsp;The live website](#23the-live-website)<br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
         </td>
         <td align="left">
 
@@ -131,7 +131,7 @@ The website is split into three four main sections:
         <td>Operating instructions for the PAL software</td>
     </tr>
     <tr>
-        <td><strong>3. The Project validation documents</strong></td>
+        <td><strong>3. The Project validation docs</strong></td>
         <td>Full set of validation documentation for the engineering project that produced the PAL</td>
     </tr>
     <tr>
