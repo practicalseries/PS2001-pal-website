@@ -1,0 +1,1418 @@
+<!DOCTYPE html>                                                                 <!-- HTML 5 file -->
+
+<!-- PRACTICALSERIES (c) 2021
+
+*******************************************************************************
+
+PRACTICALSERIES: Practical Series of Publications by Michael Gledhill
+                 Published in the United Kingdom
+
+                 Email: mg@practicalseries.com
+                 Web:   https://practicalseries.com
+
+******************************************************************************* -->
+<html lang="en">                                                                <!-- Declare language                              -->
+    <head>                                                                      <!-- Start of head section                         -->
+        <meta charset="utf-8">                                                  <!-- Use unicode char set (< 1024 char from SOF)   -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Make page follow browser width and reset zoom -->
+        <meta name="description" content="Practiacl series automation library, PAL, an explanation of the software control mechanism, scm, parallel branches, nested branches, commit messages">
+
+<!-- ==========================================================================
+
+
+
+*******************************************************************************
+Title :          PRACTICAL SERIES AUTOMATION LIBRARY (PAL)
+
+                 GIT - SOFTWARE CONTROL MECHANISM              11-0300-SCM.HTML
+*******************************************************************************
+DETAILS
+
+The Practical Series publication - Practical Series Automation Library (PAL)
+
+This website is part of the Practical Series Automation Library (PAL); a
+library of software modules and templates that have been made available for
+the Siemens Simatic S7-1500 range of controllers. The PAL is fully deployable
+software that is suitable for the control of most industrial process
+applications.
+
+*******************************************************************************
+MODIFICATION HISTORY:
+
+This is a complete summary of all software modifications.
+
+Date          Issue        Author         Reason for Modification
+*******************************************************************************
+01 Apr 2021   000.104      M. Gledhill    Released as a development prototype
+                                          Revision control active
+                                          RELEASE CHECKLIST
+                                             Title                Y
+                                             Meta description     Y
+                                             Rev Badge (br red)   000.104 (dev)
+                                             Rev Data Page        000.104
+                                             Rev Data Code        None
+                                             Rev Data scroll      000.104
+                                             TOC softscroll       Y
+                                             Nav Prev chap        Y (0200)
+                                             Nav Prev sec         Y (0308)
+                                             Nav Next chap        Y (0400)
+                                             Nav Next sec         Y (0400)
+                                             Nav Top              Y
+                                             Nav Home             Y (00)
+                                             Last section Prev    Y (0308)
+                                             Last section Next    Y (0400)
+                                             Footer Top           Y
+                                             Footer Contacts &c.  Y (11/80)
+                                             All UTX removed      *********** N ********************************************
+
+                                          File created
+                                          based on 98-00-blank.html
+*************************************************************************** -->
+
+
+<!-- **************************************************************************
+     FAVICON
+     ***********************************************************************-->
+        <!-- favicons all platforms --> <link rel="apple-touch-icon" sizes="180x180" href="../00-comres/11-resources/02-images/01-favicons/apple-touch-icon.png">
+                                        <link rel="icon" type="image/png"            href="../00-comres/11-resources/02-images/01-favicons/favicon-32x32.png" sizes="32x32">
+                                        <link rel="icon" type="image/png"            href="../00-comres/11-resources/02-images/01-favicons/favicon-16x16.png" sizes="16x16">
+                                        <link rel="mask-icon"                        href="../00-comres/11-resources/02-images/01-favicons/safari-pinned-tab.svg">
+                                        <meta name="theme-color" content="#ffffff">
+
+
+<!-- **************************************************************************
+     HEAD SCRIPT AREA
+     ***********************************************************************-->
+        <!-- jQuery Library -->         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Waypoints (sticky nav) --> <script src="../00-comres/21-global/05-js/jquery.waypoints.min.js"></script>
+        <!-- Hyphenator -->             <script src="../00-comres/21-global/05-js/hyphenator.js"></script>
+        <!-- Lightbox -->               <script src="../00-comres/21-global/05-js/lightbox.js"></script>
+        <!-- Prettify (main) -->        <script src="../00-comres/21-global/05-js/run_prettify.js?autoload=true&lang=css"></script>
+        <!-- MathJax -->                <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async></script>
+        <!-- PS main script -->         <script src="../00-comres/11-resources/05-js/script.js"></script>
+                                                                <!-- ▼▼▼▼ CHANGE FOLDER ▼▼▼▼  -->
+         <!-- PS local scroll script --> <script src="01-pages/11-0309-scm/05-local-js/scroll.js"></script>
+
+
+
+
+<!-- **************************************************************************
+     HEAD CSS LOAD
+     ***********************************************************************-->
+        <!-- Load PS fonts -->          <link rel="stylesheet" type="text/css" href="../00-comres/21-global/03-fonts/ps-fonts.css">
+        <!-- Load TIA fonts -->         <link rel="stylesheet" type="text/css" href="../00-comres/21-global/03-fonts/tia-fonts.css">
+        <!-- Normalise -->              <link rel="stylesheet" type="text/css" href="../00-comres//21-global/01-css/normalise.css">
+        <!-- Lightbox styles -->        <link rel="stylesheet" type="text/css" href="../00-comres/21-global/01-css/lightbox.css">
+        <!-- Ionicons -->               <link rel="stylesheet" type="text/css" href="../00-comres/21-global/01-css/ionicons.min.css">
+        <!-- PS grid system -->         <link rel="stylesheet" type="text/css" href="../00-comres/11-resources/01-css/grid.css">
+        <!-- PS main styles -->         <link rel="stylesheet" type="text/css" href="../00-comres/11-resources/01-css/style.css">
+        <!-- PAL styles -->             <link rel="stylesheet" type="text/css" href="../00-comres/11-resources/01-css/style-pal.css">
+                                                                <!-- ▼▼▼▼ CHANGE FOLDER ▼▼▼▼  -->
+        <!-- Code frag highlights      <link rel="stylesheet" type="text/css" href="01-pages/11-0309-scm/01-local-css/codelines.css">-->
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      GOOGLE ANALYTICS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                        <script>
+                                          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                                          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                                          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                                          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                                          ga('create', 'UA-87335633-1', 'auto');
+                                          ga('set', 'anonymizeIp', true);           // anonymise ip address
+                                          ga('send', 'pageview');
+                                        </script>
+
+
+<!-- **************************************************************************
+     TITLE
+     ***********************************************************************-->
+        <title>PAL | SCM Revision Numbering (page 3)</title>
+    </head>
+
+    <body>
+
+
+<!-- ************************************************************************** [WP HEADER]
+     HEADER (COVER & TABLE OF CONTENTS)
+     ***********************************************************************-->
+
+        <header id="js--000000">
+
+<!-- ************************************************************************** [WP TOPNAV]
+     TOP NAVIGATION (ABOVE CONTENTS LIST)
+     ***********************************************************************-->
+
+            <nav>                                               <!-- Start of top nav bar     -->
+                <div class="top-nav">                           <!-- Start of top nav row     -->
+                    <div class="rg-row">                        <!-- Start of nav button row  -->
+                        <!-- Button 01 - Previous Section -->
+                        <a class="nav-wide" href="11-0306-scm.html#js--030800"><span class="top-nav-icon">l</span><span class="top-nav-text">Prev. section</span></a>
+                        <!-- Button 02 - Previous Chapter -->
+                        <a class="nav-wide" href="11-0200-scm.html#js--000000"><span class="top-nav-icon">u</span><span class="top-nav-text">Prev. chapter</span></a>
+                        <!-- Button 03 - Home wide (hidden when fixed nav activates) -->
+                        <a class="nav-wide nav-home" href="11-00-scm.html#js--000000"><span class="top-nav-text">Home</span><span class="top-nav-icon">h</span></a>
+                        <!-- Button 03a - Top narrow (hidden until fixed nav activates) -->
+                        <a class="nav-narrow js--sc-000000" href="#"><span class="top-nav-icon">t</span><span class="top-nav-text">Top</span></a>
+                        <!-- Button 03b - Home narrow (hidden until fixed nav activates) -->
+                        <a class="nav-narrow" href="11-00-scm.html#js--000000"><span class="top-nav-text">Home</span><span class="top-nav-icon">h</span></a>
+                        <!-- Button 04 - Next Chapter -->
+                        <a class="nav-wide utx" href="11-0400-scm.html#js--040000"><span class="top-nav-text">Next chapter</span><span class="top-nav-icon">d</span></a>
+                        <!-- Button 05 - Next section -->
+                        <a class="nav-wide utx" href="11-0400-scm.html#js--040000"><span class="top-nav-text">Next section</span><span class="top-nav-icon">r</span></a>
+                    </div>                                      <!-- End of nav button row    -->
+                </div>                                          <!-- End of top nav row       -->
+            </nav>                                              <!-- End of top nav bar       -->
+<!-- ========================================================================== [WP END]      -->
+
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      HEADLINE - LEFT SIDEBAR (LOGO)
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+             <div class="rg-row pal-title-row">
+                <div class="rg-col rg-span1-5">
+                    <aside class="aside-left aside-left-rev">
+                         <a href="index.html">
+<!-- Logo image -->         <img class="pal-headline-logo" src="../00-comres/11-resources/02-images/pal-logo-github.svg" alt="PAL Logo">
+                        </a>
+                    </aside>
+
+                </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      HEADLINE - DOCUMENT TITLE
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                <div class="rg-col rg-span3-5">
+                    <div class="pal-headline">
+                        <p class="pal-headline-ps">Practical Series Automation Library</p>
+<!-- Doc Title Sml      <h2>Blank Webpage Template</h2>-->
+<!-- Doc Title Lrg -->  <h2><span style="font-size: 150%">A Software Control Mechanism</span></h2> 
+
+                    </div>
+                </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      HEADLINE - RIGHT SIDEBAR (Page revision information)
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                <div class="rg-col rg-span1-5">
+                    <aside class="aside-right-rev">
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - REVISION TABLE
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class="table-rev">
+<!-- Title row -->      <tr>
+                            <td class="leading"></td>
+                            <td class="table-right"></td>
+                            <td colspan="2" class="table-left" style="border-bottom: 1px solid #ccc">Page Revision Data</td>
+                        </tr>
+<!-- Spacing row -->    <tr class="no-border">
+                            <td class="leading"></td>
+                            <td colspan="3" class="table-left"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">Page:</td>
+                            <td class="table-right" style="width: 30%" id="rev-doc">000.104</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">scroll.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-scroll"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em; border-bottom: 1px solid #ccc"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">codelines.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-codelines"></td>
+                        </tr>
+<!-- Title row -->      <tr>
+                            <td class="leading" style="height: 2em"></td>
+                            <td class="table-right"></td>
+                            <td colspan="2" class="table-left" style="border-bottom: 1px solid #ccc; vertical-align: bottom">Common resources</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">script.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-script"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">Style.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-style"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">style-pal.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-style-pal"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">grid.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-grid"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">ps-fonts.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-ps-fonts"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">tia-fonts.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-tia-fonts"></td>
+                        </tr>
+<!-- Title row -->      <tr>
+                            <td class="leading" style="height: 2em"></td>
+                            <td class="table-right"></td>
+                            <td colspan="2" class="table-left" style="border-bottom: 1px solid #ccc; vertical-align: bottom">Global resources</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">normalise.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-normalise"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">lightbox.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-lightbox"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">lightbox.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-lbjs"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">waypoints.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-waypoints"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">hyphenator.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-hyphenator"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">ionicons.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-ionicons"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">prettify.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-prettify"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">prettify.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-run-prettify"></td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                    </aside>
+                </div>
+            </div>
+<!-- ************************************************************************** [WP TITLE]
+     TITLE BAR (Section number and text)
+     ***********************************************************************-->
+
+            <div class="rg-row">                                <!-- Start of title row       -->
+                <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
+                    <aside class="rev-badge-side">              <!-- BUILD BADGE              -->
+                        <img src="https://img.shields.io/badge/dev-000.104-BF504D.svg" alt="Build">
+                    </aside>
+                </div>                                          <!-- End of Left column       -->
+                <div class="rg-col rg-span3-5">                 <!-- Start of title           -->
+                   <div class="pal-overline-index"></div>       <!-- Overline bar             -->
+<!-- Section     <div class="title-num-box"><p>98</p></div>
+                    <div class="title-text-box"><h1><span class="title-small-num">01</span>Blank page</h1></div> -->
+<!-- Contents -->   <div class="title-contents"><h1>Contents</h1></div> 
+                </div>                                          <!-- End of title             -->
+                <div class="rg-col rg-span1-5">                 <!-- Start of right column    -->
+                    <aside class="aside-right-rev">             <!-- Start of right side bar  -->
+                    </aside>                                    <!-- End of right side bar    -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of title row         -->
+<!-- ========================================================================== [WP END]      -->
+
+
+<!-- ************************************************************************** [WP TOC]
+     TABLE OF CONTENTS
+     ***********************************************************************-->
+
+            <div class="rg-row">                                <!-- Start of TOC section     -->
+                <div class="rg-col rg-span1-5"></div>           <!-- Left column (not used)   -->
+                <div class="rg-col rg-span3-5">                 <!-- Start of TOC column      -->
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    TOC - Section 3
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ul class="toc-line">
+<!-- Level 1 -->        <li><a href="index.html">
+                            <div class="toc-lev"><span class="toc-lev1-num"></span><span class="toc-lev1-text">Git documents main page</span></div></a>
+                        </li>
+                    </ul>
+
+                    <ul class="toc-line">
+<!-- Level 1 -->        <li><a href="11-00-scm.html">
+                            <div class="toc-lev"><span class="toc-lev1-num"></span><span class="toc-lev1-text">SCM main page</span></div></a>
+                        </li>
+                    </ul>
+                        
+                    <ul class="toc-line">
+<!-- Level 1 -->        <li><a class="js--sc-030000" href="11-0300-scm.html#js--030000">
+                                <div class="toc-lev"><span class="toc-lev1-num">3</span><span class="toc-lev1-text">The software revision numbering mechanism</span></div></a>
+                        </li>
+                    </ul>
+
+                    <ul class="toc-list">
+<!-- Level 2 -->        <li><a class="js--sc-030100" href="11-0300-scm.html#js--030100">
+                            <div class="toc-lev"><span class="toc-lev2-num">3.1</span><span class="toc-lev2-text">Workflow arrangements</span></div></a>
+                        </li>
+<!-- Level 2 -->        <li><a class='js--sc-030200' href='11-0300-scm.html#js--030200'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>3.2</span><span class='toc-lev2-text'>Master branch revision states</span></div></a>
+                        </li>                            
+<!-- Level 2 -->        <li><a class='js--sc-030300' href='11-0300-scm.html#js--030300'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>3.3</span><span class='toc-lev2-text'>Development branch names</span></div></a>
+                        </li>
+<!-- Level 2 -->        <li><a class='js--sc-030400' href='11-0300-scm.html#js--030400'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>3.4</span><span class='toc-lev2-text'>Development branch commit tags</span></div></a>
+                        </li> 
+<!-- Level 2 -->        <li><a class='js--sc-030500' href='11-0300-scm.html#js--030500'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>3.5</span><span class='toc-lev2-text'>Merging a development branch</span></div></a>
+                        </li>    
+<!-- Level 2 -->        <li><a class='js--sc-030600' href='11-0306-scm.html#js--030600'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>3.6</span><span class='toc-lev2-text'>Individual module revision numbers</span></div></a>
+                        </li>  
+<!-- Level 3 -->        <li><a class='js--sc-030601' href='11-0306-scm.html#js--030601'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>3.6.1</span><span class='toc-lev3-text'>Programmable block revision numbers</span></div></a>
+                        </li>
+<!-- Level 3 -->        <li><a class='js--sc-030602' href='11-0306-scm.html#js--030602'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>3.6.2</span><span class='toc-lev3-text'>Data block revision numbers</span></div></a>
+                        </li>
+<!-- Level 3 -->        <li><a class='js--sc-030603' href='11-0306-scm.html#js--030603'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>3.6.3</span><span class='toc-lev3-text'>User Data Type revision numbers</span></div></a>
+                        </li>
+<!-- Level 2 -->        <li><a class='js--sc-030700' href='11-0306-scm.html#js--030700'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>3.7</span><span class='toc-lev2-text'>OB1 module revision numbers</span></div></a>
+                        </li>   
+<!-- Level 2 -->        <li><a class='js--sc-030800' href='11-0306-scm.html#js--030800'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>3.8</span><span class='toc-lev2-text'>Commit points and filenames</span></div></a>
+                        </li>      
+<!-- Level 3 -->        <li><a class='js--sc-030801' href='11-0306-scm.html#js--030801'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>3.8.1</span><span class='toc-lev3-text'>OB&nbsp;1 and filenames</span></div></a>
+                        </li>    
+<!-- Level 2 -->        <li><a class='js--sc-030900' href='11-0309-scm.html#js--030900'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>3.9</span><span class='toc-lev2-text'>Parallel development branches</span></div></a>
+                        </li>  
+<!-- Level 2 -->        <li><a class='js--sc-031000' href='11-0309-scm.html#js--031000'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>3.10</span><span class='toc-lev2-text'>OB&nbsp;1 and the Merging of branches</span></div></a>
+                        </li>  
+<!-- Level 3 -->        <li><a class='js--sc-031001' href='11-0309-scm.html#js--031001'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>3.10.1</span><span class='toc-lev3-text'>Merging a single/first branch</span></div></a>
+                        </li>
+<!-- Level 3 -->        <li><a class='js--sc-031002' href='11-0309-scm.html#js--031002'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>3.10.2</span><span class='toc-lev3-text'>Merging additional parallel branches</span></div></a>
+                        </li>      
+<!-- Level 2 -->        <li><a class='js--sc-031100' href='11-0309-scm.html#js--031100'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>3.11</span><span class='toc-lev2-text'>Nested branches</span></div></a>
+                        </li>          
+<!-- Level 2 -->        <li><a class='js--sc-031200' href='11-0309-scm.html#js--031200'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>3.12</span><span class='toc-lev2-text'>A note on commit messages</span></div></a>
+                        </li>                        
+                    </ul>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                </div>                                          <!-- End of TOC column        -->
+                <div class="rg-col rg-span1-5"></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of TOC section       -->            
+            
+<!-- ========================================================================== [WP END]      -->
+
+
+        </header>                                               <!-- End of header            -->
+<!-- ========================================================================== [WP END]      -->
+
+
+
+<!-- ************************************************************************** [WP FIXEDNAV]
+     FIXED NAVIGATION BAR CHANGEOVER POINT
+     ***********************************************************************-->
+        <div id="js--fixed-nav"></div>                          <!-- fixed navigation point   -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - 3.9 - Parallel development branches
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--030900'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-overline'></div>      <!-- Overline                 -->
+                 <div class='sub-title-num-box'><h2>3.9</h2></div>
+                 <div class='sub-title-text-box'><h2>Parallel development branches</h2></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>It is perfectly possible to have two (or more) simultaneous development branches:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-24'>
+                            <a href='01-pages/11-0309-scm/02-images/fig-03-24-min.svg' data-lightbox='fig-set' data-title='Figure 3.24 - Parallel development branches'>
+                                <img src='01-pages/11-0309-scm/02-images/fig-03-24-min.svg' alt='Figure 3.24 - Parallel development branches'>
+                            </a>
+                            <figcaption>Figure 3.24 &emsp; Parallel development branches</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                    <p class='hyp'>This type of arrangement can appear slightly confusing when all the branches are merged back onto the master branch:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-25'>
+                            <a href='01-pages/11-0309-scm/02-images/fig-03-25-min.svg' data-lightbox='fig-set' data-title='Figure 3.25 - Merged parallel development branches'>
+                                <img src='01-pages/11-0309-scm/02-images/fig-03-25-min.svg' alt='Figure 3.25 - Merged parallel development branches'>
+                            </a>
+                            <figcaption>Figure 3.25 &emsp; Merged parallel development branches</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>All the commits are listed in order of the time they were applied.</p>
+
+                    <p class='hyp'>Things are simplified if only the primary commits are considered:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-26'>
+                            <a href='01-pages/11-0309-scm/02-images/fig-03-26-min.svg' data-lightbox='fig-set' data-title='Figure 3.26 - Merged parallel development branches, primary commits'>
+                                <img src='01-pages/11-0309-scm/02-images/fig-03-26-min.svg' alt='Figure 3.26 - Merged parallel development branches, primary commits'>
+                            </a>
+                            <figcaption>Figure 3.26 &emsp; Merged parallel development branches, primary commits</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>From a workflow point of view, this is how the Project software should be viewed, a series of primary commits at which some part of the software was released for use.</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      NOTE - HANGING INDENT
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ul class='note'>                           <!-- Start of note            -->
+                        <li>The secondary commits are always present and can be recovered, however it is the primary commits that denote milestones in the software development.</li>
+                    </ul>                                       <!-- End of note              -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>With parallel branches, it does not matter what order the branches are made or what order they merge back to the master branch. In the previous example, <span class='git-cmd'>D0001A</span> is created first, and is merged back to the <span class='git-cmd'>master</span> branch first. The following shows a similar arrangement with the first branch merging last:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-27'>
+                            <a href='01-pages/11-0309-scm/02-images/fig-03-27-min.svg' data-lightbox='fig-set' data-title='Figure 3.27 - Parallel development branches with different merge order'>
+                                <img src='01-pages/11-0309-scm/02-images/fig-03-27-min.svg' alt='Figure 3.27 - Parallel development branches with different merge order'>
+                            </a>
+                            <figcaption>Figure 3.27 &emsp; Parallel development branches with different merge order</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                    <p class='hyp'>Here, the second branch <span class='git-cmd'>D0001B</span> is created after <span class='git-cmd'>D0001A</span> but merges back before it; in this case the merged result would be:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-28'>
+                            <a href='01-pages/11-0309-scm/02-images/fig-03-28-min.svg' data-lightbox='fig-set' data-title='Figure 3.28 - Alternative Merged parallel development branches'>
+                                <img src='01-pages/11-0309-scm/02-images/fig-03-28-min.svg' alt='Figure 3.28 - Alternative Merged parallel development branches'>
+                            </a>
+                            <figcaption>Figure 3.28 &emsp; Alternative Merged parallel development branches</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>And with just the primary commits:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-29'>
+                            <a href='01-pages/11-0309-scm/02-images/fig-03-29-min.svg' data-lightbox='fig-set' data-title='Figure 3.29 - Alternative Merged parallel development branches, primary commits'>
+                                <img src='01-pages/11-0309-scm/02-images/fig-03-29-min.svg' alt='Figure 3.29 - Alternative Merged parallel development branches, primary commits'>
+                            </a>
+                            <figcaption>Figure 3.29 &emsp; Alternative Merged parallel development branches, primary commits</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - 3.10 - OB&nbsp;1 and the Merging of branches
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--031000'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-overline'></div>      <!-- Overline                 -->
+                 <div class='sub-title-num-box'><h2>3.10</h2></div>
+                 <div class='sub-title-text-box'><h2>OB&nbsp;1 and the Merging of branches</h2></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>Where software development takes place on individual development branches, this will generally involve modules that have no relation to each other, in the example of <a class='xref js--sc-f03-24' href='#'>Figure&nbsp;3.24</a>, the first branch develops a particular function (<span class='block'>FC01001</span>) and the second branch a completely different module (<span class='block'>FC02001</span>), these two modules (and their associated data blocks and UDTs) could be merged back to the <span class='git-cmd'>master</span> branch without issue, all the modules developed on the first branch have no connection with the modules on the second branch and vice versa; indeed, each branch has no knowledge of the modules being developed on the other branch.</p>
+
+                    <p class='hyp'>This complete independence of modules on the different development branches means that there is generally, no conflict when the branches are merged, all the modules of the first branch can be merged to the <span class='git-cmd'>master</span> branch, and when the second branch is merged, it has a completely separate set of modules that can also be merged without conflict.</p>
+
+                    <p class='hyp'>There is however, one problem with this: OB&nbsp;1. OB&nbsp;1 contains revision information for the whole project (see <a class='hlink' href='11-0306-scm.html#js--030700'> &sect;&nbsp;3.7</a>) and both branches will have a modified OB1 and both OB&nbsp;1s will be different; this will not cause a problem when the first branch is merged back to the <span class='git-cmd'>master</span> branch, all the changes were on the development branch and will merge back to the <span class='git-cmd'>master</span> without any conflict (referred to as a <em>fast forward</em> merge in Git terminology). However, when the second branch is merged back, there will be a conflict with OB&nbsp;1 (because it has been changed on both branches) and there needs to be some mechanism for reconciling the differences.</p>
+
+                    <p class='hyp'>To accommodate this, the following section describe how branches should be merged together and how the primary commits are generated.</p>
+
+                    <p class='hyp'>There are two types of merge, the first is where the first (or a single) development branch is merged back to the <span class='git-cmd'>master</span> branch, this is the easier merge because there will be no conflict. The second type is where additional branches are merged back, this will cause a conflict with earlier merges and this is handled slightly differently.</p>
+
+                    <p class='hyp'>Examining each in turn:</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SUBSECTION]
+     SUBSECTION - 3.10.1 - Merging a single branch or the first branch to merge
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--031001'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-num-box'><h3>3.10.1</h3></div>
+                    <div class='sub-title-text-box'><h3>Merging a single branch or the first branch to merge</h3></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>Consider the following example from the previous section:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+     <div class='fig-row'>
+        <!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-30'>
+                                    <a href='01-pages/11-0309-scm/02-images/fig-03-24-min.svg' data-lightbox='fig-set' data-title='Figure 3.30 - Parallel development branches'>
+                                        <img src='01-pages/11-0309-scm/02-images/fig-03-24-min.svg' alt='Figure 3.30 - Parallel development branches'>
+                                    </a>
+                                    <figcaption>Figure 3.30 &emsp; Parallel development branches</figcaption>
+                                </figure>
+                            </div>
+        <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        
+                    <p class='hyp'>For the moment, consider only the first development branch to merge back to the <span class='git-cmd'>master</span> branch: <span class='git-cmd'>D0001A-FC01001</span>:</p>
+
+                    <p class='hyp'>At the merge point, the last commit to have been made on the <span class='git-cmd'>D0001A-FC01001</span> branch was <span class='code'>D0001A-001.000</span>, at this point OB&nbsp;1 had the following revision comments in it: </p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-31'>
+                            <a href='01-pages/11-0309-scm/02-images/fig-03-31-min.png' data-lightbox='fig-set' data-title='Figure 3.31 - First branch merge OB&nbsp;1 revision data'>
+                                <img style="max-width: 574px;" src='01-pages/11-0309-scm/02-images/fig-03-31-min.png' alt='Figure 3.31 - First branch merge OB&nbsp;1 revision data'>
+                            </a>
+                            <figcaption>Figure 3.31 &emsp; First branch merge OB&nbsp;1 revision data</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>And the hardcoded revision was:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-32'>
+                            <a href='01-pages/11-0309-scm/02-images/fig-03-32-min.png' data-lightbox='fig-set' data-title='Figure 3.32 - First branch merge OB&nbsp;1 revision hard coded data'>
+                                <img src='01-pages/11-0309-scm/02-images/fig-03-32-min.png' alt='Figure 3.32 - First branch merge OB&nbsp;1 revision hard coded data'>
+                            </a>
+                            <figcaption>Figure 3.32 &emsp; First branch merge OB&nbsp;1 revision hard coded data</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The merge will take place in Visual Studio Code (VSC) and will be made as a <em>&ldquo;fast forward&rdquo;</em> merge (this is the standard arrangement with VSC), this does not create a merge commit, it simple leaves the head at the last commit on the development branch. </p>
+
+                    <p class='hyp'>After the merge, the <span class='git-cmd'>master</span> branch would be as follows:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-33'>
+                            <a href='01-pages/11-0309-scm/02-images/fig-03-33-min.svg' data-lightbox='fig-set' data-title='Figure 3.33 - master branch after first merge'>
+                                <img src='01-pages/11-0309-scm/02-images/fig-03-33-min.svg' alt='Figure 3.33 - master branch after first merge'>
+                            </a>
+                            <figcaption>Figure 3.33 &emsp; master branch after first merge</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>As yet there is no final <span class='code'>D0002</span> primary commit. This commit is made directly on the <span class='git-cmd'>master</span> branch after the merge.</p>
+
+                    <p class='hyp'>This may seem to contradict the <em>&ldquo;no development work on the master branch&rdquo;</em> rule (see <a class='hlink' href='11-0300-scm.html#js--030300'>&sect;&nbsp;3.3</a>); however, adding this primary commit point is simply updating the revision status of OB&nbsp;1 and cannot be considered development work.</p>
+
+                    <p class='hyp'>There are three changes to be made to OB&nbsp;1, the first two are changes to the revision information (both hardcoded and in the network comments), the third is to the file name (<a class='hlink' href='11-0306-scm.html#js--030801'>&sect;&nbsp;3.8.1</a>).</p>
+
+                    <p class='hyp'>The changes to the hardcoded OB&nbsp;1 revision (in network 2) is to update the revision to the primary commit tag (in this case <span class='code'>D0002</span>), as follows:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-34'>
+                            <a href='01-pages/11-0309-scm/02-images/fig-03-34-min.png' data-lightbox='fig-set' data-title='Figure 3.34 - Primary commit point hardcoded update'>
+                                <img src='01-pages/11-0309-scm/02-images/fig-03-34-min.png' alt='Figure 3.34 - Primary commit point hardcoded update'>
+                            </a>
+                            <figcaption>Figure 3.34 &emsp; Primary commit point hardcoded update</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                    <p class='hyp'>The update to the network comment requires the removal of the secondary commit information and the addition of the primary commit revision:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-35'>
+                            <a href='01-pages/11-0309-scm/02-images/fig-03-35-min.png' data-lightbox='fig-set' data-title='Figure 3.35 - Primary commit point network comment update'>
+                                <img style="max-width: 570px;" src='01-pages/11-0309-scm/02-images/fig-03-35-min.png' alt='Figure 3.35 - Primary commit point network comment update'>
+                            </a>
+                            <figcaption>Figure 3.35 &emsp; Primary commit point network comment update</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The final change is to the TIA Portal project name in network 1 of OB&nbsp;1:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-36'>
+                            <a href='01-pages/11-0309-scm/02-images/fig-03-36-min.png' data-lightbox='fig-set' data-title='Figure 3.36 - Primary commit point project filename'>
+                                <img style="max-width: 566px;" src='01-pages/11-0309-scm/02-images/fig-03-36-min.png' alt='Figure 3.36 - Primary commit point project filename'>
+                            </a>
+                            <figcaption>Figure 3.36 &emsp; Primary commit point project filename</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                    <p class='hyp'><a class='hlink' href='11-0306-scm.html#js--030800'>Section&nbsp;3.8</a> gives details of TIA Portal project names and their association with commit points.</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SUBSECTION]
+     SUBSECTION - 3.10.2 - Merging additional parallel branches
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--031002'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-num-box'><h3>3.10.2</h3></div>
+                    <div class='sub-title-text-box'><h3>Merging additional parallel branches</h3></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>Again, consider the example given in the previous section:</p>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-37'>
+                            <a href='01-pages/11-0309-scm/02-images/fig-03-24-min.svg' data-lightbox='fig-set' data-title='Figure 3.37 - Parallel development branches'>
+                                <img src='01-pages/11-0309-scm/02-images/fig-03-24-min.svg' alt='Figure 3.37 - Parallel development branches'>
+                            </a>
+                            <figcaption>Figure 3.37 &emsp; Parallel development branches</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                    <p class='hyp'>In the previous section, the first branch <span class='git-cmd'>D0001A-FC01001</span> was merged back to the master branch, leaving the overall workflow in the following state:</p>
+                    
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-38'>
+                            <a href='01-pages/11-0309-scm/02-images/fig-03-38-min.svg' data-lightbox='fig-set' data-title='Figure 3.38 - Parallel development after first branch merge'>
+                                <img src='01-pages/11-0309-scm/02-images/fig-03-38-min.svg' alt='Figure 3.38 - Parallel development after first branch merge'>
+                            </a>
+                            <figcaption>Figure 3.38 &emsp; Parallel development after first branch merge</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                    <p class='hyp'>This is the point at which the second branch (<span class='git-cmd'>D0001B-FC02001</span>) is to be merged back to the <span class='git-cmd'>master</span>.</p>
+
+                    <p class='hyp'>At this point, the last commit to have been made on the <span class='git-cmd'>D0001B-FC02001</span> branch was <span class='code'>D0001B-001.000</span>. <a class='xref js--sc-f03-39' href='#'>Figure&nbsp;3.39</a> shows the OB&nbsp;1 revision comments at this point.</p>
+
+                    <p class='hyp'>It should be noted at this point that the OB&nbsp;1 comments do not contain any information about the secondary commits on the <span class='git-cmd'>D0001A-FC01001</span> branch or the <span class='code'>D0003</span> primary commit point, this is because all those commits took place on other branches (either the <span class='git-cmd'>D0001A-FC01001</span> branch or the <span class='git-cmd'>master</span> branch) and are at this stage unknow to the <span class='git-cmd'>D0001B-FC02001</span> development branch.</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-39'>
+                            <a href='01-pages/11-0309-scm/02-images/fig-03-39-min.png' data-lightbox='fig-set' data-title='Figure 3.39 - Second branch merge OB&nbsp;1 revision data'>
+                                <img style="max-width: 573px;" src='01-pages/11-0309-scm/02-images/fig-03-39-min.png' alt='Figure 3.39 - Second branch merge OB&nbsp;1 revision data'>
+                            </a>
+                            <figcaption>Figure 3.39 &emsp; Second branch merge OB&nbsp;1 revision data</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+        
+                    <p class='hyp'>With the hardcoded revision:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-40'>
+                            <a href='01-pages/11-0309-scm/02-images/fig-03-40-min.png' data-lightbox='fig-set' data-title='Figure 3.40 - Second branch merge OB&nbsp;1 revision hard coded data'>
+                                <img src='01-pages/11-0309-scm/02-images/fig-03-40-min.png' alt='Figure 3.40 - Second branch merge OB&nbsp;1 revision hard coded data'>
+                            </a>
+                            <figcaption>Figure 3.40 &emsp; Second branch merge OB&nbsp;1 revision hard coded data</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>Again, the merge will take place in VSC and will again be made as a fast forward merge.</p>
+
+                    <p class='hyp'>This will do two things, it will merge <span class='code'>FC02001</span> on to the <span class='git-cmd'>master</span> branch with commit tag <span class='code'>D0001B-001.000</span>.</p>
+
+                    <p class='hyp'>Secondly, it will indicate a conflict in OB&nbsp;1, this is because OB&nbsp;1 has been modified both on the <span class='git-cmd'>D0001A-FC01001</span> branch (now merged to the <span class='git-cmd'>master</span> branch) and on the <span class='git-cmd'>D0001B-FC02001</span> branch.</p>
+
+                    <p class='hyp'>This can be seen in the <span class='menu'>source control</span> state of Visual Studio Code (VSC):</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-41'>
+                            <a href='01-pages/11-0309-scm/02-images/fig-03-41-min.png' data-lightbox='fig-set' data-title='Figure 3.41 - VSC merge conflict indication'>
+                                <img src='01-pages/11-0309-scm/02-images/fig-03-41-min.png' alt='Figure 3.41 - VSC merge conflict indication'>
+                            </a>
+                            <figcaption>Figure 3.41 &emsp; VSC merge conflict indication</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The commit hasn&rsquo;t been made at this stage; this is because there is a conflict in one of the files.</p>
+
+                    <p class='hyp'>This can be seen in point <span class='index'>1</span> in <a class='xref js--sc-f03-41' href='#'>Figure&nbsp;3.41</a>, the affected files are listed under <span class='menu'>merge changes</span> point <span class='index'>2</span>, here it is just OB&nbsp;1 that has a conflict (conflicted files are indicated by the red exclamation mark).</p>
+
+                    <p class='hyp'>All the conflict free files (the ones that will merge without any issues) are showing as <span class='menu'>staged changes</span>. </p>
+
+                    <p class='hyp'>To allow the commit to take place, the OB&nbsp;1 modifications will be discarded, this is done by right clicking the OB&nbsp;1 file in <span class='menu'>merge changes</span> point <span class='index'>2</span> in <a class='xref js--sc-f03-41' href='#'>Figure&nbsp;3.41</a> and selecting <span class='menu'>accept all current</span> in the dropdown menu (the current being the current or, in this case the <span class='git-cmd'>master</span> branch).</p>
+
+                    <p class='hyp'>The merge can now be committed, in this case with commit message <span class='code'>D0001B-MERGE</span>.</p>
+
+                    <p class='hyp'>This will commit all the changes from the <span class='git-cmd'>D0001B-FC02001</span> branch, but leave OB&nbsp;1 as it was at the <span class='code'>D0002</span> commit point, the list of commits on the <span class='git-cmd'>master</span> branch is shown below.</p>
+
+                    <p class='hyp'>All the commits are there from both branches, the <span class='git-cmd'>master</span> branch has the following:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-42'>
+                            <a href='01-pages/11-0309-scm/02-images/fig-03-42-min.svg' data-lightbox='fig-set' data-title='Figure 3.42 - Merge intermediate commit'>
+                                <img src='01-pages/11-0309-scm/02-images/fig-03-42-min.svg' alt='Figure 3.42 - Merge intermediate commit'>
+                            </a>
+                            <figcaption>Figure 3.42 &emsp; Merge intermediate commit</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>However, another primary commit now needs to be made on the master branch, this will be <span class='code'>D0003</span>, and this must include the updates made to OB&nbsp;1, in the last commit on the <span class='git-cmd'>D0001B-FC02001</span> branch.</p>
+
+                    <p class='hyp'>This is similar to the changes made to OB&nbsp;1 for commit <span class='code'>D0002</span> (see <a class='xref js--sc-031001' href='#'>&sect;&nbsp;3.10.1</a>); it should be noted at this point that OB&nbsp;1 is currently in the same state as it was at <span class='code'>D0002</span>, the last primary commit on the <span class='git-cmd'>master</span> branch</p>
+
+                    <p class='hyp'>Again, there are three changes to be made to OB&nbsp;1, the first two are changes to the revision information (both hardcoded and in the network comments), the third is to the file name (see <a class='hlink' href='11-0306-scm.html#js--030801'>&sect;&nbsp;3.8.1</a>).</p>
+
+                    <p class='hyp'>The changes to the hardcoded OB&nbsp;1 revision (in network 2) is to update the revision to the primary commit tag (in this case <span class='code'>D0003</span>), as follows:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-43'>
+                            <a href='01-pages/11-0309-scm/02-images/fig-03-43-min.png' data-lightbox='fig-set' data-title='Figure 3.43 - D0003 primary commit point hardcoded update'>
+                                <img src='01-pages/11-0309-scm/02-images/fig-03-43-min.png' alt='Figure 3.43 - D0003 primary commit point hardcoded update'>
+                            </a>
+                            <figcaption>Figure 3.43 &emsp; D0003 primary commit point hardcoded update</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The update to the network comment requires the removal of the secondary commit information and the addition of the primary commit revision:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-44'>
+                            <a href='01-pages/11-0309-scm/02-images/fig-03-44-min.png' data-lightbox='fig-set' data-title='Figure 3.44 - D0003 primary commit point network comment update'>
+                                <img style="max-width: 567px;" src='01-pages/11-0309-scm/02-images/fig-03-44-min.png' alt='Figure 3.44 - D0003 primary commit point network comment update'>
+                            </a>
+                            <figcaption>Figure 3.44 &emsp; D0003 primary commit point network comment update</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>Finally, the TIA Portal project name in network 1 of OB&nbsp;1:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-45'>
+                            <a href='01-pages/11-0309-scm/02-images/fig-03-45-min.png' data-lightbox='fig-set' data-title='Figure 3.45 - D0003 primary commit point project filename'>
+                                <img style="max-width: 568px;" src='01-pages/11-0309-scm/02-images/fig-03-45-min.png' alt='Figure 3.45 - D0003 primary commit point project filename'>
+                            </a>
+                            <figcaption>Figure 3.45 &emsp; D0003 primary commit point project filename</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                    <p class='hyp'>Other changes to OB&nbsp;1 may be required, if additional information is stored (such as a summary of completed modules &amp;c.).</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - 3.11 - Nested branches
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--031100'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-overline'></div>      <!-- Overline                 -->
+                 <div class='sub-title-num-box'><h2>3.11</h2></div>
+                 <div class='sub-title-text-box'><h2>Nested branches</h2></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>It is possible to have a development branch from another development branch (referred to as nesting). Nested branches always merge back onto their parent branch:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-46'>
+                            <a href='01-pages/11-0309-scm/02-images/fig-03-46-min.svg' data-lightbox='fig-set' data-title='Figure 3.46 - Nested development branches'>
+                                <img src='01-pages/11-0309-scm/02-images/fig-03-46-min.svg' alt='Figure 3.46 - Nested development branches'>
+                            </a>
+                            <figcaption>Figure 3.46 &emsp; Nested development branches</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The nested development branch name has an extra character before the dash, this is another ordinal number, identifying the number of the nested branch. The rest of the branch name is as <a class='hlink' href='11-0300-scm.html#js--030300'>&sect;&nbsp;3.3</a>:</p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code'>SNNNNbX-MMYYYYY</span></p>
+
+                    <p class='hyp'>The extra character (X) starts at 1 for the first nested branch and incremented by 1 for each additional nested branch.</p>
+
+                    <p class='hyp'>Each commit on the nested branch has the format:</p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code'>SNNNNbX-nnn.amm</span></p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - 3.12 - A note on commit messages
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--031200'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-overline'></div>      <!-- Overline                 -->
+                 <div class='sub-title-num-box'><h2>3.12</h2></div>
+                 <div class='sub-title-text-box'><h2>A note on commit messages</h2></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>Commit messages should have a short (less than 50 characters) first line. In Visual Studio Code (VCS), extended commits are possible (these are commits where more than one line can be entered), and the Commit Message Editor extension makes the configuration of commit messages into a standardised form based format.</p>
+
+                    <p class='hyp'>The Commit Message Editor is an extension for Visual Studio Code and can be found here: <a class='xref' href='https://marketplace.visualstudio.com/items?itemName=adam-bender.commit-message-editor'>Commit Message Editor</a></p>
+
+                    <p class='hyp'>The Commit Message Editor settings should be adjusted to match the following settings (these are stored in the <span class='code'>settings.json</span> file for Visual Studio Code):</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     CODE FRAGMENT - STANDARD BLOCK WITH HEADER & CAPTION & DOWNLOAD (HTML)
+                     FORCED LINE NUMBERING & TEXT WRAP
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+     <div class="code-extract">
+        <!-- Code file name --> <div class="code-header">settings.json</div>
+                                <div class="code-area">
+        
+        <!-- Code extraxt -->       <pre class="prettyprint lang-json" id="js--c03-01">"commit-message-editor.tokens":&nbsp;[
+&nbsp;&nbsp;&nbsp;&nbsp;{
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;label&quot;:&nbsp;&quot;Type&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;name&quot;:&nbsp;&quot;type&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;type&quot;:&nbsp;&quot;enum&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;options&quot;:&nbsp;[
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;label&quot;:&nbsp;&quot;---&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;value&quot;:&nbsp;&quot;&quot;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;label&quot;:&nbsp;&quot;PS&nbsp;(Mas)&nbsp;-&nbsp;Dev&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;description&quot;:&nbsp;&quot;PS&nbsp;master&nbsp;branch&nbsp;-&nbsp;development&quot;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;label&quot;:&nbsp;&quot;PS&nbsp;(Mas)&nbsp;-&nbsp;Merge&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;description&quot;:&nbsp;&quot;PS&nbsp;master&nbsp;branch&nbsp;-&nbsp;merge&nbsp;point&nbsp;adjustment&quot;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;label&quot;:&nbsp;&quot;PS&nbsp;(Mas)&nbsp;-&nbsp;Prove&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;description&quot;:&nbsp;&quot;PS&nbsp;master&nbsp;branch&nbsp;-&nbsp;proving&nbsp;(test)&quot;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;label&quot;:&nbsp;&quot;PS&nbsp;(Mas)&nbsp;-&nbsp;Qual&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;description&quot;:&nbsp;&quot;PS&nbsp;master&nbsp;branch&nbsp;-&nbsp;qualification&quot;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;label&quot;:&nbsp;&quot;PS&nbsp;(Mas)&nbsp;-&nbsp;Release&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;description&quot;:&nbsp;&quot;PS&nbsp;master&nbsp;branch&nbsp;-&nbsp;released&nbsp;for&nbsp;use&quot;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;label&quot;:&nbsp;&quot;PS&nbsp;(Dev)&nbsp;-&nbsp;Dev&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;description&quot;:&nbsp;&quot;PS&nbsp;development&nbsp;branch&nbsp;-&nbsp;development&quot;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;label&quot;:&nbsp;&quot;PS&nbsp;(Dev)&nbsp;-&nbsp;Merge&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;description&quot;:&nbsp;&quot;PS&nbsp;development&nbsp;branch&nbsp;-&nbsp;merge&nbsp;point&nbsp;adjustment&quot;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;label&quot;:&nbsp;&quot;PS&nbsp;(Dev)&nbsp;-&nbsp;Prove&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;description&quot;:&nbsp;&quot;PS&nbsp;development&nbsp;branch&nbsp;-&nbsp;proving&nbsp;(test)&quot;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;label&quot;:&nbsp;&quot;PS&nbsp;(Dev)&nbsp;-&nbsp;Qual&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;description&quot;:&nbsp;&quot;PS&nbsp;development&nbsp;branch&nbsp;-&nbsp;qualification&quot;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;label&quot;:&nbsp;&quot;PS&nbsp;(Dev)&nbsp;-&nbsp;Release&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;description&quot;:&nbsp;&quot;PS&nbsp;development&nbsp;branch&nbsp;-&nbsp;released&nbsp;for&nbsp;use&quot;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;label&quot;:&nbsp;&quot;PS&nbsp;(Gen)&nbsp;-&nbsp;Rev&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;description&quot;:&nbsp;&quot;PS&nbsp;development&nbsp;branch&nbsp;-&nbsp;revision&nbsp;update&quot;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;label&quot;:&nbsp;&quot;PS&nbsp;(Gen)&nbsp;-&nbsp;Type&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;description&quot;:&nbsp;&quot;PS&nbsp;development&nbsp;branch&nbsp;-&nbsp;typographical&nbsp;changes&nbsp;only&quot;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;description&quot;:&nbsp;&quot;Type&nbsp;of&nbsp;changes&quot;
+    &nbsp;&nbsp;&nbsp;&nbsp;},
+    {
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;label&quot;:&nbsp;&quot;Commit&nbsp;Tag&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;name&quot;:&nbsp;&quot;scope&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;description&quot;:&nbsp;&quot;The&nbsp;commit&nbsp;tag&nbsp;that&nbsp;will&nbsp;be&nbsp;applied&nbsp;to&nbsp;this&nbsp;commit&nbsp;(e.g.&nbsp;D0002B-0.101)&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;type&quot;:&nbsp;&quot;text&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;multiline&quot;:&nbsp;false,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;prefix&quot;:&nbsp;&quot;[&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;suffix&quot;:&nbsp;&quot;]&quot;
+    },
+    {
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;label&quot;:&nbsp;&quot;Commit&nbsp;Title&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;name&quot;:&nbsp;&quot;description&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;description&quot;:&nbsp;&quot;Commit&nbsp;title&nbsp;line&nbsp;text&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;type&quot;:&nbsp;&quot;text&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;multiline&quot;:&nbsp;false
+    },
+    {
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;label&quot;:&nbsp;&quot;Body&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;name&quot;:&nbsp;&quot;body&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;description&quot;:&nbsp;&quot;Optional&nbsp;body&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;type&quot;:&nbsp;&quot;text&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;multiline&quot;:&nbsp;true,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;lines&quot;:&nbsp;10,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;maxLines&quot;:&nbsp;100
+    },
+    //&nbsp;{
+    //&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;label&quot;:&nbsp;&quot;Footer&quot;,
+    //&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;name&quot;:&nbsp;&quot;footer&quot;,
+    //&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;description&quot;:&nbsp;&quot;Optional&nbsp;footer:&nbsp;&quot;,
+    //&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;type&quot;:&nbsp;&quot;text&quot;,
+    //&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;multiline&quot;:&nbsp;false,
+    //&nbsp;}
+    ],
+    &quot;commit-message-editor.view.defaultView&quot;:&nbsp;&quot;form&quot;,
+    &quot;commit-message-editor.dynamicTemplate&quot;:&nbsp;[
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;{scope}&nbsp;&mdash;&nbsp;{description}&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;{type}&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;  ────────────────────────────────────────&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;{body}&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;&nbsp;&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;  ────────────────────────────────────────&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;Those&nbsp;aspects&nbsp;of&nbsp;the&nbsp;PAL&nbsp;project&nbsp;that&nbsp;have&nbsp;been&nbsp;migrated&nbsp;to&nbsp;the&nbsp;GitHub&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;Version&nbsp;Control&nbsp;System&nbsp;(VCS)&nbsp;are&nbsp;operating&nbsp;under&nbsp;the&nbsp;Software&nbsp;Control&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;Mechanism&nbsp;(SCM)&nbsp;specified&nbsp;in&nbsp;document&nbsp;PS2001-5-2302-011:&quot;,
+    &nbsp;&nbsp;&nbsp;&nbsp;&quot;   https://practicalseries.com/2001-pal/31-git/11-00-scm.html&quot;
+    ],
+    </pre>
+        
+                                </div>
+        <!-- Caption table -->  <table class="code-caption">
+                                    <tr class="no-border">
+                                        <td style="width: 5.0%"></td>
+        <!-- Caption text  -->          <td style="width: 90.0%">Code 3.1 &emsp; Visual Studio Code&nbsp;&mdash;&nbsp;Commit Message Editor settings</td>
+        <!-- download link -->          <td style="width: 5.0%"></td>
+                                    </tr>
+                                </table>
+                            </div>
+        <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        
+
+                    <p class='hyp'>This arrangement gives a common form that can be used to enter and edit a commit message before making the commit. It has the following appearance:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-47'>
+                            <a href='01-pages/11-0309-scm/02-images/fig-03-47-min.png' data-lightbox='fig-set' data-title='Figure 3.47 - Visual Studio Code&nbsp;&mdash;&nbsp;Commit Message Editor form'>
+                                <img src='01-pages/11-0309-scm/02-images/fig-03-47-min.png' alt='Figure 3.47 - Visual Studio Code&nbsp;&mdash;&nbsp;Commit Message Editor form'>
+                            </a>
+                            <figcaption>Figure 3.47 &emsp; Visual Studio Code&nbsp;&mdash;&nbsp;Commit Message Editor form</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The <span class='menu'>type</span> field is a drop down selection that indicates the type of commit being made, those beginning <span class='menu'>PS(Mas)</span> are commits directly on the master branch, those beginning <span class='menu'>PS(Dev)</span> are on a development branch, those beginning <span class='menu'>PS(Gen)</span> are of a general nature (not generally applicable to the software itself&nbsp;&mdash;&nbsp;e.g. a change to a <span class='code'>README</span> files or some file that is external to the Controller software).</p>
+
+                    <p class='hyp'>The entry following the dash indicates the phase of the software as follows:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class='table-clean' id='js--t03-04'>
+<!-- Header row -->     <tr>
+                            <th class='leading'></th>
+                            <th class='table-left' style='width: 15%'>Entry</th>
+                            <th class='table-left' style='width: 85%'>Meaning</th>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'>Dev</td>
+                            <td class='table-left'>Development commit (incremental build &amp;c.)</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'>Merge</td>
+                            <td class='table-left'>Branch merge point</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'>Prove</td>
+                            <td class='table-left'>Proving (the software is at a test commit)</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'>Qual</td>
+                            <td class='table-left'>Qualification (the software is at a qualifying commit)</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'>Release</td>
+                            <td class='table-left'>Software (or module) is released for use</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'>Rev</td>
+                            <td class='table-left'>Revision change only</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'>Type</td>
+                            <td class='table-left'>Typographical corrections</td>
+                        </tr>
+
+<!-- Caption -->        <tr class='no-border'>
+                            <td class='leading'></td>
+                            <td colspan='3' class='table-caption'>Table 3.4 &emsp; Commit message type field</td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The <span class='menu'>Commit tag</span> is the commit tag that will be applied to the commit.</p>
+
+                    <p class='hyp'><span class='menu'>Commit Title</span> is the first line of the commit, the first line is always shown in bold to indicate that it is a title.</p>
+
+                    <p class='hyp'>The <span class='menu'>Body</span> field contains the description of the changes being made at this commit point.</p>
+
+                    <p class='hyp'>The completed commit has the following appearance:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-48'>
+                            <a href='01-pages/11-0309-scm/02-images/fig-03-48-min.png' data-lightbox='fig-set' data-title='Figure 3.48 - Visual Studio Code&nbsp;&mdash;&nbsp;Actual commit message'>
+                                <img style="max-width: 600px;" src='01-pages/11-0309-scm/02-images/fig-03-48-min.png' alt='Figure 3.48 - Visual Studio Code&nbsp;&mdash;&nbsp;Actual commit message'>
+                            </a>
+                            <figcaption>Figure 3.48 &emsp; Visual Studio Code&nbsp;&mdash;&nbsp;Actual commit message</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>Where:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      NUMBERED LIST
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ol class='list-num'>                       <!-- Start of numbered list   -->
+                        <li><p class='hyp'>Is the <span class='menu'>Commit Tag</span></p></li>
+
+                        <li><p class='hyp'>Is the <span class='menu'>Commit Title</span></p></li>
+
+                        <li><p class='hyp'>Is the <span class='menu'>Type</span></p></li>
+
+                        <li><p class='hyp'>Is the <span class='menu'>Body</span></p></li>
+
+                        <li><p class='hyp'>A common footer attached to all commit messages</p></li>
+                    </ol>                                       <!-- End of numbered list     -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'></p>
+
+                    <p class='hyp'></p>
+
+                    <p class='hyp'></p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+
+
+
+
+<!-- ************************************************************************** [WP LAST]
+     SECTION - LAST SECTION BEFORE FOOTER (WITH NAVIGATION)
+     ***********************************************************************-->
+
+        <p> <br class="toc-pad"></p>
+        <p> <br class="toc-pad"></p>
+        <div class="section-std" id="js--999901">               <!-- Start of additional row  -->
+            <div class="rg-row">                                <!-- Start of row content     -->
+                <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
+                    <aside class="aside-nav">                   <!-- Start of sidebar nav     -->
+                        <a class="xref" href="11-0306-scm.html#js--030800">Prev</a>
+                    </aside>                                    <!-- End of left side bar     -->
+</div>                                          <!-- End of left column       -->
+
+                <div class="rg-col rg-span3-5 aside-nav">       <!-- Start of end image area  -->
+                    <img src="../00-comres/11-resources/01-css/01-css-images/end-mark.svg" alt="End flourish image">
+                </div>                                          <!-- End of section text area -->
+
+                <div class="rg-col rg-span1-5">                 <!-- Start of right column    -->
+                    <aside class="aside-nav">                   <!-- Start of sidebar nav     -->
+                        <a class="xref utx" href="11-0400-scm.html#js--040000">Next</a>
+                    </aside>                                    <!-- End of right side bar    -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of row content       -->
+        </div>                                                  <!-- End of additional row    -->
+<!-- ========================================================================== [WP END]      -->
+
+
+<!-- ************************************************************************** [WP FOOTER]
+     FOOTER
+     ***********************************************************************-->
+        <footer class="footer">                                 <!-- Start of footer          -->
+            <ul class="footer-nav">                             <!-- Start of footer nav      -->
+                <li><a class="js--sc-000000" href="#"><span class="top-nav-icon" style="color:#5b7daf">t</span>Top</a><span class="footer-spacer">&#x25C7;</span></li>
+                <li><a href="../11-web/80-00-finally.html#js--800100">Contact MG</a><span class="footer-spacer">&#x25C7;</span></li>
+                <li><a href="../11-web/80-00-finally.html#js--800200">Acknowledgments</a><span class="footer-spacer">&#x25C7;</span></li>
+                <li><a href="../11-web/80-00-finally.html#js--800300">Colophon</a><span class="footer-spacer">&#x25C7;</span></li>
+                <li><a href="../11-web/80-00-finally.html#js--800400">Legal &amp; Privacy</a></li>
+            </ul>                                               <!-- End of footer nav        -->
+
+            <ul class="social-links">
+ <!--            <li><a href="https://www.facebook.com/practicalseries"><i id="js--fbicon" class="ion-social-facebook-outline"></i></a></li>
+                <li><a href="https://twitter.com/practicalseries"><i id="js--twicon" class="ion-social-twitter-outline"></i></a></li> -->
+            </ul>
+        </footer>                                               <!-- End of footer            -->
+<!-- ========================================================================== [WP END]      -->
+
+    </body>
+</html>

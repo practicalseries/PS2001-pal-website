@@ -15,7 +15,7 @@ PRACTICALSERIES: Practical Series of Publications by Michael Gledhill
     <head>                                                                      <!-- Start of head section                         -->
         <meta charset="utf-8">                                                  <!-- Use unicode char set (< 1024 char from SOF)   -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Make page follow browser width and reset zoom -->
-        <meta name="description" content="Practiacl series automation library, PAL, the MIT licence, an explanation of the software control mechanism, scm">
+        <meta name="description" content="Practiacl series automation library, PAL, software control mechanism, scm, git revision numbering arrangement, workflow, master branch, development branches, commit tags">
 
 <!-- ==========================================================================
 
@@ -24,7 +24,7 @@ PRACTICALSERIES: Practical Series of Publications by Michael Gledhill
 *******************************************************************************
 Title :          PRACTICAL SERIES AUTOMATION LIBRARY (PAL)
 
-                 GIT - SOFTWARE CONTROL MECHANISM              11-0200-SCM.HTML
+                 GIT - SOFTWARE CONTROL MECHANISM              11-0300-SCM.HTML
 *******************************************************************************
 DETAILS
 
@@ -43,7 +43,29 @@ This is a complete summary of all software modifications.
 
 Date          Issue        Author         Reason for Modification
 *******************************************************************************
-30 Mar 2021   000.101      M. Gledhill    File created
+07 Apr 2021   000.104      M. Gledhill    Released as a development prototype
+                                          Revision control active
+                                          RELEASE CHECKLIST
+                                             Title                Y
+                                             Meta description     Y
+                                             Rev Badge (br red)   000.104 (dev)
+                                             Rev Data Page        000.104
+                                             Rev Data Code        None
+                                             Rev Data scroll      000.104
+                                             TOC softscroll       Y
+                                             Nav Prev chap        Y (0200)
+                                             Nav Prev sec         Y (0201)
+                                             Nav Next chap        Y (0400)
+                                             Nav Next sec         Y (0306)
+                                             Nav Top              Y
+                                             Nav Home             Y (00)
+                                             Last section Prev    Y (0200)
+                                             Last section Next    Y (0306)
+                                             Footer Top           Y
+                                             Footer Contacts &c.  Y (11/80)
+                                             All UTX removed      *********** N ********************************************
+
+                                          File created
                                           based on 98-00-blank.html
 *************************************************************************** -->
 
@@ -86,7 +108,7 @@ Date          Issue        Author         Reason for Modification
         <!-- PS main styles -->         <link rel="stylesheet" type="text/css" href="../00-comres/11-resources/01-css/style.css">
         <!-- PAL styles -->             <link rel="stylesheet" type="text/css" href="../00-comres/11-resources/01-css/style-pal.css">
                                                                 <!-- ▼▼▼▼ CHANGE FOLDER ▼▼▼▼  -->
-        <!-- Code frag highlights      <link rel="stylesheet" type="text/css" href="01-pages/11-0200-scm/01-local-css/codelines.css">-->
+        <!-- Code frag highlights      <link rel="stylesheet" type="text/css" href="01-pages/11-0300-scm/01-local-css/codelines.css">-->
 
 <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       GOOGLE ANALYTICS
@@ -106,7 +128,7 @@ Date          Issue        Author         Reason for Modification
 <!-- **************************************************************************
      TITLE
      ***********************************************************************-->
-        <title>PAL | Software Control Mechanism</title>
+        <title>PAL | SCM Revision Numbering (page 1)</title>
     </head>
 
     <body>
@@ -126,9 +148,9 @@ Date          Issue        Author         Reason for Modification
                 <div class="top-nav">                           <!-- Start of top nav row     -->
                     <div class="rg-row">                        <!-- Start of nav button row  -->
                         <!-- Button 01 - Previous Section -->
-                        <a class="nav-wide" href="11-00-scm.html#js--010300"><span class="top-nav-icon">l</span><span class="top-nav-text">Prev. section</span></a>
+                        <a class="nav-wide" href="11-0200-scm.html#js--020100"><span class="top-nav-icon">l</span><span class="top-nav-text">Prev. section</span></a>
                         <!-- Button 02 - Previous Chapter -->
-                        <a class="nav-wide" href="11-00-scm.html#js--000000"><span class="top-nav-icon">u</span><span class="top-nav-text">Prev. chapter</span></a>
+                        <a class="nav-wide" href="11-0200-scm.html#js--000000"><span class="top-nav-icon">u</span><span class="top-nav-text">Prev. chapter</span></a>
                         <!-- Button 03 - Home wide (hidden when fixed nav activates) -->
                         <a class="nav-wide nav-home" href="11-00-scm.html#js--000000"><span class="top-nav-text">Home</span><span class="top-nav-icon">h</span></a>
                         <!-- Button 03a - Top narrow (hidden until fixed nav activates) -->
@@ -136,9 +158,9 @@ Date          Issue        Author         Reason for Modification
                         <!-- Button 03b - Home narrow (hidden until fixed nav activates) -->
                         <a class="nav-narrow" href="11-00-scm.html#js--000000"><span class="top-nav-text">Home</span><span class="top-nav-icon">h</span></a>
                         <!-- Button 04 - Next Chapter -->
-                        <a class="nav-wide" href="11-0300-scm.html#js--030000"><span class="top-nav-text">Next chapter</span><span class="top-nav-icon">d</span></a>
+                        <a class="nav-wide utx" href="11-0400-scm.html#js--040000"><span class="top-nav-text">Next chapter</span><span class="top-nav-icon">d</span></a>
                         <!-- Button 05 - Next section -->
-                        <a class="nav-wide" href="11-0300-scm.html#js--030000"><span class="top-nav-text">Next section</span><span class="top-nav-icon">r</span></a>
+                        <a class="nav-wide" href="11-0306-scm.html#js--030600"><span class="top-nav-text">Next section</span><span class="top-nav-icon">r</span></a>
                     </div>                                      <!-- End of nav button row    -->
                 </div>                                          <!-- End of top nav row       -->
             </nav>                                              <!-- End of top nav bar       -->
@@ -191,7 +213,7 @@ Date          Issue        Author         Reason for Modification
                             <td class="leading" style="height: 1em"></td>
                             <td class="table-cent" style="width: 30%"></td>
                             <td class="table-left" style="width: 40%">Page:</td>
-                            <td class="table-right" style="width: 30%" id="rev-doc">000.101</td>
+                            <td class="table-right" style="width: 30%" id="rev-doc">000.104</td>
                         </tr>
 <!-- Data row -->       <tr>
                             <td class="leading" style="height: 1em"></td>
@@ -312,7 +334,7 @@ Date          Issue        Author         Reason for Modification
             <div class="rg-row">                                <!-- Start of title row       -->
                 <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
                     <aside class="rev-badge-side">              <!-- BUILD BADGE              -->
-                        <img src="https://img.shields.io/badge/dev-000.101-BF504D.svg" alt="Build">
+                        <img src="https://img.shields.io/badge/dev-000.104-BF504D.svg" alt="Build">
                     </aside>
                 </div>                                          <!-- End of Left column       -->
                 <div class="rg-col rg-span3-5">                 <!-- Start of title           -->
@@ -342,24 +364,79 @@ Date          Issue        Author         Reason for Modification
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
                     <ul class="toc-line">
 <!-- Level 1 -->        <li><a href="index.html">
-    <div class="toc-lev"><span class="toc-lev1-num"></span><span class="toc-lev1-text">Git documents main page</span></div></a>
-</li>
-</ul>
+                            <div class="toc-lev"><span class="toc-lev1-num"></span><span class="toc-lev1-text">Git documents main page</span></div></a>
+                        </li>
+                    </ul>
+
+                    <ul class="toc-line">
+<!-- Level 1 -->        <li><a href="11-00-scm.html">
+                            <div class="toc-lev"><span class="toc-lev1-num"></span><span class="toc-lev1-text">SCM main page</span></div></a>
+                        </li>
+                    </ul>
                         
                     <ul class="toc-line">
-<!-- Level 1 -->        <li><a class="js--sc-020000" href="11-0200-scm.html#js--020000">
-                                <div class="toc-lev"><span class="toc-lev1-num">2</span><span class="toc-lev1-text">Approach to version control</span></div></a>
+<!-- Level 1 -->        <li><a class="js--sc-030000" href="11-0300-scm.html#js--030000">
+                                <div class="toc-lev"><span class="toc-lev1-num">3</span><span class="toc-lev1-text">The software revision numbering mechanism</span></div></a>
                         </li>
                     </ul>
 
                     <ul class="toc-list">
-<!-- Level 2 -->        <li><a class="js--sc-020100" href="11-0200-scm.html#js--020100">
-                            <div class="toc-lev"><span class="toc-lev2-num">2.1</span><span class="toc-lev2-text">SCM Version control requirements</span></div></a>
+<!-- Level 2 -->        <li><a class="js--sc-030100" href="11-0300-scm.html#js--030100">
+                            <div class="toc-lev"><span class="toc-lev2-num">3.1</span><span class="toc-lev2-text">Workflow arrangements</span></div></a>
                         </li>
+<!-- Level 2 -->        <li><a class='js--sc-030200' href='11-0300-scm.html#js--030200'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>3.2</span><span class='toc-lev2-text'>Master branch revision states</span></div></a>
+                        </li>                            
+<!-- Level 2 -->        <li><a class='js--sc-030300' href='11-0300-scm.html#js--030300'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>3.3</span><span class='toc-lev2-text'>Development branch names</span></div></a>
+                        </li>
+<!-- Level 2 -->        <li><a class='js--sc-030400' href='11-0300-scm.html#js--030400'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>3.4</span><span class='toc-lev2-text'>Development branch commit tags</span></div></a>
+                        </li> 
+<!-- Level 2 -->        <li><a class='js--sc-030500' href='11-0300-scm.html#js--030500'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>3.5</span><span class='toc-lev2-text'>Merging a development branch</span></div></a>
+                        </li>    
+<!-- Level 2 -->        <li><a class='js--sc-030600' href='11-0306-scm.html#js--030600'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>3.6</span><span class='toc-lev2-text'>Individual module revision numbers</span></div></a>
+                        </li>  
+<!-- Level 3 -->        <li><a class='js--sc-030601' href='11-0306-scm.html#js--030601'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>3.6.1</span><span class='toc-lev3-text'>Programmable block revision numbers</span></div></a>
+                        </li>
+<!-- Level 3 -->        <li><a class='js--sc-030602' href='11-0306-scm.html#js--030602'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>3.6.2</span><span class='toc-lev3-text'>Data block revision numbers</span></div></a>
+                        </li>
+<!-- Level 3 -->        <li><a class='js--sc-030603' href='11-0306-scm.html#js--030603'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>3.6.3</span><span class='toc-lev3-text'>User Data Type revision numbers</span></div></a>
+                        </li>
+<!-- Level 2 -->        <li><a class='js--sc-030700' href='11-0306-scm.html#js--030700'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>3.7</span><span class='toc-lev2-text'>OB1 module revision numbers</span></div></a>
+                        </li>   
+<!-- Level 2 -->        <li><a class='js--sc-030800' href='11-0306-scm.html#js--030800'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>3.8</span><span class='toc-lev2-text'>Commit points and filenames</span></div></a>
+                        </li>      
+<!-- Level 3 -->        <li><a class='js--sc-030801' href='11-0306-scm.html#js--030801'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>3.8.1</span><span class='toc-lev3-text'>OB&nbsp;1 and filenames</span></div></a>
+                        </li>    
+<!-- Level 2 -->        <li><a class='js--sc-030900' href='11-0309-scm.html#js--030900'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>3.9</span><span class='toc-lev2-text'>Parallel development branches</span></div></a>
+                        </li>  
+<!-- Level 2 -->        <li><a class='js--sc-031000' href='11-0309-scm.html#js--031000'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>3.10</span><span class='toc-lev2-text'>OB&nbsp;1 and the Merging of branches</span></div></a>
+                        </li>  
+<!-- Level 3 -->        <li><a class='js--sc-031001' href='11-0309-scm.html#js--031001'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>3.10.1</span><span class='toc-lev3-text'>Merging a single/first branch</span></div></a>
+                        </li>
+<!-- Level 3 -->        <li><a class='js--sc-031002' href='11-0309-scm.html#js--031002'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>3.10.2</span><span class='toc-lev3-text'>Merging additional parallel branches</span></div></a>
+                        </li>      
+<!-- Level 2 -->        <li><a class='js--sc-031100' href='11-0309-scm.html#js--031100'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>3.11</span><span class='toc-lev2-text'>Nested branches</span></div></a>
+                        </li>          
+<!-- Level 2 -->        <li><a class='js--sc-031200' href='11-0309-scm.html#js--031200'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>3.12</span><span class='toc-lev2-text'>A note on commit messages</span></div></a>
+                        </li>                        
                     </ul>
-                                           
-                    
-               <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
                 </div>                                          <!-- End of TOC column        -->
                 <div class="rg-col rg-span1-5"></div>           <!-- Right column (not used)  -->
@@ -380,13 +457,518 @@ Date          Issue        Author         Reason for Modification
 <!-- ========================================================================== [WP END]      -->
 
 
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - 3 - The software revision numbering mechanism
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--030000'>           <!-- Start of section         -->
+            <div class='rg-row title-row'>                      <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5 title-centre'>    <!-- Start of title           -->
+                    <div class='title-num-box'><p>3</p></div>
+                    <div class='title-text-box'><h1><span class='title-small-num'>3</span>The software revision numbering mechanism</h1></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>This section describes a revision numbering strategy for the PAL software under the control of the Git and GitHub version control systems.</p>
+
+                    <p class='hyp'>As stated previously, Git and GitHub use commit numbers to identify individual submissions to the repository, these are commonly referred to as <em>hash</em> or <em>sha</em> (pronounced shar to rhyme with bar) numbers. These are unique seven-digit hexadecimal numbers, and while they identify exactly, a particular revision within the repository, they do not do so in a way that can be easily interpreted by humans trying to understand the workflow of the project (given two commit numbers: <span class='code'>[af25d47]</span> and <span class='code'>[9cf63b1]</span>, it would not be possible to say, just by looking at them, which came first), commit numbers can be considered completely random, but non-repeating numbers.</p>
+
+                    <p class='hyp'>Git and GitHub both have the facility to <em>tag</em> any commit point, this tag must be unique, but it is entirely at the discretion of the user and can contain up to 25 characters.</p>
+
+                    <p class='hyp'>The SCM numbering mechanism will use these <em>commit tags</em> to identify the particular revision of both a software module and a TIA Project.</p>
+
+                    <p class='hyp'>The tags will also from the basis for naming the TIA Portal project at each commit point.</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
 
 
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - 3.1 - Workflow arrangements
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--030100'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-overline'></div>      <!-- Overline                 -->
+                 <div class='sub-title-num-box'><h2>3.1</h2></div>
+                 <div class='sub-title-text-box'><h2>Workflow arrangements</h2></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>The workflow within the Git repository consists of a single main branch, the <span class='git-cmd'>master</span> branch.</p>
+
+                    <p class='hyp'>The <span class='git-cmd'>master</span> branch (after some initial development work to establish it) will, generally, only contain either finished (released) modules, software that has passed some level of testing or qualification or software that has been released for use.</p>
+
+                    <p class='hyp'>Released modules are modules that have undergone a software module test (SMT) and have passed that test (i.e. a module that is deployable) &mdash;it does not indicate that all software modules are finished, just that the module in question is complete, tested and deployable.</p>
+
+                    <p class='hyp'>When the software as a whole (all modules), has completed module testing, integration testing, has been commissioned and qualified, then the software as a whole will be released for use.</p>
+
+                    <p class='hyp'>Development work can take place at any time and will always take place on a separate branch. Development branches always spur from some definite commit point on the <span class='git-cmd'>master</span> branch.</p>
+
+                    <p class='hyp'>A development branch must have a very restricted scope. I.e. a single module or group of related modules. </p>
+
+                    <p class='hyp'>Generally, a development branch will contain all the things associated with that module (i.e. the function, any data types &amp;c.).</p>
+
+                    <p class='hyp'>When the module development is complete and tested, it will be merged back to the <span class='git-cmd'>master branch</span>, the merge point will be given a five-character tag (<a class='xref js--sc-f03-01' href='#'>Figure&nbsp;3.1</a>):</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-01'>
+                            <a href='01-pages/11-0300-scm/02-images/fig-03-01-min.svg' data-lightbox='fig-set' data-title='Figure 3.1 - master branch workflow (typical)'>
+                                <img src='01-pages/11-0300-scm/02-images/fig-03-01-min.svg' alt='Figure 3.1 - master branch workflow (typical)'>
+                            </a>
+                            <figcaption>Figure 3.1 &emsp; master branch workflow (typical)</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - 3.2 - Master branch revision states
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--030200'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-overline'></div>      <!-- Overline                 -->
+                 <div class='sub-title-num-box'><h2>3.2</h2></div>
+                 <div class='sub-title-text-box'><h2>Master branch revision states</h2></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>The project progresses through various different states along the <span class='git-cmd'>master</span> branch. Each state is a commit point and this in turn has a tag with five characters. Each such commit point is referred to as a <em>primary commit</em>.</p>
+
+                    <p class='hyp'>Each primary commit tag is given a letter that represents the condition of a particular commit point.</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class='table-clean' id='js--t03-01'>
+<!-- Header row -->     <tr>
+                            <th class='leading'></th>
+                            <th class='table-cent' style='width: 7%'>State</th>
+                            <th class='table-cent' style='width: 17%'>Example</th>
+                            <th class='table-cent' style='width: 17%'>Meaning</th>
+                            <th class='table-left' style='width: 59%'>Description</th>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-cent'><span class='code'>D</span></td>
+                            <td class='table-cent'><span class='code'>D0126</span></td>
+                            <td class='table-cent'>Development</td>
+                            <td class='table-left'><p>The software as a whole is in the build phase and has not been fully tested.</p>
+                            Certain modules may have undergone module testing and are released for use. This is on a module-by-module basis.</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-cent'><span class='code'>P</span></td>
+                            <td class='table-cent'><span class='code'>P0001</span></td>
+                            <td class='table-cent'>Proving (test)</td>
+                            <td class='table-left'>The software is released for integration testing. All modules within the software have undergone module testing and have been released for use.</td>
+                        </tr>
+
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-cent'><span class='code'>Q</span></td>
+                            <td class='table-cent'><span class='code'>Q0001</span></td>
+                            <td class='table-cent'>Qualification</td>
+                            <td class='table-left'>The software is deployed for commissioning, installation qualification (IQ) and operational qualification (OQ).</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-cent'><span class='code'>R</span></td>
+                            <td class='table-cent'><span class='code'>R0001</span></td>
+                            <td class='table-cent'>Released</td>
+                            <td class='table-left'>The software is released for use</td>
+                        </tr>
+
+<!-- Caption -->        <tr class='no-border'>
+                            <td class='leading'></td>
+                            <td colspan='4' class='table-caption'>Table 3.1 &emsp; master branch commit point tags</td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The <span class='git-cmd'>master</span> branch commit tags have the following format:</p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code'>SNNNN</span></p>
+
+                    <p class='hyp'>Where <span class='code'>S</span> is the state letter (<a class='xref js--sc-t03-01' href='#'>Table&nbsp;3.1</a>):</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      UNNUMBERED LIST
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ul class='list-no-num'>                    <!-- Start of unnumbered list -->
+                        <li><p class='hyp'><span class='code'>D</span> &mdash; Development</p></li>
+
+                        <li><p class='hyp'><span class='code'>P</span> &mdash; Proving (testing)</p></li>
+
+                        <li><p class='hyp'><span class='code'>Q</span> &mdash; Qualification</p></li>
+
+                        <li><p class='hyp'><span class='code'>R</span> &mdash; Released</p></li>
+                    </ul>                                       <!-- End of unnumbered list   -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                    <p class='hyp'><span class='code'>NNNN</span> is a number; this starts at <span class='code'>0001</span> (there is a special case for the first commit to the repository, this has value <span class='code'>0000</span>) for each particular state and is incremented by one for each subsequent issue. </p>
+
+                    <p class='hyp'>E.g. <span class='code'>D0001 &rarr; D0002 &rarr; D0003 &rarr; P0001 &rarr; R0001 &rarr; R0002</span> &amp;c.</p>
+
+                    <p class='hyp'></p>
+
+                    <p class='hyp'></p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
 
 
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - 3.3 - Development branch names
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--030300'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-overline'></div>      <!-- Overline                 -->
+                 <div class='sub-title-num-box'><h2>3.3</h2></div>
+                 <div class='sub-title-text-box'><h2>Development branch names</h2></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>Generally, development never takes place along the <span class='git-cmd'>master</span> branch. The only exception to this is at the start of the project when the repository is created. The initial commit typically takes place on the <span class='git-cmd'>master</span> branch (this is always tagged <span class='code'>D0000</span>), and there may be subsequent commits on the <span class='git-cmd'>master</span> branch to establish the repository structure: folders, configuration files (e.g. <span class='code'>.gitignore</span> and <span class='code'>.gitkeep</span> files &amp;c.) and other common repository files (<span class='code'>README.md</span>, <span class='code'>LICENCE.md</span> &amp;c.).</p>
+
+                    <p class='hyp'>Such development can take place along the <span class='git-cmd'>master</span> branch until some suitable point is reached; this point is usually where module development begins; after this, only minor changes will take place on the <span class='git-cmd'>master</span> branch, such changes will be to address any conflicts that occur when merging multiple development branches back to the master branch (see <a class='hlink' href='11-0309-scm.html#js--030900'>Section&nbsp;3.9</a>).</p>
+
+                    <p class='hyp'>At this point, no significant development work can take place on the <span class='git-cmd'>master</span> branch.</p>
+
+                    <p class='hyp'>Development work always takes place on a separate <span class='git-cmd'>development</span> branch. </p>
+
+                    <p class='hyp'>A development branch must have a very restricted scope. I.e. a single module or group of related modules. </p>
+
+                    <p class='hyp'>Each development branch is taken from the latest primary commit point on the <span class='git-cmd'>master</span> branch (generally referred to as the <span class='git-cmd'>HEAD</span>). The name given to a <span class='git-cmd'>development</span> branch is always in the format:</p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code'>SNNNNb-MMYYYYY</span></p>
+
+                    <p class='hyp'>Where <span class='code'>SNNNN</span> is the commit point tag on the <span class='git-cmd'>master</span> branch from which the <span class='git-cmd'>development</span> branch diverges. </p>
+
+                    <p class='hyp'>The <span class='code'>b</span> character is an ordinal character identifying multiple branches that start from the same <span class='git-cmd'>master</span> branch commit point, the first branch receives character <span class='code'>A</span>, the second <span class='code'>B</span>, the third <span class='code'>C</span> &amp;c.</p>
+
+                    <p class='hyp'>The remainder of the branch name refers to the object being developed; these are generally software modules. <span class='code'>MMYYYYY</span> specifies the object under development, for example <span class='block'>FC01001</span>. It could equally apply to just a data type e.g. <span class='block'>UT01000</span>.</p>
+
+                    <p class='hyp'>Here, <span class='code'>MM</span> refers to the type of module (<span class='block'>OB</span>, <span class='block'>FB</span>, <span class='block'>FC</span>,<span class='block'>DB</span>, <span class='block'>UT</span> &amp;c.) and <span class='codde'>YYYYY</span> to the module number (these are always numerical, five-digit numbers with leading zeros where necessary). </p>
+
+                    <p class='hyp'>This arrangement can be seen below:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-02'>
+                            <a href='01-pages/11-0300-scm/02-images/fig-03-02-min.svg' data-lightbox='fig-set' data-title='Figure 3.2 - Multiple development branches from a master branch primary commit point'>
+                                <img src='01-pages/11-0300-scm/02-images/fig-03-02-min.svg' alt='Figure 3.2 - Multiple development branches from a master branch primary commit point'>
+                            </a>
+                            <figcaption>Figure 3.2 &emsp; Multiple development branches from a master branch primary commit point</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                    <p class='hyp'>Here, two development branches diverge from the latest commit point on the <span class='git-cmd'>master</span> branch, point <span class='index'>1</span>. The first branch is used to develop module <span class='block'>FC01001</span>, the second to develop module <span class='block'>FC02001</span>.</p>
+
+                    <p class='hyp'>The first branch name takes the <span class='git-cmd'>master</span> branch commit point (<span class='code'>D0002</span>), followed by the ordinal character, since this is the first branch the ordinal character is <span class='code'>A</span>. Giving <span class='code'>D0002A</span>. This is followed by a dash (<span class='code'>-)</span> and the module number, in this case <span class='code'>FC01001</span>. </p>
+
+                    <p class='hyp'>The final branch name is thus <span class='code'>D0002A-FC01001</span>. Point <span class='index'>2</span> in <a class='xref js--sc-f03-02' href='#'>Figure&nbsp;3.2</a>.</p>
+
+                    <p class='hyp'>The second branch is also attached to the <span class='git-cmd'>master</span> branch commit point <span class='code'>D0002</span>, but in this case it is the second branch, giving an ordinal character of <span class='code'>B</span>. In this case the module being developed is <span class='code'>FC02001</span>. </p>
+
+                    <p class='hyp'>This gives a final branch name for the second branch of: <span class='code'>D0002B-FC02001</span>. Point <span class='index'>3</span> in <a class='xref js--sc-f03-02' href='#'>Figure&nbsp;3.2</a>.</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - 3.4 - Development branch commit tags
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--030400'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-overline'></div>      <!-- Overline                 -->
+                 <div class='sub-title-num-box'><h2>3.4</h2></div>
+                 <div class='sub-title-text-box'><h2>Development branch commit tags</h2></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>All development work takes place on the development branch. There will be many such branches through the course of the Project. </p>
+
+                    <p class='hyp'>Each development branch will consist of multiple commits, these commits are referred to as <em></em>secondary commits</em> (c.f. <em>primary commits</em> made on the <span class='git-cmd'>master</span> branch). These secondary commits will mostly be incremental builds (an incremental build is just a point at which the work was committed to preserve the software at a particular point, these incremental builds occur often, allowing the software to be recovered if necessary. The reasons behind an incremental build are at the discretion of the developer, it may be a significant point in the development of the software, alternatively, it may be just a commit because it was the end of the day).</p>
+
+                    <p class='hyp'>Each secondary commit on a development branch is tagged, and the tag has the format:</p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code'>SNNNNb-nnn.amm</span></p>
+
+                    <p class='hyp'>Where <span class='code'>SNNNNb</span> is the first part of the branch name (before the dash), see <a class='xref js--sc-030300' href='#'>&sect;&nbsp;3.3</a>. This is the originating <span class='git-cmd'>master</span> branch commit point and the branch ordinal character.</p>
+
+                    <p class='hyp'>The remaining characters (<span class='code'>nnn.amm</span>) are all numerical and reflect the current revision of the module under development, the format of this revision number is explained in <a class='hlink' href='11-0306-scm.html#js--030600'>Section&nbsp;3.6</a>.</p>
+
+                    <p class='hyp'>The <span class='git-cmd'>development</span> branch will be complete when the module being developed on that branch has successfully undergone its software module test and the module is at a release revision, at this point the development branch can be merged back onto the <span class='git-cmd'>master</span> branch.</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
 
 
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - 3.5 - Merging a development branch
+     ***********************************************************************-->
 
+        <section class='section-std' id='js--030500'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-overline'></div>      <!-- Overline                 -->
+                 <div class='sub-title-num-box'><h2>3.5</h2></div>
+                 <div class='sub-title-text-box'><h2>Merging a development branch</h2></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>When all the work on a development branch is complete, that branch can be merged back onto the <span class='git-cmd'>master</span> branch.</p>
+
+                    <p class='hyp'>Consider the following example:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-03'>
+                            <a href='01-pages/11-0300-scm/02-images/fig-03-03-min.svg' data-lightbox='fig-set' data-title='Figure 3.3 - Example development branch'>
+                                <img src='01-pages/11-0300-scm/02-images/fig-03-03-min.svg' alt='Figure 3.3 - Example development branch'>
+                            </a>
+                            <figcaption>Figure 3.3 &emsp; Example development branch</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                    <p class='hyp'>Here a development branch (<span class='code'>D0002A-FC01001</span>) was initiated from <span class='git-cmd'>master</span> branch commit point <span class='code'>D0002</span>.</p>
+
+                    <p class='hyp'>There have been three commits on the <span class='git-cmd'>development</span> branch: <span class='code'>D0002A-000.101</span>, <span class='code'>D0002A-000.102</span> and <span class='code'>D0002A-000.801</span>; the first two were incremental builds and the last was a software module test. Let us assume that the module passed its module test and is now finished (released for use).</p>
+
+                    <p class='hyp'>There will now be an additional (and final) commit on the development branch to reflect the released revision of the module:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-04'>
+                            <a href='01-pages/11-0300-scm/02-images/fig-03-04-min.svg' data-lightbox='fig-set' data-title='Figure 3.4 - Example development branch, final commit'>
+                                <img src='01-pages/11-0300-scm/02-images/fig-03-04-min.svg' alt='Figure 3.4 - Example development branch, final commit'>
+                            </a>
+                            <figcaption>Figure 3.4 &emsp; Example development branch, final commit</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The development branch can now be merged back to the <span class='git-cmd'>master</span> branch, following the merge, a new primary commit point must be created on the <span class='git-cmd'>master</span> branch. This will have a revised revision data for OB1 (see <a class='hlink' href='11-0306-scm.html#js--030700'>Section&nbsp;3.7</a>) and will have the format <span class='code'>SNNNN</span>.</p>
+
+                    <p class='hyp'>This new commit point must be given the next, logical tag for the master branch. In this case, the last primary commit tag on the <span class='git-cmd'>master</span> branch was <span class='code'>D0002</span>, the next, logical primary tag is thus <span class='code'>D0003</span> (an increment of one on the last <span class='git-cmd'>master</span> branch tag).</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      NOTE - HANGING INDENT
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ul class='note'>                           <!-- Start of note            -->
+                        <li>Here, there is a transition from one development tag to the next (<span class='code'>D0002</span> to <span class='code'>D0003</span>). It would be perfectly possible for this to be a transition to a different state, I.e. it could be going from development (<span class='code'>D</span>) to proving (<span class='code'>P</span>), in which case the numbering restarts at <span class='code'>0001</span>.</li>
+                    </ul>                                       <!-- End of note              -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>Diagrammatically, this is:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-05'>
+                            <a href='01-pages/11-0300-scm/02-images/fig-03-05-min.svg' data-lightbox='fig-set' data-title='Figure 3.5 - Example development branch, merge to master'>
+                                <img src='01-pages/11-0300-scm/02-images/fig-03-05-min.svg' alt='Figure 3.5 - Example development branch, merge to master'>
+                            </a>
+                            <figcaption>Figure 3.5 &emsp; Example development branch, merge to master</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>Once the merge has taken place, all the secondary commits made on the development branch will become part of the <span class='git-cmd'>master</span> branch, thus:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-06'>
+                            <a href='01-pages/11-0300-scm/02-images/fig-03-06-min.svg' data-lightbox='fig-set' data-title='Figure 3.6 - The master branch after the merge'>
+                                <img src='01-pages/11-0300-scm/02-images/fig-03-06-min.svg' alt='Figure 3.6 - The master branch after the merge'>
+                            </a>
+                            <figcaption>Figure 3.6 &emsp; The master branch after the merge</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>Although the <span class='git-cmd'>master</span> branch now contains all the secondary commit point made on the development branch, none of them were made on the <span class='git-cmd'>master</span> branch itself (all this work happened on the development branch). </p>
+
+                    <p class='hyp'>This arrangement is correct; ultimately, when the project is finished, there will only be the <span class='git-cmd'>master</span> branch left and this will contain every commit made within the project.</p>
+
+                    <p class='hyp'>To more clearly understand the <span class='git-cmd'>master</span> branch, only the primary commit points (with just five characters) need be considered:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f03-07'>
+                            <a href='01-pages/11-0300-scm/02-images/fig-03-07-min.svg' data-lightbox='fig-set' data-title='Figure 3.7 - The master branch significant commit points'>
+                                <img src='01-pages/11-0300-scm/02-images/fig-03-07-min.svg' alt='Figure 3.7 - The master branch significant commit points'>
+                            </a>
+                            <figcaption>Figure 3.7 &emsp; The master branch significant commit points</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'></p>
+
+                    <p class='hyp'></p>
+
+                    <p class='hyp'></p>
+
+                    <p class='hyp'></p>
+
+                    <p class='hyp'></p>
+
+                    <p class='hyp'></p>
+
+                    <p class='hyp'></p>
+
+                    <p class='hyp'></p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
 
 
 
@@ -405,7 +987,7 @@ Date          Issue        Author         Reason for Modification
             <div class="rg-row">                                <!-- Start of row content     -->
                 <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
                     <aside class="aside-nav">                   <!-- Start of sidebar nav     -->
-                        <a class="xref" href="11-00-scm.html#js--010300">Prev</a>
+                        <a class="xref" href="11-0200-scm.html#js--020100">Prev</a>
                     </aside>                                    <!-- End of left side bar     -->
 </div>                                          <!-- End of left column       -->
 
@@ -415,7 +997,7 @@ Date          Issue        Author         Reason for Modification
 
                 <div class="rg-col rg-span1-5">                 <!-- Start of right column    -->
                     <aside class="aside-nav">                   <!-- Start of sidebar nav     -->
-                        <a class="xref" href="11-0300-scm.html#js--000000">Next</a>
+                        <a class="xref" href="11-0306-scm.html#js--000000">Next</a>
                     </aside>                                    <!-- End of right side bar    -->
                 </div>                                          <!-- End of right column      -->
             </div>                                              <!-- End of row content       -->

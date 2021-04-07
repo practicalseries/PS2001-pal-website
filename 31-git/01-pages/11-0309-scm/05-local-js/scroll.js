@@ -59,7 +59,7 @@ Date          Issue        Author         Reason for Modification
 -------------------------------------------------------------------------------
 07 Apr 2021   000.104      M. Gledhill    Scroll points added for page
 
-28 Feb 2021   000.000      M. Gledhill    File created
+09 Feb 2021   000.000      M. Gledhill    File created
                                           based on 98-00 scroll.js file
                                           Revison 000.101                                          
 ---------------------------------------------------------------------------- */
@@ -127,23 +127,25 @@ $(document).ready(function() {                  /* START OF PAGE READY FUNCTION 
        $('html, body').animate({scrollTop: $('#js--NN0100').offset().top -20}, 1000);
     });
    ------------------------------------------------------------------------- */
-    $('.js--sc-030100').click(function () {
-      $('html, body').animate({scrollTop: $('#js--030100').offset().top -20}, 1000);
-    });
-    $('.js--sc-030200').click(function () {
-      $('html, body').animate({scrollTop: $('#js--030200').offset().top -20}, 1000);
+   $('.js--sc-030900').click(function () {
+      $('html, body').animate({scrollTop: $('#js--030900').offset().top -20}, 1000);
    });
-   $('.js--sc-030300').click(function () {
-      $('html, body').animate({scrollTop: $('#js--030300').offset().top -20}, 1000);
+   $('.js--sc-031000').click(function () {
+      $('html, body').animate({scrollTop: $('#js--031000').offset().top -20}, 1000);
    });
-   $('.js--sc-030400').click(function () {
-      $('html, body').animate({scrollTop: $('#js--030400').offset().top -20}, 1000);
+   $('.js--sc-031001').click(function () {
+      $('html, body').animate({scrollTop: $('#js--031001').offset().top -20}, 1000);
    });
-   $('.js--sc-030500').click(function () {
-      $('html, body').animate({scrollTop: $('#js--030500').offset().top -20}, 1000);
+   $('.js--sc-031002').click(function () {
+      $('html, body').animate({scrollTop: $('#js--031002').offset().top -20}, 1000);
+   });
+   $('.js--sc-031100').click(function () {
+      $('html, body').animate({scrollTop: $('#js--031100').offset().top -20}, 1000);
+   });
+   $('.js--sc-031200').click(function () {
+      $('html, body').animate({scrollTop: $('#js--031200').offset().top -20}, 1000);
    });
 
-    
 
 /* ---------------------------------------------------------------------------
    SCROLL TO -  NON-STANDARD (INLINE) SECTIONS
@@ -153,7 +155,7 @@ $(document).ready(function() {                  /* START OF PAGE READY FUNCTION 
            $('html, body').animate({scrollTop: $('#js--nn0101a').offset().top -120}, 1000);
           });
    ------------------------------------------------------------------------- */
-   
+
 /* ---------------------------------------------------------------------------
    SCROLL TO -  CROSS REFERENCES
    For figures, the offset is set to .to -80 - e.g.
@@ -187,31 +189,89 @@ $(document).ready(function() {                  /* START OF PAGE READY FUNCTION 
     });
    ------------------------------------------------------------------------- */
 
-   $('.js--sc-f03-01').click(function () {
-      $('html, body').animate({scrollTop: $('#js--f03-01').offset().top -80}, 1000);
+   $('.js--sc-f03-24').click(function () {
+      $('html, body').animate({scrollTop: $('#js--f03-24').offset().top -80}, 1000);
    });
-   $('.js--sc-f03-02').click(function () {
-      $('html, body').animate({scrollTop: $('#js--f03-02').offset().top -80}, 1000);
+   $('.js--sc-f03-25').click(function () {
+      $('html, body').animate({scrollTop: $('#js--f03-25').offset().top -80}, 1000);
    });
-   $('.js--sc-f03-03').click(function () {
-      $('html, body').animate({scrollTop: $('#js--f03-03').offset().top -80}, 1000);
+   $('.js--sc-f03-26').click(function () {
+      $('html, body').animate({scrollTop: $('#js--f03-26').offset().top -80}, 1000);
    });
-   $('.js--sc-f03-04').click(function () {
-      $('html, body').animate({scrollTop: $('#js--f03-04').offset().top -80}, 1000);
+   $('.js--sc-f03-27').click(function () {
+      $('html, body').animate({scrollTop: $('#js--f03-27').offset().top -80}, 1000);
    });
-   $('.js--sc-f03-05').click(function () {
-      $('html, body').animate({scrollTop: $('#js--f03-05').offset().top -80}, 1000);
+   $('.js--sc-f03-28').click(function () {
+      $('html, body').animate({scrollTop: $('#js--f03-28').offset().top -80}, 1000);
    });
-   $('.js--sc-f03-06').click(function () {
-      $('html, body').animate({scrollTop: $('#js--f03-06').offset().top -80}, 1000);
+   $('.js--sc-f03-29').click(function () {
+      $('html, body').animate({scrollTop: $('#js--f03-29').offset().top -80}, 1000);
    });
-   $('.js--sc-f03-07').click(function () {
-      $('html, body').animate({scrollTop: $('#js--f03-07').offset().top -80}, 1000);
+   $('.js--sc-f03-30').click(function () {
+      $('html, body').animate({scrollTop: $('#js--f03-30').offset().top -80}, 1000);
    });
-   
-   $('.js--sc-t03-01').click(function () {
-      $('html, body').animate({scrollTop: $('#js--t03-01').offset().top -60}, 1000);
+   $('.js--sc-f03-31').click(function () {
+      $('html, body').animate({scrollTop: $('#js--f03-31').offset().top -80}, 1000);
    });
+   $('.js--sc-f03-32').click(function () {
+      $('html, body').animate({scrollTop: $('#js--f03-32').offset().top -80}, 1000);
+   });
+   $('.js--sc-f03-33').click(function () {
+      $('html, body').animate({scrollTop: $('#js--f03-33').offset().top -80}, 1000);
+   });
+   $('.js--sc-f03-34').click(function () {
+      $('html, body').animate({scrollTop: $('#js--f03-34').offset().top -80}, 1000);
+   });
+   $('.js--sc-f03-35').click(function () {
+      $('html, body').animate({scrollTop: $('#js--f03-35').offset().top -80}, 1000);
+   });
+   $('.js--sc-f03-36').click(function () {
+      $('html, body').animate({scrollTop: $('#js--f03-36').offset().top -80}, 1000);
+   });
+   $('.js--sc-f03-37').click(function () {
+      $('html, body').animate({scrollTop: $('#js--f03-37').offset().top -80}, 1000);
+   });
+   $('.js--sc-f03-38').click(function () {
+      $('html, body').animate({scrollTop: $('#js--f03-38').offset().top -80}, 1000);
+   });
+   $('.js--sc-f03-39').click(function () {
+      $('html, body').animate({scrollTop: $('#js--f03-39').offset().top -80}, 1000);
+   });
+   $('.js--sc-f03-40').click(function () {
+      $('html, body').animate({scrollTop: $('#js--f03-40').offset().top -80}, 1000);
+   });
+   $('.js--sc-f03-41').click(function () {
+      $('html, body').animate({scrollTop: $('#js--f03-41').offset().top -80}, 1000);
+   });
+   $('.js--sc-f03-42').click(function () {
+      $('html, body').animate({scrollTop: $('#js--f03-42').offset().top -80}, 1000);
+   });
+   $('.js--sc-f03-43').click(function () {
+      $('html, body').animate({scrollTop: $('#js--f03-43').offset().top -80}, 1000);
+   });
+   $('.js--sc-f03-44').click(function () {
+      $('html, body').animate({scrollTop: $('#js--f03-44').offset().top -80}, 1000);
+   });
+   $('.js--sc-f03-45').click(function () {
+      $('html, body').animate({scrollTop: $('#js--f03-45').offset().top -80}, 1000);
+   });
+   $('.js--sc-f03-46').click(function () {
+      $('html, body').animate({scrollTop: $('#js--f03-46').offset().top -80}, 1000);
+   });
+   $('.js--sc-f03-47').click(function () {
+      $('html, body').animate({scrollTop: $('#js--f03-47').offset().top -80}, 1000);
+   });
+   $('.js--sc-f03-48').click(function () {
+      $('html, body').animate({scrollTop: $('#js--f03-48').offset().top -80}, 1000);
+   });
+
+   $('.js--sc-t03-04').click(function () {
+      $('html, body').animate({scrollTop: $('#js--t03-04').offset().top -60}, 1000);
+   });
+
+    $('.js--sc-c03-01').click(function () {
+       $('html, body').animate({scrollTop: $('#js--c03-01').offset().top -120}, 1000);
+    });
 
 
 

@@ -132,14 +132,12 @@ Date          Issue        Author         Reason for Modification
 
 .pal-headline {
     font-family: "conc-c8-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     color: #1F2D41;
     font-size: 150%;
 }
 .pal-headline h1 {                          /* format h1 - MAIN TITLE */
     font-family: "conc-c2-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 107.5%;
     margin-top: 0.85rem;
@@ -147,7 +145,6 @@ Date          Issue        Author         Reason for Modification
 .pal-headline-ps {
     margin-top: 2.8rem;
         margin-bottom: 1rem;
-    -webkit-transform: scaleY(1.36);
     transform: scaleY(1.36)}
 .pal-headline-logo {
     max-width: 90%;
@@ -171,7 +168,6 @@ Date          Issue        Author         Reason for Modification
    /* width: 45%;*/
     text-align: left;
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 200%;
     color: #404030;
@@ -183,7 +179,6 @@ Date          Issue        Author         Reason for Modification
    /* width: 55%;*/
     text-align: left;
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 95%;
     color: #404030;
@@ -197,7 +192,6 @@ Date          Issue        Author         Reason for Modification
     text-align: left;
     text-transform: uppercase;
     font-family: "conc-t4-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 100%;
     color: #404030;
@@ -206,7 +200,6 @@ Date          Issue        Author         Reason for Modification
 .pal-blk-title {                            /* container for heading text */
     text-align: left;
     font-family: "conc-c4-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 73%;
     color: #404030;
@@ -220,7 +213,6 @@ Date          Issue        Author         Reason for Modification
     width: 50%;
     text-align: left;
     font-family: "conc-c3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 67%;
     color: #404030;
@@ -232,7 +224,6 @@ Date          Issue        Author         Reason for Modification
     width: 35%;
     text-align: right;
     font-family: "conc-c3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 67%;
     color: #404030;
@@ -241,14 +232,12 @@ Date          Issue        Author         Reason for Modification
 .pal-blk-ver-rd {                           /* container for large number */
     display: inline-block;
     float: left;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#C0504D), to(#953735));
     background-image: linear-gradient(#C0504D, #953735);
     border-radius: 1rem;
     text-shadow: 0px 2px #632523;
     width: 12%;
     text-align: center;
     font-family: "conc-t4-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 55%;
     color: #fff;
@@ -317,7 +306,6 @@ Date          Issue        Author         Reason for Modification
    ************************************************************************* */
 .table-rev {
     font-family: "trip-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     color: #aaa;
     font-size: 0.4rem;
@@ -370,7 +358,6 @@ Date          Issue        Author         Reason for Modification
     width: 20%;
     text-align: left;
     font-family: "conc-t2-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 500%;
     color: #404030;
@@ -381,7 +368,6 @@ Date          Issue        Author         Reason for Modification
     float: left;
     width: 80%;
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 190%;
     line-height: 110%;
@@ -470,7 +456,6 @@ Date          Issue        Author         Reason for Modification
     border-collapse: collapse;
     margin-bottom: 1rem;
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.8em;
     background-color: #fbfbfb;
@@ -478,7 +463,6 @@ Date          Issue        Author         Reason for Modification
 }
 .table-abs th {
     font-family: "conc-c3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.7rem;
     padding: 0.5rem 0.2rem 0.5rem 0.2rem;   /* top padding to separate from prev text */
@@ -490,7 +474,6 @@ Date          Issue        Author         Reason for Modification
 }
 .table-abs em {
     font-family: "conc-t3-b";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-style:normal;
 }
@@ -517,7 +500,6 @@ Date          Issue        Author         Reason for Modification
    ************************************************************************* */
 .table-tech {
     font-family: "conc-c3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.7rem;
     width: 84%;
@@ -528,7 +510,6 @@ Date          Issue        Author         Reason for Modification
 .table-tech th {
     font-family: "conc-c3-r";
     font-weight: normal;
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.75rem;
     color: #fff;
@@ -551,7 +532,6 @@ Date          Issue        Author         Reason for Modification
 
 .table-tech em {
     font-family: "conc-t4-b";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-style:normal;
 }
@@ -571,7 +551,6 @@ Date          Issue        Author         Reason for Modification
 
 .table-struc {
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.55rem;
     width:90%;
@@ -585,7 +564,6 @@ Date          Issue        Author         Reason for Modification
 }
 .table-struc th {
     font-family: "conc-t2-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     text-transform: uppercase;
     font-size: 0.55rem;
@@ -612,7 +590,6 @@ Date          Issue        Author         Reason for Modification
 
 .table-struc em {
     font-family: "conc-t3-b";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-style:normal;
 }
@@ -626,7 +603,6 @@ Date          Issue        Author         Reason for Modification
 .struc-title {
     font-family: "conc-t2-r";
     font-weight: bold;
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     text-transform: uppercase;
     font-size: 0.55rem;
@@ -643,7 +619,6 @@ Date          Issue        Author         Reason for Modification
 
 .table-tag {
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.55rem;
     width:90%;
@@ -655,7 +630,6 @@ Date          Issue        Author         Reason for Modification
 
 .table-tag th {
     font-family: "conc-t2-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     text-transform: uppercase;
     font-size: 0.55rem;
@@ -682,7 +656,6 @@ Date          Issue        Author         Reason for Modification
 
 .table-tag em {
     font-family: "conc-t3-b";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-style:normal;
 }
@@ -698,14 +671,12 @@ Date          Issue        Author         Reason for Modification
     margin-bottom: rem;
     margin-top: 2rem;
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.7rem;
 }
 .table-swrev th {
     font-family: "conc-c3-r";
     font-weight: normal;
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
 
     color: #7F7F7F;
@@ -771,7 +742,6 @@ Date          Issue        Author         Reason for Modification
 
 .code-header {                              /* code header (filename header) */
     font-family: "conc-c3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     text-transform: none;
 }
@@ -814,7 +784,6 @@ Date          Issue        Author         Reason for Modification
 .nav-next:link,                             /* navigation link options */
 .nav-next:visited{
     color: #cccccc;
-    -webkit-transition: background-color 0.2s, color 0.2s;
     transition: background-color 0.2s, color 0.2s;
 }
 .nav-prev:hover,                            /* navigation hover options */
@@ -920,7 +889,6 @@ Date          Issue        Author         Reason for Modification
     background-color: transparent;
     border: 1px solid #ccc;
     border-radius: 0.5rem;
-    -webkit-transition: all 0.2s;
     transition: all 0.2s;
 }
 .side-toc-head {
@@ -942,13 +910,12 @@ Date          Issue        Author         Reason for Modification
 
 .side-toc-line {
     display: none;
-    -webkit-column-count: 2;
-    column-count: 2;
+    -moz-column-count: 2;
+         column-count: 2;
     margin:0;
     padding-bottom: 0.5rem;                     /* padding to bottom of TOC box */
     list-style: none;
     font-family: "conc-t4-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.6rem;
 }
@@ -963,19 +930,18 @@ Date          Issue        Author         Reason for Modification
 }
 
 .side-toc-lev:link,                              /* format the link hover background */
-.side-toc-lev:visited { -webkit-transition: background-color 0.2s; transition: background-color 0.2s; }
+.side-toc-lev:visited { transition: background-color 0.2s; }
 .side-toc-lev:hover,
 .side-toc-lev:active  { background-color: #ddd; }
 
 .side-toc-home {font-family: "conc-t3-b";}
 .side-toc-home:link,                              /* format the link hover background */
-.side-toc-home:visited { -webkit-transition: background-color 0.2s; transition: background-color 0.2s; }
+.side-toc-home:visited { transition: background-color 0.2s; }
 .side-toc-home:hover,
 .side-toc-home:active  { background-color: #ddd; }
 
 .side-toc-lev1-chap {
     display: inline-block;
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     vertical-align: top;
     text-align: right;
@@ -986,7 +952,6 @@ Date          Issue        Author         Reason for Modification
 }
 .side-toc-lev1-sec {
     display: inline-block;
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     vertical-align: top;
     width: 1.5rem;                              /* Width of section number */
@@ -997,7 +962,6 @@ Date          Issue        Author         Reason for Modification
 }
 .side-toc-lev1-text {
     display: inline-block;
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     min-width: 10rem;                              /* Width of text number */
     padding-right: 0.2rem;
@@ -1065,7 +1029,6 @@ Date          Issue        Author         Reason for Modification
 .toc-lev1-numpal {                             /* container for TOC level 1 number */
     display: inline-block;
     font-family: "conc-c4-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     vertical-align: top;
     width: 15%;
@@ -1076,7 +1039,6 @@ Date          Issue        Author         Reason for Modification
 .toc-lev1-textpal {                            /* container for TOC level 1 text */
     display: inline-block;
     font-family: "conc-c4-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     width: 80%;
     margin-top: 0.5rem;
@@ -1086,7 +1048,6 @@ Date          Issue        Author         Reason for Modification
 .toc-lev2-numpal {                             /* container for TOC level 2 number */
     display: inline-block;
     font-family: "conc-t3-b";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.75rem;    vertical-align: top;
     width: 20%;
@@ -1097,7 +1058,6 @@ Date          Issue        Author         Reason for Modification
 .toc-lev2-textpal {                            /* container for TOC level 2 text */
     display: inline-block;
     font-family: "conc-t3-b";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.75rem;
     width: 70%;
@@ -1108,7 +1068,6 @@ Date          Issue        Author         Reason for Modification
 .toc-lev3-numpal {                             /* container for TOC level 3 number */
     display: inline-block;
     font-family: "conc-t4-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.75rem;    vertical-align: top;
     width: 20%;
@@ -1119,7 +1078,6 @@ Date          Issue        Author         Reason for Modification
 .toc-lev3-textpal {                            /* container for TOC level 3 text */
     display: inline-block;
     font-family: "conc-t4-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.75rem;
     width: 70%;
@@ -1177,7 +1135,7 @@ Date          Issue        Author         Reason for Modification
 
 .end-space {margin-top: 10rem}              /* SPACING - large end space */
 
-.fig-space {margin-top: 3rem}              /* SPACING - large end space */
+.fig-space {margin-top: 3rem}               /* SPACING - large end space */
 
 footer {min-height: 4rem;}                  /* add additional space to bottom of footer */
 
@@ -1187,7 +1145,6 @@ h5 {
     font-family: 'conc-c2-r';
     color: #aaa;
     font-weight:normal;
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 220%;
     margin-top: 0.5rem;
