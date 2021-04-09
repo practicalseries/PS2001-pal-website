@@ -1,0 +1,1262 @@
+<!DOCTYPE html>                                                                 <!-- HTML 5 file -->
+
+<!-- PRACTICALSERIES (c) 2021
+
+*******************************************************************************
+
+PRACTICALSERIES: Practical Series of Publications by Michael Gledhill
+                 Published in the United Kingdom
+
+                 Email: mg@practicalseries.com
+                 Web:   https://practicalseries.com
+
+******************************************************************************* -->
+<html lang="en">                                                                <!-- Declare language                              -->
+    <head>                                                                      <!-- Start of head section                         -->
+        <meta charset="utf-8">                                                  <!-- Use unicode char set (< 1024 char from SOF)   -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Make page follow browser width and reset zoom -->
+        <meta name="description" content="Practiacl series automation library, PAL, website control mechanism, scm, git revision numbering arrangement, workflow, master branch, development branches, commit tags">
+
+<!-- ==========================================================================
+
+
+
+*******************************************************************************
+Title :          PRACTICAL SERIES AUTOMATION LIBRARY (PAL)
+
+                 GIT - SOFTWARE CONTROL MECHANISM              11-0400-SCM.HTML
+*******************************************************************************
+DETAILS
+
+The Practical Series publication - Practical Series Automation Library (PAL)
+
+This website is part of the Practical Series Automation Library (PAL); a
+library of software modules and templates that have been made available for
+the Siemens Simatic S7-1500 range of controllers. The PAL is fully deployable
+software that is suitable for the control of most industrial process
+applications.
+
+*******************************************************************************
+MODIFICATION HISTORY:
+
+This is a complete summary of all software modifications.
+
+Date          Issue        Author         Reason for Modification
+*******************************************************************************
+08 Apr 2021   000.105      M. Gledhill    Released as a development prototype
+                                          Revision control active
+                                          RELEASE CHECKLIST       
+                                             Title                Y
+                                             Meta description     Y
+                                             Rev Badge (br red)   000.105 (dev)
+                                             Rev Data Page        000.105
+                                             Rev Data Code        None
+                                             Rev Data scroll      000.105
+                                             TOC softscroll       Y
+                                             Nav Prev chap        Y (0300)
+                                             Nav Prev sec         Y (0312)
+                                             Nav Next chap        Y (0500)
+                                             Nav Next sec         Y (0500)
+                                             Nav Top              Y
+                                             Nav Home             Y (00)
+                                             Last section Prev    Y (0312)
+                                             Last section Next    Y (0500)
+                                             Footer Top           Y
+                                             Footer Contacts &c.  Y (11/80)
+                                             All U-TX removed     *********** N ********************************************
+
+                                          File created
+                                          based on 98-00-blank.html
+*************************************************************************** -->
+
+
+<!-- **************************************************************************
+     FAVICON
+     ***********************************************************************-->
+        <!-- favicons all platforms --> <link rel="apple-touch-icon" sizes="180x180" href="../00-comres/11-resources/02-images/01-favicons/apple-touch-icon.png">
+                                        <link rel="icon" type="image/png"            href="../00-comres/11-resources/02-images/01-favicons/favicon-32x32.png" sizes="32x32">
+                                        <link rel="icon" type="image/png"            href="../00-comres/11-resources/02-images/01-favicons/favicon-16x16.png" sizes="16x16">
+                                        <link rel="mask-icon"                        href="../00-comres/11-resources/02-images/01-favicons/safari-pinned-tab.svg">
+                                        <meta name="theme-color" content="#ffffff">
+
+
+<!-- **************************************************************************
+     HEAD SCRIPT AREA
+     ***********************************************************************-->
+        <!-- jQuery Library -->         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Waypoints (sticky nav) --> <script src="../00-comres/21-global/05-js/jquery.waypoints.min.js"></script>
+        <!-- Hyphenator -->             <script src="../00-comres/21-global/05-js/hyphenator.js"></script>
+        <!-- Lightbox -->               <script src="../00-comres/21-global/05-js/lightbox.js"></script>
+        <!-- Prettify (main) -->        <script src="../00-comres/21-global/05-js/run_prettify.js?autoload=true&lang=css"></script>
+        <!-- MathJax -->                <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async></script>
+        <!-- PS main script -->         <script src="../00-comres/11-resources/05-js/script.js"></script>
+                                                                <!-- ▼▼▼▼ CHANGE FOLDER ▼▼▼▼  -->
+         <!-- PS local scroll script --> <script src="01-pages/11-0400-scm/05-local-js/scroll.js"></script>
+
+
+
+
+<!-- **************************************************************************
+     HEAD CSS LOAD
+     ***********************************************************************-->
+        <!-- Load PS fonts -->          <link rel="stylesheet" type="text/css" href="../00-comres/21-global/03-fonts/ps-fonts.css">
+        <!-- Load TIA fonts -->         <link rel="stylesheet" type="text/css" href="../00-comres/21-global/03-fonts/tia-fonts.css">
+        <!-- Normalise -->              <link rel="stylesheet" type="text/css" href="../00-comres//21-global/01-css/normalise.css">
+        <!-- Lightbox styles -->        <link rel="stylesheet" type="text/css" href="../00-comres/21-global/01-css/lightbox.css">
+        <!-- Ionicons -->               <link rel="stylesheet" type="text/css" href="../00-comres/21-global/01-css/ionicons.min.css">
+        <!-- PS grid system -->         <link rel="stylesheet" type="text/css" href="../00-comres/11-resources/01-css/grid.css">
+        <!-- PS main styles -->         <link rel="stylesheet" type="text/css" href="../00-comres/11-resources/01-css/style.css">
+        <!-- PAL styles -->             <link rel="stylesheet" type="text/css" href="../00-comres/11-resources/01-css/style-pal.css">
+                                                                <!-- ▼▼▼▼ CHANGE FOLDER ▼▼▼▼  -->
+        <!-- Code frag highlights      <link rel="stylesheet" type="text/css" href="01-pages/11-0400-scm/01-local-css/codelines.css">-->
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      GOOGLE ANALYTICS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                        <script>
+                                          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                                          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                                          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                                          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                                          ga('create', 'UA-87335633-1', 'auto');
+                                          ga('set', 'anonymizeIp', true);           // anonymise ip address
+                                          ga('send', 'pageview');
+                                        </script>
+
+
+<!-- **************************************************************************
+     TITLE
+     ***********************************************************************-->
+        <title>PAL | SCM Revision Numbering (website)</title>
+    </head>
+
+    <body>
+
+
+<!-- ************************************************************************** [WP HEADER]
+     HEADER (COVER & TABLE OF CONTENTS)
+     ***********************************************************************-->
+
+        <header id="js--000000">
+
+<!-- ************************************************************************** [WP TOPNAV]
+     TOP NAVIGATION (ABOVE CONTENTS LIST)
+     ***********************************************************************-->
+
+            <nav>                                               <!-- Start of top nav bar     -->
+                <div class="top-nav">                           <!-- Start of top nav row     -->
+                    <div class="rg-row">                        <!-- Start of nav button row  -->
+                        <!-- Button 01 - Previous Section -->
+                        <a class="nav-wide" href="11-0309-scm.html#js--031200"><span class="top-nav-icon">l</span><span class="top-nav-text">Prev. section</span></a>
+                        <!-- Button 02 - Previous Chapter -->
+                        <a class="nav-wide" href="11-0300-scm.html#js--000000"><span class="top-nav-icon">u</span><span class="top-nav-text">Prev. chapter</span></a>
+                        <!-- Button 03 - Home wide (hidden when fixed nav activates) -->
+                        <a class="nav-wide nav-home" href="11-00-scm.html#js--000000"><span class="top-nav-text">Home</span><span class="top-nav-icon">h</span></a>
+                        <!-- Button 03a - Top narrow (hidden until fixed nav activates) -->
+                        <a class="nav-narrow js--sc-000000" href="#"><span class="top-nav-icon">t</span><span class="top-nav-text">Top</span></a>
+                        <!-- Button 03b - Home narrow (hidden until fixed nav activates) -->
+                        <a class="nav-narrow" href="11-00-scm.html#js--000000"><span class="top-nav-text">Home</span><span class="top-nav-icon">h</span></a>
+                        <!-- Button 04 - Next Chapter -->
+                        <a class="nav-wide utx" href="11-0500-scm.html#js--000000"><span class="top-nav-text">Next chapter</span><span class="top-nav-icon">d</span></a>
+                        <!-- Button 05 - Next section -->
+                        <a class="nav-wide utx" href="11-0500-scm.html#js--000000"><span class="top-nav-text">Next section</span><span class="top-nav-icon">r</span></a>
+                    </div>                                      <!-- End of nav button row    -->
+                </div>                                          <!-- End of top nav row       -->
+            </nav>                                              <!-- End of top nav bar       -->
+<!-- ========================================================================== [WP END]      -->
+
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      HEADLINE - LEFT SIDEBAR (LOGO)
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+             <div class="rg-row pal-title-row">
+                <div class="rg-col rg-span1-5">
+                    <aside class="aside-left aside-left-rev">
+                         <a href="index.html">
+<!-- Logo image -->         <img class="pal-headline-logo" src="../00-comres/11-resources/02-images/pal-logo-github.svg" alt="PAL Logo">
+                        </a>
+                    </aside>
+
+                </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      HEADLINE - DOCUMENT TITLE
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                <div class="rg-col rg-span3-5">
+                    <div class="pal-headline">
+                        <p class="pal-headline-ps">Practical Series Automation Library</p>
+<!-- Doc Title Sml      <h2>Blank Webpage Template</h2>-->
+<!-- Doc Title Lrg -->  <h2><span style="font-size: 150%">A Software Control Mechanism</span></h2> 
+
+                    </div>
+                </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      HEADLINE - RIGHT SIDEBAR (Page revision information)
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                <div class="rg-col rg-span1-5">
+                    <aside class="aside-right-rev">
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - REVISION TABLE
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class="table-rev">
+<!-- Title row -->      <tr>
+                            <td class="leading"></td>
+                            <td class="table-right"></td>
+                            <td colspan="2" class="table-left" style="border-bottom: 1px solid #ccc">Page Revision Data</td>
+                        </tr>
+<!-- Spacing row -->    <tr class="no-border">
+                            <td class="leading"></td>
+                            <td colspan="3" class="table-left"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">Page:</td>
+                            <td class="table-right" style="width: 30%" id="rev-doc">000.105</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">scroll.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-scroll"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em; border-bottom: 1px solid #ccc"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">codelines.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-codelines"></td>
+                        </tr>
+<!-- Title row -->      <tr>
+                            <td class="leading" style="height: 2em"></td>
+                            <td class="table-right"></td>
+                            <td colspan="2" class="table-left" style="border-bottom: 1px solid #ccc; vertical-align: bottom">Common resources</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">script.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-script"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">Style.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-style"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">style-pal.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-style-pal"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">grid.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-grid"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">ps-fonts.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-ps-fonts"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">tia-fonts.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-tia-fonts"></td>
+                        </tr>
+<!-- Title row -->      <tr>
+                            <td class="leading" style="height: 2em"></td>
+                            <td class="table-right"></td>
+                            <td colspan="2" class="table-left" style="border-bottom: 1px solid #ccc; vertical-align: bottom">Global resources</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">normalise.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-normalise"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">lightbox.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-lightbox"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">lightbox.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-lbjs"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">waypoints.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-waypoints"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">hyphenator.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-hyphenator"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">ionicons.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-ionicons"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">prettify.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-prettify"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">prettify.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-run-prettify"></td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                    </aside>
+                </div>
+            </div>
+<!-- ************************************************************************** [WP TITLE]
+     TITLE BAR (Section number and text)
+     ***********************************************************************-->
+
+            <div class="rg-row">                                <!-- Start of title row       -->
+                <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
+                    <aside class="rev-badge-side">              <!-- BUILD BADGE              -->
+                        <img src="https://img.shields.io/badge/dev-000.105-BF504D.svg" alt="Build">
+                    </aside>
+                </div>                                          <!-- End of Left column       -->
+                <div class="rg-col rg-span3-5">                 <!-- Start of title           -->
+                   <div class="pal-overline-index"></div>       <!-- Overline bar             -->
+<!-- Section     <div class="title-num-box"><p>98</p></div>
+                    <div class="title-text-box"><h1><span class="title-small-num">01</span>Blank page</h1></div> -->
+<!-- Contents -->   <div class="title-contents"><h1>Contents</h1></div> 
+                </div>                                          <!-- End of title             -->
+                <div class="rg-col rg-span1-5">                 <!-- Start of right column    -->
+                    <aside class="aside-right-rev">             <!-- Start of right side bar  -->
+                    </aside>                                    <!-- End of right side bar    -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of title row         -->
+<!-- ========================================================================== [WP END]      -->
+
+
+<!-- ************************************************************************** [WP TOC]
+     TABLE OF CONTENTS
+     ***********************************************************************-->
+
+            <div class="rg-row">                                <!-- Start of TOC section     -->
+                <div class="rg-col rg-span1-5"></div>           <!-- Left column (not used)   -->
+                <div class="rg-col rg-span3-5">                 <!-- Start of TOC column      -->
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    TOC - Section 4
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ul class="toc-line">
+<!-- Level 1 -->        <li><a href="index.html">
+                            <div class="toc-lev"><span class="toc-lev1-num"></span><span class="toc-lev1-text">Git documents main page</span></div></a>
+                        </li>
+                    </ul>
+
+                    <ul class="toc-line">
+<!-- Level 1 -->        <li><a href="11-00-scm.html">
+                            <div class="toc-lev"><span class="toc-lev1-num"></span><span class="toc-lev1-text">SCM main page</span></div></a>
+                        </li>
+                    </ul>
+                        
+                    <ul class="toc-line">
+<!-- Level 1 -->        <li><a class='js--sc-040000' href='11-0400-scm.html#js--040000'>
+                                <div class='toc-lev'><span class='toc-lev1-num'>4</span><span class='toc-lev1-text'>The website revision numbering mechanism</span></div></a>
+                        </li>                        
+                    </ul>
+
+                    <ul class="toc-list">
+<!-- Level 2 -->        <li><a class='js--sc-040100' href='11-0400-scm.html#js--040100'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>4.1</span><span class='toc-lev2-text'>Workflow arrangements</span></div></a>
+                        </li>
+<!-- Level 2 -->        <li><a class='js--sc-040200' href='11-0400-scm.html#js--040200'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>4.2</span><span class='toc-lev2-text'>Master branch revision states</span></div></a>
+                        </li>
+<!-- Level 2 -->        <li><a class='js--sc-040300' href='11-0400-scm.html#js--040300'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>4.3</span><span class='toc-lev2-text'>Development branch names</span></div></a>
+                        </li>
+<!-- Level 2 -->        <li><a class='js--sc-040400' href='11-0400-scm.html#js--040400'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>4.4</span><span class='toc-lev2-text'>Development branch commit tags</span></div></a>
+                        </li>
+<!-- Level 2 -->        <li><a class='js--sc-040500' href='11-0400-scm.html#js--040500'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>4.5</span><span class='toc-lev2-text'>Merging of development branches</span></div></a>
+                        </li>
+<!-- Level 2 -->        <li><a class='js--sc-040600' href='11-0400-scm.html#js--040600'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>4.6</span><span class='toc-lev2-text'>Individual page revision numbers</span></div></a>
+                        </li>
+<!-- Level 2 -->        <li><a class='js--sc-040601' href='11-0400-scm.html#js--040601'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>4.6.1</span><span class='toc-lev2-text'>Revision numbers within page files</span></div></a>
+                        </li>
+
+                    </ul>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                </div>                                          <!-- End of TOC column        -->
+                <div class="rg-col rg-span1-5"></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of TOC section       -->            
+            
+<!-- ========================================================================== [WP END]      -->
+
+
+        </header>                                               <!-- End of header            -->
+<!-- ========================================================================== [WP END]      -->
+
+
+
+<!-- ************************************************************************** [WP FIXEDNAV]
+     FIXED NAVIGATION BAR CHANGEOVER POINT
+     ***********************************************************************-->
+        <div id="js--fixed-nav"></div>                          <!-- fixed navigation point   -->
+<!-- ========================================================================== [WP END]      -->
+
+
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - 4 - The website revision numbering mechanism
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--040000'>           <!-- Start of section         -->
+            <div class='rg-row title-row'>                      <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5 title-centre'>    <!-- Start of title           -->
+                    <div class='title-num-box'><p>4</p></div>
+                    <div class='title-text-box'><h1><span class='title-small-num'>4</span>The website revision numbering mechanism</h1></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>The revision numbering mechanism and version control systems discussed in the previous sections was associated with the PAL software developed for the Siemens Controllers using TIA Portal and stored in the <a class='xref' href='https://github.com/practicalseries/PS2001-pal-software'><span class='code'>PS2001-pal-software</span></a> GitHub repository (see <a class='hlink utx' href='11-0500-scm.html#js--050200'>Section&nbsp;5.2</a> for details of the software and associated GitHub repository).</p>
+
+                    <p class='hyp'>In addition to this repository, there is a second repository <a class='xref' href='https://github.com/practicalseries/PS2001-pal-website'><span class='code'>PS2001-pal-website</span></a> that stores the website pages that are published in association with the PAL software (see <a class='hlink utx' href='11-0500-scm.html#js--050300'>Section&nbsp;5.3</a> for details of the website and associated GitHub repository).</p>
+
+                    <p class='hyp'>This website is also developed using the same revision numbering mechanism detailed in the previous section, there are however, some minor differences, particularly in the naming of branches. These differences are discussed in the following sections.</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - 4.1 - Workflow arrangements
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--040100'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-overline'></div>      <!-- Overline                 -->
+                 <div class='sub-title-num-box'><h2>4.1</h2></div>
+                 <div class='sub-title-text-box'><h2>Workflow arrangements</h2></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>The website Git repository, like the software Git repository consists of a single main, <span class='git-cmd'>master</span> branch and various development branches.</p>
+
+                    <p class='hyp'>The <span class='git-cmd'>master</span> branch (after some initial development work to establish the repository) will, generally, only contain released web pages </p>
+
+                    <p class='hyp'>Released web pages are pages that have been built, tested and are complete and ready for live use on the website server.</p>
+
+                    <p class='hyp'>As with the PAL software, development work can take place at any time and will always take place on a separate development branch and each development branch will spur from some definite commit point on the <span class='git-cmd'>master</span> branch.</p>
+
+                    <p class='hyp'>With the website, each development branch has a very limited scope, usually the development of a single web page or series of webpages that are linked together (a section of the website for example). The branch may also be concerned with developing a background element of the website such as a particular JavaScript, jQuery or CSS file.</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - 4.2 - Master branch revision states
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--040200'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-overline'></div>      <!-- Overline                 -->
+                 <div class='sub-title-num-box'><h2>4.2</h2></div>
+                 <div class='sub-title-text-box'><h2>Master branch revision states</h2></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>The website development progresses through various different states along the master branch in the same way as the PAL software (see <a class='hlink' href='11-0300-scm.html#js--030200'>&sect;&nbsp;3.2</a>), where each state is a primary commit point. There are however, fewer states that can be applied to the website:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class='table-clean' id='js--t04-01'>
+<!-- Header row -->     <tr>
+                            <th class='leading'></th>
+                            <th class='table-cent' style='width: 7%'>State</th>
+                            <th class='table-cent' style='width: 17%'>Example</th>
+                            <th class='table-cent' style='width: 17%'>Meaning</th>
+                            <th class='table-left' style='width: 59%'>Description</th>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 7em'></div></td>
+                            <td class='table-cent'><span class='code'>D</span></td>
+                            <td class='table-cent'><span class='code'>D0126</span></td>
+                            <td class='table-cent'>Development</td>
+                            <td class='table-left'><p>The website as a whole is in the build phase and has not been fully tested. </p>
+                                Certain web pages may have been developed and tested and released for use. This is on a page-by-page basis</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 7em'></div></td>
+                            <td class='table-cent'><span class='code'>P</span></td>
+                            <td class='table-cent'><span class='code'>P0001</span></td>
+                            <td class='table-cent'>Published</td>
+                            <td class='table-left'>The website is published for testing. All web pages within the software are present, and the site as a whole is being tested on a live website for consistency checks, final proof reading and link integrity.</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 7em'></div></td>
+                            <td class='table-cent'><span class='code'>R</span></td>
+                            <td class='table-cent'><span class='code'>R0001</span></td>
+                            <td class='table-cent'>Released</td>
+                            <td class='table-left'>The website is released for use/td>
+                        </tr>
+
+<!-- Caption -->        <tr class='no-border'>
+                            <td class='leading'></td>
+                            <td colspan='4' class='table-caption'>Table 4.1 &emsp; master branch commit point tags</td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The <span class='git-cmd'>master</span> branch commit tags have the same format as the PAL software:</p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code'>SNNNN</span></p>
+
+                    <p class='hyp'>Where S is the state letter (<a class='xref js--sc-t04-01' href='#'>Table&nbsp;4.1</a>):</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      UNNUMBERED LIST
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ul class='list-no-num'>                    <!-- Start of unnumbered list -->
+                        <li><p class='hyp'><span class='code'>D</span> &mdash; Development</p></li>
+
+                        <li><p class='hyp'><span class='code'>P</span> &mdash; Published</p></li>
+
+                        <li><p class='hyp'><span class='code'>R</span> &mdash; Released</p></li>
+                    </ul>                                       <!-- End of unnumbered list   -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+                    <p class='hyp'><span class='code'>NNNN</span> is a number; this starts at <span class='code'>0001</span> (there is a special case for the first commit to the repository, this has value <span class='code'>0000</span>) for each particular state and is incremented by one for each subsequent issue. </p>
+
+                    <p class='hyp'>E.g. <span class='code'>D0001 &rarr; D0002 &rarr; D0003 &rarr; P0001 &rarr; R0001 &rarr; R0002</span> &amp;c.</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - 4.3 - Development branch names
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--040300'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-overline'></div>      <!-- Overline                 -->
+                 <div class='sub-title-num-box'><h2>4.3</h2></div>
+                 <div class='sub-title-text-box'><h2>Development branch names</h2></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>The main difference between the website workflow and the PAL software workflow is in the naming of development branches.</p>
+
+                    <p class='hyp'>The website development like the PAL software development branches will always diverge from the latest primary commit point on the <span class='git-cmd'>master</span> branch. The difference is the name, the website development branch name is in the format:</p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code'>SNNNNb-WW-PageName</span></p>
+
+                    <p class='hyp'>Where <span class='code'>SNNNN</span> is the commit point tag on the <span class='git-cmd'>master</span> branch from which the development branch diverges and b is the ordinal character identifying multiple branches (this is identical to the PAL software in <a class='hlink' href='11-0300-scm.html#js--030300'>&sect;&nbsp;3.3</a>).</p>
+
+                    <p class='hyp'>The remainder of the branch name refers to the section of the website and the web page being developed. <span class='code'>WW</span> refers to the number main folder of the website (see <a class='hlink utx' href='11-0500-scm.html#js--050302'>&sect;&nbsp;5.3.2</a>):</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class='table-clean' id='js--t04-02'>
+<!-- Header row -->     <tr>
+                            <th class='leading'></th>
+                            <th class='table-left' style='width: 20%'>Folder</th>
+                            <th class='table-left' style='width: 80%'>Purpose</th>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>00-comres</span></td>
+                            <td class='table-left'>Common resources</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading' style='height: 3em'></td>
+                            <td class='table-left'><span class='code'>01-admin</span></td>
+                            <td class='table-left'>Various administration pages </td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>11-web</span></td>
+                            <td class='table-left'>The main website containing the  PAL user guides and information</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>21-project</span></td>
+                            <td class='table-left'>Holds all the Project documentation (validation documents)</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>31-git</span></td>
+                            <td class='table-left'>Contains information used by the GitHub repositories</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>81-binary</span></td>
+                            <td class='table-left'>Contains binary files (the TIA Project archive files &amp;c.)</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>91-userdocs</span></td>
+                            <td class='table-left'>The online version of TIA Project the User Documentation files</td>
+                        </tr>
+
+<!-- Caption -->        <tr class='no-border'>
+                            <td class='leading'></td>
+                            <td colspan='3' class='table-caption'>Table 4.2 &emsp; Website folder numbering</td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                    <p class='hyp'>I.e. <span class='code'>WW</span> will be <span class='code'>00</span>, <span class='code'>01</span>, <span class='code'>11</span>, <span class='code'>21</span>, <span class='code'>31</span>, <span class='code'>81</span> or <span class='code'>91</span>.</p>
+
+                    <p class='hyp'>The <span class='code'>PageName</span> is the name of the HTML file for the particular page, an example being:</p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code'>11-00-scm.html</span></p>
+
+                    <p class='hyp'>This file (<span class='code'>11-00-scm.html</span>) is part of the <span class='code'>31-git</span> folder of the website, hence the <span class='code'>WW-PageName</span> part of the branch name would be (don&rsquo;t include the file extension):</p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code'>31-11-00-scm</span></p>
+
+                    <p class='hyp'>The <span class='code'>PageName</span> consists of a pair of number (<span class='code'>11-00</span> in the above example) followed by a short description indicating the purpose of the web page (<span class='code'>scm</span> in the example). The number pair is always in the format <span class='code'>cc-ss</span> where <span class='code'>cc</span> is the <em>&ldquo;chapter&rdquo;</em> number of the web page and <span class='code'>ss</span> is the <em>&ldquo;section&rdquo;</em>. The web pages are assigned chapter and section numbers like a document (e.g. this part of this document is chapter 4, section 3; its web page equivalent would thus be <span class='code'>04-03</span>).</p>
+
+                    <p class='hyp'>The development branch is generally associated with a particular web page, and is named accordingly, however, the development branch will include all the files associated with, and required by that web page (i.e. the development branch will include the various CSS, JavaScript, jQuery, image files and binary files needed for the web page to work properly).</p>
+
+                    <p class='hyp'>The index.html file associated with each of the main folders does not have any leading numbers in its file name (it is just called <span class='code'>index.html</span>), however, for the sake of consistency, such index files are given the numbe <span class='code'>00-00</span> in the branch name. E.g.:</p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code'>31-00-00-index</span></p>
+
+                    <p class='hyp'>Where the development branch is associated with a section (multiple pages) of the website, the branch name will use the chapter number only (just the <span class='code'>cc</span> part), for example, if a branch were developing the introduction pages of the website in the <span class='code'>11</span> web folder, its branch name would be:</p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code'>11-01-intro</span></p>
+
+                    <p class='hyp'>Where the development branch is for a particular file, rather than a web page (this is usually where a common file that affects the whole website is being change or created) then the branch name will have the format:</p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code'>SNNNNb-00-FileName</span></p>
+
+                    <p class='hyp'>The common files are always stored in the <span class='code'>00-comres</span> folder (hence <span class='code'>WW</span> will always be <span class='code'>00</span>), the file name is the name of the file being modified (without the extension) for example, if the main <span class='code'>style.css</span> file were being modified, the branch name would be:</p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code'>SNNNNb-00-style</span></p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - 4.4 - Development branch commit tags
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--040400'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-overline'></div>      <!-- Overline                 -->
+                 <div class='sub-title-num-box'><h2>4.4</h2></div>
+                 <div class='sub-title-text-box'><h2>Development branch commit tags</h2></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>Development branch commit tags (secondary commits) are identical to those of the software development branches (<a class='hlink' href='11-0300-scm.html#js--030400'>&sect;&nbsp;3.4</a>); where each secondary commit is tagged and the tag has the format:</p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code'>SNNNNb-nnn.amm</span></p>
+
+                    <p class='hyp'>Where <span class='code'>SNNNNb</span> is the first part of the branch name (before the dash), see <a class='xref js--sc-040300' href='#'>&sect;&nbsp;4.3</a>. This is the originating <span class='git-cmd'>master</span> branch commit point and the branch ordinal character.</p>
+
+                    <p class='hyp'>The remaining characters (<span class='code'>nnn.amm</span>) are all numerical and reflect the current revision of the web page (or file) under development, the format of this revision number is similar to that of the PAL software and is explained in <a class='hlink' href='11-0306-scm.html#js--030600'>&sect;&nbsp;3.6</a>.</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - 4.5 - Merging of development branches
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--040500'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-overline'></div>      <!-- Overline                 -->
+                 <div class='sub-title-num-box'><h2>4.5</h2></div>
+                 <div class='sub-title-text-box'><h2>Merging of development branches</h2></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>The merging of development branches is generally a simplified arrangement of that used for the PAL software (see <a class='hlink' href='11-0300-scm.html#js--030400'>&sect;&nbsp;3.4</a> and <a class='hlink' href='11-0300-scm.html#js--030500'>&sect;&nbsp;3.5</a>).</p>
+
+                    <p class='hyp'>Development branches within the website are usually mutually exclusive and have no impact on each other (this is different to the PAL software where multiple branches usually have some degree of commonality, particularly with OB&nbsp;1). This exclusiveness means that multiple branches can be merged without any conflict and the approach taken in <a class='hlink' href='11-0300-scm.html#js--030500'>&sect;&nbsp;3.5</a> for merging a single development branch or the first of multiple development branches can be adopted for all development branches within the website repository.</p>
+
+                    <p class='hyp'>Exceptions exist where common table of contents (TOC) are being modified (and possibly where two simultaneous branches exist to modify a common file).</p>
+
+                    <p class='hyp'>To minimise such conflicts, it is generally better to manage the workflow such that simultaneous (parallel) branches do not target common resources. Better to manage common files and common TOCs in a single development branch.</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - 4.6 - Individual page and file revision numbers
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--040600'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-overline'></div>      <!-- Overline                 -->
+                 <div class='sub-title-num-box'><h2>4.6</h2></div>
+                 <div class='sub-title-text-box'><h2>Individual page and file revision numbers</h2></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>All the files associated with a web page (HTML, CSS, JavaScript and jQuery) have their own revision number. The current file revisions for all components of a web page are displayed at the top right of all web pages:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f04-01'>
+                            <a href='01-pages/11-0400-scm/02-images/fig-04-01-min.png' data-lightbox='fig-set' data-title='Figure 4.1 - Web page component revisions'>
+                                <img src='01-pages/11-0400-scm/02-images/fig-04-01-min.png' alt='Figure 4.1 - Web page component revisions'>
+                            </a>
+                            <figcaption>Figure 4.1 &emsp; Web page component revisions</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>This can be seen in more detail below:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f04-02'>
+                            <a href='01-pages/11-0400-scm/02-images/fig-04-02-min.png' data-lightbox='fig-set' data-title='Figure 4.2 - Web page component revisions (detail)'>
+                                <img style="max-width: 215px;" src='01-pages/11-0400-scm/02-images/fig-04-02-min.png' alt='Figure 4.2 - Web page component revisions (detail)'>
+                            </a>
+                            <figcaption>Figure 4.2 &emsp; Web page component revisions (detail)</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The Page revision data, point <span class='index'>1</span>, shows the current revision of all the files associated with the particular web page. </p>
+
+                    <p class='hyp'>The Common resources, point <span class='index'>2</span>, shows the revision of the standard files that are common to all web pages.</p>
+
+                    <p class='hyp'>Finally, the Global resources, point <span class='index'>3</span>, shows the revision of all third party files (these are normalised revision generated within the project, i.e. project revision <span class='code'>001</span> of <span class='code'>normailse.css</span> reflects the actual file build of <span class='code'>8.0.1</span>, the association between the normalised project build and the actual third party build is listed in the revision table at the start of each file).</p>
+
+                    <p class='hyp'>The numbering of the webpage (or file) revision <span class='code'>nnn.amm</span> is an incremental numbering system. In this system <span class='code'>nnn</span> reflects the current version of the software; typically, the first properly released software will be <span class='code'>001</span>. Previous development versions will be <span class='code'>000</span>.</p>
+
+                    <p class='hyp'>The numbers after the decimal point (<span class='code'>amm</span>) reflect development and test modification to the current revision (for software modifications), in this system a reflects the current status of the software as follows:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class='table-clean' id='js--t04-03'>
+<!-- Header row -->     <tr>
+                            <th class='leading'></th>
+                            <th class='table-cent' style='width: 25%'>First digit (<span class='code' style="text-transform:lowercase">a</span>)</th>
+                            <th class='table-cent' style='width: 20%'>Meaning</th>
+                            <th class='table-left' style='width: 55%'>Description</th>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-cent'><span class='code'>0</span></td>
+                            <td class='table-cent'>Released<br><span class='code'>mm</span> will be <span class='code'>00</span></td>
+                            <td class='table-left'>Page/file is released at version <span class='code'>nnn</span> (i.e. <span class='code'>nnn.000</span>)</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-cent'><span class='code'>1-7</span></td>
+                            <td class='table-cent'>Development</td>
+                            <td class='table-left'>Page/file is under development and has not been tested</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-cent'><span class='code'>8</span></td>
+                            <td class='table-cent'>Publication</td>
+                            <td class='table-left'>Page/file has been published (on the webserver) for live testing/td>
+                        </tr>
+<!-- Caption -->        <tr class='no-border'>
+                            <td class='leading'></td>
+                            <td colspan='3' class='table-caption'>Table 4.3 &emsp; Website revision number (first digit)</td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+
+                    <p class='hyp'>The remaining numbers (<span class='code'>mm</span>), are incremental build numbers for the current revision (this allows development tracking).</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      NOTE - HANGING INDENT
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ul class='note'>                           <!-- Start of note            -->
+                        <li>A release version of a page or file will have revision <span class='code'>001.000</span>, <span class='code'>002.000</span>,<span class='code'>003.000</span> &amp;c. I.e. the numbers after the decimal point are all zero. The first development of the software at release <span class='code'>003</span> would have revision <span class='code'>003.101</span>.</li>
+                    </ul>                                       <!-- End of note              -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The Global resources revisions, point <span class='index'>3</span>, in <a class='xref js--sc-f04-02' href='#'>Figure&nbsp;4.2</a> only have the first three digits (<span class='code'>nnn</span>), third party software is always at a released version.</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SUBSECTION]
+     SUBSECTION - 4.6.1 - Recording revision numbers within web page files
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--040601'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-num-box'><h3>4.6.1</h3></div>
+                    <div class='sub-title-text-box'><h3>Recording revision numbers within web page files</h3></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>All HTML, CSS, JavaScript and jQuery files have a modification history at the start of the file; an example for <span class='code'>style.css</span> is shown below:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f04-03'>
+                            <a href='01-pages/11-0400-scm/02-images/fig-04-03-min.png' data-lightbox='fig-set' data-title='Figure 4.3 - Modification history shown in file header'>
+                                <img src='01-pages/11-0400-scm/02-images/fig-04-03-min.png' alt='Figure 4.3 - Modification history shown in file header'>
+                            </a>
+                            <figcaption>Figure 4.3 &emsp; Modification history shown in file header</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>In addition, the revision information is also hardcoded into each file:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f04-04'>
+                            <a href='01-pages/11-0400-scm/02-images/fig-04-04-min.png' data-lightbox='fig-set' data-title='Figure 4.4 - Hardcoded revision information (for style.css)'>
+                                <img src='01-pages/11-0400-scm/02-images/fig-04-04-min.png' alt='Figure 4.4 - Hardcoded revision information (for style.css)'>
+                            </a>
+                            <figcaption>Figure 4.4 &emsp; Hardcoded revision information (for style.css)</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The various revisions for each file type are displayed by the HTML as multiple rows in a revision table, the following shows the format of each entry:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     CODE FRAGMENT - STANDARD BLOCK WITH HEADER & CAPTION (HTML)
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class="code-extract">
+<!-- Code file name --> <div class="code-header">Web page .html file</div>
+                        <div class="code-area">
+
+<!-- Code extraxt -->       <pre class="prettyprint lang-html" id="js--c04-01" style="font-size: 0.53em;">&lt;!--&nbsp;&nbsp;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TABLE&nbsp;-&nbsp;REVISION&nbsp;TABLE
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;table&nbsp;class=&quot;table-rev&quot;&gt;
+&lt;!--&nbsp;Data&nbsp;row&nbsp;--&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&nbsp;class=&quot;leading&quot;&nbsp;style=&quot;height:&nbsp;1em&quot;&gt;&lt;/td&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&nbsp;class=&quot;table-cent&quot;&nbsp;style=&quot;width:&nbsp;30%&quot;&gt;&lt;/td&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&nbsp;class=&quot;table-left&quot;&nbsp;style=&quot;width:&nbsp;40%&quot;&gt;<span class='sans-b'>NAME</span>:&lt;/td&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&nbsp;class=&quot;table-right&quot;&nbsp;style=&quot;width:&nbsp;30%&quot;&nbsp;id=&quot;<span class='sans-b'>ID_NAME</span>&quot;&gt;&lt;/td&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;
+</pre>
+
+                        </div>
+<!-- Caption -->        <div class="code-caption">Code 4.1 &emsp; Revision data displayed on a web page</div>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+                    <p class='hyp'>The <span class='sans-b'>NAME</span> and <span class='sans-b'>ID_NAME</span> are as follows:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class='table-clean' id='js--t04-04'>
+<!-- Header row -->     <tr>
+                            <th class='leading'></th>
+                            <th class='table-left' style='width: 30%'>NAME</th>
+                            <th class='table-left' style='width: 30%'>ID_NAME</th>
+                            <th class='table-left' style='width: 40%'>Description</th>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>Page</span></td>
+                            <td class='table-left'><span class='code'>rev-doc</span></td>
+                            <td class='table-left'>Hardcoded revision of the web page</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>scroll.js</span></td>
+                            <td class='table-left'><span class='code'>rev-scroll</span></td>
+                            <td rowspan="14" class='table-left'  style="vertical-align: middle;"><em>ID_NAME</em> is replaced by the revision number in <em>NAME</em> file</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>codelines.css</span></td>
+                            <td class='table-left'><span class='code'>rev-codelines</span></td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>script.js</span></td>
+                            <td class='table-left'><span class='code'>rev-script</span></td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>style.css</span></td>
+                            <td class='table-left'><span class='code'>rev-style</span></td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>style-pal.css</span></td>
+                            <td class='table-left'><span class='code'>rev-style-pal</span></td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>grid.css</span></td>
+                            <td class='table-left'><span class='code'>rev-grid</span></td>
+                         </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>ps-fonts.css</span></td>
+                            <td class='table-left'><span class='code'>rev-ps-fonts</span></td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>normalise.css</span></td>
+                            <td class='table-left'><span class='code'>rev-normalise</span></td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>lightbox.css</span></td>
+                            <td class='table-left'><span class='code'>rev-lightbox</span></td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>waypoints.css</span></td>
+                            <td class='table-left'><span class='code'>rev-waypoints</span></td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>hyphenator.css</span></td>
+                            <td class='table-left'><span class='code'>rev-hyphenator</span></td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>ionicons.css</span></td>
+                            <td class='table-left'><span class='code'>rev-ionicons</span></td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>prettify.css</span></td>
+                            <td class='table-left'><span class='code'>rev-prettify</span></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>prettify.js</span></td>
+                            <td class='table-left'><span class='code'>rev-run-prettify</span></td>
+                        </tr>
+<!-- Caption -->        <tr class='no-border'>
+                            <td class='leading'></td>
+                            <td colspan='3' class='table-caption'>Table 4.4 &emsp; NAME and ID_NAME associations</td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>Each file listed in the <span class='sans-b'>NAME</span> column appends its own revision number to the <span class='sans-b'>ID_NAME</span> HTML ID value, in the case of <span class='code'>style.css</span>, the code is:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     CODE FRAGMENT - STANDARD BLOCK WITH HEADER & CAPTION (HTML)
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class="code-extract">
+<!-- Code file name --> <div class="code-header">style.css</div>
+                        <div class="code-area">
+
+<!-- Code extraxt -->       <pre class="prettyprint lang-css" id="js--c04-02" style="font-size: 0.53em;">/*&nbsp;****************************************************************************
+&nbsp;&nbsp;&nbsp;REVISION
+&nbsp;&nbsp;&nbsp;****************************************************************************&nbsp;*/
+#rev-style:after&nbsp;{&nbsp;content:&nbsp;&quot;000.102&quot;;&nbsp;}
+</pre>
+
+                        </div>
+<!-- Caption -->        <div class="code-caption">Code 4.2 &emsp; Revision information for style.css</div>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+                    <p class='hyp'>In the case of a <span class='code'>.js</span> file, it has the following appearance (this is for script.js)</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     CODE FRAGMENT - STANDARD BLOCK WITH HEADER & CAPTION (HTML)
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class="code-extract">
+<!-- Code file name --> <div class="code-header">script.css</div>
+                        <div class="code-area">
+
+<!-- Code extraxt -->       <pre class="prettyprint lang-js" id="js--c04-03" style="font-size: 0.53em;">/*&nbsp;****************************************************************************
+&nbsp;&nbsp;&nbsp;REVISION
+&nbsp;&nbsp;&nbsp;****************************************************************************&nbsp;*/
+
+&nbsp;&nbsp;&nbsp;&nbsp;$('#rev-script').append&nbsp;(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;&lt;p&gt;000.101&lt;/p&gt;&quot;&nbsp;/*&nbsp;LOCAL&nbsp;JS&nbsp;REVISION&nbsp;NUMBER&nbsp;*/
+&nbsp;&nbsp;&nbsp;&nbsp;);
+</pre>
+
+                        </div>
+<!-- Caption -->        <div class="code-caption">Code 4.3 &emsp; Revision information for script.js</div>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+                    <p class='hyp'>The actual HTML file has the data hardcoded in the HTML table after the <span class='code'>rev-doc</span> ID (<span class='code'>000.101</span> in this case):</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     CODE FRAGMENT - STANDARD BLOCK WITH HEADER & CAPTION (HTML)
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class="code-extract">
+<!-- Code file name --> <div class="code-header">Web page .html file</div>
+                        <div class="code-area">
+
+<!-- Code extraxt -->       <pre class="prettyprint lang-html" id="js--c04-04" style="font-size: 0.5em;">/&lt;!--&nbsp;Data&nbsp;row&nbsp;--&gt;&nbsp;&nbsp;&nbsp;&lt;tr&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&nbsp;class=&quot;leading&quot;&nbsp;style=&quot;height:&nbsp;1em&quot;&gt;&lt;/td&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&nbsp;class=&quot;table-cent&quot;&nbsp;style=&quot;width:&nbsp;30%&quot;&gt;&lt;/td&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&nbsp;class=&quot;table-left&quot;&nbsp;style=&quot;width:&nbsp;40%&quot;&gt;Page:&lt;/td&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&nbsp;class=&quot;table-right&quot;&nbsp;style=&quot;width:&nbsp;30%&quot;&nbsp;id=&quot;rev-doc&quot;&gt;000.101&lt;/td&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;
+
+</pre>
+
+                        </div>
+<!-- Caption -->        <div class="code-caption">Code 4.4 &emsp; Revision data for the HTML file</div>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+
+
+
+
+
+<!-- ************************************************************************** [WP LAST]
+     SECTION - LAST SECTION BEFORE FOOTER (WITH NAVIGATION)
+     ***********************************************************************-->
+
+        <p> <br class="toc-pad"></p>
+        <p> <br class="toc-pad"></p>
+        <div class="section-std" id="js--999901">               <!-- Start of additional row  -->
+            <div class="rg-row">                                <!-- Start of row content     -->
+                <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
+                    <aside class="aside-nav">                   <!-- Start of sidebar nav     -->
+                        <a class="xref" href="11-0309-scm.html#js--031200">Prev</a>
+                    </aside>                                    <!-- End of left side bar     -->
+</div>                                          <!-- End of left column       -->
+
+                <div class="rg-col rg-span3-5 aside-nav">       <!-- Start of end image area  -->
+                    <img src="../00-comres/11-resources/01-css/01-css-images/end-mark.svg" alt="End flourish image">
+                </div>                                          <!-- End of section text area -->
+
+                <div class="rg-col rg-span1-5">                 <!-- Start of right column    -->
+                    <aside class="aside-nav">                   <!-- Start of sidebar nav     -->
+                        <a class="xref utx" href="11-0500-scm.html#js--000000">Next</a>
+                    </aside>                                    <!-- End of right side bar    -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of row content       -->
+        </div>                                                  <!-- End of additional row    -->
+<!-- ========================================================================== [WP END]      -->
+
+
+<!-- ************************************************************************** [WP FOOTER]
+     FOOTER
+     ***********************************************************************-->
+        <footer class="footer">                                 <!-- Start of footer          -->
+            <ul class="footer-nav">                             <!-- Start of footer nav      -->
+                <li><a class="js--sc-000000" href="#"><span class="top-nav-icon" style="color:#5b7daf">t</span>Top</a><span class="footer-spacer">&#x25C7;</span></li>
+                <li><a href="../11-web/80-00-finally.html#js--800100">Contact MG</a><span class="footer-spacer">&#x25C7;</span></li>
+                <li><a href="../11-web/80-00-finally.html#js--800200">Acknowledgments</a><span class="footer-spacer">&#x25C7;</span></li>
+                <li><a href="../11-web/80-00-finally.html#js--800300">Colophon</a><span class="footer-spacer">&#x25C7;</span></li>
+                <li><a href="../11-web/80-00-finally.html#js--800400">Legal &amp; Privacy</a></li>
+            </ul>                                               <!-- End of footer nav        -->
+
+            <ul class="social-links">
+ <!--            <li><a href="https://www.facebook.com/practicalseries"><i id="js--fbicon" class="ion-social-facebook-outline"></i></a></li>
+                <li><a href="https://twitter.com/practicalseries"><i id="js--twicon" class="ion-social-twitter-outline"></i></a></li> -->
+            </ul>
+        </footer>                                               <!-- End of footer            -->
+<!-- ========================================================================== [WP END]      -->
+
+    </body>
+</html>

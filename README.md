@@ -1,9 +1,9 @@
-# PracticalSeries Automation Library Website <img height="25px" src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/m1-badge.svg?bxno=d002a-000.104">
+# PracticalSeries Automation Library Website <img height="25px" src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/m1-badge.svg?bxno=d002a-000.105">
 
 <br />
 
 <p align="left">
-    <img width="500px" src="https://practicalseries.com/2001-pal/00-comres/11-resources/02-images/pal-logo-web.svg?bxno=d002a-000.104">
+    <img width="500px" src="https://practicalseries.com/2001-pal/00-comres/11-resources/02-images/pal-logo-web.svg?bxno=d002a-000.105">
 </p>
 
 
@@ -46,7 +46,7 @@
 [&emsp;&emsp;&ensp; 2.2.7 &emsp;User Documents (91-userdocs)](#227-user-document-storage-91-userdocs-directory)
 
 [&emsp;&emsp;&ensp; 2.3. &emsp; &nbsp;The live website](#23the-live-website)<br>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &emsp;
         </td>
         <td align="left">
 
@@ -147,7 +147,7 @@ All four sections are contained within this repository.
 The website is contained in a series of folders, the underlying structure of which is:
 
 <p align="center">
-    <img width="500px" src="https://practicalseries.com/2001-pal/31-git/01-pages/02-00-webreadme/02-images/fig-02-01.png?bxno=d002a-000.104">
+    <img width="500px" src="https://practicalseries.com/2001-pal/31-git/01-pages/02-00-webreadme/02-images/fig-02-01.png?bxno=d002a-000.105">
 </p>
 <p align="center"><sup>Fig 02-01 &mdash; The website folder structure</sup></p>
 
@@ -202,7 +202,7 @@ The website has several folders within it:
 The broad contents of these folders is shown in the Figure 2.3 below:
 
 <p align="center">
-    <img src="https://practicalseries.com/2001-pal/31-git/01-pages/02-00-webreadme/02-images/fig-02-03.svg?bxno=d002a-000.104">
+    <img src="https://practicalseries.com/2001-pal/31-git/01-pages/02-00-webreadme/02-images/fig-02-03.svg?bxno=d002a-000.105">
 </p>
 <p align="center"><sup>Fig 02-03 &mdash; The website folder in relation to the live website</sup></p>
 
@@ -351,7 +351,7 @@ Logon information is required to give the WinSCP application access to the webse
 The [WinSCP](https://winscp.net/eng/index.php) application has two windows, the left-hand side is the **offline** website on the local machine, the right-hand side is the **online** website on the Heart Internet servers:
 
 <p align="center">
-    <img src="https://practicalseries.com/2001-pal/31-git/01-pages/02-00-webreadme/02-images/fig-02-04.png?bxno=d002a-000.104">
+    <img src="https://practicalseries.com/2001-pal/31-git/01-pages/02-00-webreadme/02-images/fig-02-04.png?bxno=d002a-000.105">
 </p>
 <p align="center"><sup>Fig 02-04 &mdash; WinSCP FTP with the live website</sup></p>
 
@@ -386,10 +386,10 @@ The current revision status of the master branch and any development branches is
 
 | Branch             | Revision                               | Status
 | ------------------ | -------------------------------------- | -----------------------------
-| <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/m1-name.svg?bxno=d002a-000.104">           | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/m1-badge.svg?bxno=d002a-000.104"> | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/m1-text.svg?bxno=d002a-000.104">
-| <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d1-name.svg?bxno=d002a-000.104">           | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d1-badge.svg?bxno=d002a-000.104"> | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d1-text.svg?bxno=d002a-000.104">
-| <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d2-name.svg?bxno=d002a-000.104">           | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d2-badge.svg?bxno=d002a-000.104"> | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d2-text.svg?bxno=d002a-000.104">
-| <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d3-name.svg?bxno=d002a-000.104">           | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d3-badge.svg?bxno=d002a-000.104"> | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d3-text.svg?bxno=d002a-000.104">
+| <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/m1-name.svg?bxno=d002a-000.105">           | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/m1-badge.svg?bxno=d002a-000.105"> | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/m1-text.svg?bxno=d002a-000.105">
+| <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d1-name.svg?bxno=d002a-000.105">           | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d1-badge.svg?bxno=d002a-000.105"> | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d1-text.svg?bxno=d002a-000.105">
+| <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d2-name.svg?bxno=d002a-000.105">           | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d2-badge.svg?bxno=d002a-000.105"> | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d2-text.svg?bxno=d002a-000.105">
+| <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d3-name.svg?bxno=d002a-000.105">           | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d3-badge.svg?bxno=d002a-000.105"> | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d3-text.svg?bxno=d002a-000.105">
 
 The full workflow for the project is shown in the [Software Control](#5--software-control) section of this document.
 
@@ -400,7 +400,7 @@ The full workflow for the project is shown in the [Software Control](#5--softwar
 This website contains a lot of documentation (in fact all the project documentation is accessible from within this website). The overall document flow path is shown below:
 
 <p align="center">
-    <img src="https://practicalseries.com/2001-pal/31-git/01-pages/02-00-webreadme/02-images/fig-04-01.svg?bxno=d002a-000.104">
+    <img src="https://practicalseries.com/2001-pal/31-git/01-pages/02-00-webreadme/02-images/fig-04-01.svg?bxno=d002a-000.105">
 </p>
 <p align="center"><sup>Fig 04-01 &mdash; Project documentation flow path</sup></p>
 
@@ -419,7 +419,7 @@ Any new document created must be entered in this Project Registry.
 The following is an example of a page from the Project Registry:
 
 <p align="center">
-    <img src="https://practicalseries.com/2001-pal/31-git/01-pages/02-00-webreadme/02-images/fig-04-02.png?bxno=d002a-000.104">
+    <img src="https://practicalseries.com/2001-pal/31-git/01-pages/02-00-webreadme/02-images/fig-04-02.png?bxno=d002a-000.105">
 </p>
 <p align="center"><sup>Fig 04-02 &mdash; Document registry (example page)</sup></p>
 
@@ -435,7 +435,7 @@ The full, historic workflow for the project is shown below:
 
 The workflow diagram shows the current state of the repository and identifies all development branches (both past and present) as well as the main ```master``` branch. The workflow diagram(s) lists all the commit points within the repository and the tag identifiers given to each.
 
-<img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/01-workflow/wf-001p.svg?bxno=d002a-000.104">
+<img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/01-workflow/wf-001p.svg?bxno=d002a-000.105">
 <p align="center"><sup>Workflow diagram</sup></p>
 
 
@@ -624,7 +624,7 @@ Lots of people make a living out of validating systems and they do so by overcom
 Validation itself is a good idea; it’s not a bad approach to take to every project — sometimes it’s required (pharma, nuclear, oil and gas), sometimes it’s completely over the top (PLCs playing the trombone<sup>2</sup>), but most projects benefit from the approach (even if they tone down the rigour and rules a bit, most projects don’t care how you write the date or make sure you draw a line through every blank area on a page).
 
 
->&emsp;<sup>2</sup>&emsp; For anyone who doesn’t know what a PLC is, it’s a Programmable Logic Controller, or where Siemens are concerned, just a Controller, and they pretty much control just about every automated process in the world, from rollercoasters to water treatment plants; brewing, baggage handling, power stations, car production lines, traffic lights, chemical plants, I’d be willing to bet there is a couple on the space-station; I’ve even seen one play *I’m forever blowing bubbles* on a trombone it had an air compressor connected to the mouthpiece and a three phase motor driving the slide *(engineering at its finest)*. If it’s got an electrical panel, it’s a fair bet it’sgot a PLC inside it somewhere.
+>&emsp;<sup>2</sup>&emsp; For anyone who doesn’t know what a PLC is, it’s a Programmable Logic Controller, or where Siemens are concerned, just a Controller, and they pretty much control just about every automated process in the world, from rollercoasters to water treatment plants; brewing, baggage handling, power stations, car production lines, traffic lights, chemical plants, I’d be willing to bet there is a couple on the space-station; I’ve even seen one play *I’m forever blowing bubbles* on a trombone it had an air compressor connected to the mouthpiece and a three phase motor driving the slide *(engineering at its finest)*. If it’s got an electrical panel, it’s a fair bet it’s got a PLC inside it somewhere.
 
 At this point, I was going to restructure the software, write new bits and change some old bits, and I decided to do it as a formal project and since I wanted the software to be suitable for pharma projects, I decided that it would be a *“validated”* project with all that that entails. 
 
