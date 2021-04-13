@@ -1,0 +1,1568 @@
+<!DOCTYPE html>                                                                 <!-- HTML 5 file -->
+
+<!-- PRACTICALSERIES (c) 2021
+
+*******************************************************************************
+
+PRACTICALSERIES: Practical Series of Publications by Michael Gledhill
+                 Published in the United Kingdom
+
+                 Email: mg@practicalseries.com
+                 Web:   https://practicalseries.com
+
+******************************************************************************* -->
+<html lang="en">                                                                <!-- Declare language                              -->
+    <head>                                                                      <!-- Start of head section                         -->
+        <meta charset="utf-8">                                                  <!-- Use unicode char set (< 1024 char from SOF)   -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Make page follow browser width and reset zoom -->
+        <meta name="description" content="Practiacl series automation library, PAL, web development platforms, wdp, scm, local and remote repositories">
+
+<!-- ==========================================================================
+
+
+
+*******************************************************************************
+Title :          PRACTICAL SERIES AUTOMATION LIBRARY (PAL)
+
+                 GIT - SOFTWARE CONTROL MECHANISM              11-0503-SCM.HTML
+*******************************************************************************
+DETAILS
+
+The Practical Series publication - Practical Series Automation Library (PAL)
+
+This website is part of the Practical Series Automation Library (PAL); a
+library of software modules and templates that have been made available for
+the Siemens Simatic S7-1500 range of controllers. The PAL is fully deployable
+software that is suitable for the control of most industrial process
+applications.
+
+*******************************************************************************
+MODIFICATION HISTORY:
+
+This is a complete summary of all software modifications.
+
+Date          Issue        Author         Reason for Modification
+*******************************************************************************
+12 Apr 2021   000.106      M. Gledhill    Released as a development prototype
+                                          Revision control active
+                                          RELEASE CHECKLIST       
+                                             Title                Y
+                                             Meta description     Y
+                                             Rev Badge (br red)   000.106 (dev)
+                                             Rev Data Page        000.106
+                                             Rev Data Code        None
+                                             Rev Data scroll      000.106
+                                             TOC softscroll       Y
+                                             Nav Prev chap        Y (0400)
+                                             Nav Prev sec         Y (0502)
+                                             Nav Next chap        Y (0600)
+                                             Nav Next sec         Y (0504)
+                                             Nav Top              Y
+                                             Nav Home             Y (00)
+                                             Last section Prev    Y (0502)
+                                             Last section Next    Y (0504)
+                                             Footer Top           Y
+                                             Footer Contacts &c.  Y (11/80)
+                                             All U-TX removed     *********** N ********************************************
+
+                                          File created
+                                          based on 98-00-blank.html
+*************************************************************************** -->
+
+
+<!-- **************************************************************************
+     FAVICON
+     ***********************************************************************-->
+        <!-- favicons all platforms --> <link rel="apple-touch-icon" sizes="180x180" href="../00-comres/11-resources/02-images/01-favicons/apple-touch-icon.png">
+                                        <link rel="icon" type="image/png"            href="../00-comres/11-resources/02-images/01-favicons/favicon-32x32.png" sizes="32x32">
+                                        <link rel="icon" type="image/png"            href="../00-comres/11-resources/02-images/01-favicons/favicon-16x16.png" sizes="16x16">
+                                        <link rel="mask-icon"                        href="../00-comres/11-resources/02-images/01-favicons/safari-pinned-tab.svg">
+                                        <meta name="theme-color" content="#ffffff">
+
+
+<!-- **************************************************************************
+     HEAD SCRIPT AREA
+     ***********************************************************************-->
+        <!-- jQuery Library -->         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Waypoints (sticky nav) --> <script src="../00-comres/21-global/05-js/jquery.waypoints.min.js"></script>
+        <!-- Hyphenator -->             <script src="../00-comres/21-global/05-js/hyphenator.js"></script>
+        <!-- Lightbox -->               <script src="../00-comres/21-global/05-js/lightbox.js"></script>
+        <!-- Prettify (main) -->        <script src="../00-comres/21-global/05-js/run_prettify.js?autoload=true&lang=css"></script>
+        <!-- MathJax -->                <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async></script>
+        <!-- PS main script -->         <script src="../00-comres/11-resources/05-js/script.js"></script>
+                                                                <!-- ▼▼▼▼ CHANGE FOLDER ▼▼▼▼  -->
+         <!-- PS local scroll script --> <script src="01-pages/11-0503-scm/05-local-js/scroll.js"></script>
+
+
+
+
+<!-- **************************************************************************
+     HEAD CSS LOAD
+     ***********************************************************************-->
+        <!-- Load PS fonts -->          <link rel="stylesheet" type="text/css" href="../00-comres/21-global/03-fonts/ps-fonts.css">
+        <!-- Load TIA fonts -->         <link rel="stylesheet" type="text/css" href="../00-comres/21-global/03-fonts/tia-fonts.css">
+        <!-- Normalise -->              <link rel="stylesheet" type="text/css" href="../00-comres//21-global/01-css/normalise.css">
+        <!-- Lightbox styles -->        <link rel="stylesheet" type="text/css" href="../00-comres/21-global/01-css/lightbox.css">
+        <!-- Ionicons -->               <link rel="stylesheet" type="text/css" href="../00-comres/21-global/01-css/ionicons.min.css">
+        <!-- PS grid system -->         <link rel="stylesheet" type="text/css" href="../00-comres/11-resources/01-css/grid.css">
+        <!-- PS main styles -->         <link rel="stylesheet" type="text/css" href="../00-comres/11-resources/01-css/style.css">
+        <!-- PAL styles -->             <link rel="stylesheet" type="text/css" href="../00-comres/11-resources/01-css/style-pal.css">
+                                                                <!-- ▼▼▼▼ CHANGE FOLDER ▼▼▼▼  -->
+        <!-- Code frag highlights      <link rel="stylesheet" type="text/css" href="01-pages/11-0503-scm/01-local-css/codelines.css">-->
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      GOOGLE ANALYTICS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                        <script>
+                                          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                                          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                                          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                                          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                                          ga('create', 'UA-87335633-1', 'auto');
+                                          ga('set', 'anonymizeIp', true);           // anonymise ip address
+                                          ga('send', 'pageview');
+                                        </script>
+
+
+<!-- **************************************************************************
+     TITLE
+     ***********************************************************************-->
+        <title>PAL | SCM Web Development Platforms</title>
+    </head>
+
+    <body>
+
+
+<!-- ************************************************************************** [WP HEADER]
+     HEADER (COVER & TABLE OF CONTENTS)
+     ***********************************************************************-->
+
+        <header id="js--000000">
+
+<!-- ************************************************************************** [WP TOPNAV]
+     TOP NAVIGATION (ABOVE CONTENTS LIST)
+     ***********************************************************************-->
+
+            <nav>                                               <!-- Start of top nav bar     -->
+                <div class="top-nav">                           <!-- Start of top nav row     -->
+                    <div class="rg-row">                        <!-- Start of nav button row  -->
+                        <!-- Button 01 - Previous Section -->
+                        <a class="nav-wide" href="11-0502-scm.html#js--050200"><span class="top-nav-icon">l</span><span class="top-nav-text">Prev. section</span></a>
+                        <!-- Button 02 - Previous Chapter -->
+                        <a class="nav-wide" href="11-0400-scm.html#js--000000"><span class="top-nav-icon">u</span><span class="top-nav-text">Prev. chapter</span></a>
+                        <!-- Button 03 - Home wide (hidden when fixed nav activates) -->
+                        <a class="nav-wide nav-home" href="11-00-scm.html#js--000000"><span class="top-nav-text">Home</span><span class="top-nav-icon">h</span></a>
+                        <!-- Button 03a - Top narrow (hidden until fixed nav activates) -->
+                        <a class="nav-narrow js--sc-000000" href="#"><span class="top-nav-icon">t</span><span class="top-nav-text">Top</span></a>
+                        <!-- Button 03b - Home narrow (hidden until fixed nav activates) -->
+                        <a class="nav-narrow" href="11-00-scm.html#js--000000"><span class="top-nav-text">Home</span><span class="top-nav-icon">h</span></a>
+                        <!-- Button 04 - Next Chapter -->
+                        <a class="nav-wide" href="11-0600-scm.html#js--000000"><span class="top-nav-text">Next chapter</span><span class="top-nav-icon">d</span></a>
+                        <!-- Button 05 - Next section -->
+                        <a class="nav-wide" href="11-0504-scm.html#js--050400"><span class="top-nav-text">Next section</span><span class="top-nav-icon">r</span></a>
+                    </div>                                      <!-- End of nav button row    -->
+                </div>                                          <!-- End of top nav row       -->
+            </nav>                                              <!-- End of top nav bar       -->
+<!-- ========================================================================== [WP END]      -->
+
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      HEADLINE - LEFT SIDEBAR (LOGO)
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+             <div class="rg-row pal-title-row">
+                <div class="rg-col rg-span1-5">
+                    <aside class="aside-left aside-left-rev">
+                         <a href="index.html">
+<!-- Logo image -->         <img class="pal-headline-logo" src="../00-comres/11-resources/02-images/pal-logo-github.svg" alt="PAL Logo">
+                        </a>
+                    </aside>
+
+                </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      HEADLINE - DOCUMENT TITLE
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                <div class="rg-col rg-span3-5">
+                    <div class="pal-headline">
+                        <p class="pal-headline-ps">Practical Series Automation Library</p>
+<!-- Doc Title Sml      <h2>Blank Webpage Template</h2>-->
+<!-- Doc Title Lrg -->  <h2><span style="font-size: 150%">A Software Control Mechanism</span></h2> 
+
+                    </div>
+                </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      HEADLINE - RIGHT SIDEBAR (Page revision information)
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                <div class="rg-col rg-span1-5">
+                    <aside class="aside-right-rev">
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - REVISION TABLE
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class="table-rev">
+<!-- Title row -->      <tr>
+                            <td class="leading"></td>
+                            <td class="table-right"></td>
+                            <td colspan="2" class="table-left" style="border-bottom: 1px solid #ccc">Page Revision Data</td>
+                        </tr>
+<!-- Spacing row -->    <tr class="no-border">
+                            <td class="leading"></td>
+                            <td colspan="3" class="table-left"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">Page:</td>
+                            <td class="table-right" style="width: 30%" id="rev-doc">000.106</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">scroll.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-scroll"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em; border-bottom: 1px solid #ccc"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">codelines.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-codelines"></td>
+                        </tr>
+<!-- Title row -->      <tr>
+                            <td class="leading" style="height: 2em"></td>
+                            <td class="table-right"></td>
+                            <td colspan="2" class="table-left" style="border-bottom: 1px solid #ccc; vertical-align: bottom">Common resources</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">script.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-script"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">Style.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-style"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">style-pal.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-style-pal"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">grid.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-grid"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">ps-fonts.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-ps-fonts"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">tia-fonts.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-tia-fonts"></td>
+                        </tr>
+<!-- Title row -->      <tr>
+                            <td class="leading" style="height: 2em"></td>
+                            <td class="table-right"></td>
+                            <td colspan="2" class="table-left" style="border-bottom: 1px solid #ccc; vertical-align: bottom">Global resources</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">normalise.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-normalise"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">lightbox.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-lightbox"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">lightbox.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-lbjs"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">waypoints.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-waypoints"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">hyphenator.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-hyphenator"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">ionicons.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-ionicons"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">prettify.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-prettify"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">prettify.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-run-prettify"></td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                    </aside>
+                </div>
+            </div>
+<!-- ************************************************************************** [WP TITLE]
+     TITLE BAR (Section number and text)
+     ***********************************************************************-->
+
+            <div class="rg-row">                                <!-- Start of title row       -->
+                <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
+                    <aside class="rev-badge-side">              <!-- BUILD BADGE              -->
+                        <img src="https://img.shields.io/badge/dev-000.106-BF504D.svg" alt="Build">
+                    </aside>
+                </div>                                          <!-- End of Left column       -->
+                <div class="rg-col rg-span3-5">                 <!-- Start of title           -->
+                   <div class="pal-overline-index"></div>       <!-- Overline bar             -->
+<!-- Section     <div class="title-num-box"><p>98</p></div>
+                    <div class="title-text-box"><h1><span class="title-small-num">01</span>Blank page</h1></div> -->
+<!-- Contents -->   <div class="title-contents"><h1>Contents</h1></div> 
+                </div>                                          <!-- End of title             -->
+                <div class="rg-col rg-span1-5">                 <!-- Start of right column    -->
+                    <aside class="aside-right-rev">             <!-- Start of right side bar  -->
+                    </aside>                                    <!-- End of right side bar    -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of title row         -->
+<!-- ========================================================================== [WP END]      -->
+
+
+<!-- ************************************************************************** [WP TOC]
+     TABLE OF CONTENTS
+     ***********************************************************************-->
+
+            <div class="rg-row">                                <!-- Start of TOC section     -->
+                <div class="rg-col rg-span1-5"></div>           <!-- Left column (not used)   -->
+                <div class="rg-col rg-span3-5">                 <!-- Start of TOC column      -->
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    TOC - Section 5
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ul class="toc-line">
+<!-- Level 1 -->        <li><a href="index.html">
+                            <div class="toc-lev"><span class="toc-lev1-num"></span><span class="toc-lev1-text">Git documents main page</span></div></a>
+                        </li>
+                    </ul>
+
+                    <ul class="toc-line">
+<!-- Level 1 -->        <li><a href="11-00-scm.html">
+                            <div class="toc-lev"><span class="toc-lev1-num"></span><span class="toc-lev1-text">SCM main page</span></div></a>
+                        </li>
+                    </ul>
+                    <ul class="toc-line">
+<!-- Level 1 -->        <li><a class='js--sc-050000' href='11-0500-scm.html.html#js--050000'>
+                                <div class='toc-lev'><span class='toc-lev1-num'>5</span><span class='toc-lev1-text'>Software storage and folder structures</span></div></a>
+                        </li>                        
+                    </ul>
+
+                    <ul class="toc-list">
+<!-- Level 2 -->        <li><a class='js--sc-050100' href='11-0500-scm.html#js--050100'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>5.1</span><span class='toc-lev2-text'>An overview of the Project structure</span></div></a>
+                        </li>
+<!-- Level 2 -->        <li><a class='js--sc-050200' href='11-0502-scm.html#js--050200'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>5.2</span><span class='toc-lev2-text'>Engineering stations</span></div></a>
+                        </li>
+<!-- Level 3 -->        <li><a class='js--sc-050201' href='11-0502-scm.html#js--050201'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.2.1</span><span class='toc-lev3-text'>ES software folders</span></div></a>
+                        </li>
+<!-- Level 3 -->        <li><a class='js--sc-050202' href='11-0502-scm.html#js--050202'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.2.2</span><span class='toc-lev3-text'>Software development area</span></div></a>
+                        </li>
+<!-- Level 3 -->        <li><a class='js--sc-050203' href='11-0502-scm.html#js--050203'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.2.3</span><span class='toc-lev3-text'>The Workspace and local repository</span></div></a>
+                        </li>  
+<!-- Level 3 -->        <li><a class='js--sc-050204' href='11-0502-scm.html#js--050204'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.2.4</span><span class='toc-lev3-text'>Understanding the Simatic Workspace</span></div></a>
+                        </li>
+<!-- Level 3 -->        <li><a class='js--sc-050205' href='11-0502-scm.html#js--050205'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.2.5</span><span class='toc-lev3-text'>The Workspace as a local repository</span></div></a>
+                        </li>      
+<!-- Level 3 -->        <li><a class='js--sc-050206' href='11-0502-scm.html#js--050206'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.2.6</span><span class='toc-lev3-text'>Commit point archives</span></div></a>
+                        </li>    
+<!-- Level 3 -->        <li><a class='js--sc-050207' href='11-0502-scm.html#js--050207'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.2.7</span><span class='toc-lev3-text'>Maser ES and repository backup</span></div></a>
+                        </li>     
+<!-- Level 3 -->        <li><a class='js--sc-050208' href='11-0502-scm.html#js--050208'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.2.8</span><span class='toc-lev3-text'>Remote repository</span></div></a>
+                        </li>    
+<!-- Level 2 -->        <li><a class='js--sc-050300' href='11-0503-scm.html#js--050300'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>5.3</span><span class='toc-lev2-text'>Web development platforms</span></div></a>
+                        </li>
+<!-- Level 3 -->        <li><a class='js--sc-050301' href='11-0503-scm.html#js--050301'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.3.1</span><span class='toc-lev3-text'>WDP software folders</span></div></a>
+                        </li>  
+<!-- Level 3 -->        <li><a class='js--sc-050302' href='11-0503-scm.html#js--050302'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.3.2</span><span class='toc-lev3-text'>Understanding the website structure</span></div></a>
+                        </li>      
+<!-- Level 3 -->        <li><a class='js--sc-050303' href='11-0503-scm.html#js--050303'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.3.3</span><span class='toc-lev3-text'>Local repository</span></div></a>
+                        </li>
+<!-- Level 3 -->        <li><a class='js--sc-050304' href='11-0503-scm.html#js--050304'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.5.4</span><span class='toc-lev3-text'>Master WDP and repository backup</span></div></a>
+                        </li>   
+<!-- Level 3 -->        <li><a class='js--sc-050305' href='11-0503-scm.html#js--050305'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.3.5</span><span class='toc-lev3-text'>Remote repository</span></div></a>
+                        </li>       
+<!-- Level 3 -->        <li><a class='js--sc-050306' href='11-0503-scm.html#js--050306'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.3.6</span><span class='toc-lev3-text'>The live website</span></div></a>
+                        </li>   
+<!-- Level 2 -->        <li><a class='js--sc-050400' href='11-0504-scm.html#js--050400'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>5.4</span><span class='toc-lev2-text'>NAS based Project documentation</span></div></a>
+                        </li> 
+<!-- Level 3 -->        <li><a class='js--sc-050401' href='11-0504-scm.html#js--050401'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.4.1</span><span class='toc-lev3-text'>The Project folder structure
+                        </li>      
+<!-- Level 3 -->        <li><a class='js--sc-050402' href='11-0504-scm.html#js--050402'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.4.2</span><span class='toc-lev3-text'>Project registry</span></div></a>
+                        </li>     
+<!-- Level 3 -->        <li><a class='js--sc-050403' href='11-0504-scm.html#js--050403'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.4.3</span><span class='toc-lev3-text'>Document versions</span></div></a>
+                        </li>      
+                    </ul>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                </div>                                          <!-- End of TOC column        -->
+                <div class="rg-col rg-span1-5"></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of TOC section       -->            
+            
+<!-- ========================================================================== [WP END]      -->
+
+
+        </header>                                               <!-- End of header            -->
+<!-- ========================================================================== [WP END]      -->
+
+
+
+<!-- ************************************************************************** [WP FIXEDNAV]
+     FIXED NAVIGATION BAR CHANGEOVER POINT
+     ***********************************************************************-->
+        <div id="js--fixed-nav"></div>                          <!-- fixed navigation point   -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - 5.3 - Web development platforms
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050300'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-overline'></div>      <!-- Overline                 -->
+                 <div class='sub-title-num-box'><h2>5.3</h2></div>
+                 <div class='sub-title-text-box'><h2>Web development platforms</h2></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>Web development platforms (WDP) are used to develop the website that supports the PAL software Project.</p>
+
+                    <p class='hyp'>Web development platforms are similar to engineering stations and have a similar specification: generally high powered machines with at least 512&nbsp;GB of hard drive storage and 16&nbsp;GB of RAM. Typically with a 10<sup>th</sup> or 11<sup>th</sup> generation i7 processor or equivalent (such as an AMD Ryzen 7).</p>
+
+                    <p class='hyp'>WDPs should be equipped with dual 27&quot; QHD (quad high definition) screens (these have a resolution of 2560 × 1440 pixels).</p>
+
+                    <p class='hyp'>Unlike ESs, WDP machines do not need a fixed IP address and need not have TIA Portal installed.</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      NOTE - HANGING INDENT
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ul class='note'>                           <!-- Start of note            -->
+                        <li>It is perfectly possible to use an Engineering Station as a Web Development Platform and indeed, it is quite common to do so (in which case it will be referred to as an ES).</li>
+                    </ul>                                       <!-- End of note              -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'></p>
+
+                    <p class='hyp'></p>
+
+                    <p class='hyp'>The configuration of an WDP, including drive allocation, device naming, software package installation &amp;c. is explained in the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-Software-configurations/PS2001-5-2341-001-ES-WDP-Config.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a>.</p>
+
+                    <p class='hyp'>In summary, it is assumed that the WDP has been configured in line with the above document and is equipped as follows:</p>
+
+                    <p class='hyp'>The WDP is equipped with three hard drive partitions (as a minimum):</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class='table-clean'>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left' style='width: 15%'><span class='code'>C:</span></td>
+                            <td class='table-left' style='width: 25%'><span class='code'>OpSys</span></td>
+                            <td class='table-left' style='width: 60%'>Operating system and application files</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='code'>D:</span></td>
+                            <td class='table-left'><span class='code'>Projects</span></td>
+                            <td class='table-left'>PSP project files</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='code'>E:</span></td>
+                            <td class='table-left'><span class='code'>Licences</span></td>
+                            <td class='table-left'>Storage area for licences &amp;c. </td>
+                        </tr>
+<!-- Caption -->        <tr class='no-border'>
+                            <td class='leading'></td>
+                            <td colspan='3' class='table-caption'>&emsp;</td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->       
+
+                    <p class='hyp'>The <span class='code'>C:</span> drive (<span class='code'>OpSys</span>) hholds the operating system and any installed programmes and applications. The <span class='code'>C:</span> drive should be at least 200&nbsp;GB in size.</p>
+
+                    <p class='hyp'>The <span class='code'>D:</span> drive (<span class='code'>Projects</span>) holds the website project developed for the PAL. Broadly, this is all the HTML, CSS, JS, jQuery and image files needed by a website. The <span class='code'>D:</span> drive should fill the remainder of the hard drive, excepting 1&nbsp;GB that should be reserved for the <span class='code'>E:</span> drive. The <span class='code'>D:</span> drive should be at least 200&nbsp;GB in size.</p>
+
+                    <p class='hyp'>The <span class='code'>E:</span> drive (<span class='code'>Licences</span>) holds all the licences needed to activate the Siemens TIA Portal software and its installed options. </p>
+
+                    <p class='hyp'>The <span class='code'>E:</span> drive is generally very small, it need only be a few megabytes in size (in practice, a 1&nbsp;GB partition is more than adequate).</p>
+
+                    <p class='hyp'>The software applications and configurations required by a WDP are as follows:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      NUMBERED LIST
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ol class='list-num'>                       <!-- Start of numbered list   -->
+                        <li><p class='hyp'>A GitHub user account has been setup</p></li>
+                    </ol>                                       <!-- End of numbered list     -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->  
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      UNNUMBERED LIST
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ul class='list-no-num' style="padding-left: 3em;">    <!-- Start of unnumbered list -->
+                        <li><p class='nohyp'><span class='sans'>The account has been added to the PracticalSeries organisation</span></p></li>
+                    </ul>                                       <!-- End of unnumbered list   -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      NUMBERED LIST
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ol start="2" class='list-num'>             <!-- Start of numbered list   -->
+                        <li><p class='hyp'>Git SCM has been installed</p></li>
+                    </ol>                                       <!-- End of numbered list     -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->  
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+UNNUMBERED LIST
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ul class='list-no-num' style="padding-left: 3em;"><!-- Start of unnumbered list -->
+                        <li><p class='nohyp'><span class='sans'>Notepad++ is installed as the Git default editor</span></p></li>
+
+                        <li><p class='nohyp'><span class='sans'>An SSH key link has been established between Git and GitHub</span></p></li>
+
+                    </ul>                                       <!-- End of unnumbered list   -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      NUMBERED LIST
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ol start="3" class='list-num'>             <!-- Start of numbered list   -->
+                        <li><p class='hyp'>The Visual Studio Code text editor has been installed</p></li>
+                    </ol>                                       <!-- End of numbered list     -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->  
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+UNNUMBERED LIST
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ul class='list-no-num' style="padding-left: 3em;"><!-- Start of unnumbered list -->
+                        <li><p class='nohyp'><span class='sans'>The standard set of Visual Studio Code extensions have been installed</span></p></li>
+
+                    </ul>                                       <!-- End of unnumbered list   -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+                    <p class='hyp'>The packages above are listed in the order in which they should have been installed on the engineering station. The exact details for installing and configuring the above application is given in the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-Software-configurations/PS2001-5-2341-001-ES-WDP-Config.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a>.</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SUBSECTION]
+     SUBSECTION - 5.3.1 - WDP software folders
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050301'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-num-box'><h3>5.3.1</h3></div>
+                    <div class='sub-title-text-box'><h3>WDP software folders</h3></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>The WDP website project is stored on the <span class='code'>D:</span> drive (<span class='code'>Projects</span>).This holds a single primary folder that contains the WDP website Git repository:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class='table-clean'>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left' style='width: 40%'><span class='code'>2500 Git Projects</span></td>
+                            <td class='table-left' style='width: 60%'>Git Workspace folder</td>
+                        </tr>
+<!-- Caption -->        <tr class='no-border'>
+                            <td class='leading'></td>
+                            <td colspan='2' class='table-caption'>&emsp;</td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->       
+
+
+                    <p class='hyp'>The underlying structure is:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f05-15'>
+                            <a href='01-pages/11-0503-scm/02-images/fig-05-15-min.svg' data-lightbox='fig-set' data-title='Figure 5.15 - WDP Project folder structure'>
+                                <img style="max-width: 500px;" src='01-pages/11-0503-scm/02-images/fig-05-15-min.svg' alt='Figure 5.15 - WDP Project folder structure'>
+                            </a>
+                            <figcaption>Figure 5.15 &emsp; WDP Project folder structure</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>This structure is examined further in the following section:</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SUBSECTION]
+     SUBSECTION - 5.3.2 - Understanding the website structure
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050302'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-num-box'><h3>5.3.2</h3></div>
+                    <div class='sub-title-text-box'><h3>Understanding the website structure</h3></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>The website structure of <a class='xref js--sc-f05-15' href='#'>Figure&nbsp;5.15</a> (everything below the <span class='code'>PS2001-pal-website</span>, excepting the <span class='code'>.git</span> folder) is the actual website, the offline version. Everything in these folders is copied to the live website server and can be seen at the following address:</p>
+
+                    <p class='hyp' style="text-align: center;"><a class='xref' href='https://practicalseries.com/2001-pal/'>https://practicalseries.com/2001-pal/</a></p>
+
+                    <p class='hyp'>The relationship between the offline and online folders is as follows:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f05-16'>
+                            <a href='01-pages/11-0503-scm/02-images/fig-05-16-min.svg' data-lightbox='fig-set' data-title='Figure 5.16 - The website folder in relation to the live website'>
+                                <img src='01-pages/11-0503-scm/02-images/fig-05-16-min.svg' alt='Figure 5.16 - The website folder in relation to the live website'>
+                            </a>
+                            <figcaption>Figure 5.16 &emsp; The website folder in relation to the live website</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                
+
+                    <p class='hyp'>The contents of the folders (<span class='code'>00-comres</span>, <span class='code'>01-admin</span>, <span class='code'>11-web</span>, <span class='code'>21-protect</span>, <span class='code'>31-git</span>, <span class='code'>81-binary</span> and <span class='code'>91-userdocs</span>) and the root folder are copied to the live website servers using a <em>file transfer protocol</em> (FTP) package, this is a one way sync from the WDP to the website servers. The synchronisation is made manually whenever the WDP website is updated.</p>
+
+                    <p class='hyp'>The website has several folders within it:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class='table-clean'>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left' style='width: 20%'><span class='code'>00-comres</span></td>
+                            <td class='table-left' style='width: 80%'>Common resources</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='code'>01-admin</span></td>
+                            <td class='table-left'>Various administration pages </td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='code'>11-web</span></td>
+                            <td class='table-left'>The main website containing the  PAL user guides and information</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='code'>21-project</span></td>
+                            <td class='table-left'>Holds all the documentation associated with the Project (validation documents)</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='code'>31-git</span></td>
+                            <td class='table-left'>Contains information used by the GitHub repositories</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='code'>81-binary</span></td>
+                            <td class='table-left'>Contains binary files (the TIA Project archive files &amp;c.)</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='code'>91-userdocs</span></td>
+                            <td class='table-left'>The online version of the User Documentation files embedded in the TIA Project</td>
+                        </tr>
+<!-- Caption -->        <tr class='no-border'>
+                            <td class='leading'></td>
+                            <td colspan='2' class='table-caption'>&emsp;</td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->       
+
+
+                    <p class='hyp'>The broad contents of these folders is shown below:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f05-17'>
+                            <a href='01-pages/11-0503-scm/02-images/fig-05-17-min.svg' data-lightbox='fig-set' data-title='Figure 5.17 - The website folder structure in detail (part 1)'>
+                                <img src='01-pages/11-0503-scm/02-images/fig-05-17-min.svg' alt='Figure 5.17 - The website folder structure in detail (part 1)'>
+                            </a>
+                            <figcaption>Figure 5.17 &emsp; The website folder structure in detail (part 1)</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The website has two primary components:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      NUMBERED LIST
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ol class='list-num'>                       <!-- Start of numbered list   -->
+                        <li><p class='hyp'>A user guide explaining how to download and use the PAL software (contained in the <span class='code'>11-web</span> directory)</p></li>
+
+                        <li><p class='hyp'>A comprehensive guide to validated projects and all the documentation associated with the PAL project in its entirety (contained in the <span class='code'>21-project</span> directory)</p></li>
+                    </ol>                                       <!-- End of numbered list     -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The remaining folders are secondary and are used to support the primary sections. A brief description of all the folders is given below:</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP INLINE]
+     SECTION INLINE - Common resources (00-comres directory)
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050302a'>          <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-text-box'><h4>Common resources directory<br><span class='code' style="font-size: 1.5rem;">&emsp;&emsp;&emsp;00-comres</span></h4></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>The common resources are those components needed by every page within the website. It contains things such as the common cascading style sheets (CSS), the JavaScript (JS) files used within each page, common images and the common font-files needed to correctly render the web pages.</p>
+
+                    <p class='hyp'>The <span class='code'>00-comres</span> directory is broadly split into two further directories:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class='table-clean'>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left' style='width: 30%'><span class='code'>11-resources</span></td>
+                            <td class='table-left' style='width: 70%'>Contains CSS, JS and jQuery files produced by the PSP</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>21-global</span></td>
+                            <td class='table-left'>Contains third party components needed by the website</td>
+                        </tr>
+<!-- Caption -->        <tr class='no-border'>
+                            <td class='leading'></td>
+                            <td colspan='2' class='table-caption'>&emsp;</td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->       
+
+
+                    <p class='hyp'>The <span class='code'>11-resources</span> folder contains files associated with the website that have been written and developed by the PSP engineers (i.e. these are files that belong to the PSP). They fall into three categories: CSS files (to manage the appearance of the webpages), images (such as logos &amp;c.) and JavaScript files that handle the dynamic navigation used on the web pages.</p>
+
+                    <p class='hyp'>The <span class='code'>21-global</span> is primarily used to hold third party applications that are used within the website. These are categorised as follows:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+      <table class='table-clean'>
+        <!-- Data row -->       <tr class='no-border'>
+                                    <td class='leading'><div style='min-height: 3em'></div></td>
+                                    <td class='table-left' style='width: 30%'><span class='code'>woff files</span></td>
+                                    <td class='table-left' style='width: 70%'>These contain the fonts used by the website and were purchased by the PSP</td>
+                                </tr>
+        <!-- Data row -->       <tr class='no-border'>
+                                    <td class='leading'><div style='min-height: 3em'></div></td>
+                                    <td class='table-left'><span class='code'>normalise.css</span></td>
+                                    <td class='table-left'>A third party file use to standardise how different browsers render a website</td>
+                                </tr>
+        <!-- Data row -->       <tr class='no-border'>
+                                    <td class='leading'><div style='min-height: 3em'></div></td>
+                                    <td class='table-left'><span class='code'>lightbox.js</span></td>
+                                    <td class='table-left'>Used to display images in a larger, overlay arrangement</td>
+                                </tr>
+        <!-- Data row -->       <tr class='no-border'>
+                                    <td class='leading'><div style='min-height: 3em'></div></td>
+                                    <td class='table-left'><span class='code'>Waypoints.js</span></td>
+                                    <td class='table-left'>Used to create dynamic navigation bars</td>
+                                </tr>
+        <!-- Data row -->       <tr class='no-border'>
+                                    <td class='leading'><div style='min-height: 3em'></div></td>
+                                    <td class='table-left'><span class='code'>Hyphenator.js</span></td>
+                                    <td class='table-left'>Used to correctly and dynamically hyphenate the website text </td>
+                                </tr>
+        <!-- Data row -->       <tr class='no-border'>
+                                    <td class='leading'><div style='min-height: 3em'></div></td>
+                                    <td class='table-left'><span class='code'>MathJax.js</span></td>
+                                    <td class='table-left'>Used to render equations on the website where required</td>
+                                </tr>
+        <!-- Data row -->       <tr class='no-border'>
+                                    <td class='leading'><div style='min-height: 3em'></div></td>
+                                    <td class='table-left'><span class='code'>Google-prettify.js</span></td>
+                                    <td class='table-left'>Allows sections of software (code fragments) to be displayed on the website</td>
+                                </tr>
+        <!-- Caption -->        <tr class='no-border'>
+                                    <td class='leading'></td>
+                                    <td colspan='2' class='table-caption'>&emsp;</td>
+                                </tr>
+                            </table>
+        <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->       
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP INLINE]
+     SECTION INLINE - Administration files directory 
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050302b'>          <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-text-box'><h4>Administration files directory<br><span class='code' style="font-size: 1.5rem;">&emsp;&emsp;&emsp;01-admin</span></h4></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>necessary for the website management (such as revision data, workflow diagrams, change requests &amp;c.)</p>
+
+                    <p class='hyp'>The <span class='code'>01-admin</span> directory is not directly accessible by users of the website, but the contents of it can be accessed by other webpages within the website to display or reference particular information.</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP INLINE]
+     SECTION INLINE - The PAL documentation directory 
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050302c'>          <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-text-box'><h4>PAL documentation directory<br><span class='code' style="font-size: 1.5rem;">&emsp;&emsp;&emsp;11-web</span></h4></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>This contains a full, on-line description and operating guide for the PAL software. It explains exactly how to use the PAL software, how to configure it and gives very detailed, real-world examples of how to use it.</p>
+
+                    <p class='hyp'>each module is configured, the requirements and options for that module and examples of how to use the module.</p>
+
+                    <p class='hyp'>This part of the website is directly accessed at the following url:</p>
+
+                    <p class='hyp' style="text-align: center;"><a class='xref' href='http://practicalseries.com/2001-pal/11-web/'>http://practicalseries.com/2001-pal/11-web/</a></p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP INLINE]
+     SECTION INLINE - The Project documentation directory 
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050302c'>          <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-text-box'><h4>Project documentation directory<br><span class='code' style="font-size: 1.5rem;">&emsp;&emsp;&emsp;21-project</span></h4></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>The PAL software is designed for use within pharmaceutical environments and as such is a <em>&ldquo;validated&rdquo;</em> project (see the <a class='xref' href='https://practicalseries.com/2001-pal/81-binary/01-docs/01-Planning-Quality/21-Validation-Plan-(VP)/PS2001-5-0121-002-VP.pdf' download>Validation Plan (VP) <em>[Ref. 001]</em></a> for a detailed description of validated projects and their requirements). </p>
+
+                    <p class='hyp'>Validation is the process of making sure a computerised system (such as a PLC and its software) does precisely what it was designed to do; specifically, it is the exercise of correctly and traceably documenting every requirement of the system and making sure that that requirement is formally and exhaustively tested. </p>
+
+                    <p class='hyp'>The fact that the Project is validated, and the associated documents required by such projects have been deemed to be useful in their own right. This part of the website give a practical approach to validating a control system, it explains the &ldquo;life cycle&rdquo; process and the phases necessary to progressing from a requirement specification to a fully validated and deployed system.</p>
+
+                    <p class='hyp'>This part of the website provides examples of all the documentation required to by a validated system and explains how they should be used. This documentation is all made available in pdf and Microsoft Office formats (Word, Excel, Visio and Projects); the documents are complete and can be downloaded and reused as a template by anyone to whom they may be useful; again under the <a class='xref' href='https://github.com/practicalseries/PS2001-pal-software/blob/master/LICENCE.md'>MIT Open Source licence</a</p>
+
+                    <p class='hyp'>The project documentation also includes copies of the completed test and qualification documents needed to demonstrate the PAL software has been validated</p>
+
+                    <p class='hyp'>This part of the website is directly accessed at the following url:</p>
+
+                    <p class='hyp' style="text-align: center;"><a class='xref' href='http://practicalseries.com/2001-pal/21-project/'>http://practicalseries.com/2001-pal/21-project/</a></p>
+
+                    <p class='hyp'></p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+
+
+
+<!-- ************************************************************************** [WP INLINE]
+     SECTION INLINE - Git repository webpages directory 
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050302e'>          <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-text-box'><h4>Git repository webpage directory<br><span class='code' style="font-size: 1.5rem;">&emsp;&emsp;&emsp;31-git</span></h4></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>The Git repositories created as part of this Project are all public repositories available to anyone with a GitHub account. These repositories all contain documentation of some form or another, usually as <span class='code'>README.md</span> files, that explain the purpose of the repository and how to use the repository.</p>
+
+                    <p class='hyp'>These files often reference specific websites or pages that offer further explanation of a particular point.</p>
+
+                    <p class='hyp'>The <span class='code'>31-git</span> directory provides a storage location for such webpages for the PAL repositories; this document, for example, is available as an online webpage:</p>
+
+                    <p class='hyp' style="text-align: center;"><a class='xref' href='https://practicalseries.com/2001-pal/31-git/11-00-scm.html'>https://practicalseries.com/2001-pal/31-git/11-00-scm.html</a></p>
+
+                    <p class='hyp'></p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP INLINE]
+     SECTION INLINE - Binary file storage directory 
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050302f'>          <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-text-box'><h4>Binary file storage directory<br><span class='code' style="font-size: 1.5rem;">&emsp;&emsp;&emsp;81-binary</span></h4></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>All the downloadable aspects of the website:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      UNNUMBERED LIST
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ul class='list-no-num'>                    <!-- Start of unnumbered list -->
+                        <li><p class='hyp'>PDF documents</p></li>
+
+                        <li><p class='hyp'>Microsoft Office documents</p></li>
+
+                        <li><p class='hyp'>Software archive files</p></li>
+
+                        <li><p class='hyp'>Code examples &amp;c.</p></li>
+                    </ul>                                       <!-- End of unnumbered list   -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>are stored in the binary area of the website, such files are all accessed via other webpages within the website.</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP INLINE]
+     SECTION INLINE - User Document storage directory 
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050302g'>          <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-text-box'><h4>User Document storage directory<br><span class='code' style="font-size: 1.5rem;">&emsp;&emsp;&emsp;91-userdocs</span></h4></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>The <span class='code'>91-userdocs</span> directory is a special directory and is structured in the correct format for the TIA Portal User Documentation facilities (see the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/11-SW-Software-Design-Specification-(SDS)/PS2001-5-2311-001-SDS.pdf' download>Software Design Specification (SDS) <em>[Ref.&nbsp;003, Section&nbsp;13]</em></a> for details of the User Documentation facilities).</p>
+
+                    <p class='hyp'>This is the online version of the User Documentation embedded within the PAL software TIA Projects.</p>
+
+                    <p class='hyp'>The User Documentation allows additional information about a block within the PAL software to be directly accessed from within the TIA Portal environment.</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SUBSECTION]
+     SUBSECTION - 5.3.3 - Local repository
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050303'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-num-box'><h3>5.3.3</h3></div>
+                    <div class='sub-title-text-box'><h3>Local repository</h3></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>The website folder: <span class='code'>PS2001-pal-website</span> contains the full website in the folders listed in the previous section. This folder is also a Git repository (separate to the <span class='code'>PS2001-pal-software</span> repository that contains the software being developed for the PAL, the Controller software, see <a class='hlink' href='11-0502-scm.html#js--050203'>&sect;&nbsp;5.2.3</a>) </p>
+
+                    <p class='hyp'>This means that the development of the website is under the control of the Git VCS.</p>
+
+                    <p class='hyp'>The website is written and developed using the Visual Studio Code text editor. The repository aspect of the website is maintained via the source code control aspects of this application (again the instructions for installing Visual Studio Code and the various Git extension are given in the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-Software-configurations/PS2001-5-2341-001-ES-WDP-Config.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a><em>)</em>. </p>
+
+                    <p class='hyp'>All repository actions are carried out using the Visual Studio Code application. This includes committing changes to the local repository, creating and managing development branches and the bidirectional synchronisation of the local repository with the remote GitHub repository.</p>
+
+                    <p class='hyp'></p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SUBSECTION]
+     SUBSECTION - 5.3.4 - Master WDP&nbsp;&mdash;&nbsp;local repository backup to NAS
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050304'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-num-box'><h3>5.3.4</h3></div>
+                    <div class='sub-title-text-box'><h3>Master WDP&nbsp;&mdash;&nbsp;local repository backup to NAS</h3></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>There can be any number of web development platforms (WDPs), generally, each developer will have one.</p>
+
+                    <p class='hyp'>There is however, only one <span class='emph'>Master</span> web development platform (MWDP), this usually belongs to the lead web developer.</p>
+
+                    <p class='hyp'>All WDPs have a local repository and are constantly being synchronised with the remote repository on the GitHub servers, whenever a commit is made to a local repository, on any WDP, that WDP must first be synchronised with the remote repository (ensuring that any changes made by the local commit do not create a conflict with the any other changes that have been stored within the remote repository).</p>
+
+                    <p class='hyp'>The remote repository is essentially, the master repository and it is this repository that holds all the commits made by any WDP.</p>
+
+                    <p class='hyp'>For the same reasons given in <a class='hlink' href='11-0502-scm.html#js--050207'>&sect;&nbsp;5.2.7</a>, the web repository is also backed up to the PSP NAS drive.</p>
+
+                    <p class='hyp'>This is done by the Master Web Development Platform; each time the MWDP is synchronised with the master repository on GitHub, it makes a complete copy of the repository on the PSP network accessible storage (NAS) drives. </p>
+
+                    <p class='hyp'>The MWDP should be synchronised at least once a week with the remote repository.</p>
+
+                    <p class='hyp'>The backup mechanism is the same as that for the Master Engineering Station, it uses Dropbox as an intermediary, the full description of how this works is given in <a class='hlink' href='11-0502-scm.html#js--050207'>&sect;&nbsp;5.2.7</a>.</p>
+
+                    <p class='hyp'>The Master Web Development Platform has a slightly different folder structure. Similar to the Master ES, the <span class='code'>2500 Git Project</span> folder is, stored within a live Dropbox folder on the MWDP:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f05-18'>
+                            <a href='01-pages/11-0503-scm/02-images/fig-05-18-min.svg' data-lightbox='fig-set' data-title='Figure 5.18 - MWDP NAS backup structure'>
+                                <img src='01-pages/11-0503-scm/02-images/fig-05-18-min.svg' alt='Figure 5.18 - MWDP NAS backup structure'>
+                            </a>
+                            <figcaption>Figure 5.18 &emsp; MWDP NAS backup structure</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>Application to access to the PSP Dropbox account should be made to:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class='table-clean' id='js--t05-06'>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left' style='width: 30%'><span class='sml-caps-ns'>Account Manager</span></td>
+                            <td class='table-left' style='width: 70%'>Michael Gledhill</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='sml-caps-ns'>Account Details</span></td>
+                            <td class='table-left'>PSP Dropbox</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='sml-caps-ns'>Contact Details</span></td>
+                            <td class='table-left'>mg@practicalseries.com</td>
+                        </tr>
+<!-- Caption -->        <tr class='no-border'>
+                            <td class='leading'></td>
+                            <td colspan='2' class='table-caption'>Table 5.6 &emsp; PSP Dropbox account manager details</td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SUBSECTION]
+     SUBSECTION - 5.3.5 - Remote repository
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050305'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-num-box'><h3>5.3.5</h3></div>
+                    <div class='sub-title-text-box'><h3>Remote repository</h3></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>All WDPs work with a remote repository that contains the current copy of all committed changes made to the website on any of the WDP machines. The remote repository is the <span class='emph'>master</span> repository, it holds all the development branches (created by any WDP) and the most up to date <span class='git-cmd'>master</span> branch.</p>
+
+                    <p class='hyp'>Any development work that takes place on a development branch on any WDP, will at some point be committed to the local repository (on the WDP), before this can happen, the Visual Studio Code application making the commit will require that any changes that exist within the remote repository, but are not present on the local WDP (i.e. changes that have been made by other users) are <em>pulled</em> from the remote repository, before the local WDP changes can be <em>pushed</em> back to the remote repository. This Pull before Push approach ensures that the user must resolve any conflicts between user&rsquo;s local repository on the local WDP and the remote repository before pushing the resolved changes back to the remote.</p>
+
+                    < <p class='hyp'>To use the remote repository from a local WDP, the two must be linked via a secure shell key link (SSH link), the process for doing this is explained in the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-Software-configurations/PS2001-5-2341-001-ES-WDP-Config.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a>, and again, on the website here:</p>
+
+                    <p class='hyp'>The remote repository is a public repository (one that anyone with a GitHub account can read and copy) and is part of the GitHub PracticalSeries organisation. It is available here:</p>
+
+                    <p class='hyp' style="text-align: center;"><a class='xref' href='https://github.com/practicalseries'>https://github.com/practicalseries</a></p>
+
+                    <p class='hyp'>The remote repository itself is available here:</p>
+
+                    <p class='hyp' style="text-align: center;"><a class='xref' href='https://github.com/practicalseries/PS2001-pal-website'>https://github.com/practicalseries/PS2001-pal-website</a></p>
+
+                    <p class='hyp'>Read access to the organisation and all of the repositories it contains, is available to anyone with a GitHub account. </p>
+
+                    <p class='hyp'>Access for contributors requires permission from the organisation owner, applications for such access should be made to:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class='table-clean' id='js--t05-07'>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left' style='width: 40%'><span class='sml-caps-ns'>GitHub Organisation:</span></td>
+                            <td class='table-left' style='width: 60%'>https://github.com/practicalseries</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='sml-caps-ns'>Repository Name:</span></td>
+                            <td class='table-left'>PS2001-pal-website</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='sml-caps-ns'>Organisation Owner:</span></td>
+                            <td class='table-left'>Michael Gledhill</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='sml-caps-ns'>Contact Details</span></td>
+                            <td class='table-left'>mg@practicalseries.com</td>
+                        </tr>
+<!-- Caption -->        <tr class='no-border'>
+                            <td class='leading'></td>
+                            <td colspan='2' class='table-caption'>Table 5.7 &emsp; PracticalSeries GitHub organisation details</td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SUBSECTION]
+     SUBSECTION - 5.3.6 - The live website
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050306'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-num-box'><h3>5.3.6</h3></div>
+                    <div class='sub-title-text-box'><h3>The live website</h3></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>The live Practical Series of Publications website is hosted by <a class='xref' href='https://www.heartinternet.uk/'>Heart Internet</a> in the United Kingdom.</p>
+
+                    <p class='hyp'>The website has various publications (of which the PAL website is just one component), The landing page for the top level of the website is:</p>
+
+                    <p class='hyp' style="text-align: center;"><a class='xref' href='https://www.practicalseries.com/'>https://www.practicalseries.com/</a></p>
+
+                    <p class='hyp'>And the landing page for this, the PAL website is:</p>
+
+                    <p class='hyp' style="text-align: center;"><a class='xref' href='http://www.practicalseries.com/2001-pal/'>http://www.practicalseries.com/2001-pal/</a></p>
+
+                    <p class='hyp'>The Master Web Development Platform (MWDP) is used to maintain the live website.</p>
+
+                    <p class='hyp'>The live website is an exact copy of the offline website stored in folder <span class='code'>PS2001-pal-wesite</span> on the <span class='code'>D:</span> drive of the MWDP, but without the <span class='code'>.git</span> folder.</p>
+
+                    <p class='hyp'>The website is uploaded from the MWDP to the Heart Internet servers using the WinSCP application, the installation of this application is discussed in the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-Software-configurations/PS2001-5-2341-001-ES-WDP-Config.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a>.</p>
+
+                    <p class='hyp'>Logon information is required to give access to the WinSCP application (this logon information is also restricted to having the correct credentials, the website will only permit machines with specific IP addresses to upload the data).</p>
+
+                    <p class='hyp'>The WinSCP application has two windows, the left-hand side is the <em>offline</em> website on the MWDP, the right-hand side is the <em>online</em> website on the Heart Internet servers:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f05-19'>
+                            <a href='01-pages/11-0503-scm/02-images/fig-05-19-min.png' data-lightbox='fig-set' data-title='Figure 5.19 - WinSCP FTP with the live website'>
+                                <img src='01-pages/11-0503-scm/02-images/fig-05-19-min.png' alt='Figure 5.19 - WinSCP FTP with the live website'>
+                            </a>
+                            <figcaption>Figure 5.19 &emsp; WinSCP FTP with the live website</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>Those requiring FTP access to the website should apply to the following:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class='table-clean' id='js--t05-08'>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left' style='width: 40%'><span class='sml-caps-ns'>Site Owner::</span></td>
+                            <td class='table-left' style='width: 60%'>Michael Gledhill</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='sml-caps-ns'>Account details::</span></td>
+                            <td class='table-left'>PSP Website FTP</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='sml-caps-ns'>Contact Details</span></td>
+                            <td class='table-left'>mg@practicalseries.com</td>
+                        </tr>
+<!-- Caption -->        <tr class='no-border'>
+                            <td class='leading'></td>
+                            <td colspan='2' class='table-caption'>Table 5.8 &emsp; PracticalSeries FTP access details</td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+
+
+<!-- ************************************************************************** [WP LAST]
+     SECTION - LAST SECTION BEFORE FOOTER (WITH NAVIGATION)
+     ***********************************************************************-->
+
+        <p> <br class="toc-pad"></p>
+        <p> <br class="toc-pad"></p>
+        <div class="section-std" id="js--999901">               <!-- Start of additional row  -->
+            <div class="rg-row">                                <!-- Start of row content     -->
+                <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
+                    <aside class="aside-nav">                   <!-- Start of sidebar nav     -->
+                        <a class="xref" href="11-0502-scm.html#js--050200">Prev</a>
+                    </aside>                                    <!-- End of left side bar     -->
+</div>                                          <!-- End of left column       -->
+
+                <div class="rg-col rg-span3-5 aside-nav">       <!-- Start of end image area  -->
+                    <img src="../00-comres/11-resources/01-css/01-css-images/end-mark.svg" alt="End flourish image">
+                </div>                                          <!-- End of section text area -->
+
+                <div class="rg-col rg-span1-5">                 <!-- Start of right column    -->
+                    <aside class="aside-nav">                   <!-- Start of sidebar nav     -->
+                        <a class="xref" href="11-0504-scm.html#js--050400">Next</a>
+                    </aside>                                    <!-- End of right side bar    -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of row content       -->
+        </div>                                                  <!-- End of additional row    -->
+<!-- ========================================================================== [WP END]      -->
+
+
+<!-- ************************************************************************** [WP FOOTER]
+     FOOTER
+     ***********************************************************************-->
+        <footer class="footer">                                 <!-- Start of footer          -->
+            <ul class="footer-nav">                             <!-- Start of footer nav      -->
+                <li><a class="js--sc-000000" href="#"><span class="top-nav-icon" style="color:#5b7daf">t</span>Top</a><span class="footer-spacer">&#x25C7;</span></li>
+                <li><a href="../11-web/80-00-finally.html#js--800100">Contact MG</a><span class="footer-spacer">&#x25C7;</span></li>
+                <li><a href="../11-web/80-00-finally.html#js--800200">Acknowledgments</a><span class="footer-spacer">&#x25C7;</span></li>
+                <li><a href="../11-web/80-00-finally.html#js--800300">Colophon</a><span class="footer-spacer">&#x25C7;</span></li>
+                <li><a href="../11-web/80-00-finally.html#js--800400">Legal &amp; Privacy</a></li>
+            </ul>                                               <!-- End of footer nav        -->
+
+            <ul class="social-links">
+ <!--            <li><a href="https://www.facebook.com/practicalseries"><i id="js--fbicon" class="ion-social-facebook-outline"></i></a></li>
+                <li><a href="https://twitter.com/practicalseries"><i id="js--twicon" class="ion-social-twitter-outline"></i></a></li> -->
+            </ul>
+        </footer>                                               <!-- End of footer            -->
+<!-- ========================================================================== [WP END]      -->
+
+    </body>
+</html>

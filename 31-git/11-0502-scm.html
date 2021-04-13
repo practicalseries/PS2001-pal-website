@@ -1,0 +1,1920 @@
+<!DOCTYPE html>                                                                 <!-- HTML 5 file -->
+
+<!-- PRACTICALSERIES (c) 2021
+
+*******************************************************************************
+
+PRACTICALSERIES: Practical Series of Publications by Michael Gledhill
+                 Published in the United Kingdom
+
+                 Email: mg@practicalseries.com
+                 Web:   https://practicalseries.com
+
+******************************************************************************* -->
+<html lang="en">                                                                <!-- Declare language                              -->
+    <head>                                                                      <!-- Start of head section                         -->
+        <meta charset="utf-8">                                                  <!-- Use unicode char set (< 1024 char from SOF)   -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Make page follow browser width and reset zoom -->
+        <meta name="description" content="Practiacl series automation library, PAL, Enginering stations, ES, scm, TIA Workspace structure, local and remote repositories">
+
+<!-- ==========================================================================
+
+
+
+*******************************************************************************
+Title :          PRACTICAL SERIES AUTOMATION LIBRARY (PAL)
+
+                 GIT - SOFTWARE CONTROL MECHANISM              11-0502-SCM.HTML
+*******************************************************************************
+DETAILS
+
+The Practical Series publication - Practical Series Automation Library (PAL)
+
+This website is part of the Practical Series Automation Library (PAL); a
+library of software modules and templates that have been made available for
+the Siemens Simatic S7-1500 range of controllers. The PAL is fully deployable
+software that is suitable for the control of most industrial process
+applications.
+
+*******************************************************************************
+MODIFICATION HISTORY:
+
+This is a complete summary of all software modifications.
+
+Date          Issue        Author         Reason for Modification
+*******************************************************************************
+10 Apr 2021   000.106      M. Gledhill    Released as a development prototype
+                                          Revision control active
+                                          RELEASE CHECKLIST       
+                                             Title                Y
+                                             Meta description     Y
+                                             Rev Badge (br red)   000.106 (dev)
+                                             Rev Data Page        000.105
+                                             Rev Data Code        None
+                                             Rev Data scroll      000.105
+                                             TOC softscroll       Y
+                                             Nav Prev chap        Y (0400)
+                                             Nav Prev sec         Y (0501)
+                                             Nav Next chap        Y (0600)
+                                             Nav Next sec         Y (0503)
+                                             Nav Top              Y
+                                             Nav Home             Y (00)
+                                             Last section Prev    Y (0501)
+                                             Last section Next    Y (0503)
+                                             Footer Top           Y
+                                             Footer Contacts &c.  Y (11/80)
+                                             All U-TX removed     *********** N ********************************************
+
+                                          File created
+                                          based on 98-00-blank.html
+*************************************************************************** -->
+
+
+<!-- **************************************************************************
+     FAVICON
+     ***********************************************************************-->
+        <!-- favicons all platforms --> <link rel="apple-touch-icon" sizes="180x180" href="../00-comres/11-resources/02-images/01-favicons/apple-touch-icon.png">
+                                        <link rel="icon" type="image/png"            href="../00-comres/11-resources/02-images/01-favicons/favicon-32x32.png" sizes="32x32">
+                                        <link rel="icon" type="image/png"            href="../00-comres/11-resources/02-images/01-favicons/favicon-16x16.png" sizes="16x16">
+                                        <link rel="mask-icon"                        href="../00-comres/11-resources/02-images/01-favicons/safari-pinned-tab.svg">
+                                        <meta name="theme-color" content="#ffffff">
+
+
+<!-- **************************************************************************
+     HEAD SCRIPT AREA
+     ***********************************************************************-->
+        <!-- jQuery Library -->         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Waypoints (sticky nav) --> <script src="../00-comres/21-global/05-js/jquery.waypoints.min.js"></script>
+        <!-- Hyphenator -->             <script src="../00-comres/21-global/05-js/hyphenator.js"></script>
+        <!-- Lightbox -->               <script src="../00-comres/21-global/05-js/lightbox.js"></script>
+        <!-- Prettify (main) -->        <script src="../00-comres/21-global/05-js/run_prettify.js?autoload=true&lang=css"></script>
+        <!-- MathJax -->                <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async></script>
+        <!-- PS main script -->         <script src="../00-comres/11-resources/05-js/script.js"></script>
+                                                                <!-- ▼▼▼▼ CHANGE FOLDER ▼▼▼▼  -->
+         <!-- PS local scroll script --> <script src="01-pages/11-0502-scm/05-local-js/scroll.js"></script>
+
+
+
+
+<!-- **************************************************************************
+     HEAD CSS LOAD
+     ***********************************************************************-->
+        <!-- Load PS fonts -->          <link rel="stylesheet" type="text/css" href="../00-comres/21-global/03-fonts/ps-fonts.css">
+        <!-- Load TIA fonts -->         <link rel="stylesheet" type="text/css" href="../00-comres/21-global/03-fonts/tia-fonts.css">
+        <!-- Normalise -->              <link rel="stylesheet" type="text/css" href="../00-comres//21-global/01-css/normalise.css">
+        <!-- Lightbox styles -->        <link rel="stylesheet" type="text/css" href="../00-comres/21-global/01-css/lightbox.css">
+        <!-- Ionicons -->               <link rel="stylesheet" type="text/css" href="../00-comres/21-global/01-css/ionicons.min.css">
+        <!-- PS grid system -->         <link rel="stylesheet" type="text/css" href="../00-comres/11-resources/01-css/grid.css">
+        <!-- PS main styles -->         <link rel="stylesheet" type="text/css" href="../00-comres/11-resources/01-css/style.css">
+        <!-- PAL styles -->             <link rel="stylesheet" type="text/css" href="../00-comres/11-resources/01-css/style-pal.css">
+                                                                <!-- ▼▼▼▼ CHANGE FOLDER ▼▼▼▼  -->
+        <!-- Code frag highlights      <link rel="stylesheet" type="text/css" href="01-pages/11-0502-scm/01-local-css/codelines.css">-->
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      GOOGLE ANALYTICS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                        <script>
+                                          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                                          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                                          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                                          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                                          ga('create', 'UA-87335633-1', 'auto');
+                                          ga('set', 'anonymizeIp', true);           // anonymise ip address
+                                          ga('send', 'pageview');
+                                        </script>
+
+
+<!-- **************************************************************************
+     TITLE
+     ***********************************************************************-->
+        <title>PAL | SCM Engineering Stations</title>
+    </head>
+
+    <body>
+
+
+<!-- ************************************************************************** [WP HEADER]
+     HEADER (COVER & TABLE OF CONTENTS)
+     ***********************************************************************-->
+
+        <header id="js--000000">
+
+<!-- ************************************************************************** [WP TOPNAV]
+     TOP NAVIGATION (ABOVE CONTENTS LIST)
+     ***********************************************************************-->
+
+            <nav>                                               <!-- Start of top nav bar     -->
+                <div class="top-nav">                           <!-- Start of top nav row     -->
+                    <div class="rg-row">                        <!-- Start of nav button row  -->
+                        <!-- Button 01 - Previous Section -->
+                        <a class="nav-wide" href="11-0500-scm.html#js--050100"><span class="top-nav-icon">l</span><span class="top-nav-text">Prev. section</span></a>
+                        <!-- Button 02 - Previous Chapter -->
+                        <a class="nav-wide" href="11-0400-scm.html#js--000000"><span class="top-nav-icon">u</span><span class="top-nav-text">Prev. chapter</span></a>
+                        <!-- Button 03 - Home wide (hidden when fixed nav activates) -->
+                        <a class="nav-wide nav-home" href="11-00-scm.html#js--000000"><span class="top-nav-text">Home</span><span class="top-nav-icon">h</span></a>
+                        <!-- Button 03a - Top narrow (hidden until fixed nav activates) -->
+                        <a class="nav-narrow js--sc-000000" href="#"><span class="top-nav-icon">t</span><span class="top-nav-text">Top</span></a>
+                        <!-- Button 03b - Home narrow (hidden until fixed nav activates) -->
+                        <a class="nav-narrow" href="11-00-scm.html#js--000000"><span class="top-nav-text">Home</span><span class="top-nav-icon">h</span></a>
+                        <!-- Button 04 - Next Chapter -->
+                        <a class="nav-wide" href="11-0600-scm.html#js--000000"><span class="top-nav-text">Next chapter</span><span class="top-nav-icon">d</span></a>
+                        <!-- Button 05 - Next section -->
+                        <a class="nav-wide" href="11-0503-scm.html#js--050300"><span class="top-nav-text">Next section</span><span class="top-nav-icon">r</span></a>
+                    </div>                                      <!-- End of nav button row    -->
+                </div>                                          <!-- End of top nav row       -->
+            </nav>                                              <!-- End of top nav bar       -->
+<!-- ========================================================================== [WP END]      -->
+
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      HEADLINE - LEFT SIDEBAR (LOGO)
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+             <div class="rg-row pal-title-row">
+                <div class="rg-col rg-span1-5">
+                    <aside class="aside-left aside-left-rev">
+                         <a href="index.html">
+<!-- Logo image -->         <img class="pal-headline-logo" src="../00-comres/11-resources/02-images/pal-logo-github.svg" alt="PAL Logo">
+                        </a>
+                    </aside>
+
+                </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      HEADLINE - DOCUMENT TITLE
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                <div class="rg-col rg-span3-5">
+                    <div class="pal-headline">
+                        <p class="pal-headline-ps">Practical Series Automation Library</p>
+<!-- Doc Title Sml      <h2>Blank Webpage Template</h2>-->
+<!-- Doc Title Lrg -->  <h2><span style="font-size: 150%">A Software Control Mechanism</span></h2> 
+
+                    </div>
+                </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      HEADLINE - RIGHT SIDEBAR (Page revision information)
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                <div class="rg-col rg-span1-5">
+                    <aside class="aside-right-rev">
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - REVISION TABLE
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class="table-rev">
+<!-- Title row -->      <tr>
+                            <td class="leading"></td>
+                            <td class="table-right"></td>
+                            <td colspan="2" class="table-left" style="border-bottom: 1px solid #ccc">Page Revision Data</td>
+                        </tr>
+<!-- Spacing row -->    <tr class="no-border">
+                            <td class="leading"></td>
+                            <td colspan="3" class="table-left"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">Page:</td>
+                            <td class="table-right" style="width: 30%" id="rev-doc">000.106</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">scroll.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-scroll"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em; border-bottom: 1px solid #ccc"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">codelines.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-codelines"></td>
+                        </tr>
+<!-- Title row -->      <tr>
+                            <td class="leading" style="height: 2em"></td>
+                            <td class="table-right"></td>
+                            <td colspan="2" class="table-left" style="border-bottom: 1px solid #ccc; vertical-align: bottom">Common resources</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">script.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-script"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">Style.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-style"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">style-pal.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-style-pal"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">grid.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-grid"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">ps-fonts.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-ps-fonts"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">tia-fonts.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-tia-fonts"></td>
+                        </tr>
+<!-- Title row -->      <tr>
+                            <td class="leading" style="height: 2em"></td>
+                            <td class="table-right"></td>
+                            <td colspan="2" class="table-left" style="border-bottom: 1px solid #ccc; vertical-align: bottom">Global resources</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">normalise.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-normalise"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">lightbox.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-lightbox"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">lightbox.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-lbjs"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">waypoints.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-waypoints"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">hyphenator.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-hyphenator"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">ionicons.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-ionicons"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">prettify.css:</td>
+                            <td class="table-right" style="width: 30%" id="rev-prettify"></td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class="leading" style="height: 1em"></td>
+                            <td class="table-cent" style="width: 30%"></td>
+                            <td class="table-left" style="width: 40%">prettify.js:</td>
+                            <td class="table-right" style="width: 30%" id="rev-run-prettify"></td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                    </aside>
+                </div>
+            </div>
+<!-- ************************************************************************** [WP TITLE]
+     TITLE BAR (Section number and text)
+     ***********************************************************************-->
+
+            <div class="rg-row">                                <!-- Start of title row       -->
+                <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
+                    <aside class="rev-badge-side">              <!-- BUILD BADGE              -->
+                        <img src="https://img.shields.io/badge/dev-000.106-BF504D.svg" alt="Build">
+                    </aside>
+                </div>                                          <!-- End of Left column       -->
+                <div class="rg-col rg-span3-5">                 <!-- Start of title           -->
+                   <div class="pal-overline-index"></div>       <!-- Overline bar             -->
+<!-- Section     <div class="title-num-box"><p>98</p></div>
+                    <div class="title-text-box"><h1><span class="title-small-num">01</span>Blank page</h1></div> -->
+<!-- Contents -->   <div class="title-contents"><h1>Contents</h1></div> 
+                </div>                                          <!-- End of title             -->
+                <div class="rg-col rg-span1-5">                 <!-- Start of right column    -->
+                    <aside class="aside-right-rev">             <!-- Start of right side bar  -->
+                    </aside>                                    <!-- End of right side bar    -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of title row         -->
+<!-- ========================================================================== [WP END]      -->
+
+
+<!-- ************************************************************************** [WP TOC]
+     TABLE OF CONTENTS
+     ***********************************************************************-->
+
+            <div class="rg-row">                                <!-- Start of TOC section     -->
+                <div class="rg-col rg-span1-5"></div>           <!-- Left column (not used)   -->
+                <div class="rg-col rg-span3-5">                 <!-- Start of TOC column      -->
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    TOC - Section 5
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ul class="toc-line">
+<!-- Level 1 -->        <li><a href="index.html">
+                            <div class="toc-lev"><span class="toc-lev1-num"></span><span class="toc-lev1-text">Git documents main page</span></div></a>
+                        </li>
+                    </ul>
+
+                    <ul class="toc-line">
+<!-- Level 1 -->        <li><a href="11-00-scm.html">
+                            <div class="toc-lev"><span class="toc-lev1-num"></span><span class="toc-lev1-text">SCM main page</span></div></a>
+                        </li>
+                    </ul>
+                    <ul class="toc-line">
+<!-- Level 1 -->        <li><a class='js--sc-050000' href='11-0500-scm.html.html#js--050000'>
+                                <div class='toc-lev'><span class='toc-lev1-num'>5</span><span class='toc-lev1-text'>Software storage and folder structures</span></div></a>
+                        </li>                        
+                    </ul>
+
+                    <ul class="toc-list">
+<!-- Level 2 -->        <li><a class='js--sc-050100' href='11-0500-scm.html#js--050100'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>5.1</span><span class='toc-lev2-text'>An overview of the Project structure</span></div></a>
+                        </li>
+<!-- Level 2 -->        <li><a class='js--sc-050200' href='11-0502-scm.html#js--050200'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>5.2</span><span class='toc-lev2-text'>Engineering stations</span></div></a>
+                        </li>
+<!-- Level 3 -->        <li><a class='js--sc-050201' href='11-0502-scm.html#js--050201'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.2.1</span><span class='toc-lev3-text'>ES software folders</span></div></a>
+                        </li>
+<!-- Level 3 -->        <li><a class='js--sc-050202' href='11-0502-scm.html#js--050202'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.2.2</span><span class='toc-lev3-text'>Software development area</span></div></a>
+                        </li>
+<!-- Level 3 -->        <li><a class='js--sc-050203' href='11-0502-scm.html#js--050203'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.2.3</span><span class='toc-lev3-text'>The Workspace and local repository</span></div></a>
+                        </li>  
+<!-- Level 3 -->        <li><a class='js--sc-050204' href='11-0502-scm.html#js--050204'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.2.4</span><span class='toc-lev3-text'>Understanding the Simatic Workspace</span></div></a>
+                        </li>
+<!-- Level 3 -->        <li><a class='js--sc-050205' href='11-0502-scm.html#js--050205'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.2.5</span><span class='toc-lev3-text'>The Workspace as a local repository</span></div></a>
+                        </li>      
+<!-- Level 3 -->        <li><a class='js--sc-050206' href='11-0502-scm.html#js--050206'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.2.6</span><span class='toc-lev3-text'>Commit point archives</span></div></a>
+                        </li>    
+<!-- Level 3 -->        <li><a class='js--sc-050207' href='11-0502-scm.html#js--050207'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.2.7</span><span class='toc-lev3-text'>Maser ES and repository backup</span></div></a>
+                        </li>     
+<!-- Level 3 -->        <li><a class='js--sc-050208' href='11-0502-scm.html#js--050208'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.2.8</span><span class='toc-lev3-text'>Remote repository</span></div></a>
+                        </li>    
+<!-- Level 2 -->        <li><a class='js--sc-050300' href='11-0503-scm.html#js--050300'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>5.3</span><span class='toc-lev2-text'>Web development platforms</span></div></a>
+                        </li>
+<!-- Level 3 -->        <li><a class='js--sc-050301' href='11-0503-scm.html#js--050301'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.3.1</span><span class='toc-lev3-text'>WDP software folders</span></div></a>
+                        </li>  
+<!-- Level 3 -->        <li><a class='js--sc-050302' href='11-0503-scm.html#js--050302'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.3.2</span><span class='toc-lev3-text'>Understanding the website structure</span></div></a>
+                        </li>      
+<!-- Level 3 -->        <li><a class='js--sc-050303' href='11-0503-scm.html#js--050303'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.3.3</span><span class='toc-lev3-text'>Local repository</span></div></a>
+                        </li>
+<!-- Level 3 -->        <li><a class='js--sc-050304' href='11-0503-scm.html#js--050304'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.5.4</span><span class='toc-lev3-text'>Master WDP and repository backup</span></div></a>
+                        </li>   
+<!-- Level 3 -->        <li><a class='js--sc-050305' href='11-0503-scm.html#js--050305'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.3.5</span><span class='toc-lev3-text'>Remote repository</span></div></a>
+                        </li>       
+<!-- Level 3 -->        <li><a class='js--sc-050306' href='11-0503-scm.html#js--050306'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.3.6</span><span class='toc-lev3-text'>The live website</span></div></a>
+                        </li>   
+<!-- Level 2 -->        <li><a class='js--sc-050400' href='11-0504-scm.html#js--050400'>
+                            <div class='toc-lev'><span class='toc-lev2-num'>5.4</span><span class='toc-lev2-text'>NAS based Project documentation</span></div></a>
+                        </li> 
+<!-- Level 3 -->        <li><a class='js--sc-050401' href='11-0504-scm.html#js--050401'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.4.1</span><span class='toc-lev3-text'>The Project folder structure
+                        </li>      
+<!-- Level 3 -->        <li><a class='js--sc-050402' href='11-0504-scm.html#js--050402'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.4.2</span><span class='toc-lev3-text'>Project registry</span></div></a>
+                        </li>     
+<!-- Level 3 -->        <li><a class='js--sc-050403' href='11-0504-scm.html#js--050403'>
+                            <div class='toc-lev'><span class='toc-lev3-num'>5.4.3</span><span class='toc-lev3-text'>Document versions</span></div></a>
+                        </li>      
+                    </ul>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                </div>                                          <!-- End of TOC column        -->
+                <div class="rg-col rg-span1-5"></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of TOC section       -->            
+            
+<!-- ========================================================================== [WP END]      -->
+
+
+        </header>                                               <!-- End of header            -->
+<!-- ========================================================================== [WP END]      -->
+
+
+
+<!-- ************************************************************************** [WP FIXEDNAV]
+     FIXED NAVIGATION BAR CHANGEOVER POINT
+     ***********************************************************************-->
+        <div id="js--fixed-nav"></div>                          <!-- fixed navigation point   -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - 5.2 - Engineering stations
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050200'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-overline'></div>      <!-- Overline                 -->
+                 <div class='sub-title-num-box'><h2>5.2</h2></div>
+                 <div class='sub-title-text-box'><h2>Engineering stations</h2></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>Engineering stations (ES) are used to develop the PAL software, they are generally high powered machines with at least 512&nbsp;GB of hard drive storage and 16&nbsp;GB of RAM. Typically with a 10<sup>th</sup> or 11<sup>th</sup> generation i7 processor or equivalent (such as an AMD Ryzen 7).</p>
+
+                    <p class='hyp'>Engineering stations should be equipped with dual 27&quot; QHD (quad high definition) screens (these have a resolution of 2560 × 1440 pixels).</p>
+
+                    <p class='hyp'>The configuration of an ES, including drive allocation, device naming, software package installation &amp;c. is explained in the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-Software-configurations/PS2001-5-2341-001-ES-WDP-Config.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a>.</p>
+
+                    <p class='hyp'>In summary, it is assumed that the ES has been configured in line with the above document and is equipped as follows:</p>
+
+                    <p class='hyp'>The ES is equipped with three hard drive partitions (as a minimum):</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class='table-clean'>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left' style='width: 15%'><span class='code'>C:</span></td>
+                            <td class='table-left' style='width: 25%'><span class='code'>OpSys</span></td>
+                            <td class='table-left' style='width: 60%'>Operating system and application files</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='code'>D:</span></td>
+                            <td class='table-left'><span class='code'>Projects</span></td>
+                            <td class='table-left'>PSP project files</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='code'>E:</span></td>
+                            <td class='table-left'><span class='code'>Licences</span></td>
+                            <td class='table-left'>Storage area for licences &amp;c. </td>
+                        </tr>
+<!-- Caption -->        <tr class='no-border'>
+                            <td class='leading'></td>
+                            <td colspan='3' class='table-caption'>&emsp;</td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->       
+
+                    <p class='hyp'>The <span class='code'>C:</span> drive (<span class='code'>OpSys</span>) holds the operating system and all installed programmes and applications (the Siemens application software and any office applications will be installed on this drive). The <span class='code'>C:</span> drive should be at least 200&nbsp;GB in size.</p>
+
+                    <p class='hyp'>The <span class='code'>D:</span> drive (<span class='code'>Projects</span>) holds any Controller, HMI and SCADA projects developed using TIA Portal. This consists of the source code, archives, graphical images, runtime configurations and any other files needed to develop the control system software. The <span class='code'>D:</span> drive should fill the remainder of the hard drive, excepting 1&nbsp;GB that should be reserved for the <span class='code'>E:</span> drive. The <span class='code'>D:</span> drive should be at least 200&nbsp;GB in size.</p>
+
+                    <p class='hyp'>The <span class='code'>E:</span> drive (<span class='code'>Licences</span>) holds all the licences needed to activate the Siemens TIA Portal software and its installed options. </p>
+
+                    <p class='hyp'>The <span class='code'>E:</span> drive is generally very small, it need only be a few megabytes in size (in practice, a 1&nbsp;GB partition is more than adequate).</p>
+
+                    <p class='hyp'>The software applications and configuration below are required on an ES:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      NUMBERED LIST
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ol class='list-num'>                       <!-- Start of numbered list   -->
+                        <li><p class='hyp'>TIA Portal has been installed</p></li>
+                    </ol>                                       <!-- End of numbered list     -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->  
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      UNNUMBERED LIST
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ul class='list-no-num' style="padding-left: 3em;">    <!-- Start of unnumbered list -->
+                        <li><p class='nohyp'><span class='sans'>The TIA Portal setting have been set to the PAL configuration</span></p></li>
+
+                        <li><p class='nohyp'><span class='sans'>The TIA Portal Git add-in has been installed and enabled</span></p></li>
+                    </ul>                                       <!-- End of unnumbered list   -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      NUMBERED LIST
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ol start="2" class='list-num'>              <!-- Start of numbered list   -->
+                        <li><p class='hyp'>A GitHub user account has been setup</p></li>
+                    </ol>                                       <!-- End of numbered list     -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->  
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      UNNUMBERED LIST
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ul class='list-no-num' style="padding-left: 3em;">                    <!-- Start of unnumbered list -->
+                        <li><p class='nohyp'><span class='sans'>The account has been added as a contributor to the PracticalSeries organisation</span></p></li>
+                    </ul>                                       <!-- End of unnumbered list   -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      NUMBERED LIST
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ol start="3" class='list-num'>             <!-- Start of numbered list   -->
+                        <li><p class='hyp'>Git SCM has been installed</p></li>
+                    </ol>                                       <!-- End of numbered list     -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->  
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+UNNUMBERED LIST
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ul class='list-no-num' style="padding-left: 3em;"><!-- Start of unnumbered list -->
+                        <li><p class='nohyp'><span class='sans'>Notepad++ is installed as the Git default editor</span></p></li>
+
+                        <li><p class='nohyp'><span class='sans'>An SSH key link has been established between Git and GitHub</span></p></li>
+
+                    </ul>                                       <!-- End of unnumbered list   -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      NUMBERED LIST
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ol start="4" class='list-num'>             <!-- Start of numbered list   -->
+                        <li><p class='hyp'>The Visual Studio Code text editor has been installed</p></li>
+                    </ol>                                       <!-- End of numbered list     -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->  
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+UNNUMBERED LIST
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ul class='list-no-num' style="padding-left: 3em;"><!-- Start of unnumbered list -->
+                        <li><p class='nohyp'><span class='sans'>The standard set of Visual Studio Code extensions have been installed</span></p></li>
+
+                    </ul>                                       <!-- End of unnumbered list   -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+                    <p class='hyp'>The packages above are listed in the order in which they should have been installed on the engineering station. The exact details for installing and configuring the above application is given in the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-Software-configurations/PS2001-5-2341-001-ES-WDP-Config.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a>.</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SUBSECTION]
+     SUBSECTION - 5.2.1 - ES software folders
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050201'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-num-box'><h3>5.2.1</h3></div>
+                    <div class='sub-title-text-box'><h3>ES software folders</h3></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>All the Controller software for the PAL is stored on the <span class='code'>D:</span> drive (<span class='code'>Projects</span>).</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class='table-clean'>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left' style='width: 40%'><span class='code'>1000 Software Projects</span></td>
+                            <td class='table-left' style='width: 60%'>TIA Portal Projects folder</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='code'>2500 Git Projects</span></td>
+                            <td class='table-left'>Git Workspace folder</td>
+                        </tr>
+<!-- Caption -->        <tr class='no-border'>
+                            <td class='leading'></td>
+                            <td colspan='2' class='table-caption'>&emsp;</td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->       
+
+
+                    <p class='hyp'>The underlying structure is:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f05-02'>
+                            <a href='01-pages/11-0502-scm/02-images/fig-05-02-min.svg' data-lightbox='fig-set' data-title='Figure 5.2 - ES Project folder structure'>
+                                <img src='01-pages/11-0502-scm/02-images/fig-05-02-min.svg' alt='Figure 5.2 - ES Project folder structure'>
+                            </a>
+                            <figcaption>Figure 5.2 &emsp; ES Project folder structure</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The software projects folder:</p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code'>1000 Software Projects</span></p>
+
+                    <p class='hyp'>is used to store the individual Controller projects that are opened and developed using TIA Portal. All such projects (within the PAL) are named as follows (see <a class='hlink' href='11-0306-scm.html#js--030800'>&sect;&nbsp;3.8</a>):</p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code'>PS2001-PAL-&lt;commit tag&gt;</span></p>
+
+                    <p class='hyp'>The alternate branch on the <span class='code'>D:</span> drive is:</p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code'>2500 Git Projects</span></p>
+
+                    <p class='hyp'>This is used to store the Git repository that is used to store the TIA Portal Project Workspace.</p>
+
+                    <p class='hyp'>These two folders:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class='table-clean'>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left' style='width: 40%'><span class='code'>1000 Software Projects</span></td>
+                            <td class='table-left' style='width: 60%'>TIA Portal Projects folder</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='code'>2500 Git Projects</span></td>
+                            <td class='table-left'>Git Workspace folder</td>
+                        </tr>
+<!-- Caption -->        <tr class='no-border'>
+                            <td class='leading'></td>
+                            <td colspan='3' class='table-caption'>&emsp;</td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->       
+
+                    <p class='hyp'>are examined further in the following sections.</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SUBSECTION]
+     SUBSECTION - 5.2.2 - Software development area (1000 Software Projects)
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050202'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-num-box'><h3>5.2.2</h3></div>
+                    <div class='sub-title-text-box'><h3>Software development area<br><span class='code' style="font-size: 1.5rem;">1000 Software Projects</span></h3></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>There may be multiple projects under the </p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code'>1000 Software Projects</p>
+
+                    <p class='hyp'>Each project is identified by its project number (<span class='code'>PSnnnn</span>) followed by the name and some brief description of the project. In the case of the PAL software the project number is (<span class='code'>PS2001</span>) and the full project folder is (<span class='code'>PS2001-PAL-Build-SW</span>).</p>
+
+                    <p class='hyp'>The <span class='code'>PS2001-PAL-Build-SW</span> folder holds all the TIA projects, these are the projects that can be downloaded via TIA Portal into a Controller.</p>
+
+                    <p class='hyp'>The entire software development takes place in TIA Portal and is stored as a TIA project locally on the engineering station.</p>
+
+                    <p class='hyp'>All TIA Projects are stored in the folder 31 SW TIA PAL:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f05-03'>
+                            <a href='01-pages/11-0502-scm/02-images/fig-05-03-min.svg' data-lightbox='fig-set' data-title='Figure 5.3 - PAL local ES TIA Project folder structure'>
+                                <img style="max-width: 418px;" src='01-pages/11-0502-scm/02-images/fig-05-03-min.svg' alt='Figure 5.3 - PAL local ES TIA Project folder structure'>
+                            </a>
+                            <figcaption>Figure 5.3 &emsp; PAL local ES TIA Project folder structure</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>Each TIA Portal project is stored in its own sub-folder under the <span class='code'>31 SW TIA PAL</span> directory. Each project is named according to its commit point (see <a class='hlink' href='11-0306-scm.html#js--030800'>&sect;&nbsp;3.8</a> for information about file names).</p>
+
+                    <p class='hyp'>An example is shown below:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f05-04'>
+                            <a href='01-pages/11-0502-scm/02-images/fig-05-04-min.png' data-lightbox='fig-set' data-title='Figure 5.4 - TIA Projects within the folder structure'>
+                                <img src='01-pages/11-0502-scm/02-images/fig-05-04-min.png' alt='Figure 5.4 - TIA Projects within the folder structure'>
+                            </a>
+                            <figcaption>Figure 5.4 &emsp; TIA Projects within the folder structure</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The interior of a TIA Project folder has the following appearance:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f05-05'>
+                            <a href='01-pages/11-0502-scm/02-images/fig-05-05-min.png' data-lightbox='fig-set' data-title='Figure 5.5 - TIA Projects within the folder structure'>
+                                <img src='01-pages/11-0502-scm/02-images/fig-05-05-min.png' alt='Figure 5.5 - TIA Projects within the folder structure'>
+                            </a>
+                            <figcaption>Figure 5.5 &emsp; TIA Projects within the folder structure</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The <span class='code'>.ap16</span> file (highlighted in blue), if clicked would open the project in TIA Portal. The folder structure above is all part of the TIA Project and independent modification of this structure or any files within it may result in the corruption of the project.</p>
+
+                    <p class='hyp'>The top level folder of a project (in this case <span class='code'>PS2001-PAL-D0003</span>) should be considered to be the TIA Portal Project in its entirety, everything below this level is best left alone. </p>
+
+                    <p class='hyp'><a class='xref js--sc-f05-02' href='#'>Figure&nbsp;5.2</a> shows an additional folder under the <span class='code'>PS2001-PAL-Build-SW</span> directory, this is the <span class='code'>41 TIA PoC</span> folder. This also holds TIA Projects; these are not formally part of the PAL software, they form <em>&ldquo;proof of concept&rdquo;</em> projects.</p>
+
+                    <p class='hyp'>Proof of concept software is used to develop, test or demonstrate that a particular approach works within the PAL prior to that approach being formally adopted within the PAL.</p>
+
+                    <p class='hyp'>Proof of concept projects can be considered a test bed or prototyping area for software.</p>
+
+                    <p class='hyp'>The final folder under the <span class='code'>PS2001-PAL-Build-SW</span> directory is designated <span class='code'>81 SW Archive</span>; this is used to store <em>&ldquo;archived&rdquo;</em> copies of each build of the TIA Project software.</p>
+
+                    <p class='hyp'>Archived copies of a project are produced by TIA Portal, they are essentially zipped versions of the TIA Project folder with non-essential (or re-buildable) information removed </p>
+
+                    <p class='hyp'>Archive files are a convenient way of transporting projects (and indeed, each archived copy of the software is available for download from the website, see below). </p>
+
+                    <p class='hyp'>Project archive files all have the extension <span class='code'>.zap16</span> (and are universally referred to as <em>&ldquo;zap&rdquo;</em> files), they are indeed <span class='code'>zip</span> files, if the extension were change from <span class='code'>.zap16</span> to <span class='code'>.zip</span>, the contents could be extracted by Windows Explorer.</p>
+
+                    <p class='hyp'>There is an archive file for all commit points (see <a class='hlink' href='11-0306-scm.html#js--030800'>&sect;&nbsp;3.8</a>) within the software (both primary and secondary). These are accessible from the website at the following address:</p>
+
+                    <p class='hyp' style="text-align: center;"><a class='xref' href='https://practicalseries.com/2001-pal/31-git/81-00-archive.html'>https://practicalseries.com/2001-pal/31-git/81-00-archive.html</a></p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SUBSECTION]
+     SUBSECTION - 5.2.3 - The Workspace and local repository 
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050203'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-num-box'><h3>5.2.3</h3></div>
+                    <div class='sub-title-text-box'><h3>The Workspace repository<br><span class='code' style="font-size: 1.5rem;">2500 Git Projects</span></h3></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>The ES stores all its Git repositories in the directory:</p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code'>2500 Git Projects</span></p>
+
+                    <p class='hyp'>Specifically, the PAL repository associated with the Controller software development is the <span class='code'>PS2001-pal-software folder</span>:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f05-06'>
+                            <a href='01-pages/11-0502-scm/02-images/fig-05-06-min.svg' data-lightbox='fig-set' data-title='Figure 5.6 - PAL local ES repository folder structure'>
+                                <img style="max-width: 464px;" src='01-pages/11-0502-scm/02-images/fig-05-06-min.svg' alt='Figure 5.6 - PAL local ES repository folder structure'>
+                            </a>
+                            <figcaption>Figure 5.6 &emsp; PAL local ES repository folder structure</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>This folder is a Git repository, this can be seen by the hidden <span class='code'>.git</span> folder, this contains all the underlying repository structures required by Git and GitHub to control and manage the folder. </p>
+
+                    <p class='hyp'>The <span class='code'>.git</span> folder is similar to the TIA Project folders, in that, no changes should ever be made directly to anything that is in there. The best thing to do is to never open it or look in it; just leave it alone, it looks after itself.</p>
+
+                    <p class='hyp'>The remainder of the <span class='code'>PS2001-pal-software</span> folder holds the working files for the TIA Portal Workspace.</p>
+
+                    <p class='hyp'>The top level folder (<span class='code'>CON100</span>) is the Workspace equivalent of the controller in the TIA Project, this is also called <span class='code'>CON100</span> (this is in accordance with the Siemens naming conventions discussed in the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/11-SW-Software-Design-Specification-(SDS)/PS2001-5-2311-001-SDS.pdf' download>Software Design Specification (SDS) <em>[Ref.&nbsp;003, &sect;&nbsp;3.1.4]</em></a>)</p>
+
+                    <p class='hyp'>The Workspace folder contains the XML versions of the TIA Project exportable objects, these objects are also stored in (pre-named) folders:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class='table-clean'>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left' style='width: 25%'><span class='code'>Program blocks</span></td>
+                            <td class='table-left' style='width: 75%'>Holds the XML versions of Controller blocks: FBs, FCs, OBs and DBs</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='code'>PLC tags</span></td>
+                            <td class='table-left'>Holds any tag tables configured for the Controller</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='code'>PLC data types</span></td>
+                            <td class='table-left'>Holds the User Data Type (UDT) structures</td>
+                        </tr>
+<!-- Caption -->        <tr class='no-border'>
+                            <td class='leading'></td>
+                            <td colspan='3' class='table-caption'>&emsp;</td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->       
+
+                    <p class='hyp'>The linkage between the controller and the Workspace folder can be seen below:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f05-07'>
+                            <a href='01-pages/11-0502-scm/02-images/fig-05-07-min.png' data-lightbox='fig-set' data-title='Figure 5.7 - Project (left) and Workspace (right) associations'>
+                                <img src='01-pages/11-0502-scm/02-images/fig-05-07-min.png' alt='Figure 5.7 - Project (left) and Workspace (right) associations'>
+                            </a>
+                            <figcaption>Figure 5.7 &emsp; Project (left) and Workspace (right) associations</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The Workspace only holds the programmable objects from the Controller software (there is no hardware configuration, watch tables or traces &amp;c.). It can be seen that each folder and object in the TIA Project (left-hand side) has an equivalent in the Workspace (right-hand side).</p>
+
+                    <p class='hyp'>It can also be seen that the Workspace also holds some additional files: <span class='code'>.gitinore</span>, <span class='code'>LICENCE.md</span> and <span class='code'>README.md</span>; these are all files associated with the Git repository itself and have no associations within the TIA Project.</p>
+
+                    <p class='hyp'>These association are explained further in the following section:</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SUBSECTION]
+     SUBSECTION - 5.2.4 - Understanding the Simatic Workspace
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050204'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-num-box'><h3>5.2.4</h3></div>
+                    <div class='sub-title-text-box'><h3>Understanding the Simatic Workspace</h3></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>A Workspace is just a Windows folder located somewhere on the ES hard drive. It can be any folder and can have any name.</p>
+
+                    <p class='hyp'>The folder can be created directly through Windows or when being define via TIA Portal.</p>
+
+                    <p class='hyp'>In TIA Portal terms, a Workspace is simply a folder to which it will export copies of all the following types of objects (if they exist in the Project):</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      NUMBERED LIST
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+      <ol class='list-num'>                       <!-- Start of numbered list   -->
+        <li><p class='hyp'>Program blocks: </p></li>
+    </ol>                                       <!-- End of numbered list     -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->  
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+UNNUMBERED LIST
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <ul class='list-no-num' style="padding-left: 3em;">    <!-- Start of unnumbered list -->
+        <li><p class='nohyp'><span class='sans'>Organisation blocks (OBs)</span></p></li>
+
+        <li><p class='nohyp'><span class='sans'>Functions (FCs)</span></p></li>
+
+        <li><p class='nohyp'><span class='sans'>Function blocks (FBs)</span></p></li>
+
+        <li><p class='nohyp'><span class='sans'>Data blocks (DBs)</span></p></li>
+    </ul>                                       <!-- End of unnumbered list   -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+NUMBERED LIST
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <ol start="2" class='list-num'>              <!-- Start of numbered list   -->
+        <li><p class='hyp'>User (PLC) data type (referred to here, as UDTs)</p></li>
+
+        <li><p class='hyp'>PLC tag tables (referred to here as just tag tables)</p></li>
+
+    </ol>                                       <!-- End of numbered list     -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->  
+
+                    <p class='hyp'>TIA Portal exports them as text files, specifically as XML files.</p>
+
+                    <p class='hyp'>In addition to this, TIA Portal keeps track of the files it has exported and identifies if differences exist between its internal Project files and those files in the Workspace. If differences do exist, TIA Portal is able to synchronise those files in either direction (it can make the Workspace files match the Project files or, it can make the Project files match the modified Workspace files).</p>
+
+                    <p class='hyp'>The <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-Software-configurations/PS2001-5-2341-001-ES-WDP-Config.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a> contains a full description of how to create and link a Workspace to a TIA Portal Project.</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - INCIDENTAL TABLE (EN PASSANT)
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                   <table class='table-incid'>
+<!-- Header row -->     <tr>
+                            <th class='table-cent'>Author&rsquo;s note&nbsp;&mdash;&nbsp;How we got here </th>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='table-left'>
+                                <p>This isn&rsquo;t a new concept for Siemens, although it is new to TIA Portal. The forerunner to TIA Portal was a PLC programming package called Simatic Manager (or, more commonly, Step 7), this was used to programme earlier ranges of PLCs called S7-300 and S7-400 (TIA Portal will also programme these PLCs).</p>
+
+                                <p>Simatic Manager had the facility to export (or import) programmable blocks in a readable format, referred to as Source Blocks, all blocks could be converted to Source Blocks and the resulting Source Blocks were all text files that held a version of the software written in a Pascal like language (actually called Structured Control Language or SCL).</p>
+
+                                <p>The Source Files were again very useful, they were text files and so could be stored easily and could also be incorporated in a version control system&nbsp;&mdash;&nbsp;they were also readable (by humans).</p>
+
+                                <p>When TIA Portal was introduced and Simatic Manager began to be phased out (you can still get it, but most people use TIA Portal now), the Source Block functions (or any such equivalent) was not included in TIA Portal, and this upset a lot of people&nbsp;&mdash;&nbsp;virtually everyone to whom version control was important.</p>
+
+                                <p>Siemens were reminded of their deficiencies by those people, <span class='first-use'> &ldquo;oh tut deary me&rdquo;</span> they said, &ldquo;you seem to have forgotten this&rdquo; or words to that effect.</p>
+
+                                <p>Siemens have now addressed their shortcomings and have added the required features; the format is different: it exports thing as XML text files (rather than SCL text files), but it can be used in much the same way. I.e. version control systems can read the files and determine any changes that have been made. Siemens refer to the whole thing as part of their &ldquo;openness&rdquo; strategy. So, it&rsquo;s arrived late, but at least it&rsquo;s here now.</p>
+                            </td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>Looking once more at the Workspace in TIA Portal:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f05-08'>
+                            <a href='01-pages/11-0502-scm/02-images/fig-05-08-min.png' data-lightbox='fig-set' data-title='Figure 5.8 - Workspace viewed in TIA Porta'>
+                                <img src='01-pages/11-0502-scm/02-images/fig-05-08-min.png' alt='Figure 5.8 - Workspace viewed in TIA Porta'>
+                            </a>
+                            <figcaption>Figure 5.8 &emsp; Workspace viewed in TIA Porta</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The <span class='code'>CON100</span> folder (on the right) has been expanded out to show all the objects within it. On the right, the Program block folder has been opened showing the two blocks present within it. These are the XML equivalents of the blocks beginning OB00001 and FC61000 on the left.</p>
+
+                    <p class='hyp'>Opening one of the XML files (in this case OB00001), gives something similar to:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f05-09'>
+                            <a href='01-pages/11-0502-scm/02-images/fig-05-09-min.png' data-lightbox='fig-set' data-title='Figure 5.9 - The XML file for OB 1'>
+                                <img src='01-pages/11-0502-scm/02-images/fig-05-09-min.png' alt='Figure 5.9 - The XML file for OB 1'>
+                            </a>
+                            <figcaption>Figure 5.9 &emsp; The XML file for OB 1</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The XML files, although not instantly comprehensible, can be read by the human eye and ultimately understood.</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP INLINE]
+     SECTION INLINE - Understanding the Workspace symbols
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050204a'>          <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-text-box'><h4>Understanding the Workspace symbols</h4></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>Looking once more at <a class='xref js--sc-f05-08' href='#'>Figure&nbsp;5.8</a>, in the left pane, there are two columns, <span class='menu'>status</span> and <span class='menu'>action</span>. The <span class='menu'>status</span> tells us the state of the object in the TIA Project compared with the state of the object in the Workspace folder. The green dot <img src="01-pages/11-0502-scm/02-images/fig-05-09a-min.png" alt="Upload button"> means the two version are identical (generally, this is the preferred state).</p>
+
+                    <p class='hyp'>The <span class='menu'>status</span> can have the following values:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class='table-clean' id='js--t05-01'>
+<!-- Header row -->     <tr>
+                            <th class='leading'></th>
+                            <th class='table-cent' style='width: 15%'>Symbol</th>
+                            <th class='table-left' style='width: 25%'>Meaning</th>
+                            <th class='table-left' style='width: 60%'>Description</th>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-cent'><img src="01-pages/11-0502-scm/02-images/fig-05-09a-min.png" alt="No differences"></td>
+                            <td class='table-left'>No differences</td>
+                            <td class='table-left'><p>The compared versions of the object in the project and the Workspace are identical.</p>
+                            If at a group level, all lower-level elements are identical in the project and in the Workspace. 
+                            </td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading' style='height: 5em'></td>
+                            <td class='table-cent'><img src="01-pages/11-0502-scm/02-images/fig-05-09b-min.png" alt="low level differences"></td>
+                            <td class='table-left'>Lower-level differences</td>
+                            <td class='table-left'>One or more lower-level elements are different in the project and the Workspace, open the group to see the affected files.</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading' style='height: 5em'></td>
+                            <td class='table-cent'><img src="01-pages/11-0502-scm/02-images/fig-05-09c-min.png" alt="Not in workspace"></td>
+                            <td class='table-left'>Not in workspace</td>
+                            <td class='table-left'>The object is only available in the project</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading' style='height: 5em'></td>
+                            <td class='table-cent'><img src="01-pages/11-0502-scm/02-images/fig-05-09d-min.png" alt="Project object modified"></td>
+                            <td class='table-left'>Project object modified</td>
+                            <td class='table-left'>The compared versions of the object in the project and the Workspace are different. The TIA Portal object has been changed since the last synchronisation operation (Project is newer)</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading' style='height: 5em'></td>
+                            <td class='table-cent'><img src="01-pages/11-0502-scm/02-images/fig-05-09e-min.png" alt="Workspace object modified"></td>
+                            <td class='table-left'>Workspace object modified</td>
+                            <td class='table-left'>The compared versions of the object in the project and the Workspace are different. The Workspace file has been changed since the last synchronisation operation (Workspace is newer)</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading' style='height: 5em'></td>
+                            <td class='table-cent'><img src="01-pages/11-0502-scm/02-images/fig-05-09f-min.png" alt="Both modified"></td>
+                            <td class='table-left'>Both modified</td>
+                            <td class='table-left'>The compared versions of the object in the project and the Workspace are different. Both the TIA Portal object and the Workspace file have been changed since the last synchronisation operation</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading' style='height: 5em'></td>
+                            <td class='table-cent'><img src="01-pages/11-0502-scm/02-images/fig-05-09g-min.png" alt="Not known"></td>
+                            <td class='table-left'>Not known</td>
+                            <td class='table-left'>The comparison result is not known</td>
+                        </tr>
+<!-- Caption -->        <tr class='no-border'>
+                            <td class='leading'></td>
+                            <td colspan='3' class='table-caption'>Table 5.1 &emsp; Status symbols and meaning</td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The <span class='menu'>action</span> allows us to do something with the files, the Action field can have the following values:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class='table-clean' id='js--t05-02'>
+<!-- Header row -->     <tr>
+                            <th class='leading'></th>
+                            <th class='table-cent' style='width: 15%'>Symbol</th>
+                            <th class='table-left' style='width: 25%'>Meaning</th>
+                            <th class='table-left' style='width: 60%'>Description</th>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-cent'>Blank</td>
+                            <td class='table-left'>Not applicable</td>
+                            <td class='table-left'>Not applicable to this object (usually folders of groups, the folders or group must be expanded to see individual objects)</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading' style='height: 5em'></td>
+                            <td class='table-cent'><img src="01-pages/11-0502-scm/02-images/fig-05-09h-min.png" alt="No action"></td>
+                            <td class='table-left'>No action</td>
+                            <td class='table-left'>No action will be taken (do nothing)</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading' style='height: 5em'></td>
+                            <td class='table-cent'><img src="01-pages/11-0502-scm/02-images/fig-05-09i-min.png" alt="Export to Workspace"></td>
+                            <td class='table-left'>Export to Workspace</td>
+                            <td class='table-left'>The object will be exported to the Workspace (Workspace object will be made identical to Project object)</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading' style='height: 5em'></td>
+                            <td class='table-cent'><img src="01-pages/11-0502-scm/02-images/fig-05-09j-min.png" alt="Import to Project"></td>
+                            <td class='table-left'>Import to Project</td>
+                            <td class='table-left'>The object will be imported from the Workspace (Project object will be made identical to Workspace object)</td>
+                        </tr>
+<!-- Caption -->        <tr class='no-border'>
+                            <td class='leading'></td>
+                            <td colspan='3' class='table-caption'>Table 5.2 &emsp; Action symbols and meaning</td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP INLINE]
+     SECTION INLINE - Synchronising the Workspace
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050204b'>          <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-text-box'><h4>Synchronising the Workspace</h4></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>If changes have been made to blocks within TIA Portal, these changes will be indicated within the workspace, for the sake of argument, let&rsquo;s assume that OB00001 and UT38151 have been changed, the Workspace will now have the following appearance:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f05-10'>
+                            <a href='01-pages/11-0502-scm/02-images/fig-05-10-min.png' data-lightbox='fig-set' data-title='Figure 5.10 - Synchronising the Workspace'>
+                                <img src='01-pages/11-0502-scm/02-images/fig-05-10-min.png' alt='Figure 5.10 - Synchronising the Workspace'>
+                            </a>
+                            <figcaption>Figure 5.10 &emsp; Synchronising the Workspace</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>Point <span class='index'>1 </span>is indicating that a difference exists at a lower level within the Program blocks folder. Point <span class='index'>2</span> shows that OB1 has been changed in TIA Portal (c.f. <a class='xref js--sc-t05-01' href='#'>Table&nbsp;5.1</a>); the Project version is newer than the Workspace version (the star is on the left in the symbol). Points <span class='index'>3</span> and <span class='index'>4</span> show similar changes for the UT38151 data type.</p>
+
+                    <p class='hyp'>By using the drop down in the <span class='menu'>action</span> box next to each modified block, it is possible to select an action individually for each block.</p>
+
+                    <p class='hyp'>Alternatively, the menu bar at the top of the left window:</p>
+
+                    <p class='hyp' style="text-align: center;"><img src="01-pages/11-0502-scm/02-images/fig-05-10a-min.png" alt="Action Menu"></p>
+
+                    <p class='hyp'>allows the action for all the modified blocks to be selected in one go, clicking the <img src="01-pages/11-0502-scm/02-images/fig-05-10c-min.png" alt="Export to Workspace"> icon (Export changes to Workspace) changes the <span class='menu'>action</span> for the two blocks to <img src="01-pages/11-0502-scm/02-images/fig-05-09i-min.png" alt="Export to Workspace">. Nothing has happened at this point; the desired action has simple been selected (but not yet implemented).</p>
+
+                    <p class='hyp'>To make the changes, the Synchronize button <img src="01-pages/11-0502-scm/02-images/fig-05-10g-min.png" alt="Synchroise"> must be clicked. This carries out the selected actions on the modified blocks.</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      NOTE - HANGING INDENT
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ul class='note'>                           <!-- Start of note            -->
+                        <li>Only complied blocks can be synchronised with the Workspace, if the blocks have not been compiled within TIA Portal, the user will be prompted to compile them as part of the synchronisation process.</li>
+
+                        <p class="hyp" style="margin-left: 3.4rem"><span class="first-use">Generally, it is better to compile the blocks first and separately to the synchronisation process, this allows any errors to be more easily addressed.</span></p>
+                    </ul>                                       <!-- End of note              -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP INLINE]
+     SECTION INLINE - Knowhow protection
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050204c'>          <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-text-box'><h4>Knowhow protection</h4></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>Blocks with knowhow protection cannot be synchronised with the Workspace.</p>
+
+                    <p class='hyp'>However, blocks with Write Protection can be synchronised; some blocks within the PAL require protection (see the<a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary\01-docs\01-Planning-Quality\21-Validation-Plan-(VP)/PS2001-5-0121-002-VP.pdf' download>Validation Plan <em>[Ref.&nbsp;001] Appendices</em></a> for an explanation), where this is used, the protection will be Write Protection rather than knowhow protection.</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP INLINE]
+     SECTION INLINE - Common actions
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050204d'>          <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-text-box'><h4>Common actions</h4></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>In the previous example, the <img src="01-pages/11-0502-scm/02-images/fig-05-10c-min.png" alt="Export to Workspace"> icon (Export changes to Workspace) was used to select the required action, the other symbols are as follows:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class='table-clean' id='js--t05-03'>
+<!-- Header row -->     <tr>
+                            <th class='leading'></th>
+                            <th class='table-cent' style='width: 15%'>Symbol</th>
+                            <th class='table-left' style='width: 25%'>Meaning</th>
+                            <th class='table-left' style='width: 60%'>Description</th>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 5em'></div></td>
+                            <td class='table-cent'><img src="01-pages/11-0502-scm/02-images/fig-05-10b-min.png" alt="Import changes to Project"></td>
+                            <td class='table-left'>Import changes to Project</td>
+                            <td class='table-left'>Import changes from the Workspace to the Project <br>(Workspace has the newer version)</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 5em'></div></td>
+                            <td class='table-cent'><img src="01-pages/11-0502-scm/02-images/fig-05-10c-min.png" alt="Export changes to Workspace"></td>
+                            <td class='table-left'>Export changes to Workspace</td>
+                            <td class='table-left'>Export changes from the Project to the Workspace <br>(Project has newer version)</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 5em'></div></td>
+                            <td class='table-cent'><img src="01-pages/11-0502-scm/02-images/fig-05-10d-min.png" alt="Import all"></td>
+                            <td class='table-left'>Import all</td>
+                            <td class='table-left'>Where an object differs in the Project and Workspace, overwrite the object in the Project with the one from the Workspace (even if the Project holds the newer version)</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading' style='height: 5em'></td>
+                            <td class='table-cent'><img src="01-pages/11-0502-scm/02-images/fig-05-10e-min.png" alt="Export all"></td>
+                            <td class='table-left'>Export all</td>
+                            <td class='table-left'>Where an object differs in the Project and Workspace, overwrite the object in the Workspace with the one from the Project (even if the Workspace holds the newer version)</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading' style='height: 5em'></td>
+                            <td class='table-cent'><img src="01-pages/11-0502-scm/02-images/fig-05-10f-min.png" alt="Discard all actions"></td>
+                            <td class='table-left'>Discard all actions</td>
+                            <td class='table-left'>Discard any actions that may have been applied (set everything back to &ldquo;do nothing&rdquo;)</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading' style='height: 5em'></td>
+                            <td class='table-cent'><img src="01-pages/11-0502-scm/02-images/fig-05-10g-min.png" alt="Synchronise"></td>
+                            <td class='table-left'>Synchronise</td>
+                            <td class='table-left'>Implements the selected action</td>
+                        </tr>
+<!-- Caption -->        <tr class='no-border'>
+                            <td class='leading'></td>
+                            <td colspan='3' class='table-caption'>Table 5.3 &emsp; Action toolbar commands</td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      NOTE - HANGING INDENT
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ul class='note'>                           <!-- Start of note            -->
+                        <li>Actions can only be applied to an object when there is a difference between the object in the Project and the object in the Workspace</li>
+                    </ul>                                       <!-- End of note              -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                    <p class='hyp'>The difference between <span class='menu'>import/export changes</span> and <span class='menu'>import/export all</span> is subtle. If a block has been changed in the Project (left-hand side) then of the <span class='menu'>import/export changes</span> buttons only the <span class='menu'>export changes</span> will work, the <span class='menu'>import changes</span> will leave the action set at <span class='menu'>do nothing</span>. The reason for this is that there has been no change to the Workspace object, so you can not import it.</p>
+
+                    <p class='hyp'>There has, however, been a change to the Project object so it can be exported as a change.</p>
+
+                    <p class='hyp'>Conversely, the <span class='menu'>import all</span> button will work, this allows the modified object in the Project to be overwritten by the unmodified (and older) object in the Workspace. The <span class='menu'>import/export all</span> buttons will always work on any two objects that are different.</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP INLINE]
+     SECTION INLINE - A note about new objects in the Project
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050204e'>          <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-text-box'><h4>A note about new objects in the Project</h4></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>There is a problem <em>(Author: I&rsquo;m not sure if this is a problem or if it is intentional, it is however peculiar)</em> when creating a new block in TIA Portal (or indeed, creating a new block in the Workspace); if a new block were created in the Project (<span class='code'>Block_1</span> for example, shown below):</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f05-11'>
+                            <a href='01-pages/11-0502-scm/02-images/fig-05-11-min.png' data-lightbox='fig-set' data-title='Figure 5.11 - A new block in the Project'>
+                                <img src='01-pages/11-0502-scm/02-images/fig-05-11-min.png' alt='Figure 5.11 - A new block in the Project'>
+                            </a>
+                            <figcaption>Figure 5.11 &emsp; A new block in the Project</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The new block (<span class='code'>Block_1</span>) is present in the Project Window, but the <span class='menu'>status</span> and <span class='menu'>action</span> columns are empty, pressing any of the action buttons or trying to assign an action directly will not work, it won&rsquo;t do anything.</p>
+
+                    <p class='hyp'>The reason for this is that the object has not been <em>&ldquo;linked&rdquo;</em> to the Workspace. The way to link the object is to drag it from the Project side to the Workspace side (some care is needed; the block must be copied to the correct folder in the Workspace).</p>
+
+                    <p class='hyp'>Once this is done, the <span class='code'>Block_1</span> <span class='menu'>status</span> will display the green dot, indicating the two files are synchronised and are the same.</p>
+
+                    <p class='hyp'><em>(Author: It would seem better to me if the new block were treated as a modified block and it automatically gave the Project object modified status and it could just be synchronised, rather than having to actually drag it to a specific folder in the Workspace.)</em></p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SUBSECTION]
+     SUBSECTION - 5.2.5 - Understanding the Workspace as a local repository
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050205'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-num-box'><h3>5.2.5</h3></div>
+                    <div class='sub-title-text-box'><h3>Understanding the Workspace as a local repository</h3></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'><a class='xref js--sc-050203' href='#'>Section&nbsp;5.2.3</a> established that the Workspace was also a local Git repository; this means that when files are synchronised between the Project and the Workspace, any changes are logged by the Git VCS. At some point, these changes will be committed to the repository and permanently stored there. At the same time an archive copy of the TIA Project will also be made (see <a class='xref js--sc-050206' href='#'>&sect;&nbsp;5.2.6</a>).</p>
+
+                    <p class='hyp'>The Workspace is configured using the Siemens Git add-in, this is installed and activated using TIA Portal (again the instructions for doing this are given in the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-Software-configurations/PS2001-5-2341-001-ES-WDP-Config.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006])</em></a>. The Git add-in has very limited functionality compared with the Visual Studio Code functionality and is not actually used directly to maintain the Workspace repository. It is installed purely, so that TIA Portal recognises the Workspace is a repository and hides the <span class='code'>.git</span> folder, preventing it from being visible and from being inadvertently modified.</p>
+
+                    <p class='hyp'>The Workspace is maintained from within TIA Portal, all changes made to the software are synchronised with the Workspace in the manner described in <a class='xref js--sc-050204' href='#'>&sect;&nbsp;5.2.4</a>.</p>
+
+                    <p class='hyp'>The repository aspect of the Workspace is maintained via the Visual Studio Code arrangement (again the instructions for installing Visual Studio Code are given in the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-Software-configurations/PS2001-5-2341-001-ES-WDP-Config.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006])</em></a>. The Visual Studio Code text editor provides a graphical user interface to the Git repository allowing development branches to be created and used with the Workspace.</p>
+
+                    <p class='hyp'>All repository actions are carried out using the Visual Studio Code application. This includes committing changes to the local repository, creating and managing development branches and the bidirectional synchronisation of the local repository with the remote GitHub repository.</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SUBSECTION]
+     SUBSECTION - 5.2.6 - Commit point archives
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050206'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-num-box'><h3>5.2.6</h3></div>
+                    <div class='sub-title-text-box'><h3>Commit point archives</h3></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>Whenever a commit is made to the repository, the TIA Project is saved and archived at that point, the archived version of the software is given the name:</p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code'>PS2001-PAL-&lt;commit tag&gt;</span></p>
+
+                    <p class='hyp'>The commit tag being the identifying tag given to the commit point (see <a class='hlink' href='11-0306-scm.html#js--030800'>&sect;&nbsp;3.8</a>)</p>
+
+                    <p class='hyp'>The archived copy of the software is stored in the Project folder </p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code' style="font-size: 0.65rem;">D:/1000 Software Projects/PS2001-PAL-Build-SW/81 SW Archive/31 TIA PAL Archive</span></p>
+
+                    <p class='hyp'>All commit points (both primary and secondary, see <a class='hlink' href='11-0300-scm.html#js--030200'>&sect;&nbsp;3.2</a> and  <a class='hlink' href='11-0300-scm.html#js--030400'>&sect;&nbsp;3.4</a>) are stored as archive (<span class='code'>.zap16</span>) files in this directory.</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SUBSECTION]
+     SUBSECTION - 5.2.7 - Maser ES&nbsp;&mdash;&nbsp;local repository backup to NAS
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050207'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-num-box'><h3>5.2.7</h3></div>
+                    <div class='sub-title-text-box'><h3>Maser ES&nbsp;&mdash;&nbsp;local repository backup to NAS</h3></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>There can be any number of engineering stations (ESs), generally, each software development engineer will have one.</p>
+
+                    <p class='hyp'>There is however, only one <em>Master Engineering Station</em> (MES), this is usually the engineering station given to the lead software engineer on the Project.</p>
+
+                    <p class='hyp'>All ESs have a local repository (the Workspace) and are constantly being synchronised with the remote repository on the GitHub servers, whenever a commit is made to a local repository, on any ES, that ES must first be synchronised with the remote repository (ensuring that any changes made by the local commit do not create a conflict with the any other changes that have been stored within the remote repository).</p>
+
+                    <p class='hyp'>The remote repository is essentially, the <span class='emph'>master</span> repository and it is this repository that holds all the commits made by any ES.</p>
+
+                    <p class='hyp'>The GitHub servers are a third party facility (ultimately owned by Microsoft), and while they are considered secure by the Practical Series of Publications, it is felt that GitHub cannot be the sole storage location for the master repository (Microsoft may, for example, close down the site, make it prohibitively expensive, or indeed may sell it to some other party that the Practical Series of Publications did not trust).</p>
+
+                    <p class='hyp'>To this end, the Master Engineering Station, each time it is synchronised with the master repository on GitHub, makes a complete copy of the repository on the PSP network accessible storage (NAS) drives. </p>
+
+                    <p class='hyp'>The MES should be synchronised at least once a week with the remote repository.</p>
+
+                    <p class='hyp'>This is done purely as an additional backup, the PSP does not think that the GitHub website will change dramatically in the future, or be sold to the Russians&nbsp;&mdash;&nbsp;however, there is the old engineering maxim: <em>&ldquo;better to not need a backup you have, rather than need a backup that you do not have&rdquo;</em>, or to put it another way <em>&ldquo;better safe than sorry&rdquo;</em>.</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP INLINE]
+     SECTION INLINE - Repository backup mechanism
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050207a'>          <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-text-box'><h4>Repository backup mechanism</h4></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>The Master ES repository backup mechanism is slightly convoluted. This is because the Git repositories, and in particular the <span class='code'>.git</span> folder with the repository are managed (ultimately) by the Git application and this is by-and-large, a Unix based application; and while this is not a problem and the application runs perfectly well on a Windows machine, some of the filenames it uses have a Unix feel to them. </p>
+
+                    <p class='hyp'>An example being the <span class='code'>.git</span> folder itself. To some extent, Windows, and certainly some Windows application do not like files that start with a full stop, they expect there to be something before the full stop and everything after it is the extension (<span class='code'>.pdf</span> or <span class='code'>.jpeg</span> for example).</p>
+
+                    <p class='hyp'>This is a problem with the PSP NAS drives, these NAS drives are all supplied by Synolgy (this is the PSP standard for NAS drives).</p>
+
+                    <p class='hyp'>Synology NAS drives are all equipped with an application called  <em>Cloud Station Drive</em> and this allows any folder on any PC to by synchronised in real time with any corresponding folder on the NAS drive itself. The link, once created, automatically keeps the folders in sync whilever the machine is connected to the internet. It is exceptionally easy to use and just works.</p>
+
+                    <p class='hyp'>The problem with this arrangement is that certain files are not synchronised (temporary files for example or files with particular extensions) and this is the problem with the <span class='code'>.git</span> folder, Cloud Station Drive ignores certain files that Git considers essential and this leads to a corrupted copy of the repository on the NAS drive.</p>
+
+                    <p class='hyp'>To overcome this problem, a slightly different approach is taken. On the Master ES, the 2500 Git Project folder is, itself, stored within a live Dropbox folder:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f05-12'>
+                            <a href='01-pages/11-0502-scm/02-images/fig-05-12-min.svg' data-lightbox='fig-set' data-title='Figure 5.12 - Backing up a repository to the NAS drive'>
+                                <img src='01-pages/11-0502-scm/02-images/fig-05-12-min.svg' alt='Figure 5.12 - Backing up a repository to the NAS drive'>
+                            </a>
+                            <figcaption>Figure 5.12 &emsp; Backing up a repository to the NAS drive</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The Dropbox account (in this instance) is the PSP Dropbox account, this synchronises the entire <span class='code'>2500 Git Projects</span> folder and all its content with the Dropbox cloud servers.</p>
+
+                    <p class='hyp'>Synology NAS drives are equipped with a <em>Cloud Sync</em> package that allows a folder within a Dropbox account to synchronise with a partner folder on the NAS drive. In this case it is setup as follows:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f05-13'>
+                            <a href='01-pages/11-0502-scm/02-images/fig-05-13-min.png' data-lightbox='fig-set' data-title='Figure 5.13 - Backing up a repository to the NAS drive'>
+                                <img src='01-pages/11-0502-scm/02-images/fig-05-13-min.png' alt='Figure 5.13 - Backing up a repository to the NAS drive'>
+                            </a>
+                            <figcaption>Figure 5.13 &emsp; Backing up a repository to the NAS drive</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The Local Path, point <span class='index'>1</span>, is a directory on the Synology NAS drive, the Remote Path, point <span class='index'>2</span> is the Dropbox folder. It is possible to synchronise individual folders within the <span class='code'>2500 Git Projects</span> folder if required.</p>
+
+                    <p class='hyp'>This process does not suffer from the restrictions of the Cloud Station Drive application and will correctly synchronise all files within the repository without exception.</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class='table-clean' id='js--t05-04'>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left' style='width: 30%'><span class='sml-caps-ns'>Account Manager</span></td>
+                            <td class='table-left' style='width: 70%'>Michael Gledhill</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='sml-caps-ns'>Account Details</span></td>
+                            <td class='table-left'>PSP Dropbox</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='sml-caps-ns'>Contact Details</span></td>
+                            <td class='table-left'>mg@practicalseries.com</td>
+                        </tr>
+<!-- Caption -->        <tr class='no-border'>
+                            <td class='leading'></td>
+                            <td colspan='2' class='table-caption'>Table 5.4 &emsp; PSP Dropbox account manager details</td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SUBSECTION]
+     SUBSECTION - 5.2.8 - Remote repository
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050208'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-num-box'><h3>5.2.8</h3></div>
+                    <div class='sub-title-text-box'><h3>Remote repository</h3></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>All ESs work with a remote repository that contains the current copy of all committed changes made on any of the ES machines. The remote repository is the <span class='emph'>master</span> repository, it holds all the development branches (created by any ES) and the most up to date <span class='git-cmd'>master</span> branch.</p>
+
+                    <p class='hyp'>Any development work that takes place on a development branch on an ES, will at some point be committed to the local repository (on the ES), before this can happen, the Visual Studio Code application making the commit will require that any changes that exist within the remote repository, but are not present on the local ES (i.e. changes that have been made by other users on other ESs) are <em>pulled</em> from the remote repository, before the local ES changes can be <em>pushed</em> back to the remote repository. This Pull before Push approach ensures that the user must resolve any conflicts between the user&rsquo;s local repository on the local ES and the remote repository before pushing the resolved changes back to the remote.</p>
+
+                    <p class='hyp'>There is an explanation of this process (and indeed the whole, Git and GitHub approach to version control) on the PracticalSeries website at the following address:</p>
+
+                    <p class='hyp' style="text-align: center;"><a class='xref' href='https://practicalseries.com/1002-vcs/08-00-remotes.html'>https://practicalseries.com/1002-vcs/08-00-remotes.html</a></p>
+
+                    <p class='hyp'>To use the remote repository from a local ES, the two must be linked via a secure shell key link (SSH link), the process for doing this is explained in the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-Software-configurations/PS2001-5-2341-001-ES-WDP-Config.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a>, and again, on the website here:</p>
+
+                    <p class='hyp' style="text-align: center;"><a class='xref' href='https://www.practicalseries.com/1002-vcs/04-00-linking.html'>https://www.practicalseries.com/1002-vcs/04-00-linking.html</a></p>
+
+                    <p class='hyp'>To make this link, the user of the ES must have their own GitHub account and this account must be given contributor access to the remote PSP repository.</p>
+
+                    <p class='hyp'>The remote repository is public repository (one that anyone with a GitHub account can read and copy) and is part of the GitHub PracticalSeries organisation. The organisation is available here:</p>
+
+                    <p class='hyp' style="text-align: center;"><a class='xref' href='https://github.com/practicalseries'>https://github.com/practicalseries</a></p>
+
+                    <p class='hyp'>The remote repository itself is available here:</p>
+
+                    <p class='hyp' style="text-align: center;"><a class='xref' href='https://github.com/practicalseries/PS2001-pal-software'>https://github.com/practicalseries/PS2001-pal-software</a></p>
+
+                    <p class='hyp'>Read access to the organisation and all of the repositories it contains, is available to anyone with a GitHub account. </p>
+
+                    <p class='hyp'>Access for contributors requires permission from the organisation owner, applications for such access should be made to:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <table class='table-clean' id='js--t05-05'>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left' style='width: 40%'><span class='sml-caps-ns'>GitHub Organisation:</span></td>
+                            <td class='table-left' style='width: 60%'>https://github.com/practicalseries</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='sml-caps-ns'>Repository Name:</span></td>
+                            <td class='table-left'>PS2001-pal-software</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='sml-caps-ns'>Organisation Owner:</span></td>
+                            <td class='table-left'>Michael Gledhill</td>
+                        </tr>
+<!-- Data row -->       <tr>
+                            <td class='leading'><div style='min-height: 2em'></div></td>
+                            <td class='table-left'><span class='sml-caps-ns'>Contact Details</span></td>
+                            <td class='table-left'>mg@practicalseries.com</td>
+                        </tr>
+<!-- Caption -->        <tr class='no-border'>
+                            <td class='leading'></td>
+                            <td colspan='2' class='table-caption'>Table 5.5 &emsp; PracticalSeries GitHub organisation details</td>
+                        </tr>
+                    </table>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>At the time of writing, the remote repository was in a preliminary state and had the following appearance:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f05-14'>
+                            <a href='01-pages/11-0502-scm/02-images/fig-05-14-min.png' data-lightbox='fig-set' data-title='Figure 5.14 - The remote PAL repository'>
+                                <img src='01-pages/11-0502-scm/02-images/fig-05-14-min.png' alt='Figure 5.14 - The remote PAL repository'>
+                            </a>
+                            <figcaption>Figure 5.14 &emsp; The remote PAL repository</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+
+
+
+
+
+<!-- ************************************************************************** [WP LAST]
+     SECTION - LAST SECTION BEFORE FOOTER (WITH NAVIGATION)
+     ***********************************************************************-->
+
+        <p> <br class="toc-pad"></p>
+        <p> <br class="toc-pad"></p>
+        <div class="section-std" id="js--999901">               <!-- Start of additional row  -->
+            <div class="rg-row">                                <!-- Start of row content     -->
+                <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
+                    <aside class="aside-nav">                   <!-- Start of sidebar nav     -->
+                        <a class="xref" href="11-0500-scm.html#js--050100">Prev</a>
+                    </aside>                                    <!-- End of left side bar     -->
+</div>                                          <!-- End of left column       -->
+
+                <div class="rg-col rg-span3-5 aside-nav">       <!-- Start of end image area  -->
+                    <img src="../00-comres/11-resources/01-css/01-css-images/end-mark.svg" alt="End flourish image">
+                </div>                                          <!-- End of section text area -->
+
+                <div class="rg-col rg-span1-5">                 <!-- Start of right column    -->
+                    <aside class="aside-nav">                   <!-- Start of sidebar nav     -->
+                        <a class="xref" href="11-0503-scm.html#js--050300">Next</a>
+                    </aside>                                    <!-- End of right side bar    -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of row content       -->
+        </div>                                                  <!-- End of additional row    -->
+<!-- ========================================================================== [WP END]      -->
+
+
+<!-- ************************************************************************** [WP FOOTER]
+     FOOTER
+     ***********************************************************************-->
+        <footer class="footer">                                 <!-- Start of footer          -->
+            <ul class="footer-nav">                             <!-- Start of footer nav      -->
+                <li><a class="js--sc-000000" href="#"><span class="top-nav-icon" style="color:#5b7daf">t</span>Top</a><span class="footer-spacer">&#x25C7;</span></li>
+                <li><a href="../11-web/80-00-finally.html#js--800100">Contact MG</a><span class="footer-spacer">&#x25C7;</span></li>
+                <li><a href="../11-web/80-00-finally.html#js--800200">Acknowledgments</a><span class="footer-spacer">&#x25C7;</span></li>
+                <li><a href="../11-web/80-00-finally.html#js--800300">Colophon</a><span class="footer-spacer">&#x25C7;</span></li>
+                <li><a href="../11-web/80-00-finally.html#js--800400">Legal &amp; Privacy</a></li>
+            </ul>                                               <!-- End of footer nav        -->
+
+            <ul class="social-links">
+ <!--            <li><a href="https://www.facebook.com/practicalseries"><i id="js--fbicon" class="ion-social-facebook-outline"></i></a></li>
+                <li><a href="https://twitter.com/practicalseries"><i id="js--twicon" class="ion-social-twitter-outline"></i></a></li> -->
+            </ul>
+        </footer>                                               <!-- End of footer            -->
+<!-- ========================================================================== [WP END]      -->
+
+    </body>
+</html>

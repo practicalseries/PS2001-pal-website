@@ -15,7 +15,7 @@ PRACTICALSERIES: Practical Series of Publications by Michael Gledhill
     <head>                                                                      <!-- Start of head section                         -->
         <meta charset="utf-8">                                                  <!-- Use unicode char set (< 1024 char from SOF)   -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Make page follow browser width and reset zoom -->
-        <meta name="description" content="Practiacl series automation library, PAL, the MIT licence, an explanation of the software control mechanism, scm">
+        <meta name="description" content="Practiacl series automation library, PAL, project documentation, project folder structure">
 
 <!-- ==========================================================================
 
@@ -24,7 +24,7 @@ PRACTICALSERIES: Practical Series of Publications by Michael Gledhill
 *******************************************************************************
 Title :          PRACTICAL SERIES AUTOMATION LIBRARY (PAL)
 
-                 GIT - SOFTWARE CONTROL MECHANISM                11-00-SCM.HTML
+                 GIT - SOFTWARE CONTROL MECHANISM              11-0504-SCM.HTML
 *******************************************************************************
 DETAILS
 
@@ -43,20 +43,29 @@ This is a complete summary of all software modifications.
 
 Date          Issue        Author         Reason for Modification
 *******************************************************************************
-13 Apr 2021   000.106      M. Gledhill    TOC updated (Sec 5 and 6 added)
-                                            Rev Badge (br red)   000.106 (dev)
-                                            Rev Data Page        000.106
-                                            All U-TX removed     *********** N ********************************************
+12 Apr 2021   000.106      M. Gledhill    Released as a development prototype
+                                          Revision control active
+                                          RELEASE CHECKLIST       
+                                             Title                Y
+                                             Meta description     Y
+                                             Rev Badge (br red)   000.106 (dev)
+                                             Rev Data Page        000.106
+                                             Rev Data Code        None
+                                             Rev Data scroll      000.106
+                                             TOC softscroll       Y
+                                             Nav Prev chap        Y (0400)
+                                             Nav Prev sec         Y (0503)
+                                             Nav Next chap        Y (0600)
+                                             Nav Next sec         Y (0600)
+                                             Nav Top              Y
+                                             Nav Home             Y (00)
+                                             Last section Prev    Y (0503)
+                                             Last section Next    Y (0600)
+                                             Footer Top           Y
+                                             Footer Contacts &c.  Y (11/80)
+                                             All U-TX removed     Y
 
-
-09 Apr 2021   000.105      M. Gledhill    TOC updated (Sec 2,3 and 4 added)
-                                            Rev Badge (br red)   000.105 (dev)
-                                            Rev Data Page        000.105
-                                            All U-TX removed     *********** N ********************************************
-
-27 Mar 2021   000.101      M. Gledhill    Content import from SCM document
-
-14 Feb 2021   000.000      M. Gledhill    File created
+                                          File created
                                           based on 98-00-blank.html
 *************************************************************************** -->
 
@@ -82,7 +91,7 @@ Date          Issue        Author         Reason for Modification
         <!-- MathJax -->                <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML" async></script>
         <!-- PS main script -->         <script src="../00-comres/11-resources/05-js/script.js"></script>
                                                                 <!-- ▼▼▼▼ CHANGE FOLDER ▼▼▼▼  -->
-         <!-- PS local scroll script --> <script src="01-pages/11-00-scm/05-local-js/scroll.js"></script>
+         <!-- PS local scroll script --> <script src="01-pages/11-0504-scm/05-local-js/scroll.js"></script>
 
 
 
@@ -99,7 +108,7 @@ Date          Issue        Author         Reason for Modification
         <!-- PS main styles -->         <link rel="stylesheet" type="text/css" href="../00-comres/11-resources/01-css/style.css">
         <!-- PAL styles -->             <link rel="stylesheet" type="text/css" href="../00-comres/11-resources/01-css/style-pal.css">
                                                                 <!-- ▼▼▼▼ CHANGE FOLDER ▼▼▼▼  -->
-        <!-- Code frag highlights      <link rel="stylesheet" type="text/css" href="01-pages/11-00-scm/01-local-css/codelines.css">-->
+        <!-- Code frag highlights      <link rel="stylesheet" type="text/css" href="01-pages/11-0504-scm/01-local-css/codelines.css">-->
 
 <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       GOOGLE ANALYTICS
@@ -119,7 +128,7 @@ Date          Issue        Author         Reason for Modification
 <!-- **************************************************************************
      TITLE
      ***********************************************************************-->
-        <title>PAL | Software Control Mechanism</title>
+        <title>PAL | SCM Project Documentation</title>
     </head>
 
     <body>
@@ -139,19 +148,19 @@ Date          Issue        Author         Reason for Modification
                 <div class="top-nav">                           <!-- Start of top nav row     -->
                     <div class="rg-row">                        <!-- Start of nav button row  -->
                         <!-- Button 01 - Previous Section -->
-                        <div class="nav-wide" ></div>
+                        <a class="nav-wide" href="11-0503-scm.html#js--050300"><span class="top-nav-icon">l</span><span class="top-nav-text">Prev. section</span></a>
                         <!-- Button 02 - Previous Chapter -->
-                        <div class="nav-wide" ></div>
+                        <a class="nav-wide" href="11-0400-scm.html#js--000000"><span class="top-nav-icon">u</span><span class="top-nav-text">Prev. chapter</span></a>
                         <!-- Button 03 - Home wide (hidden when fixed nav activates) -->
-                        <a class="nav-wide nav-home" href="11-00-scm#js--000000"><span class="top-nav-text">Home</span><span class="top-nav-icon">h</span></a>
+                        <a class="nav-wide nav-home" href="11-00-scm.html#js--000000"><span class="top-nav-text">Home</span><span class="top-nav-icon">h</span></a>
                         <!-- Button 03a - Top narrow (hidden until fixed nav activates) -->
                         <a class="nav-narrow js--sc-000000" href="#"><span class="top-nav-icon">t</span><span class="top-nav-text">Top</span></a>
                         <!-- Button 03b - Home narrow (hidden until fixed nav activates) -->
-                        <a class="nav-narrow" href="11-00-scm#js--000000"><span class="top-nav-text">Home</span><span class="top-nav-icon">h</span></a>
+                        <a class="nav-narrow" href="11-00-scm.html#js--000000"><span class="top-nav-text">Home</span><span class="top-nav-icon">h</span></a>
                         <!-- Button 04 - Next Chapter -->
-                        <a class="nav-wide" href="11-0200-scm.html#js--000000"><span class="top-nav-text">Next chapter</span><span class="top-nav-icon">d</span></a>
+                        <a class="nav-wide" href="11-0600-scm.html#js--000000"><span class="top-nav-text">Next chapter</span><span class="top-nav-icon">d</span></a>
                         <!-- Button 05 - Next section -->
-                        <a class="nav-wide" href="11-0200-scm.html#js--000000"><span class="top-nav-text">Next section</span><span class="top-nav-icon">r</span></a>
+                        <a class="nav-wide" href="11-0600-scm.html#js--000000"><span class="top-nav-text">Next section</span><span class="top-nav-icon">r</span></a>
                     </div>                                      <!-- End of nav button row    -->
                 </div>                                          <!-- End of top nav row       -->
             </nav>                                              <!-- End of top nav bar       -->
@@ -351,177 +360,19 @@ Date          Issue        Author         Reason for Modification
                 <div class="rg-col rg-span3-5">                 <!-- Start of TOC column      -->
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    TOC - Section 1
+    TOC - Section 5
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
                     <ul class="toc-line">
 <!-- Level 1 -->        <li><a href="index.html">
-    <div class="toc-lev"><span class="toc-lev1-num"></span><span class="toc-lev1-text">Git documents main page</span></div></a>
-</li>
-</ul>
-                        
+                            <div class="toc-lev"><span class="toc-lev1-num"></span><span class="toc-lev1-text">Git documents main page</span></div></a>
+                        </li>
+                    </ul>
+
                     <ul class="toc-line">
-<!-- Level 1 -->        <li><a class="js--sc-010000" href="11-00-scm.html#js--010000">
-                                <div class="toc-lev"><span class="toc-lev1-num">1</span><span class="toc-lev1-text">Introduction</span></div></a>
+<!-- Level 1 -->        <li><a href="11-00-scm.html">
+                            <div class="toc-lev"><span class="toc-lev1-num"></span><span class="toc-lev1-text">SCM main page</span></div></a>
                         </li>
                     </ul>
-
-                    <ul class="toc-list">
-<!-- Level 2 -->        <li><a class="js--sc-010100" href="11-00-scm.html#js--010100">
-                            <div class="toc-lev"><span class="toc-lev2-num">1.1</span><span class="toc-lev2-text">Software control requirements</span></div></a>
-                        </li>
-<!-- Level 3 -->        <li><a class="js--sc-010101" href="11-00-scm.html#js--010101">
-                            <div class="toc-lev"><span class="toc-lev3-num">1.1.1</span><span class="toc-lev3-text">Module revision numbering</span></div></a>
-                        </li>
-<!-- Level 3 -->        <li><a class="js--sc-010102" href="11-00-scm.html#js--010102">
-                            <div class="toc-lev"><span class="toc-lev3-num">1.1.2</span><span class="toc-lev3-text">A version control system</span></div></a>
-                        </li>
-
-<!-- Level 2 -->        <li><a class="js--sc-010200" href="11-00-scm.html#js--010200">
-                            <div class="toc-lev"><span class="toc-lev2-num">1.2</span><span class="toc-lev2-text">Scope of this document</span></div></a>
-                        </li>
-
-<!-- Level 2 -->        <li><a class="js--sc-010300" href="11-00-scm.html#js--010300">
-                            <div class="toc-lev"><span class="toc-lev2-num">1.3</span><span class="toc-lev2-text">Ownership &amp; relationships</span></div></a>
-                        </li>
-<!-- Level 3 -->        <li><a class="js--sc-010301" href="11-00-scm.html#js--010301">
-                            <div class="toc-lev"><span class="toc-lev3-num">1.3.1</span><span class="toc-lev3-text">Ownership of the document</span></div></a>
-                        </li>
-<!-- Level 3 -->        <li><a class="js--sc-010302" href="11-00-scm.html#js--010302">
-                            <div class="toc-lev"><span class="toc-lev3-num">1.3.2</span><span class="toc-lev3-text">The status of this document</span></div></a>
-                        </li>
-<!-- Level 3 -->        <li><a class="js--sc-010303" href="11-00-scm.html#js--010303">
-                            <div class="toc-lev"><span class="toc-lev3-num">1.3.3</span><span class="toc-lev3-text">Relationship to other documents</span></div></a>
-                        </li>
-<!-- Level 3 -->        <li><a class="js--sc-010304" href="11-00-scm.html#js--010304">
-                            <div class="toc-lev"><span class="toc-lev3-num">1.3.4</span><span class="toc-lev3-text">Users of this document</span></div></a>
-                        </li>
-                    </ul>
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    TOC - Section 2
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                    <ul class="toc-line">
-<!-- Level 1 -->        <li><a class="js--sc-020000" href="11-0200-scm.html#js--020000">
-                                <div class="toc-lev"><span class="toc-lev1-num">2</span><span class="toc-lev1-text">Approach to version control</span></div></a>
-                        </li>
-                    </ul>
-
-                    <ul class="toc-list">
-<!-- Level 2 -->        <li><a class="js--sc-020100" href="11-0200-scm.html#js--020100">
-                            <div class="toc-lev"><span class="toc-lev2-num">2.1</span><span class="toc-lev2-text">SCM Version control requirements</span></div></a>
-                        </li>
-                    </ul>
-                                           
-                    
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    TOC - Section 3
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                    <ul class="toc-line">
-<!-- Level 1 -->        <li><a class="js--sc-030000" href="11-0300-scm.html#js--030000">
-                                <div class="toc-lev"><span class="toc-lev1-num">3</span><span class="toc-lev1-text">The software revision numbering mechanism</span></div></a>
-                        </li>
-                    </ul>
-
-                    <ul class="toc-list">
-<!-- Level 2 -->        <li><a class="js--sc-030100" href="11-0300-scm.html#js--030100">
-                            <div class="toc-lev"><span class="toc-lev2-num">3.1</span><span class="toc-lev2-text">Workflow arrangements</span></div></a>
-                        </li>
-<!-- Level 2 -->        <li><a class='js--sc-030200' href='11-0300-scm.html#js--030200'>
-                            <div class='toc-lev'><span class='toc-lev2-num'>3.2</span><span class='toc-lev2-text'>Master branch revision states</span></div></a>
-                        </li>                            
-<!-- Level 2 -->        <li><a class='js--sc-030300' href='11-0300-scm.html#js--030300'>
-                            <div class='toc-lev'><span class='toc-lev2-num'>3.3</span><span class='toc-lev2-text'>Development branch names</span></div></a>
-                        </li>
-<!-- Level 2 -->        <li><a class='js--sc-030400' href='11-0300-scm.html#js--030400'>
-                            <div class='toc-lev'><span class='toc-lev2-num'>3.4</span><span class='toc-lev2-text'>Development branch commit tags</span></div></a>
-                        </li> 
-<!-- Level 2 -->        <li><a class='js--sc-030500' href='11-0300-scm.html#js--030500'>
-                            <div class='toc-lev'><span class='toc-lev2-num'>3.5</span><span class='toc-lev2-text'>Merging a development branch</span></div></a>
-                        </li>    
-<!-- Level 2 -->        <li><a class='js--sc-030600' href='11-0306-scm.html#js--030600'>
-                            <div class='toc-lev'><span class='toc-lev2-num'>3.6</span><span class='toc-lev2-text'>Individual module revision numbers</span></div></a>
-                        </li>  
-<!-- Level 3 -->        <li><a class='js--sc-030601' href='11-0306-scm.html#js--030601'>
-                            <div class='toc-lev'><span class='toc-lev3-num'>3.6.1</span><span class='toc-lev3-text'>Programmable block revision numbers</span></div></a>
-                        </li>
-<!-- Level 3 -->        <li><a class='js--sc-030602' href='11-0306-scm.html#js--030602'>
-                            <div class='toc-lev'><span class='toc-lev3-num'>3.6.2</span><span class='toc-lev3-text'>Data block revision numbers</span></div></a>
-                        </li>
-<!-- Level 3 -->        <li><a class='js--sc-030603' href='11-0306-scm.html#js--030603'>
-                            <div class='toc-lev'><span class='toc-lev3-num'>3.6.3</span><span class='toc-lev3-text'>User Data Type revision numbers</span></div></a>
-                        </li>
-<!-- Level 2 -->        <li><a class='js--sc-030700' href='11-0306-scm.html#js--030700'>
-                            <div class='toc-lev'><span class='toc-lev2-num'>3.7</span><span class='toc-lev2-text'>OB1 module revision numbers</span></div></a>
-                        </li>   
-<!-- Level 2 -->        <li><a class='js--sc-030800' href='11-0306-scm.html#js--030800'>
-                            <div class='toc-lev'><span class='toc-lev2-num'>3.8</span><span class='toc-lev2-text'>Commit points and filenames</span></div></a>
-                        </li>      
-<!-- Level 3 -->        <li><a class='js--sc-030801' href='11-0306-scm.html#js--030801'>
-                            <div class='toc-lev'><span class='toc-lev3-num'>3.8.1</span><span class='toc-lev3-text'>OB&nbsp;1 and filenames</span></div></a>
-                        </li>    
-<!-- Level 2 -->        <li><a class='js--sc-030900' href='11-0309-scm.html#js--030900'>
-                            <div class='toc-lev'><span class='toc-lev2-num'>3.9</span><span class='toc-lev2-text'>Parallel development branches</span></div></a>
-                        </li>  
-<!-- Level 2 -->        <li><a class='js--sc-031000' href='11-0309-scm.html#js--031000'>
-                            <div class='toc-lev'><span class='toc-lev2-num'>3.10</span><span class='toc-lev2-text'>OB&nbsp;1 and the Merging of branches</span></div></a>
-                        </li>  
-<!-- Level 3 -->        <li><a class='js--sc-031001' href='11-0309-scm.html#js--031001'>
-                            <div class='toc-lev'><span class='toc-lev3-num'>3.10.1</span><span class='toc-lev3-text'>Merging a single/first branch</span></div></a>
-                        </li>
-<!-- Level 3 -->        <li><a class='js--sc-031002' href='11-0309-scm.html#js--031002'>
-                            <div class='toc-lev'><span class='toc-lev3-num'>3.10.2</span><span class='toc-lev3-text'>Merging additional parallel branches</span></div></a>
-                        </li>      
-<!-- Level 2 -->        <li><a class='js--sc-031100' href='11-0309-scm.html#js--031100'>
-                            <div class='toc-lev'><span class='toc-lev2-num'>3.11</span><span class='toc-lev2-text'>Nested branches</span></div></a>
-                        </li>          
-<!-- Level 2 -->        <li><a class='js--sc-031200' href='11-0309-scm.html#js--031200'>
-                            <div class='toc-lev'><span class='toc-lev2-num'>3.12</span><span class='toc-lev2-text'>A note on commit messages</span></div></a>
-                        </li>                        
-                    </ul>
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    TOC - Section 4
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                    <ul class="toc-line">
-<!-- Level 1 -->        <li><a class='js--sc-040000' href='11-0400-scm.html#js--040000'>
-                                <div class='toc-lev'><span class='toc-lev1-num'>4</span><span class='toc-lev1-text'>The website revision numbering mechanism</span></div></a>
-                        </li>                        
-                    </ul>
-
-                    <ul class="toc-list">
-<!-- Level 2 -->        <li><a class='js--sc-040100' href='11-0400-scm.html#js--040100'>
-                            <div class='toc-lev'><span class='toc-lev2-num'>4.1</span><span class='toc-lev2-text'>Workflow arrangements</span></div></a>
-                        </li>
-<!-- Level 2 -->        <li><a class='js--sc-040200' href='11-0400-scm.html#js--040200'>
-                            <div class='toc-lev'><span class='toc-lev2-num'>4.2</span><span class='toc-lev2-text'>Master branch revision states</span></div></a>
-                        </li>
-<!-- Level 2 -->        <li><a class='js--sc-040300' href='11-0400-scm.html#js--040300'>
-                            <div class='toc-lev'><span class='toc-lev2-num'>4.3</span><span class='toc-lev2-text'>Development branch names</span></div></a>
-                        </li>
-<!-- Level 2 -->        <li><a class='js--sc-040400' href='11-0400-scm.html#js--040400'>
-                            <div class='toc-lev'><span class='toc-lev2-num'>4.4</span><span class='toc-lev2-text'>Development branch commit tags</span></div></a>
-                        </li>
-<!-- Level 2 -->        <li><a class='js--sc-040500' href='11-0400-scm.html#js--040500'>
-                            <div class='toc-lev'><span class='toc-lev2-num'>4.5</span><span class='toc-lev2-text'>Merging of development branches</span></div></a>
-                        </li>
-<!-- Level 2 -->        <li><a class='js--sc-040600' href='11-0400-scm.html#js--040600'>
-                            <div class='toc-lev'><span class='toc-lev2-num'>4.6</span><span class='toc-lev2-text'>Individual page revision numbers</span></div></a>
-                        </li>
-<!-- Level 2 -->        <li><a class='js--sc-040601' href='11-0400-scm.html#js--040601'>
-                            <div class='toc-lev'><span class='toc-lev2-num'>4.6.1</span><span class='toc-lev2-text'>Revision numbers within page files</span></div></a>
-                        </li>
-
-                    </ul>
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    TOC - Section 5
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
                     <ul class="toc-line">
 <!-- Level 1 -->        <li><a class='js--sc-050000' href='11-0500-scm.html.html#js--050000'>
                                 <div class='toc-lev'><span class='toc-lev1-num'>5</span><span class='toc-lev1-text'>Software storage and folder structures</span></div></a>
@@ -595,28 +446,6 @@ Date          Issue        Author         Reason for Modification
                     </ul>
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    TOC - Section 6
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                    <ul class="toc-line">
-<!-- Level 1 -->        <li><a class='js--sc-060000' href='11-0600-scm.html#js--060000'>
-                                <div class='toc-lev'><span class='toc-lev1-num'>6</span><span class='toc-lev1-text'>Glossary and references</span></div></a>
-                        </li>
-                    </ul>
-
-                    <ul class="toc-list">
-<!-- Level 2 -->        <li><a class='js--sc-060100' href='11-0600-scm.html#js--060100'>
-                            <div class='toc-lev'><span class='toc-lev2-num'>6.1</span><span class='toc-lev2-text'>Glossary</span></div></a>
-                        </li>
-<!-- Level 2 -->        <li><a class='js--sc-060200' href='11-0600-scm.html#js--060200'>
-                            <div class='toc-lev'><span class='toc-lev2-num'>6.2</span><span class='toc-lev2-text'>References</span></div></a>
-                        </li>                        
-                    </ul>
-<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-
-
-
                 </div>                                          <!-- End of TOC column        -->
                 <div class="rg-col rg-span1-5"></div>           <!-- Right column (not used)  -->
             </div>                                              <!-- End of TOC section       -->            
@@ -635,58 +464,17 @@ Date          Issue        Author         Reason for Modification
         <div id="js--fixed-nav"></div>                          <!-- fixed navigation point   -->
 <!-- ========================================================================== [WP END]      -->
 
-
-<!-- ************************************************************************** [WP LEADIN]
-     CHAPTER - Intro leadin
-     ***********************************************************************-->
-
-        <section class='section-std' id='js--000000a'>          <!-- Start of section         -->
-            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
-                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
-                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
-                    <div class='sub-title-thinline'></div>      <!-- Thin overline            -->
-                    <div class='sub-title-num-box'><h6>Placeholder</h6></div>
-                </div>                                          <!-- End of subtitle column   -->
-                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
-            </div>                                              <!-- End of Subtitle row      -->
-
-            <div class='rg-row'>                                <!-- Start of section content -->
-                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
-                <!--     <aside class='aside-left'>                  Start of left side bar   -->
-                <!--         <p></p>                                 Side bar content         -->
-                <!--     </aside>                                    End of left side bar     -->
-                </div>                                          <!-- End of left column       -->
-
-                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
-
-                    <p class='sans hyp'><span class='all-caps'>This is the online</span> version of the software control mechanism (SCM) that dictates the revision and version control strategies used to develop the PAL software. This software included both the Controller based software modules that are the main products of the PAL and also the website pages (and associated files) that accompany the software.</p>
-
-                    <p class='sans hyp'>This and the following pages explain how the software and website are managed within the Git and GitHub version control systems, how the various revisions are numbered in a meaningful (and human readable) format and how the whole workflow is managed.</p>
-
-                    <p class='sans hyp'>These pages also explain storage mechanism for all software, website files and project documentation generate by the PAL.</p>
-
-                </div>                                          <!-- End of section text      -->
-
-                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
-                <!--     <aside class='aside-right'>                 Start of right side bar  -->
-                <!--         <p></p>                                 Side bar content         -->
-                <!--     </aside>                                    End of right side bar    -->
-                </div>                                          <!-- End of right column      -->
-            </div>                                              <!-- End of section content   -->
-        </section>                                              <!-- End of section           -->
-<!-- ========================================================================== [WP END]      -->
-
 <!-- ************************************************************************** [WP SECTION]
-     SECTION - 1 - Introduction
+     SECTION - 5.4 - NAS based Project documentation
      ***********************************************************************-->
 
-        <section class='section-std' id='js--010000'>           <!-- Start of section         -->
+        <section class='section-std' id='js--050400'>           <!-- Start of section         -->
             <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
                 <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
                 <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
                     <div class='sub-title-overline'></div>      <!-- Overline                 -->
-                 <div class='sub-title-num-box'><h2>1</h2></div>
-                 <div class='sub-title-text-box'><h2>Introduction</h2></div>
+                 <div class='sub-title-num-box'><h2>5.4</h2></div>
+                 <div class='sub-title-text-box'><h2>NAS based Project documentation</h2></div>
                 </div>                                          <!-- End of subtitle column   -->
                 <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
             </div>                                              <!-- End of Subtitle row      -->
@@ -700,462 +488,337 @@ Date          Issue        Author         Reason for Modification
 
                 <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
 
-                    <p class='hyp'>This document is the <em>Software Control Mechanism</em> (SCM) and is applicable to all Simatic Controller software developed for the <em>Practical Series Automation Library</em> of software modules (the PAL).</p>
+                    <p class='hyp'>The PAL Project documentation and administration files are stored on the PSP NAS drives, in the common project area. This can be accessed as a network location on any office PC as follows:</p>
 
-                    <p class='hyp'>The Practical Series Automation Library (PAL) is a library of software modules and templates that have been made available for the Siemens Simatic S7-1500 range of controllers (and to a lesser extent the S7-1200 range).</p>
+                    <p class='hyp' style="text-align: center;"><span class='code' style="font-size: 0.8rem;">\\192.168.1.85\01 Pa_Clavis\2230 PS Projects\PS2001-PAL-Proj</span></p>
 
-                    <p class='hyp'>The PAL software is configured and deployed using the Siemens Simatic TIA Portal programming environment.</p>
-
-                    <p class='hyp'>The library is freely available under the <a class='xref' href='https://github.com/practicalseries/PS2001-pal-software/blob/master/LICENCE.md'>MIT Open Source licence</a>. </p>
-
-                    <p class='hyp'>This document, the Software Control Mechanism, has been produced by Michael Gledhill, under his authority as the lead engineer of the Practical Series Automation Library of software modules project.</p>
-
-                </div>                                          <!-- End of section text      -->
-
-                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
-                <!--     <aside class='aside-left'>                  Start of left side bar   -->
-                <!--         <p></p>                                 Side bar content         -->
-                <!--     </aside>                                    End of left side bar     -->
-                </div>                                          <!-- End of right column      -->
-            </div>                                              <!-- End of section content   -->
-        </section>                                              <!-- End of section           -->
-<!-- ========================================================================== [WP END]      -->
-
-
-<!-- ************************************************************************** [WP SECTION]
-     SECTION - 1.1 - Software Control Mechanism requirements
-     ***********************************************************************-->
-
-        <section class='section-std' id='js--010100'>           <!-- Start of section         -->
-            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
-                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
-                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
-                    <div class='sub-title-overline'></div>      <!-- Overline                 -->
-                 <div class='sub-title-num-box'><h2>1.1</h2></div>
-                 <div class='sub-title-text-box'><h2>Software Control Mechanism requirements</h2></div>
-                </div>                                          <!-- End of subtitle column   -->
-                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
-            </div>                                              <!-- End of Subtitle row      -->
-
-            <div class='rg-row'>                                <!-- Start of section content -->
-                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
-                <!--     <aside class='aside-left'>                  Start of left side bar   -->
-                <!--         <p></p>                                 Side bar content         -->
-                <!--     </aside>                                    End of left side bar     -->
-                </div>                                          <!-- End of left column       -->
-
-                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
-
-                    <p class='hyp'>There are two principal requirements for the PAL Software Control Mechanism:</p>
+                    <p class='hyp'>Within this folder, the Project has six distinct areas:</p>
 
 <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        NUMBERED LIST
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                    <ol class='list-num'>                       <!-- Start of numbered list   -->
-                        <li><p class='hyp'>Establish a mechanism for numbering and storing the various software module versions throughout the development, test and qualification phases of the Project</p></li>
-
-                        <li><p class='hyp'>Establish a mechanism for the storage and tracking of software module revisions within a formal Version Control System (VCS)</p></li>
-                    </ol>                                       <!-- End of numbered list     -->
-<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-                    <p class='hyp'>Expanding on these subjects:</p>
-
-                </div>                                          <!-- End of section text      -->
-
-                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
-                <!--     <aside class='aside-left'>                  Start of left side bar   -->
-                <!--         <p></p>                                 Side bar content         -->
-                <!--     </aside>                                    End of left side bar     -->
-                </div>                                          <!-- End of right column      -->
-            </div>                                              <!-- End of section content   -->
-        </section>                                              <!-- End of section           -->
-<!-- ========================================================================== [WP END]      -->
-
-
-<!-- ************************************************************************** [WP SUBSECTION]
-     SUBSECTION - 1.1.1 - Module revision numbering mechanism
-     ***********************************************************************-->
-
-        <section class='section-std' id='js--010101'>           <!-- Start of section         -->
-            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
-                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
-                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
-                    <div class='sub-title-num-box'><h3>1.1.1</h3></div>
-                    <div class='sub-title-text-box'><h3>Module revision numbering mechanism</h3></div>
-                </div>                                          <!-- End of subtitle column   -->
-                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
-            </div>                                              <!-- End of Subtitle row -->
-
-            <div class='rg-row'>                                <!-- Start of section content -->
-                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
-                <!--     <aside class='aside-left'>                  Start of left side bar   -->
-                <!--         <p></p>                                 Side bar content         -->
-                <!--     </aside>                                    End of left side bar     -->
-                </div>                                          <!-- End of left column       -->
-
-                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
-
-                    <p class='hyp'>The <a class='xref' href='https://practicalseries.com/2001-pal/81-binary/01-docs/01-Planning-Quality/21-Validation-Plan-(VP)/PS2001-5-0121-002-VP.pdf' download>Validation Plan (VP) <em>[Ref. 001]</em></a> , established that software version control was a necessary requirement for the project and that all software modules within the Project must have individual revision and status information that covers all phases of the software development:</p>
-
-<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      UNNUMBERED LIST
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                    <ul class='list-no-num'>                    <!-- Start of unnumbered list -->
-                        <li><p class='hyp'>Software development (system build)</p></li>
-
-                        <li><p class='hyp'>Testing (at both a modular and integrated level)</p></li>
-
-                        <li><p class='hyp'>Qualification</p></li>
-
-                        <li><p class='hyp'>Release for use</p></li>
-                    </ul>                                       <!-- End of unnumbered list   -->
+                    <table class='table-clean' id='js--t05-09'>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left' style='width: 30%'><span class='code'>0-Administration</span></td>
+                            <td class='table-left' style='width: 70%'>Contains the project register (of all documents) and a set of template documents for use within the Project</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border' style="background-color: #EAF1DD;">
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>3-Project management</span></td>
+                            <td class='table-left'>Contains all the project management files: resource management, project planning, order placement, security &amp;c.</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>4-QHSE</span></td>
+                            <td class='table-left'>Quality, health, safety and environment. Contains all risk assessment and method statements and handles any health and safety incidents</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border' style="background-color: #EAF1DD;">
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>5-Engineering</span></td>
+                            <td class='table-left'>Contains the bulk of the project documentation, organised according to life cycle phases. Holds all documents, spreadsheets, drawings &amp;c. required to design and build the Project</td>
+                        </tr>
+<!-- Data row -->       <tr class='no-border'>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>6-Accounting</span></td>
+                            <td class='table-left'>Cost tracking, budget management and invoicing.</td>
+                        </tr>
+<!-- Data row -->       <tr style="background-color: #EAF1DD;">
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'><span class='code'>7-Correspondence</span></td>
+                            <td class='table-left'>All project correspondence including minutes of meetings, scanned copies of paper correspondence and a full email archive</td>
+                        </tr>
+<!-- Caption -->        <tr class='no-border'>
+                            <td class='leading'></td>
+                            <td colspan='3' class='table-caption'>Table 5.9 &emsp; Main areas within the Project directory</td>
+                        </tr>
+                    </table>
 <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
-                    <p class='hyp'>The revision system must also be applicable to the TIA Projects as a whole (rather than just the individual modules within the projects); to clarify, the software modules do not exist within their own right, each software module is stored in TIA Portal project that expands as each new software module is developed. </p>
 
-                    <p class='hyp'>These TIA Portal projects are backed up and multiple revisions may be in used at the same time, all of these TIA Projects must also be part of the Software Control Mechanism (SCM).</p>
-
-                </div>                                          <!-- End of section text      -->
-
-                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
-                <!--     <aside class='aside-right'>                 Start of right side bar  -->
-                <!--         <p></p>                                 Side bar content         -->
-                <!--     </aside>                                    End of left side bar     -->
-                </div>                                          <!-- End of right column      -->
-            </div>                                              <!-- End of section content   -->
-        </section>                                              <!-- End of section           -->
-<!-- ========================================================================== [WP END]      -->
-
-
-<!-- ************************************************************************** [WP SUBSECTION]
-     SUBSECTION - 1.1.2 - A version control system
-     ***********************************************************************-->
-
-        <section class='section-std' id='js--010102'>           <!-- Start of section         -->
-            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
-                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
-                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
-                    <div class='sub-title-num-box'><h3>1.1.2</h3></div>
-                    <div class='sub-title-text-box'><h3>A version control system</h3></div>
-                </div>                                          <!-- End of subtitle column   -->
-                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
-            </div>                                              <!-- End of Subtitle row      -->
-
-            <div class='rg-row'>                                <!-- Start of section content -->
-                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
-                <!--     <aside class='aside-left'>                  Start of left side bar   -->
-                <!--         <p></p>                                 Side bar content         -->
-                <!--     </aside>                                    End of left side bar     -->
-                </div>                                          <!-- End of left column       -->
-
-                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
-
-                    <p class='hyp'>A version control system (VCS) is a mechanism for recording changes made to any files within a software project. It records all the changes, what files were affected by each change and a reason explaining why those changes were made. It also records who made the change and the time and date of the change.</p>
-
-                    <p class='hyp'>The VCS keeps a record of every change made within the project and allows any file that has been modified to be reverted back to a previous state. It means that if a software module is changed, the original module can always be recovered by the VCS.</p>
-
-                    <p class='hyp'>Version control systems generally have other facilities too, they are able to show the differences between two different versions of the software (even down to lines within a file), they allow multiple people to work on the project at the same time&mdash;even to work on the same file at the same time, and they provide mechanisms for resolving conflicts (where two different people have modified the same section of a file).</p>
-
-                    <p class='hyp'>Version control systems can be applied to any kind of project; it can be a website, a documentation project, a software application, engineering control system&mdash;anything at all, as long as it&rsquo;s a collection of files that can be stored on computer.</p>
-
-                    <p class='hyp'>The version control system does not itself edit or modify any of the files within the project; it simply records the changes and, where it recognises a file type, is able to display those changes that have occurred to it.</p>
-
-                    <p class='hyp'>The version control system does not care what software application is used to modify files within the project, it can be anything: text editor, word processor, file manager, graphics editor, specialist programming application &amp;c. It cares only, that a file under its control has been modified and why the modification was made.</p>
-
-                    <p class='hyp'><span class='emph'>Version control systems simply record any change made within a collection of files (the project), who made it, when it was made and the reason why. That is all.</span></p>
-
-                    <p class='hyp'>A VCS could be applied to TIA Portal projects, these are stored as archived files (essentially <span class='code'>zip</span> files); however, these types of files are proprietary and are not directly accessible to the VCS. The VCS could, under these conditions, store each archived file, it would not, however, be able to access the internal components of the file to determine what changes have been made to any particular part of it (i.e. it could not identify a particular change to a particular module).</p>
-
-                    <p class='hyp'>With the advent of TIA Portal V16 <em>(the latest version)</em>, Siemens introduced the concept of <em>Workspaces</em>, these are environments (essentially, just Windows folders) into which the programmable aspects of a TIA Project (blocks, data types and tags) can be exported (or imported) as XML<sup>&dagger;1</sup> files.</p>
-
-                    <p class='hyp'>This is a new concept, previous versions of TIA Portal did not offer the facility of exporting software modules in a widely accessible (text based) format, the software could only be read by the proprietary TIA Portal package itself.</p>
-
-                    <p class='hyp'>The benefit of this new Workspace facility is that the exported files are stored as XML files, and XML files are an ideal format for version control systems (VCSs), version control systems can read every aspect of an XML file and identify any changes that have been made, and, just as importantly, keep track of all these changes. Additionally, each block, data type and tag table is exported as its own XML file and as such allows the tracking of each individual element within the software library. It would for example, be possible to identify all the changes made to a particular Function (e.g. <span class='block'>FC01001</span>) and determine at which point in the revision history each change was made.</p>
-
-                    <p class='hyp'>This was the purpose of Siemens adding this Workspace facility to TIA Portal, it allows proper version control of the software being developed in a TIA Portal project. It also does not require a proprietary Siemens VCS, any and all VCS systems can track text-based files (it is fundamentally, what they were designed for).</p>
-
-                    <p class='hyp'>To make things easier, Siemens also allow third-party <em>&ldquo;add-ins&rdquo;</em> to be created that can interface with these new Workspaces. One such add-in (created by Siemens) provides an interface to the version control system Git and its online partner <a class='xref' href='https://github.com/'>GitHub</a>.</p>
-
-                    <p class='hyp'>The Git add-in allows TIA Portal to interface with a Git controlled Workspace, Git also supports various graphical user interfaces, in particular, Git can be controlled and managed from within the Visual Studio Code (VSC) text editor, VSC is widely used within the PSP and will be the preferred solution for providing a VCS interface for the PAL software.</p>
-
- <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      TABLE - FOOTNOTE
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                     <table class='table-fnote' id='js--fn01'>
-                         <tr>
-                             <th class='table-cent fnote-top' style='width: 10%'></th>
-                             <th class='table-left fnote-top' style='width: 10%'></th>
-                             <th class='table-left fnote-top' style='width: 20%'></th>
-                             <th class='table-left' style='width: 60%'></th>
-                         </tr>
-                         <tr>
- <!-- Footnote number -->    <td class='table-left'><em>&dagger;1</em></td>
- <!-- Footnote text below --><td class='table-left'></td>
-                             <td colspan='2' class='table-left'>XML or eXtensible Mark-up Language files are text files that are both machine and human readable; very similar to HTML (HyperText mark-up Language) and widely used to store documents in a manageable and readable format; it contains both content and structure.</td>
-                         </tr>
-                     </table>
- <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                   
-
-                </div>                                          <!-- End of section text      -->
-
-                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
-                <!--     <aside class='aside-right'>                 Start of right side bar  -->
-                <!--         <p></p>                                 Side bar content         -->
-                <!--     </aside>                                    End of left side bar     -->
-                </div>                                          <!-- End of right column      -->
-            </div>                                              <!-- End of section content   -->
-        </section>                                              <!-- End of section           -->
-<!-- ========================================================================== [WP END]      -->
-
-
-<!-- ************************************************************************** [WP SECTION]
-     SECTION - 1.2 - Scope and purpose of this document
-     ***********************************************************************-->
-
-        <section class='section-std' id='js--010200'>           <!-- Start of section         -->
-            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
-                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
-                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
-                    <div class='sub-title-overline'></div>      <!-- Overline                 -->
-                 <div class='sub-title-num-box'><h2>1.2</h2></div>
-                 <div class='sub-title-text-box'><h2>Scope and purpose of this document</h2></div>
-                </div>                                          <!-- End of subtitle column   -->
-                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
-            </div>                                              <!-- End of Subtitle row      -->
-
-            <div class='rg-row'>                                <!-- Start of section content -->
-                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
-                <!--     <aside class='aside-left'>                  Start of left side bar   -->
-                <!--         <p></p>                                 Side bar content         -->
-                <!--     </aside>                                    End of left side bar     -->
-                </div>                                          <!-- End of left column       -->
-
-                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
-
-                    <p class='hyp'>This document is applicable to all software modules developed as part of the PAL, it explains the mechanisms used to document and control the different versions of each software module as it progresses through the various project phases. It also details the Git version control system and its application within the Project to track all software changes and provide regression mechanisms to access earlier software versions.</p>
-
-                    <p class='hyp'>Broadly, this document covers the following:</p>
-
-<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      NUMBERED LIST
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                    <ol class='list-num'>
-                        <li><p class='hyp'>Software revision numbering system</p></li>
-                    </ol>
-<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ --> 
-
-<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      UNNUMBERED LIST
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                    <ul class='list-no-num' style="padding-left: 3em">
-                        <li><p class='hyp'>Software development (system build)</p></li>
-
-                        <li><p class='hyp'>Testing</p></li>
-
-                        <li><p class='hyp'>Deployment (commissioning) &amp; Qualification</p></li>
-
-                        <li><p class='hyp'>Release</p></li>
-                    </ul>
-<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      NUMBERED LIST
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                    <ol start="2" class='list-num'>
-                        <li><p class='hyp'>Git Version Control System</p></li>
-                    </ol>
-<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ --> 
-
-<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-UNNUMBERED LIST
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                    <ul class='list-no-num' style="padding-left: 3em">
-                        <li><p class='hyp'>Purpose of</p></li>
-
-                        <li><p class='hyp'>A tracking and development philosophy</p></li>
-                    </ul>
-<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-      NUMBERED LIST
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                    <ol start="3" class='list-num'>
-                        <li><p class='hyp'>GitHub Online repository</p></li>
-                    </ol>
-<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ --> 
-
-<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-UNNUMBERED LIST
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-                    <ul class='list-no-num' style="padding-left: 3em">
-                        <li><p class='hyp'>Purpose</p></li>
-
-                        <li><p class='hyp'>Accessing and control</p></li>
-                    </ul> 
-<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-                </div>                                          <!-- End of section text      -->
-
-                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
-                <!--     <aside class='aside-left'>                  Start of left side bar   -->
-                <!--         <p></p>                                 Side bar content         -->
-                <!--     </aside>                                    End of left side bar     -->
-                </div>                                          <!-- End of right column      -->
-            </div>                                              <!-- End of section content   -->
-        </section>                                              <!-- End of section           -->
-<!-- ========================================================================== [WP END]      -->
-
-
-<!-- ************************************************************************** [WP SECTION]
-     SECTION - 1.3 - Ownership, status &amp; relationship to other documents
-     ***********************************************************************-->
-
-        <section class='section-std' id='js--010300'>           <!-- Start of section         -->
-            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
-                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
-                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
-                    <div class='sub-title-overline'></div>      <!-- Overline                 -->
-                 <div class='sub-title-num-box'><h2>1.3</h2></div>
-                 <div class='sub-title-text-box'><h2>Ownership, status &amp; relationship to other documents</h2></div>
-                </div>                                          <!-- End of subtitle column   -->
-                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
-            </div>                                              <!-- End of Subtitle row      -->
-
-            <div class='rg-row'>                                <!-- Start of section content -->
-                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
-                <!--     <aside class='aside-left'>                  Start of left side bar   -->
-                <!--         <p></p>                                 Side bar content         -->
-                <!--     </aside>                                    End of left side bar     -->
-                </div>                                          <!-- End of left column       -->
-
-                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
-
-                    <p class='hyp'>This document is an ancillary document for the Project, the ownership of the document (those whom control it and are able to modify it), its status within the Project and its relationship to all other primary documents are important factors and are explained below:</p>
-
-               </div>                                          <!-- End of section text      -->
-
-                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
-                <!--     <aside class='aside-left'>                  Start of left side bar   -->
-                <!--         <p></p>                                 Side bar content         -->
-                <!--     </aside>                                    End of left side bar     -->
-                </div>                                          <!-- End of right column      -->
-            </div>                                              <!-- End of section content   -->
-        </section>                                              <!-- End of section           -->
-<!-- ========================================================================== [WP END]      -->
-
-<!-- ************************************************************************** [WP SUBSECTION]
-    SUBSECTION - 1.3.1 - Ownership of the document
-    ***********************************************************************-->
-
-        <section class='section-std' id='js--010301'>           <!-- Start of section         -->
-            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
-                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
-                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
-                    <div class='sub-title-num-box'><h3>1.3.1</h3></div>
-                    <div class='sub-title-text-box'><h3>Ownership of the document</h3></div>
-                </div>                                          <!-- End of subtitle column   -->
-                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
-            </div>                                              <!-- End of Subtitle row -->
-
-            <div class='rg-row'>                                <!-- Start of section content -->
-                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
-                <!--     <aside class='aside-left'>                  Start of left side bar   -->
-                <!--         <p></p>                                 Side bar content         -->
-                <!--     </aside>                                    End of left side bar     -->
-                </div>                                          <!-- End of left column       -->
-
-                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
-
-                    <p class='hyp'>This document has been produced, and is controlled and maintained by the Practical Series of Publications (PSP).</p>
-
-                    <p class='hyp'>This document and all the documents that it references are subject to the change control management procedures for this project.</p>
-
-                </div>                                          <!-- End of section text      -->
-
-                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
-                <!--     <aside class='aside-right'>                 Start of right side bar  -->
-                <!--         <p></p>                                 Side bar content         -->
-                <!--     </aside>                                    End of left side bar     -->
-                </div>                                          <!-- End of right column      -->
-            </div>                                              <!-- End of section content   -->
-        </section>                                              <!-- End of section           -->
-<!-- ========================================================================== [WP END]      -->   
-
-
-<!-- ************************************************************************** [WP SUBSECTION]
-     SUBSECTION - 1.3.2 - The status of this document
-     ***********************************************************************-->
-
-        <section class='section-std' id='js--010302'>           <!-- Start of section         -->
-            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
-                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
-                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
-                    <div class='sub-title-num-box'><h3>1.3.2</h3></div>
-                    <div class='sub-title-text-box'><h3>The status of this document</h3></div>
-                </div>                                          <!-- End of subtitle column   -->
-                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
-            </div>                                              <!-- End of Subtitle row -->
-
-            <div class='rg-row'>                                <!-- Start of section content -->
-                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
-                <!--     <aside class='aside-left'>                  Start of left side bar   -->
-                <!--         <p></p>                                 Side bar content         -->
-                <!--     </aside>                                    End of left side bar     -->
-                </div>                                          <!-- End of left column       -->
-
-                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
-
-                    <p class='hyp'>This document is an internal PSP document and is not a deliverable item under the terms of the project.</p>
-
-                </div>                                          <!-- End of section text      -->
-
-                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
-                <!--     <aside class='aside-right'>                 Start of right side bar  -->
-                <!--         <p></p>                                 Side bar content         -->
-                <!--     </aside>                                    End of left side bar     -->
-                </div>                                          <!-- End of right column      -->
-            </div>                                              <!-- End of section content   -->
-        </section>                                              <!-- End of section           -->
-<!-- ========================================================================== [WP END]      -->
-
-
-<!-- ************************************************************************** [WP SUBSECTION]
-     SUBSECTION - 1.3.3 - Relationship to other documents
-     ***********************************************************************-->
-
-        <section class='section-std' id='js--010303'>           <!-- Start of section         -->
-            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
-                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
-                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
-                    <div class='sub-title-num-box'><h3>1.3.3</h3></div>
-                    <div class='sub-title-text-box'><h3>Relationship to other documents</h3></div>
-                </div>                                          <!-- End of subtitle column   -->
-                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
-            </div>                                              <!-- End of Subtitle row -->
-
-            <div class='rg-row'>                                <!-- Start of section content -->
-                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
-                <!--     <aside class='aside-left'>                  Start of left side bar   -->
-                <!--         <p></p>                                 Side bar content         -->
-                <!--     </aside>                                    End of left side bar     -->
-                </div>                                          <!-- End of left column       -->
-
-                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
-
-                    <p class='hyp'>This document expands on the software revision tracking and control and revision numbering mechanisms discussed in the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/21-Design-Functional/01-Functional-Specification-(FS)/PS2001-5-2101-001-FS.pdf' download>Functional Specification (FS) <em>[Ref.&nbsp;002, &sect;&nbsp;4.5]</em></a> and the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/11-SW-Software-Design-Specification-(SDS)/PS2001-5-2311-001-SDS.pdf' download>Software Design Specification (SDS) <em>[Ref.&nbsp;003, &sect;&nbsp;5.2.4]</em></a>.</p>
-
-                    <p class='hyp'>Its place in the document structure for the Project is shown in <a class='xref js--sc-f01-01' href='#'>Figure&nbsp;1.1</a>.</p>
-
+                    <p class='hyp'>The full Project folder structure is shown below:</p>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
         To limit the image width add style='max-width: xxxpx' before src=
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
                     <div class='fig-row'>
-<!-- Image -->          <figure class='fig-col fig1-1' id='js--f01-01'>
-                            <a href='01-pages/11-00-scm/02-images/fig-01-01.svg' data-lightbox='fig-set' data-title='Figure 1.1 - Project Documentation'>
-                                <img src='01-pages/11-00-scm/02-images/fig-01-01.svg' alt='Figure 1.1 - Project Documentation'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f05-20'>
+                            <a href='01-pages/11-0504-scm/02-images/fig-05-20-min.svg' data-lightbox='fig-set' data-title='Figure 5.20 - The full project folder structure'>
+                                <img src='01-pages/11-0504-scm/02-images/fig-05-20-min.svg' alt='Figure 5.20 - The full project folder structure'>
                             </a>
-                            <figcaption>Figure 1.1 &emsp; Project Documentation</figcaption>
+                            <figcaption>Figure 5.20 &emsp; The full project folder structure</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SUBSECTION]
+     SUBSECTION - 5.4.1 - Understanding the Project folder structure
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050401'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-num-box'><h3>5.4.1</h3></div>
+                    <div class='sub-title-text-box'><h3>Understanding the Project folder structure</h3></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>The Project folder structure is designed to hold all the project information. It is split, generally, according to discipline (management, engineering, financial &amp;c.).</p>
+
+                    <p class='hyp'>This is a common structure for all PSP projects, this is done to give consistency and commonality to all PSP projects. </p>
+
+                    <p class='hyp'>The bulk of the information contained within the Project folder structure is documentation, the breakout of the <span class='code'>5-Engineering</span> directory is organised by phase and contains all the documents listed in the <a class='xref' href='https://practicalseries.com/2001-pal/81-binary/01-docs/01-Planning-Quality/21-Validation-Plan-(VP)/PS2001-5-0121-002-VP.pdf' download>Validation Plan (VP) <em>[Ref. 001]</em></a> documents such as:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      NUMBERED LIST
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ol class='list-num'>                       <!-- Start of numbered list   -->
+                        <li><p class='hyp'>Quality Manual (QM) and Quality Plan (QP)</p></li>
+
+                        <li><p class='hyp'>Validation plan (VP)</p></li>
+
+                        <li><p class='hyp'>User Requirement Specification (URS)</p></li>
+
+                        <li><p class='hyp'>Requirement Traceability Matric (RTM)</p></li>
+
+                        <li><p class='hyp'>Functional Specification (FS)</p></li>
+
+                        <li><p class='hyp'>Hardware and Software Design Specifications (HDS, SDS)</p></li>
+
+                        <li><p class='hyp'>Design Review (DR)</p></li>
+
+                        <li><p class='hyp'>Test documentation (SMTS, SITS, FAT)</p></li>
+
+                        <li><p class='hyp'>Qualification documentation (IQ, OQ)</p></li>
+
+                        <li><p class='hyp'>Training and use documentation (UG)</p></li>
+
+                    </ol>                                       <!-- End of numbered list     -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The directory also contains secondary documents such as:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      UNNUMBERED LIST
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ul class='list-no-num'>                    <!-- Start of unnumbered list -->
+                        <li><p class='hyp'>Design drawings</p></li>
+
+                        <li><p class='hyp'>Schedules</p></li>
+
+                        <li><p class='hyp'>Equipment lists</p></li>
+
+                        <li><p class='hyp'>Certificates (calibration &amp;c.)</p></li>
+
+                        <li><p class='hyp'>Manufacturer’s literature</p></li>
+                    </ul>                                       <!-- End of unnumbered list   -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The directory also holds the data for all aspects of the system including backups of the developed software, licence information, copies of any software supplied to the project (TIA Portal media &amp;c.) and user configuration information (user names, credentials &amp;c.).</p>
+
+                    <p class='hyp'>The Project directory contains all the live information for the Project and the entire project (including development build information) can be recreated from the information contained within this directory.</p>
+
+                    <p class='hyp'>Each document within the Project, has its own folder, for example the Functional Specification is located in the folder:</p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code' style="font-size: 0.65rem;">PS2001-PAL-Proj\5-Engineering\21-Design-Functional\01-Functional-Specification</span></p>
+
+                    <p class='hyp'>The document filename reflects this location, in this the example, the FS filename is:</p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code'>PS2001-5-2101-001 R01.00 PAL FS.docm</span></p>
+
+                    <p class='hyp'>All documents have this format, it can be broken down as follows:</p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code'>PSnnnn-A-BBCCDD-PPP Sxx.yy Name</span></p>
+
+                    <p class='hyp'>Where <span class='code'>PSnnnn</span> is the project number (2001 in this case),</p>
+
+                    <p class='hyp'><span class='code'>A-BBCCDD</span> is the leading directory numbers in the path to the document from the root of the project folder, the <span class='code'>A</span> being one of the main project areas (<a class='xref js--sc-t05-09' href='#'>Table&nbsp;5.9</a>), 5 in this case.</p>
+
+                    <p class='hyp'><span class='code'>BBCCDD</span> are the remaining folder numbers, the FS is in folder:</p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code' style="font-size: 0.8rem;">5-Engineering\21-Design-Functional\01-Functional-Specification</span></p>
+
+                    <p class='hyp'>Taking the leading number from each folder give <span class='code'>5</span>, <span class='code'>21</span>, <span class='code'>01</span> (the FS is three folders deep), hence the first part of the FS filename is:</p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code'>PS2001-5-2101</span></p>
+
+                    <p class='hyp'>The <span class='code'>PPP</span> is a three digit number to ensure the document is uniquely numbered, for a single document in a particular folder, this is usually <span class='code'>001</span> (this is at the discretion of the user).</p>
+
+                    <p class='hyp'><span class='code'>Sxx.yy</span> is the revision status of the document, see <a class='xref js--sc-050403' href='#'>&sect;&nbsp;5.4.3:</a></p>
+
+                    <p class='hyp'>The <span class='code'>Name</span> is a meaningful name for the document and can be anything (though generally, shorter is better, the whole thing should be 50 characters or less).</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP INLINE]
+     SECTION INLINE - Common document folders
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050401a'>          <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-text-box'><h4>Common document folders</h4></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>Generally, each PAL document (and drawings, spreadsheets &amp;c.) has its own folder within the Project folder structure. The document itself will be in the root of this folder, the document folder will also contain a common set of sub-folders:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f05-21'>
+                            <a href='01-pages/11-0504-scm/02-images/fig-05-21-min.svg' data-lightbox='fig-set' data-title='Figure 5.21 - Document common sub-folders'>
+                                <img src='01-pages/11-0504-scm/02-images/fig-05-21-min.svg' alt='Figure 5.21 - Document common sub-folders'>
+                            </a>
+                            <figcaption>Figure 5.21 &emsp; Document common sub-folders</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The purpose of these folders is as follows:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      TABLE - STANDARD TABLE WITH BOTTOM BORDERS
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                            <table class='table-clean'>
+        <!-- Data row -->       <tr class='no-border'>
+                                    <td class='leading'><div style='min-height: 3em'></div></td>
+                                    <td class='table-left' style='width: 30%'><span class='code'>11-submitted</span></td>
+                                    <td class='table-left' style='width: 70%'>Contains the submitted documents (those with a revision status of R)</td>
+                                </tr>
+        <!-- Data row -->       <tr class='no-border' style="background-color: #EAF1DD;">
+                                    <td class='leading'><div style='min-height: 3em'></div></td>
+                                    <td class='table-left'><span class='code'>21-Review-Comment</span></td>
+                                    <td class='table-left'>Contains the marked up documents with a P status that have been reviewed and received comments from the concerned parties</td>
+                                </tr>
+        <!-- Data row -->       <tr class='no-border'>
+                                    <td class='leading'><div style='min-height: 3em'></div></td>
+                                    <td class='table-left'><span class='code'>51-Figs-images-diag</span></td>
+                                    <td class='table-left'>Figures, images and diagrams used within the main document (Visio drawings are often used, the Visio file has the same number as the main document)</td>
+                                </tr>
+        <!-- Data row -->       <tr class='no-border' style="background-color: #EAF1DD;">
+                                    <td class='leading'><div style='min-height: 3em'></div></td>
+                                    <td class='table-left'><span class='code'>52-Reference</span></td>
+                                    <td class='table-left'>Any reference material pertinent to the main document</td>
+                                </tr>
+        <!-- Data row -->       <tr class='no-border'>
+                                    <td class='leading'><div style='min-height: 3em'></div></td>
+                                    <td class='table-left'><span class='code'>91-Superseded</span></td>
+                                    <td class='table-left'>All superseded versions of the document (including draft documents)</td>
+                                </tr>
+        <!-- Caption -->        <tr class='no-border'>
+                                    <td class='leading'></td>
+                                    <td colspan='2' class='table-caption'></td>
+                                </tr>
+                            </table>
+        <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The following shows an example arrangement for the Functional Specification:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f05-22'>
+                            <a href='01-pages/11-0504-scm/02-images/fig-05-22-min.svg' data-lightbox='fig-set' data-title='Figure 5.22 - Document common sub-folders (example)'>
+                                <img src='01-pages/11-0504-scm/02-images/fig-05-22-min.svg' alt='Figure 5.22 - Document common sub-folders (example)'>
+                            </a>
+                            <figcaption>Figure 5.22 &emsp; Document common sub-folders (example)</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP INLINE]
+     SECTION INLINE - Empty folder conventions
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050401b'>          <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-text-box'><h4>Empty folder conventions</h4></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>The PAL Project folder structure is extensive with a large number of folders, many of which are pre-configured in the PSP folder template used to create the Project directories in the first place. </p>
+
+                    <p class='hyp'>To make navigation around the folder structure easier, empty folders are, by convention, prefixed with the characters <span class='code'>E#</span>, this is the default state for all folders. This can be seen below:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f05-23'>
+                            <a href='01-pages/11-0504-scm/02-images/fig-05-23-min.png' data-lightbox='fig-set' data-title='Figure 5.22 - Document common sub-folders (example)'>
+                                <img src='01-pages/11-0504-scm/02-images/fig-05-23-min.png' alt='Figure 5.22 - Document common sub-folders (example)'>
+                            </a>
+                            <figcaption>Figure 5.22 &emsp; Document common sub-folders (example)</figcaption>
                         </figure>
                     </div>
 <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
@@ -1172,6 +835,179 @@ UNNUMBERED LIST
 <!-- ========================================================================== [WP END]      -->
 
 
+<!-- ************************************************************************** [WP SUBSECTION]
+     SUBSECTION - 5.4.2 - Project registry
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050402'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-num-box'><h3>5.4.2</h3></div>
+                    <div class='sub-title-text-box'><h3>Project registry</h3></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>The 0-Adminstration folder contains the <a class='xref' href='https://practicalseries.com/2001-pal/81-binary/01-docs/PS2001-0-01-001-Project-Register.xlsx' download>Project Registry <em>[Ref. 005]</em></a>, this is a registry of all the documents produced for the Project </p>
+
+                    <p class='hyp'>The Project Registry is an Excel spread sheet that lists every document within the Project (usually by phase). It has the file name:</p>
+
+                    <p class='hyp'><span class='code'>PS2001-0-01-001-Project-Register.xlsx</span></p>
+
+                    <p class='hyp'>And is located in the following folder</p>
+
+                    <p class='hyp' style="text-align: center;"><span class='code'>PS2001-PAL-Proj\0-Administration\01-Project-Register</span></p>
+
+                    <p class='hyp'>Any new document created must be entered in this Project Registry. </p>
+
+                    <p class='hyp'>The following is an example of a page from the Project Registry:</p>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
+        To limit the image width add style='max-width: xxxpx' before src=
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <div class='fig-row'>
+<!-- Image -->          <figure class='fig-col fig1-1' id='js--f05-24'>
+                            <a href='01-pages/11-0504-scm/02-images/fig-05-24-min.png' data-lightbox='fig-set' data-title='Figure 5.24 - Document common sub-folders (example)'>
+                                <img src='01-pages/11-0504-scm/02-images/fig-05-24-min.png' alt='Figure 5.24 - Document common sub-folders (example)'>
+                            </a>
+                            <figcaption>Figure 5.24 &emsp; Document common sub-folders (example)</figcaption>
+                        </figure>
+                    </div>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'></p>
+
+                    <p class='hyp'></p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP SUBSECTION]
+     SUBSECTION - 5.4.3 - Document versions
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050403'>           <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-num-box'><h3>5.4.3</h3></div>
+                    <div class='sub-title-text-box'><h3>Document versions</h3></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>The revision of the document is expressed in the form <span class='code'>Sxx.yy</span>, where: </p>
+
+                    <p class='hyp'><span class='code'>S</span> is the status:</p>
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      UNNUMBERED LIST
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                    <ul class='list-no-num'>                    <!-- Start of unnumbered list -->
+                        <li><p class='hyp'><span class='code'>D</span>&nbsp;&mdash;&nbsp;Draft/development</p></li>
+
+                        <li><p class='hyp'><span class='code'>P</span>&nbsp;&mdash;&nbsp;Published for review</p></li>
+
+                        <li><p class='hyp'><span class='code'>R</span>&nbsp;&mdash;&nbsp;Released</p></li>
+                    </ul>                                       <!-- End of unnumbered list   -->
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+                    <p class='hyp'>The <span class='code'>xx.yy</span> numbers are the revision number, <span class='code'>xx</span> being the major revision and <span class='code'>yy</span> being a minor revision.</p>
+
+                    <p class='hyp'>The first formal release of the document will be at <span class='code'>01.00</span>, prior to this the document will have been is a draft state (e.g. <span class='code'>D00.01</span>, <span class='code'>D00.02</span>, <span class='code'>D00.03</span> &amp;c.) at some point it will have been published for review (this takes the next logical number, e.g. <span class='code'>P00.04</span>).</p>
+
+                    <p class='hyp'>Revisions after a document has been released continue with minor revisions from the released revision, consider a document at release <span class='code'>R01.00</span> that is to be modified and re-released, its progression would continue as:</p>
+
+                    <p class='hyp'><span class='code'>R01.00 &rarr; D01.01 &rarr; D01.02 &hellip; P01.09 &rarr; R02.00</span></p>
+
+                    <p class='hyp'>The status letter changes to reflect the document state, the numbers always go upwards.</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+<!-- ************************************************************************** [WP INLINE]
+     SECTION INLINE - Document revision in document references
+     ***********************************************************************-->
+
+        <section class='section-std' id='js--050403a'>          <!-- Start of section         -->
+            <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+                <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                    <div class='sub-title-text-box'><h4>Document revision in references</h4></div>
+                </div>                                          <!-- End of subtitle column   -->
+                <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+            </div>                                              <!-- End of Subtitle row      -->
+
+            <div class='rg-row'>                                <!-- Start of section content -->
+                <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+                <!--     <aside class='aside-left'>                  Start of left side bar   -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of left column       -->
+
+                <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>Where documents are referenced from within other documents, e.g.:</p>
+
+                    <p class='hyp' style="text-align: center;">Validation Plan (VP) <em>[Ref.&nbsp;003]</em></p>
+
+                    <p class='hyp'>The current revision of the document is not quoted, neither is it quoted in the References section of the document, this is to prevent every document having to be changed if a single document is modified (changing the revision of the SDS would require the reference section of all documents that referenced it to be change, this in turn would require all documents that referenced these documents to also be updated &amp;c.).</p>
+
+                    <p class='hyp'>To prevent this, document references quote the document number only, the latest revision of which is listed in the <a class='xref' href='https://practicalseries.com/2001-pal/81-binary/01-docs/PS2001-0-01-001-Project-Register.xlsx' download>Project Registry <em>[Ref. 005]</em></a>. When using the document reference, the Project Registry must be consulted to ensure the correct revision of the referenced document is used.</p>
+
+                    <p class='hyp'>At the end of the Project when no further document changes will take place (i.e. when all as-built documentation is released) all document references will be updated to include the as-built revisions of all related documents for clarity.</p>
+
+                </div>                                          <!-- End of section text      -->
+
+                <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+                <!--     <aside class='aside-right'>                 Start of right side bar  -->
+                <!--         <p></p>                                 Side bar content         -->
+                <!--     </aside>                                    End of left side bar     -->
+                </div>                                          <!-- End of right column      -->
+            </div>                                              <!-- End of section content   -->
+        </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
+
+
+
+
 <!-- ************************************************************************** [WP LAST]
      SECTION - LAST SECTION BEFORE FOOTER (WITH NAVIGATION)
      ***********************************************************************-->
@@ -1181,7 +1017,10 @@ UNNUMBERED LIST
         <div class="section-std" id="js--999901">               <!-- Start of additional row  -->
             <div class="rg-row">                                <!-- Start of row content     -->
                 <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
-                </div>                                          <!-- End of left column       -->
+                    <aside class="aside-nav">                   <!-- Start of sidebar nav     -->
+                        <a class="xref" href="11-0503-scm.html#js--050300">Prev</a>
+                    </aside>                                    <!-- End of left side bar     -->
+</div>                                          <!-- End of left column       -->
 
                 <div class="rg-col rg-span3-5 aside-nav">       <!-- Start of end image area  -->
                     <img src="../00-comres/11-resources/01-css/01-css-images/end-mark.svg" alt="End flourish image">
@@ -1189,7 +1028,7 @@ UNNUMBERED LIST
 
                 <div class="rg-col rg-span1-5">                 <!-- Start of right column    -->
                     <aside class="aside-nav">                   <!-- Start of sidebar nav     -->
-                        <a class="xref" href="11-0200-scm.html#js--000000">Next</a>
+                        <a class="xref" href="11-0600-scm.html#js--000000">Next</a>
                     </aside>                                    <!-- End of right side bar    -->
                 </div>                                          <!-- End of right column      -->
             </div>                                              <!-- End of row content       -->
