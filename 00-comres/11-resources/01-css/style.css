@@ -102,6 +102,9 @@ This is a complete summary of all software modifications.
 
 Date          Issue        Author         Reason for Modification
 -------------------------------------------------------------------------------
+01 May 2021   000.103      M. Gledhill    table-doc class added for 
+                                          documentation lists 
+                                          
 14 Feb 2021   000.102      M. Gledhill    SS02 stylistic set applied to
                                           .sans and .sans-b classes
 
@@ -121,7 +124,7 @@ Date          Issue        Author         Reason for Modification
 /* ****************************************************************************
    REVISION
    **************************************************************************** */
-#rev-style:after { content: "000.102"; }
+#rev-style:after { content: "000.107"; }
 
 
 
@@ -177,7 +180,6 @@ Date          Issue        Author         Reason for Modification
 * {
     margin: 0;
     padding: 0;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     position: relative;
 }
@@ -201,7 +203,6 @@ body {
 h1, h2, h3, h4, h5, h6 {                    /* set standard headings */
     font-family: 'conc-t3-r';
     font-weight:normal;
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 100%
 }
@@ -308,7 +309,6 @@ a:active { color: #404030; }
     color: #CCCCCC;
     margin: 0 auto;
     font-family: "conc-c4-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 80%;
 }
@@ -339,7 +339,6 @@ a:active { color: #404030; }
 .nav-narrow:link,
 .nav-narrow:visited {
     color: #cccccc;
-    -webkit-transition: background-color 0.2s, color 0.2s;
     transition: background-color 0.2s, color 0.2s;
 }
 .nav-wide:hover,                            /* navigation hover options */
@@ -460,7 +459,6 @@ a:active { color: #404030; }
     margin-right: 1rem;
     padding: 0.2rem 0.5rem;
     font-family: "conc-c4-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     text-decoration: none;
     border-radius: 1rem;
@@ -470,7 +468,6 @@ a:active { color: #404030; }
 .btn-full:link,
 .btn-full:visited {
     color: #fff;
-    -webkit-transition: background-color 0.2s;
     transition: background-color 0.2s;
 }
 .btn-full:hover,
@@ -483,7 +480,6 @@ a:active { color: #404030; }
 .btn-ghost:link,
 .btn-ghost:visited {
     color: #e67e22;
-    -webkit-transition: background-color 0.2s, color 0.2s;
     transition: background-color 0.2s, color 0.2s;
 }
 .btn-ghost:hover,
@@ -568,7 +564,6 @@ a:active { color: #404030; }
 
 .cover-title h1 {                           /* format h1 - MAIN TITLE */
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 340%;
     margin: 0 0 0.4rem 0;
@@ -577,7 +572,6 @@ a:active { color: #404030; }
 .cover-title h3,
 .cover-title h4 {
     font-family: "conc-t4-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     text-transform: uppercase;
     letter-spacing: 0.086rem;
@@ -678,7 +672,6 @@ a:active { color: #404030; }
     width: 33.3%;
     text-align: left;
     font-family: "conc-t2-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 500%;
     color: #404030;
@@ -689,7 +682,6 @@ a:active { color: #404030; }
     float: left;
     width: 66.6%;
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 190%;
     line-height: 110%;
@@ -703,7 +695,6 @@ a:active { color: #404030; }
     float: left;
     width: 100%;
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 150%;
     line-height: 110%;
@@ -823,7 +814,6 @@ a:active { color: #404030; }
     list-style: none;
     color: #4C6C9C;
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.8rem;
 }
@@ -836,14 +826,13 @@ a:active { color: #404030; }
 }
 
 .toc-lev:link,                              /* format the link hover background */
-.toc-lev:visited { -webkit-transition: background-color 0.2s; transition: background-color 0.2s; }
+.toc-lev:visited { transition: background-color 0.2s; }
 .toc-lev:hover,
 .toc-lev:active  { background-color: #f8f8f8; }
 
 .toc-lev1-num {                             /* container for TOC level 1 number */
     display: inline-block;
     font-family: "conc-t3-b";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     vertical-align: top;
     width: 5%;
@@ -853,7 +842,6 @@ a:active { color: #404030; }
 .toc-lev1-text {                            /* container for TOC level 1 text */
     display: inline-block;
     font-family: "conc-t3-b";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     width: 95%;
     margin-top: 0.6rem;
@@ -863,7 +851,6 @@ a:active { color: #404030; }
 .toc-lev1lt-num {                           /* alternative container for TOC level 1 number */
     display: inline-block;
     font-family: "conc-t3-r";               /* uses regular font, not bold */
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     vertical-align: top;
     width: 5%;
@@ -873,7 +860,6 @@ a:active { color: #404030; }
 .toc-lev1lt-text {                          /* alternative container for TOC level 1 text */
     display: inline-block;
     font-family: "conc-t3-r";               /* uses regular font, not bold */
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     width: 95%;
     margin-top: 0.6rem;
@@ -884,11 +870,10 @@ a:active { color: #404030; }
 .toc-list {                                 /* container for the TOC columns */
     margin:0;
     list-style: none;
-    -webkit-column-count: 2;
-    column-count: 2;
+    -moz-column-count: 2;
+         column-count: 2;
     color: #4C6C9C;
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.8rem;
 }
@@ -903,7 +888,6 @@ a:active { color: #404030; }
 .toc-lev2-num {                             /* container for TOC level 2 number */
     display: inline-block;
     font-family: "conc-t4-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.75rem;    vertical-align: top;
     width: 20%;
@@ -914,7 +898,6 @@ a:active { color: #404030; }
 .toc-lev2-text {                            /* container for TOC level 2 text */
     display: inline-block;
     font-family: "conc-t4-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.75rem;
     width: 70%;
@@ -955,7 +938,7 @@ a:active { color: #404030; }
    ------------------------------------------------------------------------- */
 
 @media all and (max-width:760px){
-    .toc-list { -webkit-column-count: 1; column-count: 1; }
+    .toc-list { -moz-column-count: 1; column-count: 1; }
     .toc-pad { display: none; }
     .toc-lev1-num, .toc-lev1-text { font-size: 120% ;}
     .toc-lev2-num, .toc-lev2-text { font-size: 120% ;}
@@ -1056,7 +1039,6 @@ a:active { color: #404030; }
     width: 20%;
     text-align: left;
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 1.9rem;
     color: #404030;
@@ -1068,7 +1050,6 @@ a:active { color: #404030; }
     width: 80%;
     text-align: left;
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 1.9rem;
     color: #404030;
@@ -1080,7 +1061,6 @@ a:active { color: #404030; }
     width: 100%;
     text-align: left;
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 1.7rem;
     color: #404030;
@@ -1113,7 +1093,6 @@ a:active { color: #404030; }
 .aside-right,
 .aside-head {
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.85rem;
     line-height: 1.40;
@@ -1138,7 +1117,6 @@ a:active { color: #404030; }
 .aside-right em,
 .aside-head em {
     font-family: "conc-t3-b";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
 }
 .aside-head h2 {
@@ -1230,7 +1208,6 @@ a:active { color: #404030; }
 .aside-right-rev {
     padding-top:2.5rem;
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     color: #707070;
     font-size: 0.5rem;
@@ -1299,7 +1276,6 @@ a:active { color: #404030; }
 
 .aside-nav {
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.85rem;
     color: #707070;
@@ -1310,7 +1286,6 @@ a:active { color: #404030; }
 .aside-nav a:visited {
     background-color: #fff;
     border-bottom: 1px solid transparent;
-    -webkit-transition: background-color 0.2s, border-bottom 0.2s;
     transition: background-color 0.2s, border-bottom 0.2s;
     color: #cccccc;
     text-decoration: none;
@@ -1443,14 +1418,12 @@ a:active { color: #404030; }
 .serif-b { font-family: "eqty-ta-b"; }      /* TEXT STYLE - serif font bold (override) */
 
 .sans {                                     /* TEXT STYLE - sans serif font (override) */
-    font-family: "conc-t3-r"; 
-    -webkit-font-feature-settings: "ss02";
+    font-family: "conc-t3-r";
     font-feature-settings: "ss02";
 }
 
 .sans-b {                                   /* TEXT STYLE - sans serif font bold (override) */ 
-    font-family: "conc-t4-b"; 
-    -webkit-font-feature-settings: "ss02";
+    font-family: "conc-t4-b";
     font-feature-settings: "ss02";
 }
 
@@ -1463,7 +1436,6 @@ a:active { color: #404030; }
 
 .notice {                                   /* TEXT STYLE - code fragment */
     font-family: "conc-t3-b";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 130%;
     color: #C0504D!important;
@@ -1492,7 +1464,6 @@ a:active { color: #404030; }
 
 .menu {                                     /* TEXT STYLE - code fragment */
     font-family: "conc-c4-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     color: #4F81BD;
 }
@@ -1500,7 +1471,6 @@ a:active { color: #404030; }
     display: inline-block;
     font-family: 'conc-c2-r';
     font-weight:normal;
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 150%;
     margin-top: 2rem;
@@ -1540,8 +1510,6 @@ a:active { color: #404030; }
 .hlink:visited{
     background-color: #f8f8f8;
     border-bottom: 1px solid transparent;
-    -webkit-transition: background-color 0.2s, border-bottom 0.2s;
-    -webkit-transition: border-bottom 0.2s;
     transition: border-bottom 0.2s;
 }
 .hlink:hover,
@@ -1551,8 +1519,6 @@ a:active { color: #404030; }
 .xref:visited{
     background-color: #f8f8f8;
     border-bottom: 1px solid transparent;
-    -webkit-transition: background-color 0.2s, border-bottom 0.2s;
-    -webkit-transition: border-bottom 0.2s;
     transition: border-bottom 0.2s;
 }
 .xref:hover,
@@ -1563,7 +1529,6 @@ a:active { color: #404030; }
 .pay:visited{
     background-color: #fff;
     border-bottom: 1px solid transparent;
-    -webkit-transition: background-color 0.2s, border-bottom 0.2s;
     transition: background-color 0.2s, border-bottom 0.2s;
 }
 .pay:hover,
@@ -1579,52 +1544,42 @@ a:active { color: #404030; }
 }
 
 .sset01{                                    /* apply stylistic sets to font */
-    -webkit-font-feature-settings: "ss01";
     font-feature-settings: "ss01";
  }
 
 .sset02{
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
  }
 
 .sset03{
-    -webkit-font-feature-settings: "ss03";
     font-feature-settings: "ss03";
  }
 
 .sset04{
-    -webkit-font-feature-settings: "ss04";
     font-feature-settings: "ss04";
  }
 
 .sset05{
-    -webkit-font-feature-settings: "ss05";
     font-feature-settings: "ss05";
  }
 
 .sset06{
-    -webkit-font-feature-settings: "ss06";
     font-feature-settings: "ss06";
  }
 
 .sset07{
-    -webkit-font-feature-settings: "ss07";
     font-feature-settings: "ss07";
  }
 
 .sset08{
-    -webkit-font-feature-settings: "ss08";
     font-feature-settings: "ss08";
  }
 
 .sset09{
-    -webkit-font-feature-settings: "ss09";
     font-feature-settings: "ss09";
  }
 
 .sset10{
-    -webkit-font-feature-settings: "ss10";
     font-feature-settings: "ss10";
  }
 
@@ -1658,7 +1613,6 @@ a:active { color: #404030; }
 
 .fig-row {
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.6rem;
     color: #404030;
@@ -1759,7 +1713,6 @@ tr.no-border th {                           /* no-bottom border */
 
 .table-caption {
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.6rem;
     text-align: left;
@@ -1786,13 +1739,11 @@ tr.no-border th {                           /* no-bottom border */
     border-collapse: collapse;
     margin-bottom: 1rem;
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.7rem;
 }
 .table-clean th {
     font-family: "conc-t2-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     text-transform: uppercase;
     letter-spacing: 0.086em;
@@ -1825,7 +1776,6 @@ tr.no-border th {                           /* no-bottom border */
 
 .table-clean em {
     font-family: "conc-t3-b";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-style:normal;
 }
@@ -1849,7 +1799,6 @@ tr.no-border th {                           /* no-bottom border */
 
 .table-dense {
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.55rem;
     width:90%;
@@ -1859,7 +1808,6 @@ tr.no-border th {                           /* no-bottom border */
 }
 .table-dense th {
     font-family: "conc-t2-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     text-transform: uppercase;
     font-size: 0.55rem;
@@ -1885,11 +1833,73 @@ tr.no-border th {                           /* no-bottom border */
 
 .table-dense em {
     font-family: "conc-t3-b";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-style:normal;
 }
 
+
+
+/* ****************************************************************************
+   TABLES - DOCUMENT FORMAT TABLE
+   ****************************************************************************
+   Tables use the .table-doc class to produce a simple table with a bottom
+   border that is 100% of the section text area - full width.
+
+   It is used to display document information (document index or registry &c.)
+   
+   Alternate data rows are coloured green and there is a bottom border on
+   the last row
+
+   Borders are applied in the same way as a clean table.
+   ************************************************************************* */
+
+   .table-doc {
+    font-family: "conc-t3-r";
+    font-feature-settings: "ss02";
+    font-size: 0.65em;
+    width:100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+}
+.table-doc tr:nth-child(n+2):nth-child(odd) {               /* first-child is leading (min-height row) */
+    background-color: #EAF1DD;
+}
+
+.table-doc th {
+    font-family: "conc-c2-r";
+    font-feature-settings: "ss02";
+    font-size: 0.65rem;
+    letter-spacing: 0.086em;
+    color: #7F7F7F;
+    padding: 0rem 0.2rem 0.25rem 0.2rem;    /* top padding to separate from prev text */
+    border-bottom: 1px solid #cccccc;
+}
+.table-doc td {
+    padding: 0.25rem 0.2rem;
+    line-height: 130%;
+}
+.table-doc th:first-child {               /* first-child is leading (min-height row) */
+    padding: 0;                             /* this has no margins, padding or border */
+    margin: 0;
+    border-bottom: 1px solid #fff;
+}
+.table-doc td:nth-child(2) {              /* first-child is leading (min-height row) */
+    font-family: "conc-t4-r";
+}
+
+.table-doc tr:last-child {              /* first-child is leading (min-height row) */
+    padding: 0;                             /* this has no margins, padding or border */
+    margin: 0;
+    border-bottom: 1px solid #cccccc;
+}
+
+.table-doc em {
+    font-family: "conc-t3-b";
+    font-feature-settings: "ss02";
+    font-style:normal;
+}
 
 /* ****************************************************************************
    TABLES - FOOTNOTES
@@ -1916,7 +1926,6 @@ tr.no-border th {                           /* no-bottom border */
     margin: 2rem auto 2rem auto;
     border-collapse: collapse;
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.65em;
 }
@@ -1930,7 +1939,6 @@ tr.no-border th {                           /* no-bottom border */
 }
 .table-fnote td em {
     font-family: "conc-t4-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.7rem;
 }
@@ -1956,7 +1964,6 @@ tr.no-border th {                           /* no-bottom border */
     border-collapse: collapse;
     margin-bottom: 1rem;
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.8em;
     background-color: #fbfbfb;
@@ -1964,7 +1971,6 @@ tr.no-border th {                           /* no-bottom border */
 }
 .table-incid th {
     font-family: "conc-c3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.7rem;
     padding: 0.5rem 0.2rem 0.5rem 0.2rem;   /* top padding to separate from prev text */
@@ -1977,7 +1983,6 @@ tr.no-border th {                           /* no-bottom border */
 }
 .table-incid em {
     font-family: "conc-t3-b";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-style:normal;
 }
@@ -2161,7 +2166,6 @@ tr.in-no-border th {                        /* incidental table no-bottom border
 
 .code-header {                              /* code header (filename header) */
     font-family: "trip-t3-b";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.65rem;
     text-transform: lowercase;
@@ -2193,7 +2197,6 @@ tr.in-no-border th {                        /* incidental table no-bottom border
 
 .code-caption {
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.6rem;
     width: 100%;
@@ -2207,7 +2210,6 @@ tr.in-no-border th {                        /* incidental table no-bottom border
 .code-nav:link,
 .code-nav:visited{
     color: #ccc;
-    -webkit-transition: color 0.2s;
     transition: color 0.2s;
 }
 .code-nav:hover,
@@ -2267,7 +2269,6 @@ tr.in-no-border th {                        /* incidental table no-bottom border
 
 .formulae-header {                          /* formulae header (title) */
     font-family: "conc-c3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     text-align: center;
     padding: 0.1rem 0.2rem 0.2rem 0.2rem;
@@ -2289,7 +2290,6 @@ tr.in-no-border th {                        /* incidental table no-bottom border
     display:inline-block;
     width:10%;
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.7rem;
     color: #404030;
@@ -2298,7 +2298,6 @@ tr.in-no-border th {                        /* incidental table no-bottom border
 
 .formulae-caption {                         /* formula caption area */
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.6rem;
     color: #404030;
@@ -2346,7 +2345,6 @@ tr.in-no-border th {                        /* incidental table no-bottom border
     padding-bottom: 0;
     background-color: #fbfaf6;
     font-family: "conc-t3-r";
-    -webkit-font-feature-settings: "ss02";
     font-feature-settings: "ss02";
     font-size: 0.85rem;
     line-height: 100%;
@@ -2375,7 +2373,6 @@ tr.in-no-border th {                        /* incidental table no-bottom border
     color: #4C6C9C;
     text-decoration: none;
     border-bottom: 1px solid transparent;
-    -webkit-transition: border-bottom 0.2s;
     transition: border-bottom 0.2s;}
 .footer-nav li a:hover,
 .footer-nav li a:active {

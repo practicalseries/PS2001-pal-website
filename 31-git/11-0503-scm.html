@@ -43,6 +43,8 @@ This is a complete summary of all software modifications.
 
 Date          Issue        Author         Reason for Modification
 *******************************************************************************
+01 May 2021   000.107      M. Gledhill    Doc links added
+
 12 Apr 2021   000.106      M. Gledhill    Released as a development prototype
                                           Revision control active
                                           RELEASE CHECKLIST       
@@ -63,7 +65,7 @@ Date          Issue        Author         Reason for Modification
                                              Last section Next    Y (0504)
                                              Footer Top           Y
                                              Footer Contacts &c.  Y (11/80)
-                                             All U-TX removed     *********** N ********************************************
+                                             All U-TX removed     Y
 
                                           File created
                                           based on 98-00-blank.html
@@ -213,7 +215,7 @@ Date          Issue        Author         Reason for Modification
                             <td class="leading" style="height: 1em"></td>
                             <td class="table-cent" style="width: 30%"></td>
                             <td class="table-left" style="width: 40%">Page:</td>
-                            <td class="table-right" style="width: 30%" id="rev-doc">000.106</td>
+                            <td class="table-right" style="width: 30%" id="rev-doc">000.107</td>
                         </tr>
 <!-- Data row -->       <tr>
                             <td class="leading" style="height: 1em"></td>
@@ -334,7 +336,7 @@ Date          Issue        Author         Reason for Modification
             <div class="rg-row">                                <!-- Start of title row       -->
                 <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
                     <aside class="rev-badge-side">              <!-- BUILD BADGE              -->
-                        <img src="https://img.shields.io/badge/dev-000.106-BF504D.svg" alt="Build">
+                        <img src="https://img.shields.io/badge/dev-000.107-BF504D.svg" alt="Build">
                     </aside>
                 </div>                                          <!-- End of Left column       -->
                 <div class="rg-col rg-span3-5">                 <!-- Start of title           -->
@@ -508,7 +510,7 @@ Date          Issue        Author         Reason for Modification
 
                     <p class='hyp'></p>
 
-                    <p class='hyp'>The configuration of an WDP, including drive allocation, device naming, software package installation &amp;c. is explained in the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-Software-configurations/PS2001-5-2341-001-ES-WDP-Config.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a>.</p>
+                    <p class='hyp'>The configuration of an WDP, including drive allocation, device naming, software package installation &amp;c. is explained in the <a class='xref' href='http://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-ES-WDP-Config/PS2001-5-234101-001 ES-WDP-Configuration.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a>.</p>
 
                     <p class='hyp'>In summary, it is assumed that the WDP has been configured in line with the above document and is equipped as follows:</p>
 
@@ -606,7 +608,7 @@ UNNUMBERED LIST
 <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 
-                    <p class='hyp'>The packages above are listed in the order in which they should have been installed on the engineering station. The exact details for installing and configuring the above application is given in the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-Software-configurations/PS2001-5-2341-001-ES-WDP-Config.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a>.</p>
+                    <p class='hyp'>The packages above are listed in the order in which they should have been installed on the engineering station. The exact details for installing and configuring the above application is given in the <a class='xref' href='http://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-ES-WDP-Config/PS2001-5-234101-001 ES-WDP-Configuration.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a>.</p>
 
                 </div>                                          <!-- End of section text      -->
 
@@ -956,7 +958,7 @@ UNNUMBERED LIST
 
                 <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
 
-                    <p class='hyp'>necessary for the website management (such as revision data, workflow diagrams, change requests &amp;c.)</p>
+                    <p class='hyp'>The administration area is used internally by the PSP web development team, it contains various files that are necessary for the website management (such as revision data, workflow diagrams, change requests &amp;c.)</p>
 
                     <p class='hyp'>The <span class='code'>01-admin</span> directory is not directly accessible by users of the website, but the contents of it can be accessed by other webpages within the website to display or reference particular information.</p>
 
@@ -1180,7 +1182,7 @@ UNNUMBERED LIST
 
                 <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
 
-                    <p class='hyp'>The <span class='code'>91-userdocs</span> directory is a special directory and is structured in the correct format for the TIA Portal User Documentation facilities (see the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/11-SW-Software-Design-Specification-(SDS)/PS2001-5-2311-001-SDS.pdf' download>Software Design Specification (SDS) <em>[Ref.&nbsp;003, Section&nbsp;13]</em></a> for details of the User Documentation facilities).</p>
+                    <p class='hyp'>The <span class='code'>91-userdocs</span> directory is a special directory and is structured in the correct format for the TIA Portal User Documentation facilities (see the <a class='xref' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/11-SW-Software-Design-Specification-(SDS)/PS2001-5-2311-001-SDS.pdf' download>Software Design Specification (SDS) <em>[Ref.&nbsp;003, Section&nbsp;13]</em></a> for details of the User Documentation facilities).</p>
 
                     <p class='hyp'>This is the online version of the User Documentation embedded within the PAL software TIA Projects.</p>
 
@@ -1224,7 +1226,7 @@ UNNUMBERED LIST
 
                     <p class='hyp'>This means that the development of the website is under the control of the Git VCS.</p>
 
-                    <p class='hyp'>The website is written and developed using the Visual Studio Code text editor. The repository aspect of the website is maintained via the source code control aspects of this application (again the instructions for installing Visual Studio Code and the various Git extension are given in the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-Software-configurations/PS2001-5-2341-001-ES-WDP-Config.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a><em>)</em>. </p>
+                    <p class='hyp'>The website is written and developed using the Visual Studio Code text editor. The repository aspect of the website is maintained via the source code control aspects of this application (again the instructions for installing Visual Studio Code and the various Git extension are given in the <a class='xref' href='http://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-ES-WDP-Config/PS2001-5-234101-001 ES-WDP-Configuration.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a><em>)</em>. </p>
 
                     <p class='hyp'>All repository actions are carried out using the Visual Studio Code application. This includes committing changes to the local repository, creating and managing development branches and the bidirectional synchronisation of the local repository with the remote GitHub repository.</p>
 
@@ -1362,7 +1364,7 @@ UNNUMBERED LIST
 
                     <p class='hyp'>Any development work that takes place on a development branch on any WDP, will at some point be committed to the local repository (on the WDP), before this can happen, the Visual Studio Code application making the commit will require that any changes that exist within the remote repository, but are not present on the local WDP (i.e. changes that have been made by other users) are <em>pulled</em> from the remote repository, before the local WDP changes can be <em>pushed</em> back to the remote repository. This Pull before Push approach ensures that the user must resolve any conflicts between user&rsquo;s local repository on the local WDP and the remote repository before pushing the resolved changes back to the remote.</p>
 
-                    < <p class='hyp'>To use the remote repository from a local WDP, the two must be linked via a secure shell key link (SSH link), the process for doing this is explained in the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-Software-configurations/PS2001-5-2341-001-ES-WDP-Config.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a>, and again, on the website here:</p>
+                    < <p class='hyp'>To use the remote repository from a local WDP, the two must be linked via a secure shell key link (SSH link), the process for doing this is explained in the <a class='xref' href='http://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-ES-WDP-Config/PS2001-5-234101-001 ES-WDP-Configuration.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a>, and again, on the website here:</p>
 
                     <p class='hyp'>The remote repository is a public repository (one that anyone with a GitHub account can read and copy) and is part of the GitHub PracticalSeries organisation. It is available here:</p>
 
@@ -1455,7 +1457,7 @@ UNNUMBERED LIST
 
                     <p class='hyp'>The live website is an exact copy of the offline website stored in folder <span class='code'>PS2001-pal-wesite</span> on the <span class='code'>D:</span> drive of the MWDP, but without the <span class='code'>.git</span> folder.</p>
 
-                    <p class='hyp'>The website is uploaded from the MWDP to the Heart Internet servers using the WinSCP application, the installation of this application is discussed in the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-Software-configurations/PS2001-5-2341-001-ES-WDP-Config.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a>.</p>
+                    <p class='hyp'>The website is uploaded from the MWDP to the Heart Internet servers using the WinSCP application, the installation of this application is discussed in the <a class='xref' href='http://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-ES-WDP-Config/PS2001-5-234101-001 ES-WDP-Configuration.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a>.</p>
 
                     <p class='hyp'>Logon information is required to give access to the WinSCP application (this logon information is also restricted to having the correct credentials, the website will only permit machines with specific IP addresses to upload the data).</p>
 

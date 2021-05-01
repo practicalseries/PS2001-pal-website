@@ -43,6 +43,8 @@ This is a complete summary of all software modifications.
 
 Date          Issue        Author         Reason for Modification
 *******************************************************************************
+01 May 2021   000.107      M. Gledhill    Doc links added
+
 10 Apr 2021   000.106      M. Gledhill    Released as a development prototype
                                           Revision control active
                                           RELEASE CHECKLIST       
@@ -213,7 +215,7 @@ Date          Issue        Author         Reason for Modification
                             <td class="leading" style="height: 1em"></td>
                             <td class="table-cent" style="width: 30%"></td>
                             <td class="table-left" style="width: 40%">Page:</td>
-                            <td class="table-right" style="width: 30%" id="rev-doc">000.106</td>
+                            <td class="table-right" style="width: 30%" id="rev-doc">000.107</td>
                         </tr>
 <!-- Data row -->       <tr>
                             <td class="leading" style="height: 1em"></td>
@@ -334,7 +336,7 @@ Date          Issue        Author         Reason for Modification
             <div class="rg-row">                                <!-- Start of title row       -->
                 <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
                     <aside class="rev-badge-side">              <!-- BUILD BADGE              -->
-                        <img src="https://img.shields.io/badge/dev-000.106-BF504D.svg" alt="Build">
+                        <img src="https://img.shields.io/badge/dev-000.107-BF504D.svg" alt="Build">
                     </aside>
                 </div>                                          <!-- End of Left column       -->
                 <div class="rg-col rg-span3-5">                 <!-- Start of title           -->
@@ -492,7 +494,7 @@ Date          Issue        Author         Reason for Modification
 
                     <p class='hyp'>Engineering stations should be equipped with dual 27&quot; QHD (quad high definition) screens (these have a resolution of 2560 × 1440 pixels).</p>
 
-                    <p class='hyp'>The configuration of an ES, including drive allocation, device naming, software package installation &amp;c. is explained in the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-Software-configurations/PS2001-5-2341-001-ES-WDP-Config.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a>.</p>
+                    <p class='hyp'>The configuration of an ES, including drive allocation, device naming, software package installation &amp;c. is explained in the <a class='xref' href="http://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-ES-WDP-Config/PS2001-5-234101-001 ES-WDP-Configuration.pdf" download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a>.</p>
 
                     <p class='hyp'>In summary, it is assumed that the ES has been configured in line with the above document and is equipped as follows:</p>
 
@@ -608,7 +610,7 @@ UNNUMBERED LIST
 <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 
-                    <p class='hyp'>The packages above are listed in the order in which they should have been installed on the engineering station. The exact details for installing and configuring the above application is given in the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-Software-configurations/PS2001-5-2341-001-ES-WDP-Config.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a>.</p>
+                    <p class='hyp'>The packages above are listed in the order in which they should have been installed on the engineering station. The exact details for installing and configuring the above application is given in the <a class='xref' href='http://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-ES-WDP-Config/PS2001-5-234101-001 ES-WDP-Configuration.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a>.</p>
 
                 </div>                                          <!-- End of section text      -->
 
@@ -899,7 +901,7 @@ UNNUMBERED LIST
 
                     <p class='hyp'>The remainder of the <span class='code'>PS2001-pal-software</span> folder holds the working files for the TIA Portal Workspace.</p>
 
-                    <p class='hyp'>The top level folder (<span class='code'>CON100</span>) is the Workspace equivalent of the controller in the TIA Project, this is also called <span class='code'>CON100</span> (this is in accordance with the Siemens naming conventions discussed in the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/11-SW-Software-Design-Specification-(SDS)/PS2001-5-2311-001-SDS.pdf' download>Software Design Specification (SDS) <em>[Ref.&nbsp;003, &sect;&nbsp;3.1.4]</em></a>)</p>
+                    <p class='hyp'>The top level folder (<span class='code'>CON100</span>) is the Workspace equivalent of the controller in the TIA Project, this is also called <span class='code'>CON100</span> (this is in accordance with the Siemens naming conventions discussed in the <a class='xref' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/11-SW-Software-Design-Specification-(SDS)/PS2001-5-2311-001-SDS.pdf' download>Software Design Specification (SDS) <em>[Ref.&nbsp;003, &sect;&nbsp;3.1.4]</em></a>)</p>
 
                     <p class='hyp'>The Workspace folder contains the XML versions of the TIA Project exportable objects, these objects are also stored in (pre-named) folders:</p>
 
@@ -1028,7 +1030,7 @@ NUMBERED LIST
 
                     <p class='hyp'>In addition to this, TIA Portal keeps track of the files it has exported and identifies if differences exist between its internal Project files and those files in the Workspace. If differences do exist, TIA Portal is able to synchronise those files in either direction (it can make the Workspace files match the Project files or, it can make the Project files match the modified Workspace files).</p>
 
-                    <p class='hyp'>The <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-Software-configurations/PS2001-5-2341-001-ES-WDP-Config.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a> contains a full description of how to create and link a Workspace to a TIA Portal Project.</p>
+                    <p class='hyp'>The <a class='xref' href='http://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-ES-WDP-Config/PS2001-5-234101-001 ES-WDP-Configuration.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a> contains a full description of how to create and link a Workspace to a TIA Portal Project.</p>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       TABLE - INCIDENTAL TABLE (EN PASSANT)
@@ -1338,7 +1340,7 @@ NUMBERED LIST
 
                     <p class='hyp'>Blocks with knowhow protection cannot be synchronised with the Workspace.</p>
 
-                    <p class='hyp'>However, blocks with Write Protection can be synchronised; some blocks within the PAL require protection (see the<a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary\01-docs\01-Planning-Quality\21-Validation-Plan-(VP)/PS2001-5-0121-002-VP.pdf' download>Validation Plan <em>[Ref.&nbsp;001] Appendices</em></a> for an explanation), where this is used, the protection will be Write Protection rather than knowhow protection.</p>
+                    <p class='hyp'>However, blocks with Write Protection can be synchronised; some blocks within the PAL require protection (see the<a class='xref' href='https://practicalseries.com/2001-pal/81-binary\01-docs\01-Planning-Quality\21-Validation-Plan-(VP)/PS2001-5-0121-002-VP.pdf' download>Validation Plan <em>[Ref.&nbsp;001] Appendices</em></a> for an explanation), where this is used, the protection will be Write Protection rather than knowhow protection.</p>
 
                 </div>                                          <!-- End of section text      -->
 
@@ -1535,11 +1537,11 @@ NUMBERED LIST
 
                     <p class='hyp'><a class='xref js--sc-050203' href='#'>Section&nbsp;5.2.3</a> established that the Workspace was also a local Git repository; this means that when files are synchronised between the Project and the Workspace, any changes are logged by the Git VCS. At some point, these changes will be committed to the repository and permanently stored there. At the same time an archive copy of the TIA Project will also be made (see <a class='xref js--sc-050206' href='#'>&sect;&nbsp;5.2.6</a>).</p>
 
-                    <p class='hyp'>The Workspace is configured using the Siemens Git add-in, this is installed and activated using TIA Portal (again the instructions for doing this are given in the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-Software-configurations/PS2001-5-2341-001-ES-WDP-Config.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006])</em></a>. The Git add-in has very limited functionality compared with the Visual Studio Code functionality and is not actually used directly to maintain the Workspace repository. It is installed purely, so that TIA Portal recognises the Workspace is a repository and hides the <span class='code'>.git</span> folder, preventing it from being visible and from being inadvertently modified.</p>
+                    <p class='hyp'>The Workspace is configured using the Siemens Git add-in, this is installed and activated using TIA Portal (again the instructions for doing this are given in the <a class='xref' href='http://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-ES-WDP-Config/PS2001-5-234101-001 ES-WDP-Configuration.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006])</em></a>. The Git add-in has very limited functionality compared with the Visual Studio Code functionality and is not actually used directly to maintain the Workspace repository. It is installed purely, so that TIA Portal recognises the Workspace is a repository and hides the <span class='code'>.git</span> folder, preventing it from being visible and from being inadvertently modified.</p>
 
                     <p class='hyp'>The Workspace is maintained from within TIA Portal, all changes made to the software are synchronised with the Workspace in the manner described in <a class='xref js--sc-050204' href='#'>&sect;&nbsp;5.2.4</a>.</p>
 
-                    <p class='hyp'>The repository aspect of the Workspace is maintained via the Visual Studio Code arrangement (again the instructions for installing Visual Studio Code are given in the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-Software-configurations/PS2001-5-2341-001-ES-WDP-Config.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006])</em></a>. The Visual Studio Code text editor provides a graphical user interface to the Git repository allowing development branches to be created and used with the Workspace.</p>
+                    <p class='hyp'>The repository aspect of the Workspace is maintained via the Visual Studio Code arrangement (again the instructions for installing Visual Studio Code are given in the <a class='xref' href='http://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-ES-WDP-Config/PS2001-5-234101-001 ES-WDP-Configuration.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006])</em></a>. The Visual Studio Code text editor provides a graphical user interface to the Git repository allowing development branches to be created and used with the Workspace.</p>
 
                     <p class='hyp'>All repository actions are carried out using the Visual Studio Code application. This includes committing changes to the local repository, creating and managing development branches and the bidirectional synchronisation of the local repository with the remote GitHub repository.</p>
 
@@ -1788,7 +1790,7 @@ NUMBERED LIST
 
                     <p class='hyp' style="text-align: center;"><a class='xref' href='https://practicalseries.com/1002-vcs/08-00-remotes.html'>https://practicalseries.com/1002-vcs/08-00-remotes.html</a></p>
 
-                    <p class='hyp'>To use the remote repository from a local ES, the two must be linked via a secure shell key link (SSH link), the process for doing this is explained in the <a class='xref utx' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-Software-configurations/PS2001-5-2341-001-ES-WDP-Config.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a>, and again, on the website here:</p>
+                    <p class='hyp'>To use the remote repository from a local ES, the two must be linked via a secure shell key link (SSH link), the process for doing this is explained in the <a class='xref' href='http://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/41-SW-ES-WDP-Config/PS2001-5-234101-001 ES-WDP-Configuration.pdf' download>ES/WDP Configuration Manual <em>[Ref.&nbsp;006]</em></a>, and again, on the website here:</p>
 
                     <p class='hyp' style="text-align: center;"><a class='xref' href='https://www.practicalseries.com/1002-vcs/04-00-linking.html'>https://www.practicalseries.com/1002-vcs/04-00-linking.html</a></p>
 
