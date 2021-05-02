@@ -57,6 +57,8 @@ This is a complete summary of all software modifications.
 
 Date          Issue        Author         Reason for Modification
 -------------------------------------------------------------------------------
+02 May 2021   001.000      M. Gledhill    Released
+
 07 Apr 2021   000.104      M. Gledhill    Scroll points added for page
 
 09 Feb 2021   000.000      M. Gledhill    File created
@@ -80,7 +82,7 @@ $(document).ready(function() {                  /* START OF PAGE READY FUNCTION 
    **************************************************************************** */
 
     $('#rev-scroll').append (
-        "<p>000.104</p>" /* LOCAL JS REVISION NUMBER */
+        "<p>001.000</p>" /* LOCAL JS REVISION NUMBER */
     );
 
 

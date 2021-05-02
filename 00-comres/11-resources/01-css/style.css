@@ -86,7 +86,7 @@ COLOURS IN USE
  Build Badge colours  | PS colour match - red                  | #BF504D
                       | PS colour match - bright red (WIP)     | #E60D18
                       | PS colour match - orange               | #F79545
-                      | PS colour match - green                | #9DBB61
+                      | PS colour match - green                | #3DB70F
                       | PS colour match - bright green         | #50CA22
                       | PS colour match - turquoise            | #4BABC5
                       | PS colour match - blue                 | #4F81BC
@@ -102,6 +102,8 @@ This is a complete summary of all software modifications.
 
 Date          Issue        Author         Reason for Modification
 -------------------------------------------------------------------------------
+02 May 2021   000.104      M. Gledhill    Green badge colour changed
+
 01 May 2021   000.103      M. Gledhill    table-doc class added for 
                                           documentation lists 
                                           
@@ -124,7 +126,7 @@ Date          Issue        Author         Reason for Modification
 /* ****************************************************************************
    REVISION
    **************************************************************************** */
-#rev-style:after { content: "000.107"; }
+#rev-style:after { content: "000.104"; }
 
 
 
