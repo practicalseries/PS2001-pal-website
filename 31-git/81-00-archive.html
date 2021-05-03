@@ -15,7 +15,7 @@ PRACTICALSERIES: Practical Series of Publications by Michael Gledhill
     <head>                                                                      <!-- Start of head section                         -->
         <meta charset="utf-8">                                                  <!-- Use unicode char set (< 1024 char from SOF)   -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Make page follow browser width and reset zoom -->
-        <meta name="description" content="Practiacl series automation library, PAL, the MIT licence, the TIA Project Archive">
+        <meta name="description" content="Practical series automation library, PAL, the MIT licence, the TIA Project Archive">
 
 <!-- ==========================================================================
 
@@ -43,6 +43,28 @@ This is a complete summary of all software modifications.
 
 Date          Issue        Author         Reason for Modification
 *******************************************************************************
+03 May 2021   000.801      M. Gledhill    Published as a development prototype
+                                          Revision control active
+                                          RELEASE CHECKLIST       
+                                             Title                Y
+                                             Meta description     Y
+                                             Rev Badge (br red)   000.801 (dev)
+                                             Rev Data Page        000.801
+                                             Rev Data Code        None
+                                             Rev Data scroll      000.801
+                                             TOC softscroll       Y
+                                             Nav Prev chap        Y (N/A)
+                                             Nav Prev sec         Y (Back)
+                                             Nav Next chap        Y (N/A)
+                                             Nav Next sec         Y (N/A)
+                                             Nav Top              Y
+                                             Nav Home             Y (00)
+                                             Last section Prev    Y (Back)
+                                             Last section Next    Y (N/A)
+                                             Footer Top           Y
+                                             Footer Contacts &c.  Y (11/80)
+                                             All U-TX removed     Y
+
 14 Feb 2021   000.000      M. Gledhill    File created
                                           based on 978-00-blank.html
 *************************************************************************** -->
@@ -86,7 +108,7 @@ Date          Issue        Author         Reason for Modification
         <!-- PS main styles -->         <link rel="stylesheet" type="text/css" href="../00-comres/11-resources/01-css/style.css">
         <!-- PAL styles -->             <link rel="stylesheet" type="text/css" href="../00-comres/11-resources/01-css/style-pal.css">
                                                                 <!-- ▼▼▼▼ CHANGE FOLDER ▼▼▼▼  -->
-        <!-- Code frag highlights -->  <link rel="stylesheet" type="text/css" href="01-pages/81-00-archive/01-local-css/codelines.css">
+        <!-- Code frag highlights       <link rel="stylesheet" type="text/css" href="01-pages/81-00-archive/01-local-css/codelines.css">-->
 
 <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       GOOGLE ANALYTICS
@@ -126,19 +148,19 @@ Date          Issue        Author         Reason for Modification
                 <div class="top-nav">                           <!-- Start of top nav row     -->
                     <div class="rg-row">                        <!-- Start of nav button row  -->
                         <!-- Button 01 - Previous Section -->
-                        <a class="nav-wide" href="97-00-blank-index.html#js--970101"><span class="top-nav-icon">l</span><span class="top-nav-text">Prev. section</span></a>
+                        <a class="nav-wide" href="javascript: history.go(-1)"><span class="top-nav-icon">l</span><span class="top-nav-text">Back</span></a>
                         <!-- Button 02 - Previous Chapter -->
-                        <a class="nav-wide" href="97-00-blank-index.html#js--000000"><span class="top-nav-icon">u</span><span class="top-nav-text">Prev. chapter</span></a>
+                        <div class="nav-wide" ></div>
                         <!-- Button 03 - Home wide (hidden when fixed nav activates) -->
-                        <a class="nav-wide nav-home" href="index.html#js--000000"><span class="top-nav-text">Home</span><span class="top-nav-icon">h</span></a>
+                        <a class="nav-wide nav-home" href="index.html"><span class="top-nav-text">Home</span><span class="top-nav-icon">h</span></a>
                         <!-- Button 03a - Top narrow (hidden until fixed nav activates) -->
                         <a class="nav-narrow js--sc-000000" href="#"><span class="top-nav-icon">t</span><span class="top-nav-text">Top</span></a>
                         <!-- Button 03b - Home narrow (hidden until fixed nav activates) -->
-                        <a class="nav-narrow" href="index.html#js--000000"><span class="top-nav-text">Home</span><span class="top-nav-icon">h</span></a>
+                        <a class="nav-narrow" href="index.html"><span class="top-nav-text">Home</span><span class="top-nav-icon">h</span></a>
                         <!-- Button 04 - Next Chapter -->
-                        <a class="nav-wide" href="99-00-typicals.html#js--000000"><span class="top-nav-text">Next chapter</span><span class="top-nav-icon">d</span></a>
+                        <div class="nav-wide" ></div>
                         <!-- Button 05 - Next section -->
-                        <a class="nav-wide" href="99-00-typicals.html#js--000000"><span class="top-nav-text">Next section</span><span class="top-nav-icon">r</span></a>
+                        <div class="nav-wide" ></div>
                     </div>                                      <!-- End of nav button row    -->
                 </div>                                          <!-- End of top nav row       -->
             </nav>                                              <!-- End of top nav bar       -->
@@ -152,7 +174,7 @@ Date          Issue        Author         Reason for Modification
                 <div class="rg-col rg-span1-5">
                     <aside class="aside-left aside-left-rev">
                          <a href="index.html">
-<!-- Logo image -->         <img class="pal-headline-logo" src="../00-comres/11-resources/02-images/pal-logo-github-wip.svg" alt="PAL Logo">
+<!-- Logo image -->         <img class="pal-headline-logo" src="../00-comres/11-resources/02-images/pal-logo-no-text.svg" alt="PAL Logo">
                         </a>
                     </aside>
 
@@ -191,7 +213,7 @@ Date          Issue        Author         Reason for Modification
                             <td class="leading" style="height: 1em"></td>
                             <td class="table-cent" style="width: 30%"></td>
                             <td class="table-left" style="width: 40%">Page:</td>
-                            <td class="table-right" style="width: 30%" id="rev-doc">000.000</td>
+                            <td class="table-right" style="width: 30%" id="rev-doc">000.801</td>
                         </tr>
 <!-- Data row -->       <tr>
                             <td class="leading" style="height: 1em"></td>
@@ -312,7 +334,7 @@ Date          Issue        Author         Reason for Modification
             <div class="rg-row">                                <!-- Start of title row       -->
                 <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
                     <aside class="rev-badge-side">              <!-- BUILD BADGE              -->
-                        <img src="https://img.shields.io/badge/dev-000.000-BF504D.svg" alt="Build">
+                        <img src="https://img.shields.io/badge/Pub-000.801-4F81BC.svg" alt="Build">
                     </aside>
                 </div>                                          <!-- End of Left column       -->
                 <div class="rg-col rg-span3-5">                 <!-- Start of title           -->
@@ -333,46 +355,52 @@ Date          Issue        Author         Reason for Modification
      TABLE OF CONTENTS
      ***********************************************************************-->
 
-            <div class="rg-row">                                <!-- Start of TOC section     -->
-                <div class="rg-col rg-span1-5"></div>           <!-- Left column (not used)   -->
-                <div class="rg-col rg-span3-5">                 <!-- Start of TOC column      -->
+     <div class="rg-row">                                <!-- Start of TOC section     -->
+        <div class="rg-col rg-span1-5"></div>           <!-- Left column (not used)   -->
+        <div class="rg-col rg-span3-5">                 <!-- Start of TOC column      -->
 
-               <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                    TOC - MIT LIcence
-                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TOC - TOP LEVEL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-                    <ul class="toc-list">
-<!-- Level 1 -->        <li><a class="js--sc-010000" href="01-00-licence.html#js--010000">
-                               <div class="toc-lev"><span class="toc-lev1-num"></span><span class="toc-lev1-text">The MIT Licence</span></div></a>
-                        </li>
-<!-- Level 2 -->        <li><a class="js--sc-010100" href="01-00-licence.html#js--010100">
-                            <div class="toc-lev"><span class="toc-lev1lt-num"></span><span class="toc-lev1lt-text">Why use the MIT Licence?</span></div></a>
-<!-- TOC PADDING  -->       <br class="top-pad">
-<!-- TOC PADDING  -->       <br class="top-pad">
-<!-- TOC PADDING  -->       <br class="top-pad">
+            <ul class="toc-list">
+<!-- Level 1 -->        <li><a href="index.html">
+                       <div class="toc-lev"><span class="toc-lev1-num"></span><span class="toc-lev1-text">Project main page</span></div></a>
+                </li>
+<!-- Level 1 -->        <li><a href="../21-project/01-00-docs.html">
+                       <div class="toc-lev"><span class="toc-lev1-num"></span><span class="toc-lev1-text">Project document archive</span></div></a>
+                </li>
+<!-- Level 1 -->        <li><a href="../31-git/11-00-scm.html">
+                       <div class="toc-lev"><span class="toc-lev1-num"></span><span class="toc-lev1-text">Software control mechanism (SCM)</span></div></a>
+                </li>
+            </ul>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-                        </li>
-<!-- Level 1 -->        <li><a href="index.html#js--000000">
-                               <div class="toc-lev"><span class="toc-lev1-num"></span><span class="toc-lev1-text">Git Index (README)</span></div></a>
-                        </li>
-<!-- Level 1 -->        <li><a class="js--sc-980000" href="11-00-scm.html#js--000000">
-                               <div class="toc-lev"><span class="toc-lev1-num"></span><span class="toc-lev1-text">The PAL Software Control Mechanism</span></div></a>
-                        </li>
-<!-- Level 1 -->        <li><a class="js--sc-980000" href="12-00-workspace.html#js--000000">
-                               <div class="toc-lev"><span class="toc-lev1-num"></span><span class="toc-lev1-text">The TIA Portal Workspace</span></div></a>
-                        </li>
-<!-- Level 1 -->        <li><a class="js--sc-980000" href="13-00-commit-pack.html#js--000000">
-                               <div class="toc-lev"><span class="toc-lev1-num"></span><span class="toc-lev1-text">The TIA Portal Project Archive</span></div></a>
-                        </li>
-                    </ul>
-                   
-                    
-               <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<p class='hyp' style="margin: 1.5rem 0 0.7rem 0;"><span class='sans' style="font-size: 1.3rem; color: #4C6C9C;">Software archive</span></p>
 
-                </div>                                          <!-- End of TOC column        -->
-                <div class="rg-col rg-span1-5"></div>           <!-- Right column (not used)  -->
-            </div>                                              <!-- End of TOC section       -->            
-            
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TOC - PAGE LEVEL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+            <ul class="toc-list">
+<!-- Level 1 -->        <li><a class="js--sc-010000" href="81-00-archive.html#js--010000">
+                       <div class="toc-lev"><span class="toc-lev1-num"></span><span class="toc-lev2-text">1 &emsp; Latest version</span></div></a>
+                </li>
+<!-- Level 1 -->        <li><a class="js--sc-030000" href="81-00-archive.html#js--020000">
+                       <div class="toc-lev"><span class="toc-lev1-num"></span><span class="toc-lev2-text">2 &emsp; Primary commit points</span></div></a>
+                </li>
+<!-- Level 1 -->        <li><a class="js--sc-030000" href="81-00-archive.html#js--030000">
+                       <div class="toc-lev"><span class="toc-lev1-num"></span><span class="toc-lev2-text">3 &emsp; All commit points</span></div></a>
+                </li>
+            </ul>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+        </div>                                          <!-- End of TOC column        -->
+        <div class="rg-col rg-span1-5"></div>           <!-- Right column (not used)  -->
+    </div>                                              <!-- End of TOC section       -->            
+    
 <!-- ========================================================================== [WP END]      -->
 
 
@@ -387,108 +415,328 @@ Date          Issue        Author         Reason for Modification
         <div id="js--fixed-nav"></div>                          <!-- fixed navigation point   -->
 <!-- ========================================================================== [WP END]      -->
 
+<!-- ************************************************************************** [WP LEADIN]
+     CHAPTER - Intro leadin
+     ***********************************************************************-->
 
+     <section class='section-std' id='js--000000a'>          <!-- Start of section         -->
+        <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+            <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+            <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                <div class='sub-title-thinline'></div>      <!-- Thin overline            -->
+                <div class='sub-title-num-box'><h6>Placeholder</h6></div>
+            </div>                                          <!-- End of subtitle column   -->
+            <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+        </div>                                              <!-- End of Subtitle row      -->
 
+        <div class='rg-row'>                                <!-- Start of section content -->
+            <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+            <!--     <aside class='aside-left'>                  Start of left side bar   -->
+            <!--         <p></p>                                 Side bar content         -->
+            <!--     </aside>                                    End of left side bar     -->
+            </div>                                          <!-- End of left column       -->
 
-        
-        
+            <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                <p class='sans hyp'><span class='all-caps'>This is a full</span> archive of all the Controller software created as part of the Practical Series Automation Library (PAL) using the TIA Portal development environment.</p>
+
+                <p class='sans hyp'>All software has been developed using the PAL Software Control Mechanism (SCM), available here:</p>
+
+                <p class='sans hyp' style="text-align: center;"><a class='xref' href='https://practicalseries.com/2001-pal/31-git/11-00-scm.html'>https://practicalseries.com/2001-pal/31-git/11-00-scm.html</a></p>
+
+                <p class='sans hyp'>The latest version of the software is given in <a class='xref js--sc-010000' href='#'>Section 1</a>, this the most up to date primary commit version of the software (a primary commit contains software that is released for use).</p>
+
+                <p class='sans hyp'><a class='xref js--sc-020000' href='#'>Section 2</a> lists all the primary commits that have been made in the development of the software (in reverse chronological order, most resent at the top)</p>
+
+                <p class='sans hyp'><a class='xref js--sc-030000' href='#'>Section 3</a> lists all the software, both primary and secondary commits (secondary commits contain software that is under development or under test).</p>
+
+                <p class='sans hyp'>All software files are <span class='code'>.zap16</span> files, these are TIA Portal archive files, such files can be opened and recovered from within TIA Portal.</p>
+
+            </div>                                          <!-- End of section text      -->
+
+            <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+            <!--     <aside class='aside-right'>                 Start of right side bar  -->
+            <!--         <p></p>                                 Side bar content         -->
+            <!--     </aside>                                    End of right side bar    -->
+            </div>                                          <!-- End of right column      -->
+        </div>                                              <!-- End of section content   -->
+    </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
 <!-- ************************************************************************** [WP SECTION]
-     SECTION - X.Y [SECTION NAME]
+     SECTION - 1 - Latest version
      ***********************************************************************-->
 
-        <section class="section-std" id="js--010000">           <!-- Start of section         -->
-            <div class="rg-row sub-title-row">                  <!-- Start of subtitle row    -->
-                <div class="rg-col rg-span1-5"></div>           <!-- Left column (not used)   -->
-                <div class="rg-col rg-span3-5">                 <!-- Start of subtitle column -->
-                    <div class="sub-title-thinline"></div>      <!-- Overline                 -->
-                 <!--<div class="sub-title-num-box"><h2>98.1</h2></div>-->
-                 <div class="sub-title-text-box"><h2>The MIT Licence</h2></div>
-                </div>                                          <!-- End of subtitle column   -->
-                <div class="rg-col rg-span1-5"></div>           <!-- Right column (not used)  -->
-            </div>                                              <!-- End of Subtitle row      -->
+     <section class='section-std' id='js--010000'>           <!-- Start of section         -->
+        <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+            <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+            <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                <div class='sub-title-overline'></div>      <!-- Overline                 -->
+             <div class='sub-title-num-box'><h2>1</h2></div>
+             <div class='sub-title-text-box'><h2>Latest primary commit</h2></div>
+            </div>                                          <!-- End of subtitle column   -->
+            <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+        </div>                                              <!-- End of Subtitle row      -->
 
-            <div class="rg-row">                                <!-- Start of section content -->
-                <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
-                <!--     <aside class="aside-left">                  Start of left side bar   -->
-                <!--         <p></p>                                 Side bar content         -->
-                <!--     </aside>                                    End of left side bar     -->
-                </div>                                          <!-- End of left column       -->
+        <div class='rg-row'>                                <!-- Start of section content -->
+            <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+            <!--     <aside class='aside-left'>                  Start of left side bar   -->
+            <!--         <p></p>                                 Side bar content         -->
+            <!--     </aside>                                    End of left side bar     -->
+            </div>                                          <!-- End of left column       -->
 
-                <div class="rg-col rg-span3-5">                 <!-- Start of section text    -->
+            <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
 
-                    <p class="hyp">This is a typical section, it will be numbered X.Y.</p>
+                <p class='hyp sans'>This is the latest primary commit version of the software</p>
 
-                    <p class="hyp">Sections have an <span class="code">h2</span> heading level.</p>
 
-                    <p class="hyp"></p>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  TABLE - DOCUMENT TABLE
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <table class='table-doc' id='js--t01-01' style="margin-top: 5rem;">
+<!-- Header row -->     <tr>
+                        <th class='leading'></th>
+                        <th class='table-left' style='width: 31%'>File Name.</th>
+                        <th class='table-left' style='width: 30%'>Description</th>
+                        <th class='table-cent' style='width: 18%'>Commit tag</th>
+                        <th class='table-cent' style='width: 13%'>Date</th>
+                        <th class='table-cent' style='width: 8%'>SW</th>
+                    </tr>
+<!-- Data row -->   <tr>
+                        <td class='leading'><div style='min-height: 3em'></div></td>
+                        <td class='table-left'>PS2001-PAL-D0005</td>
+                        <td class='table-left'>FC18151 Final (write protect)</td>
+                        <td class='table-cent'>D0005</td>
+                        <td class='table-cent'>2021-05-03</td>
+                        <td class='table-cent'><a class="code-nav" href="https://practicalseries.com/2001-pal/81-binary/04-data/01-sw-tia-archive/PS2001-PAL-D0005.zap16" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
+                    </tr>
+                </table>
+    <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
 
-                    <p class="hyp"></p>
 
-                    <p class="hyp"></p>
+            </div>                                          <!-- End of section text      -->
 
-                    <p class="hyp"></p>
-
-                    <p class="hyp"></p>
-
-                </div>                                          <!-- End of section text      -->
-
-                <div class="rg-col rg-span1-5">                 <!-- Start of right column    -->
-                <!--     <aside class="aside-right">                 Start of right side bar  -->
-                <!--         <p></p>                                 Side bar content         -->
-                <!--     </aside>                                    End of right side bar    -->
-                </div>                                          <!-- End of right column      -->
-            </div>                                              <!-- End of section content   -->
-        </section>                                              <!-- End of section           -->
+            <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+            <!--     <aside class='aside-left'>                  Start of left side bar   -->
+            <!--         <p></p>                                 Side bar content         -->
+            <!--     </aside>                                    End of left side bar     -->
+            </div>                                          <!-- End of right column      -->
+        </div>                                              <!-- End of section content   -->
+    </section>                                              <!-- End of section           -->
 <!-- ========================================================================== [WP END]      -->
 
+ 
 
-<!-- ************************************************************************** [WP SUBSECTION]
-     SUBSECTION - X.Y.Z [SUBSECTION NAME]
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - 2 - Primary commits
      ***********************************************************************-->
 
-        <section class="section-std" id="js--980101">           <!-- Start of section         -->
-            <div class="rg-row sub-title-row">                  <!-- Start of subtitle row    -->
-                <div class="rg-col rg-span1-5"></div>           <!-- Left column (not used)   -->
-                <div class="rg-col rg-span3-5">                 <!-- Start of subtitle column -->
-                    <div class="sub-title-num-box"><h3>98.1.1</h3></div>
-                    <div class="sub-title-text-box"><h3>Subsection</h3></div>
-                </div>                                          <!-- End of subtitle column   -->
-                <div class="rg-col rg-span1-5"></div>           <!-- Right column (not used)  -->
-            </div>                                              <!-- End of Subtitle row -->
+     <section class='section-std' id='js--020000'>           <!-- Start of section         -->
+        <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+            <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+            <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                <div class='sub-title-overline'></div>      <!-- Overline                 -->
+             <div class='sub-title-num-box'><h2>2</h2></div>
+             <div class='sub-title-text-box'><h2>Primary commit points</h2></div>
+            </div>                                          <!-- End of subtitle column   -->
+            <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+        </div>                                              <!-- End of Subtitle row      -->
 
-            <div class="rg-row">                                <!-- Start of section content -->
-                <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
-                <!--     <aside class="aside-left">                  Start of left side bar   -->
-                <!--         <p></p>                                 Side bar content         -->
-                <!--     </aside>                                    End of left side bar     -->
-                </div>                                          <!-- End of left column       -->
+        <div class='rg-row'>                                <!-- Start of section content -->
+            <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+            <!--     <aside class='aside-left'>                  Start of left side bar   -->
+            <!--         <p></p>                                 Side bar content         -->
+            <!--     </aside>                                    End of left side bar     -->
+            </div>                                          <!-- End of left column       -->
 
-                <div class="rg-col rg-span3-5">                 <!-- Start of section text    -->
+            <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
 
-                    <p class="hyp">This is a typical subsection, it will be numbered X.Y.Z.</p>
+                <p class='hyp sans'>This is a complete list of each software file at every primary commit made in the course of the Project.</p>
 
-                    <p class="hyp">Subsections have an <span class="code">h3</span> heading level.</p>
 
-                    <p class="hyp"></p>
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  TABLE - DOCUMENT TABLE
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <table class='table-doc' id='js--t02-01' style="margin-top: 5rem;">
+<!-- Header row -->     <tr>
+                        <th class='leading'></th>
+                        <th class='table-left' style='width: 31%'>File Name.</th>
+                        <th class='table-left' style='width: 30%'>Description</th>
+                        <th class='table-cent' style='width: 18%'>Commit tag</th>
+                        <th class='table-cent' style='width: 13%'>Date</th>
+                        <th class='table-cent' style='width: 8%'>SW</th>
+                    </tr>
+<!-- Data row -->   <tr>
+                        <td class='leading'><div style='min-height: 3em'></div></td>
+                        <td class='table-left'>PS2001-PAL-D0005</td>
+                        <td class='table-left'>FC18151 Final (write protect)</td>
+                        <td class='table-cent'>D0005</td>
+                        <td class='table-cent'>2021-05-03</td>
+                        <td class='table-cent'><a class="code-nav" href="https://practicalseries.com/2001-pal/81-binary/04-data/01-sw-tia-archive/PS2001-PAL-D0005.zap16" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
+                    </tr>
+<!-- Data row -->   <tr>
+                        <td class='leading'><div style='min-height: 3em'></div></td>
+                        <td class='table-left'>PS2001-PAL-D0004</td>
+                        <td class='table-left'>Minor typographical corrections</td>
+                        <td class='table-cent'>D0004</td>
+                        <td class='table-cent'>2021-05-02</td>
+                        <td class='table-cent'><a class="code-nav" href="https://practicalseries.com/2001-pal/81-binary/04-data/01-sw-tia-archive/PS2001-PAL-D0004.zap16" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
+                    </tr>
+<!-- Data row -->   <tr>
+                        <td class='leading'><div style='min-height: 3em'></div></td>
+                        <td class='table-left'>PS2001-PAL-D0003</td>
+                        <td class='table-left'>FC18151 Released for use</td>
+                        <td class='table-cent'>D0003</td>
+                        <td class='table-cent'>2021-02-19</td>
+                        <td class='table-cent'><a class="code-nav" href="https://practicalseries.com/2001-pal/81-binary/04-data/01-sw-tia-archive/PS2001-PAL-D0003.zap16" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
+                    </tr>
+<!-- Data row -->   <tr>
+                        <td class='leading'><div style='min-height: 3em'></div></td>
+                        <td class='table-left'>PS2001-PAL-D0002</td>
+                        <td class='table-left'>Baseline software build</td>
+                        <td class='table-cent'>D0002</td>
+                        <td class='table-cent'>2021-02-18</td>
+                        <td class='table-cent'><a class="code-nav" href="https://practicalseries.com/2001-pal/81-binary/04-data/01-sw-tia-archive/PS2001-PAL-D0002.zap16" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
+                    </tr>
+<!-- Data row -->   <tr>
+                        <td class='leading'><div style='min-height: 3em'></div></td>
+                        <td class='table-left'>PS2001-PAL-D0001</td>
+                        <td class='table-left'>Hardware build</td>
+                        <td class='table-cent'>D0001</td>
+                        <td class='table-cent'>2021-02-18</td>
+                        <td class='table-cent'><a class="code-nav" href="https://practicalseries.com/2001-pal/81-binary/04-data/01-sw-tia-archive/PS2001-PAL-D0001.zap16" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
+                    </tr>
+                </table>
+    <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
 
-                    <p class="hyp"></p>
 
-                    <p class="hyp"></p>
+            </div>                                          <!-- End of section text      -->
 
-                    <p class="hyp"></p>
-
-                    <p class="hyp"></p>
-
-                </div>                                          <!-- End of section text      -->
-
-                <div class="rg-col rg-span1-5">                 <!-- Start of right column    -->
-                <!--     <aside class="aside-right">                 Start of right side bar  -->
-                <!--         <p></p>                                 Side bar content         -->
-                <!--     </aside>                                    End of left side bar     -->
-                </div>                                          <!-- End of right column      -->
-            </div>                                              <!-- End of section content   -->
-        </section>                                              <!-- End of section           -->
+            <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+            <!--     <aside class='aside-left'>                  Start of left side bar   -->
+            <!--         <p></p>                                 Side bar content         -->
+            <!--     </aside>                                    End of left side bar     -->
+            </div>                                          <!-- End of right column      -->
+        </div>                                              <!-- End of section content   -->
+    </section>                                              <!-- End of section           -->
 <!-- ========================================================================== [WP END]      -->
+
+        
+
+ 
+
+<!-- ************************************************************************** [WP SECTION]
+     SECTION - 3 - All commits
+     ***********************************************************************-->
+
+     <section class='section-std' id='js--030000'>           <!-- Start of section         -->
+        <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
+            <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
+            <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
+                <div class='sub-title-overline'></div>      <!-- Overline                 -->
+             <div class='sub-title-num-box'><h2>3</h2></div>
+             <div class='sub-title-text-box'><h2>All commit points</h2></div>
+            </div>                                          <!-- End of subtitle column   -->
+            <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
+        </div>                                              <!-- End of Subtitle row      -->
+
+        <div class='rg-row'>                                <!-- Start of section content -->
+            <div class='rg-col rg-span1-5'>                 <!-- Start of left column     -->
+            <!--     <aside class='aside-left'>                  Start of left side bar   -->
+            <!--         <p></p>                                 Side bar content         -->
+            <!--     </aside>                                    End of left side bar     -->
+            </div>                                          <!-- End of left column       -->
+
+            <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                <p class='hyp sans'>This is a complete list of all software file at every commit (both primary and secondary) made in the course of the Project.</p>
+
+                <p class='hyp sans'>Secondary commits are shown in blue and are generally made on a development branch.</p>
+
+
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  TABLE - DOCUMENT TABLE
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <table class='table-doc' id='js--t03-01' style="margin-top: 5rem;">
+<!-- Header row -->     <tr>
+                        <th class='leading'></th>
+                        <th class='table-left' style='width: 31%'>File Name.</th>
+                        <th class='table-left' style='width: 30%'>Description</th>
+                        <th class='table-cent' style='width: 18%'>Commit tag</th>
+                        <th class='table-cent' style='width: 13%'>Date</th>
+                        <th class='table-cent' style='width: 8%'>SW</th>
+                    </tr>
+<!-- Data row -->   <tr>
+                        <td class='leading'><div style='min-height: 3em'></div></td>
+                        <td class='table-left'>PS2001-PAL-D0005</td>
+                        <td class='table-left'>FC18151 Final (write protect)</td>
+                        <td class='table-cent'>D0005</td>
+                        <td class='table-cent'>2021-05-03</td>
+                        <td class='table-cent'><a class="code-nav" href="https://practicalseries.com/2001-pal/81-binary/04-data/01-sw-tia-archive/PS2001-PAL-D0005.zap16" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
+                    </tr>
+<!-- Data row -->   <tr>
+                        <td class='leading'><div style='min-height: 3em'></div></td>
+                        <td class='table-left'>PS2001-PAL-D0004</td>
+                        <td class='table-left'>Minor typographical corrections</td>
+                        <td class='table-cent'>D0004</td>
+                        <td class='table-cent'>2021-05-02</td>
+                        <td class='table-cent'><a class="code-nav" href="https://practicalseries.com/2001-pal/81-binary/04-data/01-sw-tia-archive/PS2001-PAL-D0004.zap16" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
+                    </tr>
+<!-- Data row -->   <tr>
+                        <td class='leading'><div style='min-height: 3em'></div></td>
+                        <td class='table-left'>PS2001-PAL-D0003</td>
+                        <td class='table-left'>FC18151 Released for use</td>
+                        <td class='table-cent'>D0003</td>
+                        <td class='table-cent'>2021-02-19</td>
+                        <td class='table-cent'><a class="code-nav" href="https://practicalseries.com/2001-pal/81-binary/04-data/01-sw-tia-archive/PS2001-PAL-D0003.zap16" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
+                    </tr>
+<!-- Data row -->   <tr>
+                        <td class='leading'><div style='min-height: 3em'></div></td>
+                        <td class='table-left' style="color:dodgerblue;">PS2001-PAL-D0002A-001-000</td>
+                        <td class='table-left'>FC18151 released post SMT</td>
+                        <td class='table-cent'>D0002A-001.000</td>
+                        <td class='table-cent'>2021-02-19</td>
+                        <td class='table-cent'><a class="code-nav" href="https://practicalseries.com/2001-pal/81-binary/04-data/01-sw-tia-archive/PS2001-PAL-D0002A-001-000.zap16" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
+                    </tr>
+<!-- Data row -->   <tr>
+                        <td class='leading'><div style='min-height: 3em'></div></td>
+                        <td class='table-left' style="color:dodgerblue;">PS2001-PAL-D0002A-000-801</td>
+                        <td class='table-left'>FC18151 released for SMT</td>
+                        <td class='table-cent'>D0002A-000.801</td>
+                        <td class='table-cent'>2021-02-18</td>
+                        <td class='table-cent'><a class="code-nav" href="https://practicalseries.com/2001-pal/81-binary/04-data/01-sw-tia-archive/PS2001-PAL-D0002A-000-801 (FC18151 SMT).zap16" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
+                    </tr>
+<!-- Data row -->   <tr>
+                        <td class='leading'><div style='min-height: 3em'></div></td>
+                        <td class='table-left'>PS2001-PAL-D0002</td>
+                        <td class='table-left'>Baseline software build</td>
+                        <td class='table-cent'>D0002</td>
+                        <td class='table-cent'>2021-02-18</td>
+                        <td class='table-cent'><a class="code-nav" href="https://practicalseries.com/2001-pal/81-binary/04-data/01-sw-tia-archive/PS2001-PAL-D0002.zap16" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
+                    </tr>
+<!-- Data row -->   <tr>
+                        <td class='leading'><div style='min-height: 3em'></div></td>
+                        <td class='table-left'>PS2001-PAL-D0001</td>
+                        <td class='table-left'>Hardware build</td>
+                        <td class='table-cent'>D0001</td>
+                        <td class='table-cent'>2021-02-18</td>
+                        <td class='table-cent'><a class="code-nav" href="https://practicalseries.com/2001-pal/81-binary/04-data/01-sw-tia-archive/PS2001-PAL-D0001.zap16" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
+                    </tr>
+                </table>
+    <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
+
+
+            </div>                                          <!-- End of section text      -->
+
+            <div class='rg-col rg-span1-5'>                 <!-- Start of right column    -->
+            <!--     <aside class='aside-left'>                  Start of left side bar   -->
+            <!--         <p></p>                                 Side bar content         -->
+            <!--     </aside>                                    End of left side bar     -->
+            </div>                                          <!-- End of right column      -->
+        </div>                                              <!-- End of section content   -->
+    </section>                                              <!-- End of section           -->
+<!-- ========================================================================== [WP END]      -->
+
 
 
 <!-- ************************************************************************** [WP LAST]
@@ -501,7 +749,7 @@ Date          Issue        Author         Reason for Modification
             <div class="rg-row">                                <!-- Start of row content     -->
                 <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
                     <aside class="aside-nav">                   <!-- Start of sidebar nav     -->
-                        <a class="xref" href="97-00-blank-index.html#js--970101">Prev</a>
+                        <a class="xref" href="javascript: history.go(-1)">Back</a>
                     </aside>                                    <!-- End of left side bar     -->
                 </div>                                          <!-- End of left column       -->
 
@@ -510,9 +758,6 @@ Date          Issue        Author         Reason for Modification
                 </div>                                          <!-- End of section text area -->
 
                 <div class="rg-col rg-span1-5">                 <!-- Start of right column    -->
-                    <aside class="aside-nav">                   <!-- Start of sidebar nav     -->
-                        <a class="xref" href="99-00-typicals.html#js--000000">Next</a>
-                    </aside>                                    <!-- End of right side bar    -->
                 </div>                                          <!-- End of right column      -->
             </div>                                              <!-- End of row content       -->
         </div>                                                  <!-- End of additional row    -->
@@ -525,10 +770,10 @@ Date          Issue        Author         Reason for Modification
         <footer class="footer">                                 <!-- Start of footer          -->
             <ul class="footer-nav">                             <!-- Start of footer nav      -->
                 <li><a class="js--sc-000000" href="#"><span class="top-nav-icon" style="color:#5b7daf">t</span>Top</a><span class="footer-spacer">&#x25C7;</span></li>
-                <li><a href="80-00-finally.html#js--800100">Contact MG</a><span class="footer-spacer">&#x25C7;</span></li>
-                <li><a href="80-00-finally.html#js--800200">Acknowledgments</a><span class="footer-spacer">&#x25C7;</span></li>
-                <li><a href="80-00-finally.html#js--800300">Colophon</a><span class="footer-spacer">&#x25C7;</span></li>
-                <li><a href="80-00-finally.html#js--800400">Legal &amp; Privacy</a></li>
+                <li><a href="../11-web/80-00-finally.html#js--800100">Contact MG</a><span class="footer-spacer">&#x25C7;</span></li>
+                <li><a href="../11-web/80-00-finally.html#js--800200">Acknowledgments</a><span class="footer-spacer">&#x25C7;</span></li>
+                <li><a href="../11-web/80-00-finally.html#js--800300">Colophon</a><span class="footer-spacer">&#x25C7;</span></li>
+                <li><a href="../11-web/80-00-finally.html#js--800400">Legal &amp; Privacy</a></li>
             </ul>                                               <!-- End of footer nav        -->
 
             <ul class="social-links">

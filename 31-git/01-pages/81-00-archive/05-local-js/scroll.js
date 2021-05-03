@@ -57,6 +57,8 @@ This is a complete summary of all software modifications.
 
 Date          Issue        Author         Reason for Modification
 -------------------------------------------------------------------------------
+03 May 2021   000.801      M. Gledhill    Published
+
 15 Feb 2021   000.000      M. Gledhill    File created
                                           based on 98-00 scroll.js file                           
 ---------------------------------------------------------------------------- */
@@ -77,7 +79,7 @@ $(document).ready(function() {                  /* START OF PAGE READY FUNCTION 
    **************************************************************************** */
 
     $('#rev-scroll').append (
-        "<p>000.000</p>"                        /* LOCAL JS REVISION NUMBER */
+        "<p>000.801</p>"                        /* LOCAL JS REVISION NUMBER */
     );
 
 
@@ -111,9 +113,18 @@ $(document).ready(function() {                  /* START OF PAGE READY FUNCTION 
        $('html, body').animate({scrollTop: $('#js--NN0000').offset().top -10}, 1000);
     });
    ------------------------------------------------------------------------- */
-    $('.js--sc-980000').click(function () {
-       $('html, body').animate({scrollTop: $('#js--980000').offset().top -10}, 1000);
-    });
+   $('.js--sc-010000').click(function () {
+      $('html, body').animate({scrollTop: $('#js--010000').offset().top -10}, 1000);
+   });
+
+   $('.js--sc-020000').click(function () {
+      $('html, body').animate({scrollTop: $('#js--020000').offset().top -10}, 1000);
+   });
+
+   $('.js--sc-030000').click(function () {
+     $('html, body').animate({scrollTop: $('#js--030000').offset().top -10}, 1000);
+  });
+
 
 
 /* ---------------------------------------------------------------------------
@@ -124,18 +135,7 @@ $(document).ready(function() {                  /* START OF PAGE READY FUNCTION 
        $('html, body').animate({scrollTop: $('#js--NN0100').offset().top -20}, 1000);
     });
    ------------------------------------------------------------------------- */
-    $('.js--sc-980100').click(function () {
-       $('html, body').animate({scrollTop: $('#js--980100').offset().top -20}, 1000);
-    });
-
-    $('.js--sc-980101').click(function () {
-       $('html, body').animate({scrollTop: $('#js--980101').offset().top -20}, 1000);
-    });
-
-    $('.js--sc-980200').click(function () {
-       $('html, body').animate({scrollTop: $('#js--980200').offset().top -20}, 1000);
-    });
-
+ 
 
 /* ---------------------------------------------------------------------------
    SCROLL TO -  NON-STANDARD (INLINE) SECTIONS
@@ -145,14 +145,7 @@ $(document).ready(function() {                  /* START OF PAGE READY FUNCTION 
            $('html, body').animate({scrollTop: $('#js--nn0101a').offset().top -120}, 1000);
           });
    ------------------------------------------------------------------------- */
-    $('.js--sc-980101a').click(function () {
-       $('html, body').animate({scrollTop: $('#js--980101a').offset().top -120}, 1000);
-    });
-
-    $('.js--sc-980101b').click(function () {
-       $('html, body').animate({scrollTop: $('#js--980101b').offset().top -140}, 1000);
-    });
-
+ 
 /* ---------------------------------------------------------------------------
    SCROLL TO -  CROSS REFERENCES
    For figures, the offset is set to .to -80 - e.g.
@@ -186,9 +179,17 @@ $(document).ready(function() {                  /* START OF PAGE READY FUNCTION 
     });
    ------------------------------------------------------------------------- */
 
-    $('.js--sc-f98-01').click(function () {
-       $('html, body').animate({scrollTop: $('#js--f98-01').offset().top -80}, 1000);
-    });
+   $('.js--sc-t01-01').click(function () {
+      $('html, body').animate({scrollTop: $('#js--t01-01').offset().top -60}, 1000);
+   });
+
+   $('.js--sc-t02-01').click(function () {
+      $('html, body').animate({scrollTop: $('#js--t02-01').offset().top -60}, 1000);
+   });
+
+   $('.js--sc-t03-01').click(function () {
+      $('html, body').animate({scrollTop: $('#js--t02-03').offset().top -60}, 1000);
+   });
 
 
 
