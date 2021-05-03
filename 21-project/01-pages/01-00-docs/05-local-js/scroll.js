@@ -57,6 +57,8 @@ This is a complete summary of all software modifications.
 
 Date          Issue        Author         Reason for Modification
 -------------------------------------------------------------------------------
+02 May 2021   000.801      M. Gledhill    Section 3 added to scroll
+
 02 May 2021   000.801      M. Gledhill    Published
 
 01 May 2021   000.000      M. Gledhill    File created
@@ -80,7 +82,7 @@ $(document).ready(function() {                  /* START OF PAGE READY FUNCTION 
    **************************************************************************** */
 
     $('#rev-scroll').append (
-        "<p>000.801</p>" /* LOCAL JS REVISION NUMBER */
+        "<p>000.802</p>" /* LOCAL JS REVISION NUMBER */
     );
 
 
@@ -121,6 +123,10 @@ $(document).ready(function() {                  /* START OF PAGE READY FUNCTION 
     $('.js--sc-020000').click(function () {
        $('html, body').animate({scrollTop: $('#js--020000').offset().top -10}, 1000);
     });
+
+    $('.js--sc-030000').click(function () {
+      $('html, body').animate({scrollTop: $('#js--030000').offset().top -10}, 1000);
+   });
 
 
 /* ---------------------------------------------------------------------------
