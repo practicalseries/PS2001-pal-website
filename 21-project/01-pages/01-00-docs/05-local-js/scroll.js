@@ -57,7 +57,7 @@ This is a complete summary of all software modifications.
 
 Date          Issue        Author         Reason for Modification
 -------------------------------------------------------------------------------
-02 May 2021   000.801      M. Gledhill    Section 3 added to scroll
+13 May 2021   000.803      M. Gledhill    SMTR table added
 
 02 May 2021   000.801      M. Gledhill    Published
 
@@ -82,7 +82,7 @@ $(document).ready(function() {                  /* START OF PAGE READY FUNCTION 
    **************************************************************************** */
 
     $('#rev-scroll').append (
-        "<p>000.802</p>" /* LOCAL JS REVISION NUMBER */
+        "<p>000.803</p>" /* LOCAL JS REVISION NUMBER */
     );
 
 
@@ -198,6 +198,10 @@ $(document).ready(function() {                  /* START OF PAGE READY FUNCTION 
 
    $('.js--sc-t02-03').click(function () {
       $('html, body').animate({scrollTop: $('#js--t02-03').offset().top -60}, 1000);
+   });
+
+   $('.js--sc-t02-04').click(function () {
+      $('html, body').animate({scrollTop: $('#js--t02-04').offset().top -60}, 1000);
    });
 
 

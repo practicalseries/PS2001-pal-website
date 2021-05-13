@@ -57,6 +57,8 @@ This is a complete summary of all software modifications.
 
 Date          Issue        Author         Reason for Modification
 -------------------------------------------------------------------------------
+13 May 2021   000.802      M. Gledhill    Table scroll point corrected
+
 03 May 2021   000.801      M. Gledhill    Published
 
 15 Feb 2021   000.000      M. Gledhill    File created
@@ -79,7 +81,7 @@ $(document).ready(function() {                  /* START OF PAGE READY FUNCTION 
    **************************************************************************** */
 
     $('#rev-scroll').append (
-        "<p>000.801</p>"                        /* LOCAL JS REVISION NUMBER */
+        "<p>000.802</p>"                        /* LOCAL JS REVISION NUMBER */
     );
 
 
@@ -188,7 +190,7 @@ $(document).ready(function() {                  /* START OF PAGE READY FUNCTION 
    });
 
    $('.js--sc-t03-01').click(function () {
-      $('html, body').animate({scrollTop: $('#js--t02-03').offset().top -60}, 1000);
+      $('html, body').animate({scrollTop: $('#js--t03-01').offset().top -60}, 1000);
    });
 
 
