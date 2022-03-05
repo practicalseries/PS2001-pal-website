@@ -57,6 +57,8 @@ This is a complete summary of all software modifications.
 
 Date          Issue        Author         Reason for Modification
 -------------------------------------------------------------------------------
+05 Mar 2022   000.804      M. Gledhill    CALC table added
+
 13 May 2021   000.803      M. Gledhill    SMTR table added
 
 02 May 2021   000.801      M. Gledhill    Published
@@ -82,7 +84,7 @@ $(document).ready(function() {                  /* START OF PAGE READY FUNCTION 
    **************************************************************************** */
 
     $('#rev-scroll').append (
-        "<p>000.803</p>" /* LOCAL JS REVISION NUMBER */
+        "<p>000.804</p>" /* LOCAL JS REVISION NUMBER */
     );
 
 
@@ -186,6 +188,10 @@ $(document).ready(function() {                  /* START OF PAGE READY FUNCTION 
 
    $('.js--sc-t01-01').click(function () {
       $('html, body').animate({scrollTop: $('#js--t01-01').offset().top -60}, 1000);
+   });
+
+   $('.js--sc-t01-01a').click(function () {
+      $('html, body').animate({scrollTop: $('#js--t01-01a').offset().top -60}, 1000);
    });
 
    $('.js--sc-t02-01').click(function () {
