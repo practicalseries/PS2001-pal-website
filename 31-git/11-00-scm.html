@@ -38,6 +38,12 @@ MODIFICATION HISTORY:
 This is a complete summary of all software modifications.
 Date          Issue        Author         Reason for Modification
 *******************************************************************************
+15 Jun 2022   002.000      M. Gledhill    Updated to reflect SCM R02.00
+                                             Rev Badge (Green)    002.000 (Rel)
+                                             Rev Data Page        002.000
+                                             Rev Data Code        None
+                                             Rev Data scroll      001.000
+
 01 May 2021   001.000      M. Gledhill    Released
                                              Rev Badge (Green)    001.000 (Rel)
                                              Rev Data Page        001.000
@@ -206,7 +212,7 @@ Date          Issue        Author         Reason for Modification
                             <td class="leading" style="height: 1em"></td>
                             <td class="table-cent" style="width: 30%"></td>
                             <td class="table-left" style="width: 40%">Page:</td>
-                            <td class="table-right" style="width: 30%" id="rev-doc">001.000</td>
+                            <td class="table-right" style="width: 30%" id="rev-doc">002.000</td>
                         </tr>
 <!-- Data row -->       <tr>
                             <td class="leading" style="height: 1em"></td>
@@ -327,7 +333,7 @@ Date          Issue        Author         Reason for Modification
             <div class="rg-row">                                <!-- Start of title row       -->
                 <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
                     <aside class="rev-badge-side">              <!-- BUILD BADGE              -->
-                        <img src="https://img.shields.io/badge/Rel-001.000-3DB70F.svg" alt="Build">
+                        <img src="https://img.shields.io/badge/Rel-002.000-3DB70F.svg" alt="Build">
                     </aside>
                 </div>                                          <!-- End of Left column       -->
                 <div class="rg-col rg-span3-5">                 <!-- Start of title           -->
@@ -867,13 +873,13 @@ Date          Issue        Author         Reason for Modification
 
                     <p class='hyp'>A VCS could be applied to TIA Portal projects, these are stored as archived files (essentially <span class='code'>zip</span> files); however, these types of files are proprietary and are not directly accessible to the VCS. The VCS could, under these conditions, store each archived file, it would not, however, be able to access the internal components of the file to determine what changes have been made to any particular part of it (i.e. it could not identify a particular change to a particular module).</p>
 
-                    <p class='hyp'>With the advent of TIA Portal V16 <em>(the latest version)</em>, Siemens introduced the concept of <em>Workspaces</em>, these are environments (essentially, just Windows folders) into which the programmable aspects of a TIA Project (blocks, data types and tags) can be exported (or imported) as XML<sup>&dagger;1</sup> files.</p>
+                    <p class='hyp'>With the advent of TIA Portal V16 , Siemens introduced the concept of <em>Workspaces</em>, these are environments (essentially, just Windows folders) into which the programmable aspects of a TIA Project (blocks, data types and tags) can be exported (or imported) as XML<sup>&dagger;1</sup> files.</p>
 
                     <p class='hyp'>This is a new concept, previous versions of TIA Portal did not offer the facility of exporting software modules in a widely accessible (text based) format, the software could only be read by the proprietary TIA Portal package itself.</p>
 
                     <p class='hyp'>The benefit of this new Workspace facility is that the exported files are stored as XML files, and XML files are an ideal format for version control systems (VCSs), version control systems can read every aspect of an XML file and identify any changes that have been made, and, just as importantly, keep track of all these changes. Additionally, each block, data type and tag table is exported as its own XML file and as such allows the tracking of each individual element within the software library. It would for example, be possible to identify all the changes made to a particular Function (e.g. <span class='block'>FC01001</span>) and determine at which point in the revision history each change was made.</p>
 
-                    <p class='hyp'>This was the purpose of Siemens adding this Workspace facility to TIA Portal, it allows proper version control of the software being developed in a TIA Portal project. It also does not require a proprietary Siemens VCS, any and all VCS systems can track text-based files (it is fundamentally, what they were designed for).</p>
+                    <p class='hyp'>This was the purpose of Siemens adding this Workspace facility to TIA Portal, it allows proper version control of the software being developed in a TIA Portal project. It also does not require a proprietary Siemens VCS, any and all VCS systems can track text-based files (it is fundamentally, what they were designed to do).</p>
 
                     <p class='hyp'>To make things easier, Siemens also allow third-party <em>&ldquo;add-ins&rdquo;</em> to be created that can interface with these new Workspaces. One such add-in (created by Siemens) provides an interface to the version control system Git and its online partner <a class='xref' href='https://github.com/'>GitHub</a>.</p>
 

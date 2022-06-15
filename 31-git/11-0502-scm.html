@@ -43,6 +43,12 @@ This is a complete summary of all software modifications.
 
 Date          Issue        Author         Reason for Modification
 *******************************************************************************
+15 Jun 2022   002.000      M. Gledhill    Updated to reflect SCM R02.00
+                                             Rev Badge (Green)    002.000 (Rel)
+                                             Rev Data Page        002.000
+                                             Rev Data Code        None
+                                             Rev Data scroll      001.000
+
 02 May 2021   001.000      M. Gledhill    Released
                                              Rev Badge (Green)    001.000 (Rel)
                                              Rev Data Page        001.000
@@ -221,7 +227,7 @@ Date          Issue        Author         Reason for Modification
                             <td class="leading" style="height: 1em"></td>
                             <td class="table-cent" style="width: 30%"></td>
                             <td class="table-left" style="width: 40%">Page:</td>
-                            <td class="table-right" style="width: 30%" id="rev-doc">001.000</td>
+                            <td class="table-right" style="width: 30%" id="rev-doc">002.000</td>
                         </tr>
 <!-- Data row -->       <tr>
                             <td class="leading" style="height: 1em"></td>
@@ -342,7 +348,7 @@ Date          Issue        Author         Reason for Modification
             <div class="rg-row">                                <!-- Start of title row       -->
                 <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
                     <aside class="rev-badge-side">              <!-- BUILD BADGE              -->
-                        <img src="https://img.shields.io/badge/Rel-001.000-3DB70F.svg" alt="Build">
+                        <img src="https://img.shields.io/badge/Rel-002.000-3DB70F.svg" alt="Build">
                     </aside>
                 </div>                                          <!-- End of Left column       -->
                 <div class="rg-col rg-span3-5">                 <!-- Start of title           -->
@@ -496,7 +502,7 @@ Date          Issue        Author         Reason for Modification
 
                 <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
 
-                    <p class='hyp'>Engineering stations (ES) are used to develop the PAL software, they are generally high powered machines with at least 512&nbsp;GB of hard drive storage and 16&nbsp;GB of RAM. Typically with a 10<sup>th</sup> or 11<sup>th</sup> generation i7 processor or equivalent (such as an AMD Ryzen 7).</p>
+                    <p class='hyp'>Engineering stations (ES) are used to develop the PAL software, they are generally high-powered machines with at least 512&nbsp;GB of hard drive storage and 16&nbsp;GB of RAM. Typically with a 10<sup>th</sup> or 11<sup>th</sup> generation i7 processor or equivalent (such as an AMD Ryzen 7).</p>
 
                     <p class='hyp'>Engineering stations should be equipped with dual 27&quot; QHD (quad high definition) screens (these have a resolution of 2560 × 1440 pixels).</p>
 
@@ -557,7 +563,7 @@ Date          Issue        Author         Reason for Modification
       UNNUMBERED LIST
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
                     <ul class='list-no-num' style="padding-left: 3em;">    <!-- Start of unnumbered list -->
-                        <li><p class='nohyp'><span class='sans'>The TIA Portal setting have been set to the PAL configuration</span></p></li>
+                        <li><p class='nohyp'><span class='sans'>The TIA Portal settings have been set to the PAL configuration</span></p></li>
 
                         <li><p class='nohyp'><span class='sans'>The TIA Portal Git add-in has been installed and enabled</span></p></li>
                     </ul>                                       <!-- End of unnumbered list   -->
@@ -827,7 +833,7 @@ UNNUMBERED LIST
 
                     <p class='hyp'>The <span class='code'>.ap16</span> file (highlighted in blue), if clicked would open the project in TIA Portal. The folder structure above is all part of the TIA Project and independent modification of this structure or any files within it may result in the corruption of the project.</p>
 
-                    <p class='hyp'>The top level folder of a project (in this case <span class='code'>PS2001-PAL-D0003</span>) should be considered to be the TIA Portal Project in its entirety, everything below this level is best left alone. </p>
+                    <p class='hyp'>The top-level folder of a project (in this case <span class='code'>PS2001-PAL-D0003</span>) should be considered to be the TIA Portal Project in its entirety, everything below this level is best left alone. </p>
 
                     <p class='hyp'><a class='xref js--sc-f05-02' href='#'>Figure&nbsp;5.2</a> shows an additional folder under the <span class='code'>PS2001-PAL-Build-SW</span> directory, this is the <span class='code'>41 TIA PoC</span> folder. This also holds TIA Projects; these are not formally part of the PAL software, they form <em>&ldquo;proof of concept&rdquo;</em> projects.</p>
 
@@ -907,7 +913,7 @@ UNNUMBERED LIST
 
                     <p class='hyp'>The remainder of the <span class='code'>PS2001-pal-software</span> folder holds the working files for the TIA Portal Workspace.</p>
 
-                    <p class='hyp'>The top level folder (<span class='code'>CON100</span>) is the Workspace equivalent of the controller in the TIA Project, this is also called <span class='code'>CON100</span> (this is in accordance with the Siemens naming conventions discussed in the <a class='xref' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/11-SW-Software-Design-Specification-(SDS)/PS2001-5-2311-001-SDS.pdf' download>Software Design Specification (SDS) <em>[Ref.&nbsp;003, &sect;&nbsp;3.1.4]</em></a>)</p>
+                    <p class='hyp'>The top-level folder (<span class='code'>CON100</span>) is the Workspace equivalent of the controller in the TIA Project, this is also called <span class='code'>CON100</span> (this is in accordance with the Siemens naming conventions discussed in the <a class='xref' href='https://practicalseries.com/2001-pal/81-binary/01-docs/23-Design-Software/11-SW-Software-Design-Specification-(SDS)/PS2001-5-2311-001-SDS.pdf' download>Software Design Specification (SDS) <em>[Ref.&nbsp;003, &sect;&nbsp;3.1.4]</em></a>)</p>
 
                     <p class='hyp'>The Workspace folder contains the XML versions of the TIA Project exportable objects, these objects are also stored in (pre-named) folders:</p>
 
@@ -1017,7 +1023,7 @@ UNNUMBERED LIST
 
         <li><p class='nohyp'><span class='sans'>Function blocks (FBs)</span></p></li>
 
-        <li><p class='nohyp'><span class='sans'>Data blocks (DBs)</span></p></li>
+        <li><p class='nohyp'><span class='sans'>Data blocks (DBs) of any type including instance DBs</span></p></li>
     </ul>                                       <!-- End of unnumbered list   -->
 <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
@@ -1025,7 +1031,7 @@ UNNUMBERED LIST
 NUMBERED LIST
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <ol start="2" class='list-num'>              <!-- Start of numbered list   -->
-        <li><p class='hyp'>User (PLC) data type (referred to here, as UDTs)</p></li>
+        <li><p class='hyp'>User (PLC) data types (referred to here, as UDTs)</p></li>
 
         <li><p class='hyp'>PLC tag tables (referred to here as just tag tables)</p></li>
 
@@ -1055,7 +1061,7 @@ NUMBERED LIST
 
                                 <p>When TIA Portal was introduced and Simatic Manager began to be phased out (you can still get it, but most people use TIA Portal now), the Source Block functions (or any such equivalent) was not included in TIA Portal, and this upset a lot of people&nbsp;&mdash;&nbsp;virtually everyone to whom version control was important.</p>
 
-                                <p>Siemens were reminded of their deficiencies by those people, <span class='first-use'> &ldquo;oh tut deary me&rdquo;</span> they said, &ldquo;you seem to have forgotten this&rdquo; or words to that effect.</p>
+                                <p>Siemens were reminded of their deficiencies by those people, <span class='first-use'> &ldquo;oh tut deary me&rdquo;</span> they said, &ldquo;you seem to have forgotten this&rdquo; or its Anglo-Saxon equivalent.</p>
 
                                 <p>Siemens have now addressed their shortcomings and have added the required features; the format is different: it exports thing as XML text files (rather than SCL text files), but it can be used in much the same way. I.e. version control systems can read the files and determine any changes that have been made. Siemens refer to the whole thing as part of their &ldquo;openness&rdquo; strategy. So, it&rsquo;s arrived late, but at least it&rsquo;s here now.</p>
                             </td>
@@ -1330,7 +1336,7 @@ NUMBERED LIST
             <div class='rg-row sub-title-row'>                  <!-- Start of subtitle row    -->
                 <div class='rg-col rg-span1-5'></div>           <!-- Left column (not used)   -->
                 <div class='rg-col rg-span3-5'>                 <!-- Start of subtitle column -->
-                    <div class='sub-title-text-box'><h4>Knowhow protection</h4></div>
+                    <div class='sub-title-text-box'><h4>Knowhow and write protection</h4></div>
                 </div>                                          <!-- End of subtitle column   -->
                 <div class='rg-col rg-span1-5'></div>           <!-- Right column (not used)  -->
             </div>                                              <!-- End of Subtitle row      -->
@@ -1343,6 +1349,8 @@ NUMBERED LIST
                 </div>                                          <!-- End of left column       -->
 
                 <div class='rg-col rg-span3-5'>                 <!-- Start of section text    -->
+
+                    <p class='hyp'>Simatic blocks can be protected in two ways: knowhow protect (an older form of access protection) and write protection (the current form of access protection).</p>
 
                     <p class='hyp'>Blocks with knowhow protection cannot be synchronised with the Workspace.</p>
 
@@ -1444,7 +1452,7 @@ NUMBERED LIST
                     </ul>                                       <!-- End of note              -->
 <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-                    <p class='hyp'>The difference between <span class='menu'>import/export changes</span> and <span class='menu'>import/export all</span> is subtle. If a block has been changed in the Project (left-hand side) then of the <span class='menu'>import/export changes</span> buttons only the <span class='menu'>export changes</span> will work, the <span class='menu'>import changes</span> will leave the action set at <span class='menu'>do nothing</span>. The reason for this is that there has been no change to the Workspace object, so you can not import it.</p>
+                    <p class='hyp'>The difference between <span class='menu'>import/export changes</span> and <span class='menu'>import/export all</span> is subtle. If a block has been changed in the Project (left-hand side) then of the <span class='menu'>import/export changes</span> buttons only the <span class='menu'>export changes</span> will work, the <span class='menu'>import changes</span> will leave the action set at <span class='menu'>do nothing</span>. The reason for this is that there has been no change to the Workspace object, so you cannot import it.</p>
 
                     <p class='hyp'>There has, however, been a change to the Project object so it can be exported as a change.</p>
 
@@ -1639,7 +1647,7 @@ NUMBERED LIST
 
                     <p class='hyp'>The remote repository is essentially, the <span class='emph'>master</span> repository and it is this repository that holds all the commits made by any ES.</p>
 
-                    <p class='hyp'>The GitHub servers are a third party facility (ultimately owned by Microsoft), and while they are considered secure by the Practical Series of Publications, it is felt that GitHub cannot be the sole storage location for the master repository (Microsoft may, for example, close down the site, make it prohibitively expensive, or indeed may sell it to some other party that the Practical Series of Publications did not trust).</p>
+                    <p class='hyp'>The GitHub servers are a third party facility (ultimately owned by Microsoft), and while they are considered secure by the Practical Series of Publications, it is felt that GitHub cannot be the sole storage location for the master repository (Microsoft may, for example, close down the site, make it prohibitively expensive, or indeed may sell it to some other party that the Practical Series of Publications does not trust).</p>
 
                     <p class='hyp'>To this end, the Master Engineering Station, each time it is synchronised with the master repository on GitHub, makes a complete copy of the repository on the PSP network accessible storage (NAS) drives. </p>
 

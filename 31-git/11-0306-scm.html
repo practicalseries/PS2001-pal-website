@@ -43,6 +43,12 @@ This is a complete summary of all software modifications.
 
 Date          Issue        Author         Reason for Modification
 *******************************************************************************
+15 Jun 2022   002.000      M. Gledhill    Updated to reflect SCM R02.00
+                                             Rev Badge (Green)    002.000 (Rel)
+                                             Rev Data Page        002.000
+                                             Rev Data Code        None
+                                             Rev Data scroll      001.000
+
 02 May 2021   001.000      M. Gledhill    Released
                                              Rev Badge (Green)    001.000 (Rel)
                                              Rev Data Page        001.000
@@ -226,7 +232,7 @@ Date          Issue        Author         Reason for Modification
                             <td class="leading" style="height: 1em"></td>
                             <td class="table-cent" style="width: 30%"></td>
                             <td class="table-left" style="width: 40%">Page:</td>
-                            <td class="table-right" style="width: 30%" id="rev-doc">001.000</td>
+                            <td class="table-right" style="width: 30%" id="rev-doc">002.000</td>
                         </tr>
 <!-- Data row -->       <tr>
                             <td class="leading" style="height: 1em"></td>
@@ -347,7 +353,7 @@ Date          Issue        Author         Reason for Modification
             <div class="rg-row">                                <!-- Start of title row       -->
                 <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
                     <aside class="rev-badge-side">              <!-- BUILD BADGE              -->
-                        <img src="https://img.shields.io/badge/Rel-001.000-3DB70F.svg" alt="Build">
+                        <img src="https://img.shields.io/badge/Rel-002.000-3DB70F.svg" alt="Build">
                     </aside>
                 </div>                                          <!-- End of Left column       -->
                 <div class="rg-col rg-span3-5">                 <!-- Start of title           -->
@@ -844,7 +850,7 @@ Date          Issue        Author         Reason for Modification
                     </div>
 <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
 
-                    <p class='hyp'>The <span class='code'>MERGE</span> entry records the commit point tag at which the branch rejoins (merges) with the <span class='git-cmd'>master</span> branch. In this case it is at commit tag <span class='code'>D0003</span>:</p>
+                    <p class='hyp'>The <span class='code'>MERGE</span> entry records the commit point tag at which the branch re-joins (merges) with the <span class='git-cmd'>master</span> branch. In this case it is at commit tag <span class='code'>D0003</span>:</p>
 
 <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
      LIGHTBOX FIGURE - SINGLE FIGURE FULL PAGE WIDTH (748 px)
@@ -900,21 +906,11 @@ Date          Issue        Author         Reason for Modification
 
                     <p class='hyp'>Data blocks, both <em>static</em> and <em>dynamic</em>, like programmable blocks, have the revision information both hardcoded in the block and stored (with additional information) within the header comment area of the data block.</p>
 
-                    <p class='hyp'>If the data block is being developed as part of the development of a software module (the most common arrangement), the development branch will have a label associated with the programmable block rather be directly associated with the data block (in the previous example, the branch was called <span class='git-cmd'>D0002A-FC0100</span>, labelled for the software module being developed: <span class='block'>FC01001</span>).</p>
+                    <p class='hyp'>If the data block is being developed as part of the development of a software module, the development branch will have a label associated with the programmable block rather be directly associated with the data block (in the previous example, the branch was called <span class='git-cmd'>D0002A-FC0100</span>, labelled for the software module being developed: <span class='block'>FC01001</span>).</p>
+
+                    <p class='hyp'>Data blocks are to some extent independent of the standard blocks with which they are associated, a new device may be added to a project and the associated data blocks will be modified (and their revisions changed) to accommodate it. The standard module within which the data blocks are used will not change.</p>
 
                     <p class='hyp'>If the data block were the sole focus of the development branch it would be permissible to label the branch for the data block in question (e.g. <span class='git-cmd'>D0002A-DB21001</span>).</p>
-
-                    <p class='hyp'>Data blocks are generally associated with a programmable block and it is common for these data blocks to be developed at the same time (and on the same branch) as the programmable module itself.</p>
-
-                    <p class='hyp'>Data blocks, although necessary for the correct functioning of the software module, tend to be of a simplistic nature, mostly having a series of variables all of the same user data types.</p>
-
-                    <p class='hyp'>It is common for the data blocks to have fewer revisions than the software module itself, and there is no correspondence between the data block revision and the software module revision; except to say that when the software module is released for test, the data blocks associated with it must also be at the same test state; similarly, if the software is at a released state, the associated data blocks must also be at the same released state.</p>
-
-                    <p class='hyp'>Data blocks should stay at a development revision whilever the parent module is in development (however, the development revisions need not be exactly the same number). The data block moves to a test version at the same time as the parent module, and similarly, both move to the released version at the same point.</p>
-
-                    <p class='hyp'>It is the purpose of the final secondary commit on the development branch, to hold this released state, these will be in the form <span class='code'>SNNNNb-nnn.000</span> (the final three digits being zero, indicating a released version). It is this commit point at which the various blocks (FC, DBs and UTs) have their revision status updated to the released state.</p>
-
-                    <p class='hyp'>This approach gives a logical release arrangement for the software module and its associated data blocks.</p>
 
                 </div>                                          <!-- End of section text      -->
 
@@ -1003,7 +999,7 @@ Date          Issue        Author         Reason for Modification
 
                     <p class='hyp'>The network comments for a DB contain the same type of information (and in the same format) as programmable blocks (see <a class='xref js--sc-030601 href='#'>&sect;&nbsp;3.6.1</a>).</p>
 
-                    <p class='hyp'>Data blocks do not have a facility for network comments available to programmable blocks; however, all PAL data blocks are configured with a header array with variable name <span class='signal'>DB_Header</span>, this is an array of 80 Boolean values and is used purely as a comment area for the data block. The revision information is contained within the comment area of this <span class='signal'>DB_Header</span> array.</p>
+                    <p class='hyp'>Data blocks do not have the facility for network comments that is available to programmable blocks; however, all PAL data blocks are configured with a header array with variable name <span class='signal'>DB_Header</span>, this is an array of 80 Boolean values and is used purely as a comment area for the data block. The revision information is contained within the comment area of this <span class='signal'>DB_Header</span> array.</p>
 
                     <p class='hyp'>An example of this is shown below:</p>
 
@@ -1079,11 +1075,11 @@ Date          Issue        Author         Reason for Modification
                     </div>
 <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
 
-                    <p class='hyp'>UDTs, like data blocks, have fewer revisions than the software module itself, and there is no correspondence between the UDT revision and the software module revision; except to say that when the software module is released for test, the UDTs associated with it must also be at the same test state; similarly, if the software is at a released state, the associated UDTs must also be at the same released state.</p>
+                    <p class='hyp'>UDTs, are closely associated with a standard module, and any change to a UDT will cause a subsequent revision change within the associated module (after all, only the module can do something with the variables in the UDT). It is however, possible, and indeed common, for a change to the software module to have no effect on the UDTs associated with it.</p>
 
-                    <p class='hyp'>UDTs should stay at a development revision whilever the parent module is in development (however, the development revisions need not be exactly the same number). The UDT moves to a test version at the same time as the parent module, and similarly, both move to the released version at the same point.</p>
+                    <p class='hyp'>For consistency, whenever there is a change to a UDT or to the standard module that uses that UDT, the UDT revision will be changed to match the released version of the standard module (even if there has been no change to the UDT). For example, if a standard module is changed in some way and released at revision <span class='code'>002.000</span>, all the UDTs that are associated with it will also be released at revision <span class='code'>002.000</span>.</p>
 
-                    <p class='hyp'>Again, like data blocks, this approach gives a logical release arrangement for the software module and its associated UDTs.</p>
+                    <p class='hyp'>In short, the released UDT revision should always match the revision of its parent software module.</p>
 
                 </div>                                          <!-- End of section text      -->
 
@@ -1126,7 +1122,7 @@ Date          Issue        Author         Reason for Modification
 
                     <p class='hyp'>The revision of the software module under development, its data blocks and UDTs are all recorded individually in each of the various blocks.</p>
 
-                    <p class='hyp'>In addition to the module being developed, the main programme organisation block. OB&nbsp;1 (more formally identified in the PAL as <span class='code'>OB00001_IntMainProgram</span>), will also be modified, specifically to call the module under development.</p>
+                    <p class='hyp'>In addition to the module being developed, the main programme organisation block. OB&nbsp;1 (more formally identified in the PAL as <span class='code'>OB00001_IntINrmMainProgram</span>), will also be modified, specifically to call the module under development.</p>
 
                     <p class='hyp'>OB&nbsp;1 is considered a special block in the Practical Series Automation Library (and in terms of most Siemens Controller software). It is the block that executes all the rest of the controller software.</p>
 
@@ -1210,6 +1206,14 @@ Date          Issue        Author         Reason for Modification
                     <p class='hyp'>OB&nbsp;1 comments are slightly more complicated when multiple development branches exist, see <a class='hlink' href='11-0309-scm.html#js--031002'>&sect;&nbsp;3.10.2</a>.</p>
 
                     <p class='hyp'></p>
+
+                    <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                          NOTE - HANGING INDENT
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                                        <ul class='note'>                           <!-- Start of note            -->
+                                            <li>Where a commit is made directly on the <span class='git-cmd'>master</span> branch (for minor modification or to change ancillary files), the revision of OB1 and the filename of the project must also change to reflect the new commit point tag</li>
+                                        </ul>                                       <!-- End of note              -->
+                    <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
                 </div>                                          <!-- End of section text      -->
 
