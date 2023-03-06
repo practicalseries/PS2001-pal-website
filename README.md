@@ -1,9 +1,9 @@
-# PracticalSeries Automation Library Website <img height="25px" src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/m1-badge.svg?bxno=d0018">
+# PracticalSeries Automation Library Website <img height="25px" src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/m1-badge.svg?bxno=d0019">
 
 <br />
 
 <p align="left">
-    <img width="500px" src="https://practicalseries.com/2001-pal/00-comres/11-resources/02-images/pal-logo-web.svg?bxno=d0018">
+    <img width="500px" src="https://practicalseries.com/2001-pal/00-comres/11-resources/02-images/pal-logo-web.svg?bxno=d0019">
 </p>
 
 
@@ -22,10 +22,34 @@
 
 <table>
     <tr>
-        <td colspan="2"><h1>Contents</h1></td>
+        <td><h1>LATEST SOFTWARE &mdash; TIA PORTAL DOWNLOAD </h1>
+        <h2>LATEST RELEASED SOFTWARE VERSION: <sub><img height="35px" src="https://practicalseries.com/2001-pal/01-admin/99-0000-git-pal-sw/02-build/m1-badge.svg?bxno=d0019"></sub></h2></td>
     </tr>
     <tr>
-        <td colspan="2"></td>
+        <td align="left"> 
+
+<strong>The latest version of the PAL software library is available to download here (as a TIA Portal archive):
+
+
+            
+&emsp; &emsp; &emsp; [https://practicalseries.com/2001-pal/31-git/81-00-archive.html](https://practicalseries.com/2001-pal/31-git/81-00-archive.html)
+
+
+
+All the associated documentation is available to download here:
+
+&emsp; &emsp; &emsp; [https://practicalseries.com/2001-pal/21-project/01-00-docs.html](https://practicalseries.com/2001-pal/21-project/01-00-docs.html)</strong>
+        </td>
+    </tr>
+</table>
+
+<br />
+
+
+
+<table>
+    <tr>
+        <td colspan="2"><h1>Contents</h1></td>
     </tr>
     <tr>
         <td align="left"> 
@@ -72,10 +96,8 @@
     </tr>
 </table> 
 
+
 <br />
-
-
-
 
 
 
@@ -147,7 +169,7 @@ All four sections are contained within this repository.
 The website is contained in a series of folders, the underlying structure of which is:
 
 <p align="center">
-    <img width="500px" src="https://practicalseries.com/2001-pal/31-git/01-pages/02-00-webreadme/02-images/fig-02-01.png?bxno=d0018">
+    <img width="500px" src="https://practicalseries.com/2001-pal/31-git/01-pages/02-00-webreadme/02-images/fig-02-01.png?bxno=d0019">
 </p>
 <p align="center"><sup>Fig 02-01 &mdash; The website folder structure</sup></p>
 
@@ -202,7 +224,7 @@ The website has several folders within it:
 The broad contents of these folders is shown in the Figure 2.3 below:
 
 <p align="center">
-    <img src="https://practicalseries.com/2001-pal/31-git/01-pages/02-00-webreadme/02-images/fig-02-03.svg?bxno=d0018">
+    <img src="https://practicalseries.com/2001-pal/31-git/01-pages/02-00-webreadme/02-images/fig-02-03.svg?bxno=d0019">
 </p>
 <p align="center"><sup>Fig 02-03 &mdash; The website folder in relation to the live website</sup></p>
 
@@ -355,7 +377,7 @@ Logon information is required to give the WinSCP application access to the webse
 The [WinSCP](https://winscp.net/eng/index.php) application has two windows, the left-hand side is the **offline** website on the local machine, the right-hand side is the **online** website on the Heart Internet servers:
 
 <p align="center">
-    <img src="https://practicalseries.com/2001-pal/31-git/01-pages/02-00-webreadme/02-images/fig-02-04.png?bxno=d0018">
+    <img src="https://practicalseries.com/2001-pal/31-git/01-pages/02-00-webreadme/02-images/fig-02-04.png?bxno=d0019">
 </p>
 <p align="center"><sup>Fig 02-04 &mdash; WinSCP FTP with the live website</sup></p>
 
@@ -390,10 +412,10 @@ The current revision status of the master branch and any development branches is
 
 | Branch             | Revision                               | Status
 | ------------------ | -------------------------------------- | -----------------------------
-| <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/m1-name.svg?bxno=d0017">           | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/m1-badge.svg?bxno=d0018"> | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/m1-text.svg?bxno=d0018">
-| <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d1-name.svg?bxno=d0018">           | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d1-badge.svg?bxno=d0018"> | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d1-text.svg?bxno=d0018">
-| <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d2-name.svg?bxno=d0018">           | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d2-badge.svg?bxno=d0018"> | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d2-text.svg?bxno=d0018">
-| <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d3-name.svg?bxno=d0018">           | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d3-badge.svg?bxno=d0018"> | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d3-text.svg?bxno=d0018">
+| <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/m1-name.svg?bxno=d0017">           | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/m1-badge.svg?bxno=d0019"> | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/m1-text.svg?bxno=d0019">
+| <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d1-name.svg?bxno=d0019">           | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d1-badge.svg?bxno=d0019"> | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d1-text.svg?bxno=d0019">
+| <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d2-name.svg?bxno=d0019">           | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d2-badge.svg?bxno=d0019"> | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d2-text.svg?bxno=d0019">
+| <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d3-name.svg?bxno=d0019">           | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d3-badge.svg?bxno=d0019"> | <img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/02-build/d3-text.svg?bxno=d0019">
 
 The full workflow for the project is shown in the [Software Control](#5--software-control) section of this document.
 
@@ -404,7 +426,7 @@ The full workflow for the project is shown in the [Software Control](#5--softwar
 This website contains a lot of documentation (in fact all the project documentation is accessible from within this website). The overall document flow path is shown below:
 
 <p align="center">
-    <img src="https://practicalseries.com/2001-pal/31-git/01-pages/02-00-webreadme/02-images/fig-04-01.svg?bxno=d0018">
+    <img src="https://practicalseries.com/2001-pal/31-git/01-pages/02-00-webreadme/02-images/fig-04-01.svg?bxno=d0019">
 </p>
 <p align="center"><sup>Fig 04-01 &mdash; Project documentation flow path</sup></p>
 
@@ -423,7 +445,7 @@ Any new document created must be entered in this Project Registry.
 The following is an example of a page from the Project Registry:
 
 <p align="center">
-    <img src="https://practicalseries.com/2001-pal/31-git/01-pages/02-00-webreadme/02-images/fig-04-02.png?bxno=d0018">
+    <img src="https://practicalseries.com/2001-pal/31-git/01-pages/02-00-webreadme/02-images/fig-04-02.png?bxno=d0019">
 </p>
 <p align="center"><sup>Fig 04-02 &mdash; Document registry (example page)</sup></p>
 
@@ -439,7 +461,7 @@ The full, historic workflow for the project is shown below:
 
 The workflow diagram shows the current state of the repository and identifies all development branches (both past and present) as well as the main ```master``` branch. The workflow diagram(s) lists all the commit points within the repository and the tag identifiers given to each.
 
-<img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/01-workflow/wf-001p.svg?bxno=d0018">
+<img src="https://practicalseries.com/2001-pal/01-admin/99-5000-git-pal-web/01-workflow/wf-001p.svg?bxno=d0019">
 <p align="center"><sup>Workflow diagram</sup></p>
 
 
