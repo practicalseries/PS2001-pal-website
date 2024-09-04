@@ -43,7 +43,13 @@ This is a complete summary of all software modifications.
 
 Date          Issue        Author         Reason for Modification
 *******************************************************************************
-06 MAr 2023   000.812      M. Gledhill    FC19511 Released for use (D0017)
+04 Sep 2024   000.813      M. Gledhill    FC02001, 18001 and 18002 Released for use (D0018)
+                                             Rev Badge (Blue)     000.813 (Pub)
+                                             Rev Data Page        000.813
+                                             Rev Data Code        None
+                                             Rev Data-SCRoll      000.804
+
+06 Mar 2023   000.812      M. Gledhill    FC19511 Released for use (D0017)
                                              Rev Badge (Blue)     000.812 (Pub)
                                              Rev Data Page        000.812
                                              Rev Data Code        None
@@ -270,7 +276,7 @@ Date          Issue        Author         Reason for Modification
                             <td class="leading" style="height: 1em"></td>
                             <td class="table-cent" style="width: 30%"></td>
                             <td class="table-left" style="width: 40%">Page:</td>
-                            <td class="table-right" style="width: 30%" id="rev-doc">000.812</td>
+                            <td class="table-right" style="width: 30%" id="rev-doc">000.813</td>
                         </tr>
 <!-- Data row -->       <tr>
                             <td class="leading" style="height: 1em"></td>
@@ -391,7 +397,7 @@ Date          Issue        Author         Reason for Modification
             <div class="rg-row">                                <!-- Start of title row       -->
                 <div class="rg-col rg-span1-5">                 <!-- Start of left column     -->
                     <aside class="rev-badge-side">              <!-- BUILD BADGE              -->
-                        <img src="https://img.shields.io/badge/Pub-000.812-4F81BC.svg" alt="Build">
+                        <img src="https://img.shields.io/badge/Pub-000.813-4F81BC.svg" alt="Build">
                     </aside>
                 </div>                                          <!-- End of Left column       -->
                 <div class="rg-col rg-span3-5">                 <!-- Start of title           -->
@@ -559,6 +565,34 @@ TOC - PAGE LEVEL
                     </tr>
     <!-- Data row -->   <tr>
                             <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'>DB00801_St_ConstAiRawData</td>
+                            <td class='table-left'>(SYS CONSTANTS) Analog Input Raw Data</td>
+                            <td class='table-cent'>001.00</td>
+                            <td class='table-cent'>2024-05-15</td>
+                        </tr>
+    <!-- Data row -->   <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'>DB00802_St_ConstAqRawData</td>
+                            <td class='table-left'>(SYS CONSTANTS) Analog Output Raw Data</td>
+                            <td class='table-cent'>001.00</td>
+                            <td class='table-cent'>2024-05-17</td>
+                        </tr>
+    <!-- Data row -->   <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'>DB00851_St_ConstAiScaleData</td>
+                            <td class='table-left'>(SYS CONSTANTS) Analog Input Scale Data</td>
+                            <td class='table-cent'>001.00</td>
+                            <td class='table-cent'>2024-05-15</td>
+                        </tr>
+    <!-- Data row -->   <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'>DB00852_St_ConstAqScaleData</td>
+                            <td class='table-left'>(SYS CONSTANTS) Analog Output Scale Data</td>
+                            <td class='table-cent'>001.00</td>
+                            <td class='table-cent'>2024-05-17</td>
+                        </tr>
+    <!-- Data row -->   <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
                             <td class='table-left'>FC01001_StdSysGlobalData</td>
                             <td class='table-left'>(SYSTEM) Global Date Generation</td>
                             <td class='table-cent'>002.00</td>
@@ -568,8 +602,8 @@ TOC - PAGE LEVEL
                             <td class='leading'><div style='min-height: 3em'></div></td>
                             <td class='table-left'>FC02001_StdInstAnalogRead</td>
                             <td class='table-left'>(INSTRUMENT) Analog Read and Scale</td>
-                            <td class='table-cent'>002.00</td>
-                            <td class='table-cent'>2022-04-16</td>
+                            <td class='table-cent'>003.00</td>
+                            <td class='table-cent'>2024-05-16</td>
                         </tr>
     <!-- Data row -->   <tr>
                             <td class='leading'><div style='min-height: 3em'></div></td>
@@ -595,9 +629,16 @@ TOC - PAGE LEVEL
     <!-- Data row -->   <tr>
                             <td class='leading'><div style='min-height: 3em'></div></td>
                             <td class='table-left'>FC18001_StdSubScaleAI</td>
-                            <td class='table-left'>(SUBROUTINE) Analog Scale</td>
-                            <td class='table-cent'>002.00</td>
-                            <td class='table-cent'>2022-04-16</td>
+                            <td class='table-left'>(SUBROUTINE) Analog Input Scale</td>
+                            <td class='table-cent'>003.00</td>
+                            <td class='table-cent'>2024-08-31</td>
+                        </tr>
+    <!-- Data row -->   <tr>
+                            <td class='leading'><div style='min-height: 3em'></div></td>
+                            <td class='table-left'>FC18002_StdSubScaleAQ</td>
+                            <td class='table-left'>(SUBROUTINE) Analog Output Scale</td>
+                            <td class='table-cent'>001.00</td>
+                            <td class='table-cent'>2024-09-03</td>
                         </tr>
     <!-- Data row -->   <tr>
                             <td class='leading'><div style='min-height: 3em'></div></td>
@@ -685,11 +726,11 @@ TOC - PAGE LEVEL
                     </tr>
 <!-- Data row -->   <tr style="background-color: #C00000; color: #fff; font-size: 0.9rem;">
                         <td class='leading'><div style='min-height: 3em'></div></td>
-                        <td class='table-left' style="font-family: conc-t7-r;">PS2001-PAL-D0017</td>
+                        <td class='table-left' style="font-family: conc-t7-r;">PS2001-PAL-D0018</td>
                         <td class='table-cent' style="font-family: conc-t7-r;">LATEST RELEASE</td>
-                        <td class='table-cent' style="font-family: conc-t7-r;">D0017</td>
-                        <td class='table-cent' style="font-family: conc-t7-r;">2023-03-03</td>
-                        <td class='table-cent'><a class="code-nav" href="https://psop.uk/pal-d0017" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
+                        <td class='table-cent' style="font-family: conc-t7-r;">D0018</td>
+                        <td class='table-cent' style="font-family: conc-t7-r;">2024-09-03</td>
+                        <td class='table-cent'><a class="code-nav" href="https://psop.uk/pal-d0018" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
                     </tr>
                 </table>
     <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->                    
@@ -748,6 +789,14 @@ TOC - PAGE LEVEL
                         <th class='table-cent' style='width: 18%'>Commit tag</th>
                         <th class='table-cent' style='width: 13%'>Date</th>
                         <th class='table-cent' style='width: 8%'>SW</th>
+                    </tr>
+<!-- Data row -->   <tr>
+                        <td class='leading'><div style='min-height: 3em'></div></td>
+                        <td class='table-left'>PS2001-PAL-D0018</td>
+                        <td class='table-left'>FC02001, FC18001, FC18002 RELEASED FOR USE</td>
+                        <td class='table-cent'>D0018</td>
+                        <td class='table-cent'>2024-09-03</td>
+                        <td class='table-cent'><a class="code-nav" href="https://psop.uk/pal-d0018" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
                     </tr>
 <!-- Data row -->   <tr>
                         <td class='leading'><div style='min-height: 3em'></div></td>
@@ -935,7 +984,7 @@ TOC - PAGE LEVEL
                 <p class='hyp sans'><em>All commits are shown in reverse chronological order (most recent at the top).</em></p>
 
 
-<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~pal-d0017a-000-1
   TABLE - DOCUMENT TABLE
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
   <table class='table-doc' id='js--t03-01' style="margin-top: 5rem;">
@@ -946,6 +995,94 @@ TOC - PAGE LEVEL
                         <th class='table-cent' style='width: 18%'>Commit tag</th>
                         <th class='table-cent' style='width: 13%'>Date</th>
                         <th class='table-cent' style='width: 8%'>SW</th>
+                    </tr>
+<!-- Data row -->   <tr>
+                        <td class='leading'><div style='min-height: 3em'></div></td>
+                        <td class='table-left'>PS2001-PAL-D0018</td>
+                        <td class='table-left'>FC02001/FC18001/FC18002 RELEASED FOR USE</td>
+                        <td class='table-cent'>D0018</td>
+                        <td class='table-cent'>2024-09-03</td>
+                        <td class='table-cent'><a class="code-nav" href="https://psop.uk/pal-d0018" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
+                    </tr>
+<!-- Data row -->   <tr>
+                        <td class='leading'><div style='min-height: 3em'></div></td>
+                        <td class='table-left' style="color:dodgerblue; font-size: 0.63rem;">PS2001-PAL-D0017A-000-110</td>
+                        <td class='table-left'>FC18002 Post-test release</td>
+                        <td class='table-cent'>D0017A-000-110</td>
+                        <td class='table-cent'>2024-09-03</td>
+                        <td class='table-cent'><a class="code-nav" href="https://psop.uk/pal-d0017a-000-110" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
+                    </tr>
+<!-- Data row -->   <tr>
+                        <td class='leading'><div style='min-height: 3em'></div></td>
+                        <td class='table-left' style="color:dodgerblue; font-size: 0.63rem;">PS2001-PAL-D0017A-000-109</td>
+                        <td class='table-left'>FC18002 Release for SMT</td>
+                        <td class='table-cent'>D0017A-000-109</td>
+                        <td class='table-cent'>2024-09-02</td>
+                        <td class='table-cent'><a class="code-nav" href="https://psop.uk/pal-d0017a-000-109" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
+                    </tr>
+<!-- Data row -->   <tr>
+                        <td class='leading'><div style='min-height: 3em'></div></td>
+                        <td class='table-left' style="color:dodgerblue; font-size: 0.63rem;">PS2001-PAL-D0017A-000-108</td>
+                        <td class='table-left'>FC18001 Post-test release</td>
+                        <td class='table-cent'>D0017A-000-108</td>
+                        <td class='table-cent'>2024-08-31</td>
+                        <td class='table-cent'><a class="code-nav" href="https://psop.uk/pal-d0017a-000-108" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
+                    </tr>
+<!-- Data row -->   <tr>
+                        <td class='leading'><div style='min-height: 3em'></div></td>
+                        <td class='table-left' style="color:dodgerblue; font-size: 0.63rem;">PS2001-PAL-D0017A-000-107</td>
+                        <td class='table-left'>FC18001 Release for SMT</td>
+                        <td class='table-cent'>D0017A-000-107</td>
+                        <td class='table-cent'>2024-08-29</td>
+                        <td class='table-cent'><a class="code-nav" href="https://psop.uk/pal-d0017a-000-107" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
+                    </tr>
+<!-- Data row -->   <tr>
+                        <td class='leading'><div style='min-height: 3em'></div></td>
+                        <td class='table-left' style="color:dodgerblue; font-size: 0.63rem;">PS2001-PAL-D0017A-000-106</td>
+                        <td class='table-left'>FC02001/DB00802/DB00852 Post-test release</td>
+                        <td class='table-cent'>D0017A-000-106</td>
+                        <td class='table-cent'>2024-05-16</td>
+                        <td class='table-cent'><a class="code-nav" href="https://psop.uk/pal-d0017a-000-106" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
+                    </tr>
+<!-- Data row -->   <tr>
+                        <td class='leading'><div style='min-height: 3em'></div></td>
+                        <td class='table-left' style="color:dodgerblue; font-size: 0.63rem;">PS2001-PAL-D0017A-000-105</td>
+                        <td class='table-left'>DB00802/852 Created</td>
+                        <td class='table-cent'>D0017A-000-105</td>
+                        <td class='table-cent'>2024-05-16</td>
+                        <td class='table-cent'><a class="code-nav" href="https://psop.uk/pal-d0017a-000-105" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
+                    </tr>
+<!-- Data row -->   <tr>
+                        <td class='leading'><div style='min-height: 3em'></div></td>
+                        <td class='table-left' style="color:dodgerblue; font-size: 0.63rem;">PS2001-PAL-D0017A-000-104</td>
+                        <td class='table-left'>DB00801/851 Post-test release</td>
+                        <td class='table-cent'>D0017A-000-104</td>
+                        <td class='table-cent'>2024-05-15</td>
+                        <td class='table-cent'><a class="code-nav" href="https://psop.uk/pal-d0017a-000-104" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
+                    </tr>
+<!-- Data row -->   <tr>
+                        <td class='leading'><div style='min-height: 3em'></div></td>
+                        <td class='table-left' style="color:dodgerblue; font-size: 0.63rem;">PS2001-PAL-D0017A-000-103</td>
+                        <td class='table-left'>DB00851 created</td>
+                        <td class='table-cent'>D0017A-000-103</td>
+                        <td class='table-cent'>2024-05-07</td>
+                        <td class='table-cent'><a class="code-nav" href="https://psop.uk/pal-d0017a-000-103" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
+                    </tr>
+<!-- Data row -->   <tr>
+                        <td class='leading'><div style='min-height: 3em'></div></td>
+                        <td class='table-left' style="color:dodgerblue; font-size: 0.63rem;">PS2001-PAL-D0017A-000-102</td>
+                        <td class='table-left'>DB00801 populated</td>
+                        <td class='table-cent'>D0017A-000-102</td>
+                        <td class='table-cent'>2024-05-03</td>
+                        <td class='table-cent'><a class="code-nav" href="https://psop.uk/pal-d0017a-000-102" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
+                    </tr>
+<!-- Data row -->   <tr>
+                        <td class='leading'><div style='min-height: 3em'></div></td>
+                        <td class='table-left' style="color:dodgerblue; font-size: 0.63rem;">PS2001-PAL-D0017A-000-101</td>
+                        <td class='table-left'>DB00801 created</td>
+                        <td class='table-cent'>D0017A-000-101</td>
+                        <td class='table-cent'>2024-04-09</td>
+                        <td class='table-cent'><a class="code-nav" href="https://psop.uk/pal-d0017a-000-101" download><img style="max-width:60%" src="../00-comres/11-resources/02-images/11-icons/icon_tia.svg" alt="file icon"></a></td>
                     </tr>
 <!-- Data row -->   <tr>
                         <td class='leading'><div style='min-height: 3em'></div></td>
