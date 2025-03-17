@@ -108,7 +108,7 @@ The Practical Series Automation Library (PAL) is a library of software modules a
 
 The full library and all necessary documentation is available from the Practical Series website:
 
-&emsp; &emsp; &emsp; [https://practicalseries.com/2001-pal/11-web/index.html](https://practicalseries.com/2001-pal/11-web/index.html)
+&emsp; &emsp; &emsp; [https://practicalseries.com/2001-pal/index.html](https://practicalseries.com/2001-pal/index.html)
 
 
 The PAL is configured and deployed using the Siemens Simatic TIA Portal programming environment.
@@ -243,7 +243,7 @@ This directory also contains individual module documentation (in an online forma
 
 This part of the website is directly accessed at the following url:
 
-&emsp; &emsp; &emsp; [https://practicalseries.com/2001-pal/11-web](https://practicalseries.com/2001-pal/11-web)
+&emsp; &emsp; &emsp; [https://practicalseries.com/2001-pal/](https://practicalseries.com/2001-pal/)
 
 ### 2.2.2&emsp;&emsp; The Project documentation (21-project directory)
 
