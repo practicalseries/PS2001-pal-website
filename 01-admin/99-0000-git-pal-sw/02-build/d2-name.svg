@@ -7,13 +7,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="78"
+   width="138.651"
    height="20"
    role="img"
    aria-label="Dev: D0000"
    version="1.1"
    id="svg30"
-   sodipodi:docname="blank-badge.svg"
+   sodipodi:docname="d2-name.svg"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
   <metadata
      id="metadata36">
@@ -43,10 +43,10 @@
      id="namedview32"
      showgrid="false"
      inkscape:zoom="3.6410256"
-     inkscape:cx="4.806338"
-     inkscape:cy="10"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:cx="-169.19573"
+     inkscape:cy="9.9999999"
+     inkscape:window-x="2552"
+     inkscape:window-y="-6"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg30" />
   <title
@@ -54,7 +54,7 @@
   <linearGradient
      id="s"
      x2="0"
-     y2="100%">
+     y2="1">
     <stop
        offset="0"
        stop-color="#bbb"
@@ -71,31 +71,9 @@
        width="78"
        height="20"
        rx="3"
-       fill="#fff"
-       id="rect9" />
+       id="rect9"
+       x="0"
+       y="0"
+       style="fill:#ffffff" />
   </clipPath>
-  <g
-     clip-path="url(#r)"
-     id="g18"
-     style="fill:#000000;fill-opacity:0">
-    <rect
-       width="31"
-       height="20"
-       fill="#555"
-       id="rect12"
-       style="fill:#000000;fill-opacity:0" />
-    <rect
-       x="31"
-       width="47"
-       height="20"
-       fill="#b8b8b8"
-       id="rect14"
-       style="fill:#000000;fill-opacity:0" />
-    <rect
-       width="78"
-       height="20"
-       fill="url(#s)"
-       id="rect16"
-       style="fill:#000000;fill-opacity:0" />
-  </g>
 </svg>

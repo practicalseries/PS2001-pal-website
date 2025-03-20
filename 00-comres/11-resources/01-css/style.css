@@ -1455,6 +1455,7 @@ a:active { color: #404030; }
 }                                           /* margin manipulation  to create the hanging effect */
 .note li {
     list-style: none;
+    line-height: 135%;
     margin-left: 3.3rem;
     margin-right: 0.2rem;
     margin-bottom: 0.85rem;
