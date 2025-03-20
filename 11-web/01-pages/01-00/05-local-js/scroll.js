@@ -57,10 +57,12 @@ This is a complete summary of all software modifications.
 
 Date          Issue        Author         Reason for Modification
 -------------------------------------------------------------------------------
+20 Mar 2025   000.103      M. Gledhill    First release
+
 11 Feb 2021   000.101      M. Gledhill    Released as a development prototype
 
 09 Feb 2021   000.000      M. Gledhill    File created
-                                          based on 98-00 scroll.js file
+                                          based on 01-00 scroll.js file
                                           Revison 000.101                                          
 ---------------------------------------------------------------------------- */
 
@@ -114,8 +116,8 @@ $(document).ready(function() {                  /* START OF PAGE READY FUNCTION 
        $('html, body').animate({scrollTop: $('#js--NN0000').offset().top -10}, 1000);
     });
    ------------------------------------------------------------------------- */
-    $('.js--sc-980000').click(function () {
-       $('html, body').animate({scrollTop: $('#js--980000').offset().top -10}, 1000);
+    $('.js--sc-010000').click(function () {
+       $('html, body').animate({scrollTop: $('#js--010000').offset().top -10}, 1000);
     });
 
 
@@ -127,17 +129,33 @@ $(document).ready(function() {                  /* START OF PAGE READY FUNCTION 
        $('html, body').animate({scrollTop: $('#js--NN0100').offset().top -20}, 1000);
     });
    ------------------------------------------------------------------------- */
-    $('.js--sc-980100').click(function () {
-       $('html, body').animate({scrollTop: $('#js--980100').offset().top -20}, 1000);
+    $('.js--sc-010100').click(function () {
+       $('html, body').animate({scrollTop: $('#js--010100').offset().top -20}, 1000);
     });
 
-    $('.js--sc-980101').click(function () {
-       $('html, body').animate({scrollTop: $('#js--980101').offset().top -20}, 1000);
-    });
+    $('.js--sc-010101').click(function () {
+      $('html, body').animate({scrollTop: $('#js--010101').offset().top -20}, 1000);
+   });
 
-    $('.js--sc-980200').click(function () {
-       $('html, body').animate({scrollTop: $('#js--980200').offset().top -20}, 1000);
-    });
+   $('.js--sc-010102').click(function () {
+      $('html, body').animate({scrollTop: $('#js--010102').offset().top -20}, 1000);
+   });
+
+   $('.js--sc-010103').click(function () {
+      $('html, body').animate({scrollTop: $('#js--010103').offset().top -20}, 1000);
+   });
+
+   $('.js--sc-010104').click(function () {
+      $('html, body').animate({scrollTop: $('#js--010104').offset().top -20}, 1000);
+   });
+
+   $('.js--sc-010200').click(function () {
+      $('html, body').animate({scrollTop: $('#js--010200').offset().top -20}, 1000);
+   });
+
+   $('.js--sc-010300').click(function () {
+      $('html, body').animate({scrollTop: $('#js--010300').offset().top -20}, 1000);
+   });
 
 
 /* ---------------------------------------------------------------------------
@@ -148,13 +166,17 @@ $(document).ready(function() {                  /* START OF PAGE READY FUNCTION 
            $('html, body').animate({scrollTop: $('#js--nn0101a').offset().top -120}, 1000);
           });
    ------------------------------------------------------------------------- */
-    $('.js--sc-980101a').click(function () {
-       $('html, body').animate({scrollTop: $('#js--980101a').offset().top -120}, 1000);
+    $('.js--sc-010104a').click(function () {
+       $('html, body').animate({scrollTop: $('#js--010104a').offset().top -120}, 1000);
     });
 
-    $('.js--sc-980101b').click(function () {
-       $('html, body').animate({scrollTop: $('#js--980101b').offset().top -140}, 1000);
+    $('.js--sc-010104b').click(function () {
+       $('html, body').animate({scrollTop: $('#js--010104b').offset().top -140}, 1000);
     });
+
+    $('.js--sc-010300a').click(function () {
+      $('html, body').animate({scrollTop: $('#js--010300a').offset().top -140}, 1000);
+   });
 
 /* ---------------------------------------------------------------------------
    SCROLL TO -  CROSS REFERENCES
@@ -189,8 +211,8 @@ $(document).ready(function() {                  /* START OF PAGE READY FUNCTION 
     });
    ------------------------------------------------------------------------- */
 
-    $('.js--sc-f98-01').click(function () {
-       $('html, body').animate({scrollTop: $('#js--f98-01').offset().top -80}, 1000);
+    $('.js--sc-f01-01').click(function () {
+       $('html, body').animate({scrollTop: $('#js--f01-01').offset().top -80}, 1000);
     });
 
 

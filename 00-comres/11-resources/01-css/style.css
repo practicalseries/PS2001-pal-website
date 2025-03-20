@@ -1518,6 +1518,7 @@ a:active { color: #404030; }
 .hlink:hover,
 .hlink:active { border-bottom: 1px solid #404030; }
 
+.xref{font-family: "conc-t3-r";}
 .xref:link,                                 /* TEXT STYLE - cross reference hyperlink */
 .xref:visited{
     background-color: #f8f8f8;
